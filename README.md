@@ -12,6 +12,9 @@ ROMie helps you import, organize, and sync your ROM libraries to portable retro 
 - **ROM Verification** - MD5 hash matching against RetroAchievements database
 - **Smart Naming** - Normalize filenames to proper game titles
 - **Achievement Tracking** - View your RetroAchievements progress for verified ROMs
+- **Archive Support** - Handles compressed ROMs in zip and 7z formats
+
+**[View complete list of supported systems →](SUPPORTED_SYSTEMS.md)**
 
 ## Supported Device Operating Systems
 Each handheld operating system organizes ROMs differently. ROMie uses device profiles to handle this automatically. They're essentially system-to-folder mappings that ensure your ROMs end up in the right place on your device.
