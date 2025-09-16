@@ -41,7 +41,7 @@ Each handheld operating system organizes ROMs differently. ROMie uses device pro
 ## Roadmap & Issues
 
 All development is tracked publicly on GitHub:
-- [View current roadmap](https://github.com/jzimz/romie/projects/1)
+- [View current roadmap](https://github.com/users/JZimz/projects/2)
 - [Report bugs or request features](https://github.com/jzimz/romie/issues)
 - [See what's coming next](https://github.com/jzimz/romie/milestones)
 
