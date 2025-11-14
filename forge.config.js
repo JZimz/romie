@@ -1,10 +1,70 @@
 import 'dotenv/config';
-import { FusesPlugin } from '@electron-forge/plugin-fuses';
-import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import path from 'node:path';
+import { PluginBase, namedHookWithTaskFn } from '@electron-forge/plugin-base';
+import { flipFuses, FuseV1Options, FuseVersion } from '@electron/fuses';
 
 const S3_BUCKET = 'romie.jzimz.com';
 const S3_REGION = 'us-east-1';
 const CDN_URL = `https://romie.jzimz.com`;
+
+function getElectronExecutablePath({ appName, basePath, platform }) {
+  if (platform === 'darwin' || platform === 'mas') {
+    return path.join(basePath, 'MacOS', appName);
+  }
+
+  const suffix = platform === 'win32' ? '.exe' : '';
+  return path.join(basePath, `${appName}${suffix}`);
+}
+
+class FusesPlugin extends PluginBase {
+  constructor(fusesConfig) {
+    super(fusesConfig);
+
+    this.name = 'fuses';
+    this.fusesConfig = fusesConfig ?? {};
+  }
+
+  getHooks() {
+    return {
+      packageAfterCopy: namedHookWithTaskFn(
+        async (
+          _listrTask,
+          resolvedForgeConfig,
+          resourcesPath,
+          _electronVersion,
+          platform,
+          arch
+        ) => {
+          const applePlatforms = ['darwin', 'mas'];
+
+          if (!this.fusesConfig || Object.keys(this.fusesConfig).length === 0) {
+            return;
+          }
+
+          const pathToElectronExecutable = getElectronExecutablePath({
+            appName: applePlatforms.includes(platform) ? 'Electron' : 'electron',
+            basePath: path.resolve(resourcesPath, '../..'),
+            platform,
+          });
+
+          const osxSignConfig = resolvedForgeConfig.packagerConfig.osxSign;
+          const hasOSXSignConfig =
+            (typeof osxSignConfig === 'object' &&
+              osxSignConfig !== null &&
+              Object.keys(osxSignConfig).length > 0) ||
+            Boolean(osxSignConfig);
+
+          await flipFuses(pathToElectronExecutable, {
+            resetAdHocDarwinSignature:
+              !hasOSXSignConfig && applePlatforms.includes(platform) && arch === 'arm64',
+            ...this.fusesConfig,
+          });
+        },
+        'Flipping Fuses'
+      ),
+    };
+  }
+}
 
 export default {
   packagerConfig: {

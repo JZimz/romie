@@ -59,7 +59,6 @@
     "@electron-forge/maker-squirrel": "^7.10.2",
     "@electron-forge/maker-zip": "^7.10.2",
     "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
-    "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron-forge/plugin-vite": "^7.10.2",
     "@electron-forge/publisher-s3": "^7.10.2",
     "@electron/fuses": "^2.0.0",
