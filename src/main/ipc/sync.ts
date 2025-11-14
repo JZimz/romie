@@ -66,6 +66,12 @@ async function startSync(
           'device.profile_name': profile.name,
         });
 
+        // Step 1.5: Prepare filesystem (macOS metadata guard + optional cleanup)
+        await Sentry.startSpan(
+          { op: 'sync.prepare_filesystem', name: 'Prepare Device Filesystem' },
+          () => prepareDeviceFilesystem(device, profile, options)
+        );
+
         // Step 2: Preparation
         if (options.cleanDestination) {
           await Sentry.startSpan({ op: 'sync.clean', name: 'Clean Destination' }, () =>
@@ -97,6 +103,12 @@ async function startSync(
         // Step 4: Copy ROMs
         await Sentry.startSpan({ op: 'sync.copy', name: 'Copy ROMs to Device' }, () =>
           copyRoms(filteredRoms, device, profile, options, syncStatus)
+        );
+
+        // Step 5: Clean up macOS metadata files that can appear as duplicate games
+        await Sentry.startSpan(
+          { op: 'sync.cleanup_hidden', name: 'Remove macOS metadata files' },
+          () => cleanupMacHiddenFiles(device, profile)
         );
 
         // Complete
@@ -190,7 +202,7 @@ async function validateProfile(profileId: string): Promise<DeviceProfile> {
 }
 
 async function cleanDestination(device: Device, profile: DeviceProfile): Promise<void> {
-  const destinationPath = path.join(device.deviceInfo.mount, profile.romBasePath);
+  const destinationPath = getRomBasePath(device, profile);
 
   log.info(`Cleaning destination: ${destinationPath}`);
 
@@ -202,6 +214,153 @@ async function cleanDestination(device: Device, profile: DeviceProfile): Promise
     throw new SyncError(
       `Failed to clean destination ${destinationPath}: ${(error as Error).message}`
     );
+  }
+}
+
+function getRomBasePath(device: Device, profile: DeviceProfile): string {
+  const sanitizedBasePath = profile.romBasePath.replace(/^[/\\]+/, '');
+  return path.join(device.deviceInfo.mount, sanitizedBasePath);
+}
+
+function getSystemFolderPath(device: Device, profile: DeviceProfile, folderName: string): string {
+  return path.join(getRomBasePath(device, profile), folderName);
+}
+
+async function prepareDeviceFilesystem(
+  device: Device,
+  profile: DeviceProfile,
+  options: SyncOptions
+): Promise<void> {
+  await ensureMacMetadataDisabled(device.deviceInfo.mount);
+
+  // When the user is not wiping the whole destination, proactively remove
+  // macOS-style metadata files so they don't show up as duplicate games.
+  if (!options.cleanDestination) {
+    await cleanupMacHiddenFiles(device, profile);
+  }
+}
+
+async function ensureMacMetadataDisabled(mountPath: string): Promise<void> {
+  // Only relevant on macOS; on other platforms this is a no-op.
+  if (process.platform !== 'darwin') {
+    return;
+  }
+
+  const metadataFilePath = path.join(mountPath, '.metadata_never_index');
+
+  try {
+    await fs.writeFile(metadataFilePath, '', { flag: 'wx' });
+    log.info(`Created .metadata_never_index at ${metadataFilePath}`);
+  } catch (error) {
+    const err = error as { code?: string; message?: string };
+
+    if (err.code === 'EEXIST') {
+      log.debug(`.metadata_never_index already exists at ${metadataFilePath}`);
+      return;
+    }
+
+    if (err.code === 'ENOENT') {
+      log.warn(
+        `Failed to create .metadata_never_index at ${metadataFilePath}: mount path does not exist`
+      );
+      return;
+    }
+
+    if (err.code === 'EROFS') {
+      log.warn(
+        `Failed to create .metadata_never_index at ${metadataFilePath}: filesystem is read-only`
+      );
+      return;
+    }
+
+    log.warn(
+      `Failed to create .metadata_never_index at ${metadataFilePath}: ${
+        err.message ?? String(error)
+      }`
+    );
+  }
+}
+
+async function cleanupMacHiddenFiles(device: Device, profile: DeviceProfile): Promise<void> {
+  const romBasePath = getRomBasePath(device, profile);
+
+  const systemFolders = Object.values(profile.systemMappings)
+    .filter((mapping): mapping is NonNullable<typeof mapping> => !!mapping)
+    .map((mapping) => path.join(romBasePath, mapping.folderName));
+
+  const uniqueFolders = Array.from(new Set(systemFolders));
+
+  let totalRemoved = 0;
+
+  for (const folder of uniqueFolders) {
+    totalRemoved += await removeMacHiddenFilesInDirectory(folder);
+  }
+
+  if (totalRemoved > 0) {
+    log.info(`Removed ${totalRemoved} macOS metadata files from device at ${romBasePath}`);
+  } else {
+    log.debug(`No macOS metadata files found under ${romBasePath}`);
+  }
+}
+
+async function removeMacHiddenFilesInDirectory(dir: string): Promise<number> {
+  try {
+    const entries = await fs.readdir(dir);
+
+    let removed = 0;
+
+    for (const name of entries) {
+      const fullPath = path.join(dir, name);
+
+      try {
+        const stats = await fs.stat(fullPath);
+
+        if (stats.isDirectory()) {
+          removed += await removeMacHiddenFilesInDirectory(fullPath);
+          continue;
+        }
+
+        if (!stats.isFile()) {
+          continue;
+        }
+
+        if (name === '.DS_Store' || name.startsWith('._')) {
+          try {
+            await fs.unlink(fullPath);
+            removed++;
+            log.debug(`Removed macOS metadata file: ${fullPath}`);
+          } catch (error) {
+            const err = error as { message?: string };
+            log.warn(
+              `Failed to remove macOS metadata file ${fullPath}: ${err.message ?? String(error)}`
+            );
+          }
+        }
+      } catch (error) {
+        const err = error as { message?: string };
+        log.warn(
+          `Failed to stat path ${fullPath} while cleaning macOS metadata files: ${
+            err.message ?? String(error)
+          }`
+        );
+      }
+    }
+
+    return removed;
+  } catch (error) {
+    const err = error as { code?: string; message?: string };
+
+    if (err.code === 'ENOENT') {
+      log.debug(`Skipping hidden file cleanup for missing directory: ${dir}`);
+      return 0;
+    }
+
+    log.warn(
+      `Failed to read directory ${dir} while cleaning macOS metadata files: ${
+        err.message ?? String(error)
+      }`
+    );
+    return 0;
   }
 }
 
@@ -293,17 +452,12 @@ async function copyRoms(
       ? `${rom.displayName}${path.extname(sourceFilename)}`
       : sourceFilename;
 
-    const destinationPath = path.join(
-      device.deviceInfo.mount,
-      profile.romBasePath,
-      systemMapping.folderName,
-      destinationFilename
-    );
+    const destinationDir = getSystemFolderPath(device, profile, systemMapping.folderName);
+    const destinationPath = path.join(destinationDir, destinationFilename);
 
     log.debug(`Processing ROM ${i + 1}/${filteredRoms.length}: ${rom.displayName}`);
 
     // Create destination directory if needed
-    const destinationDir = path.dirname(destinationPath);
     await fs.mkdir(destinationDir, { recursive: true });
 
     // Skip if destination exists
