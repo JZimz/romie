@@ -7,7 +7,7 @@
           {{ section.title }}
         </h4>
         <ul v-if="section.id === 'tags'" class="app-sidebar__items app-sidebar__items--tags">
-          <li v-for="item in section.items">
+          <li v-for="item in section.items" :key="item.id">
             <RouterLink
               v-slot="{ isActive }"
               :to="item.route"

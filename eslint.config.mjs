@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 import vuePlugin from 'eslint-plugin-vue';
-import vueParser from 'vue-eslint-parser';
 import prettierConfig from 'eslint-config-prettier';
 import globals from 'globals';
 
@@ -111,11 +110,13 @@ export default [
     },
   },
 
-  // Vue files (browser environment)
+  // Vue files - spread the flat/recommended config array
+  ...vuePlugin.configs['flat/recommended'],
+
+  // Vue files - custom overrides (browser environment)
   {
     files: ['**/*.vue'],
     languageOptions: {
-      parser: vueParser,
       parserOptions: {
         parser: tsparser,
         ecmaVersion: 'latest',
@@ -134,11 +135,9 @@ export default [
       },
     },
     plugins: {
-      vue: vuePlugin,
       '@typescript-eslint': tseslint,
     },
     rules: {
-      ...vuePlugin.configs['vue3-recommended'].rules,
       ...tseslint.configs.recommended.rules,
       'no-console': 'off',
       'vue/multi-word-component-names': 'off',

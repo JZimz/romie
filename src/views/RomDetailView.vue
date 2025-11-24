@@ -40,7 +40,11 @@
             :achievements="romMetadataExtended?.achievements"
           />
           <ul class="rom-details__metadata">
-            <li v-for="{ label, value } in romMetadata" class="rom-details__metadata-item">
+            <li
+              v-for="{ label, value } in romMetadata"
+              :key="label"
+              class="rom-details__metadata-item"
+            >
               <span class="rom-details__metadata-label">{{ label }}:</span>
               <span class="rom-details__metadata-value">{{ value }}</span>
             </li>

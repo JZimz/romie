@@ -26,8 +26,8 @@
                 v-model="darkMode"
                 :options="themeOptions"
                 :fluid="true"
-                optionLabel="label"
-                optionValue="value"
+                option-label="label"
+                option-value="value"
                 placeholder="Select theme"
                 size="small"
                 @change="handleDarkModeChange"
@@ -87,7 +87,7 @@
                   placeholder="Enter your API key"
                   size="small"
                   :feedback="false"
-                  toggleMask
+                  toggle-mask
                 />
               </div>
             </div>

@@ -71,7 +71,7 @@ const iconUrl = computed(() => {
   if (props.romMetadataExtended?.imageIcon) {
     return `https://media.retroachievements.org/${props.romMetadataExtended.imageIcon}`;
   }
-  return;
+  return '';
 });
 </script>
 

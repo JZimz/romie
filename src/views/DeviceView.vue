@@ -72,10 +72,10 @@
               <MultiSelect
                 v-model="selectedTags"
                 :options="availableTags"
-                optionLabel="tag"
+                option-label="tag"
                 placeholder="Choose tags to sync"
                 class="w-full"
-                :maxSelectedLabels="3"
+                :max-selected-labels="3"
               />
               <div class="tag-selection__pills">
                 <Chip
@@ -107,7 +107,7 @@
                 <div class="tag-selection__option">
                   <Checkbox
                     v-model="syncOptions.cleanDestination"
-                    inputId="clean-destination"
+                    input-id="clean-destination"
                     binary
                   />
                   <div class="tag-selection__option-content">
@@ -121,7 +121,7 @@
                   </div>
                 </div>
                 <div class="tag-selection__option">
-                  <Checkbox v-model="syncOptions.useCleanNames" inputId="clean-names" binary />
+                  <Checkbox v-model="syncOptions.useCleanNames" input-id="clean-names" binary />
                   <div class="tag-selection__option-content">
                     <label for="clean-names" class="tag-selection__option-label"
                       >Simplify filenames</label
@@ -133,7 +133,7 @@
                   </div>
                 </div>
                 <div class="tag-selection__option">
-                  <Checkbox v-model="syncOptions.verifyFiles" inputId="verify-files" binary />
+                  <Checkbox v-model="syncOptions.verifyFiles" input-id="verify-files" binary />
                   <div class="tag-selection__option-content">
                     <label for="verify-files" class="tag-selection__option-label"
                       >Verify files after copy</label

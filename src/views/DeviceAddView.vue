@@ -60,7 +60,7 @@
     <DeviceAddModal
       v-if="selectedDevice"
       v-model:visible="showDeviceAddModal"
-      :storageDevice="selectedDevice"
+      :storage-device="selectedDevice"
       @created="handleCreate"
     />
   </PageLayout>

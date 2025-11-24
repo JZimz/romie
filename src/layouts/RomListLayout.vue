@@ -45,8 +45,8 @@
           { label: 'Verified', value: 'verified' },
           { label: 'Unverified', value: 'unverified' },
         ]"
-        optionLabel="label"
-        optionValue="value"
+        option-label="label"
+        option-value="value"
         placeholder="Verified"
         size="small"
       />
@@ -55,8 +55,8 @@
         :options="filterSystems"
         :filled="true"
         :disabled="props.mode === 'system'"
-        optionLabel="label"
-        optionValue="value"
+        option-label="label"
+        option-value="value"
         placeholder="System"
         size="small"
       />
@@ -64,15 +64,15 @@
         v-model="filterByRegion"
         :options="filterRegions"
         :filled="true"
-        optionLabel="label"
-        optionValue="value"
+        option-label="label"
+        option-value="value"
         placeholder="Region"
         size="small"
       />
     </div>
     <div class="rom-list-layout__content">
       <div class="rom-list-layout__content-list">
-        <slot :filteredRoms="filteredRoms" :loading="romStore.loading"></slot>
+        <slot :filtered-roms="filteredRoms" :loading="romStore.loading"></slot>
       </div>
       <div class="rom-list-layout__content-detail">
         <slot name="rom-details"></slot>
@@ -146,7 +146,7 @@ const filterRegions = computed(() => {
 });
 
 const sortedRoms = computed(() => {
-  return romStore.roms.sort((a, b) => a.displayName.localeCompare(b.displayName));
+  return [...romStore.roms].sort((a, b) => a.displayName.localeCompare(b.displayName));
 });
 
 const filteredRoms = computed(() => {

@@ -28,8 +28,8 @@ import type { SyncFailReason, SyncSkipReason } from '@/types/electron-api';
 
 withDefaults(
   defineProps<{
-    filesFailed: SyncFailReason[];
-    filesSkipped: SyncSkipReason[];
+    filesFailed?: SyncFailReason[];
+    filesSkipped?: SyncSkipReason[];
   }>(),
   {
     filesFailed: () => [],
