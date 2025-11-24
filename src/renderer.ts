@@ -7,8 +7,7 @@
  *
  */
 
-import { init as vueInit } from '@sentry/vue';
-import * as Sentry from '@sentry/electron/renderer';
+import * as Sentry from '@sentry/vue';
 import { createApp } from 'vue';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';
@@ -23,19 +22,17 @@ import { SENTRY_DSN, SENTRY_SAMPLE_RATE } from './sentry.config';
 import './styles/main.css';
 import 'primeicons/primeicons.css';
 
-if (process.env.NODE_ENV !== 'development') {
-  Sentry.init(
-    {
-      dsn: SENTRY_DSN,
-      sendDefaultPii: true,
-      integrations: [Sentry.browserTracingIntegration()],
-      tracesSampleRate: SENTRY_SAMPLE_RATE,
-    },
-    vueInit
-  );
-}
-
 const app = createApp(App);
+
+if (process.env.NODE_ENV !== 'development') {
+  Sentry.init({
+    app,
+    dsn: SENTRY_DSN,
+    sendDefaultPii: true,
+    integrations: [Sentry.browserTracingIntegration()],
+    tracesSampleRate: SENTRY_SAMPLE_RATE,
+  });
+}
 
 // Capture Vue component errors in Sentry
 app.config.errorHandler = (error, instance, info) => {
