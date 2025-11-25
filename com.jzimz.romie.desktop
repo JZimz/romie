@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=ROMie
+GenericName=ROM Manager
+Comment=ROM Manager for Retro Handhelds
+Categories=Utility;FileTools;
+
+Icon=com.jzimz.romie
+Exec=com.jzimz.romie
+Terminal=false
+StartupNotify=true
+
+Keywords=rom;retro;gaming;emulation;miyoo;handheld;sync;retroachievements;playlist;

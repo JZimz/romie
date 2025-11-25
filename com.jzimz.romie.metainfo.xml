@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.jzimz.romie</id>
+
+  <name>ROMie</name>
+  <summary>ROM Manager for Retro Handhelds</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <developer id="com.jzimz">
+    <name>JZimz</name>
+  </developer>
+
+  <description>
+    <p>
+      ROMie is a desktop application for organizing and managing your retro game ROM library. It helps you import, tag, and sync your game collections to SD cards for portable retro gaming handhelds.
+    </p>
+    <p>
+      Key features include automatic game identification using RetroAchievements, a flexible tagging system for creating custom playlists, and seamless syncing to SD cards with support for multiple device profiles including MiyooMini+, Onion OS, muOS, and Knulli.
+    </p>
+    <p>
+      Whether you have hundreds of games across multiple systems or just want an easier way to manage your portable gaming library, ROMie streamlines the entire workflow from import to device.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.jzimz.romie.desktop</launchable>
+
+  <url type="homepage">https://github.com/JZimz/romie</url>
+  <url type="bugtracker">https://github.com/JZimz/romie/issues</url>
+  <url type="help">https://github.com/JZimz/romie#readme</url>
+  <url type="vcs-browser">https://github.com/JZimz/romie</url>
+
+  <keywords>
+    <keyword>rom</keyword>
+    <keyword>retro</keyword>
+    <keyword>gaming</keyword>
+    <keyword>emulation</keyword>
+    <keyword>miyoo</keyword>
+    <keyword>handheld</keyword>
+    <keyword>sync</keyword>
+    <keyword>retroachievements</keyword>
+    <keyword>playlist</keyword>
+  </keywords>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Library view showing imported ROMs</caption>
+      <image>https://raw.githubusercontent.com/JZimz/romie/main/screenshots/library.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Sync interface for SD card management</caption>
+      <image>https://raw.githubusercontent.com/JZimz/romie/main/screenshots/sync.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.3.0" date="2025-01-24">
+      <description>
+        <p>Latest release with bug fixes and improvements.</p>
+      </description>
+    </release>
+  </releases>
+
+  <recommends>
+    <display_length compare="ge">900</display_length>
+  </recommends>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+</component>
