@@ -49,9 +49,8 @@ const createWindow = () => {
   if (process.env.NODE_ENV === 'development') {
     app.whenReady().then(async () => {
       try {
-        const { default: installExtension, VUEJS_DEVTOOLS } = await import(
-          'electron-devtools-installer'
-        );
+        const { default: installExtension, VUEJS_DEVTOOLS } =
+          await import('electron-devtools-installer');
         const { name } = await installExtension(VUEJS_DEVTOOLS);
         log.debug(`Added Extension: ${name}`);
       } catch (err) {
