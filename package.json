@@ -87,7 +87,7 @@
   "dependencies": {
     "@primeuix/themes": "^2.0.1",
     "@retroachievements/api": "^2.6.0",
-    "@sentry/electron": "^7.3.0",
+    "@sentry/electron": "^7.4.0",
     "@sentry/vue": "^10.27.0",
     "7zip-bin": "^5.2.0",
     "crc-32": "^1.2.2",
@@ -96,14 +96,14 @@
     "electron-squirrel-startup": "^1.0.1",
     "lowdb": "^7.0.1",
     "node-7z": "^3.0.0",
-    "pinia": "^3.0.3",
+    "pinia": "^3.0.4",
     "primeicons": "^7.0.0",
-    "primevue": "^4.4.1",
-    "systeminformation": "^5.27.7",
+    "primevue": "^4.5.0",
+    "systeminformation": "^5.27.11",
     "update-electron-app": "^3.1.1",
     "uuid": "^13.0.0",
     "vue": "^3.5.25",
-    "vue-router": "^4.5.1",
+    "vue-router": "^4.6.3",
     "yauzl": "^3.2.0"
   }
 }
