@@ -70,7 +70,7 @@
     "electron": "37.2.1",
     "electron-devtools-installer": "^4.0.0",
     "eslint": "^9.39.1",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.6.2",
     "git-cliff": "^2.10.1",
     "globals": "^16.5.0",
