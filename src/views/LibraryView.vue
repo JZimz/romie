@@ -1,11 +1,12 @@
 <template>
   <RomListLayout class="library-view" mode="all">
-    <template #default="{ filteredRoms, loading }">
+    <template #default="{ filteredRoms, loading, focusList }">
       <div class="library-view__content">
         <div class="library-view__summary">
           {{ librarySummary }}
         </div>
         <RomList
+          ref="romListRef"
           class="library-view__list"
           :loading="loading"
           :roms="filteredRoms"

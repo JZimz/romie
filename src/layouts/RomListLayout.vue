@@ -1,6 +1,6 @@
 <template>
   <div class="rom-list-layout">
-    <AppToolbar>
+    <AppToolbar @escape="focusList">
       <template #actions>
         <div class="rom-list-layout__header-actions">
           <!-- TODO: Add this back once grid view is implemented
@@ -82,7 +82,7 @@
     </div>
     <div class="rom-list-layout__content">
       <div class="rom-list-layout__content-list">
-        <slot :filtered-roms="filteredRoms" :loading="romStore.loading"></slot>
+        <slot :filtered-roms="filteredRoms" :loading="romStore.loading" :focus-list="focusList"></slot>
       </div>
       <div class="rom-list-layout__content-detail">
         <slot name="rom-details"></slot>
@@ -119,6 +119,7 @@ const showFilters = ref(false);
 const filterBySystem = ref([]);
 const filterByRegion = ref([]);
 const filterByRA = ref(null);
+const romListRef = ref();
 
 const searchPlaceholder = computed(() => {
   if (props.mode === 'tag' && props.tag) {
@@ -207,6 +208,10 @@ function toggleFilters() {
 
 function getUniqueRomValues<T extends keyof Rom>(field: T) {
   return Array.from(new Set(romStore.roms.map((rom) => rom[field]).filter(Boolean)));
+}
+
+function focusList() {
+  romListRef.value?.focusList?.();
 }
 </script>
 

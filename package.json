@@ -89,6 +89,7 @@
     "@retroachievements/api": "^2.6.0",
     "@sentry/electron": "^7.4.0",
     "@sentry/vue": "^10.27.0",
+    "@vueuse/core": "^14.1.0",
     "7zip-bin": "^5.2.0",
     "crc-32": "^1.2.2",
     "dotenv": "^17.2.3",

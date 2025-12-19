@@ -15,7 +15,7 @@
       <div class="app-toolbar__actions">
         <slot name="actions" />
       </div>
-      <div class="app-toolbar__search">
+      <div ref="searchSlot" class="app-toolbar__search">
         <slot name="search" />
       </div>
       <div class="app-toolbar__settings">
@@ -40,23 +40,80 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 import Button from 'primevue/button';
 import Message from 'primevue/message';
 import AppSettingsModal from '@/components/AppSettingsModal.vue';
+import { useHotkeys } from '@/composables/useHotkeys';
 
 const settingsModal = ref();
 const updateAvailable = ref<string | null>(null);
+const searchSlot = ref<HTMLElement>();
 let unsubscribeUpdates: (() => void) | null = null;
+
+const emit = defineEmits<{
+  (e: 'escape'): void;
+}>();
+
+const { register } = useHotkeys();
+let unregisterHotkeys: (() => void)[] = [];
 
 onMounted(() => {
   unsubscribeUpdates = window.update.onUpdateAvailable((version) => {
     updateAvailable.value = version;
   });
+
+  unregisterHotkeys = [
+    register({
+      key: '/',
+      handler: (event) => {
+        event.preventDefault();
+        focusSearch();
+      },
+    }),
+    register({
+      key: 'k',
+      meta: true,
+      handler: (event) => {
+        event.preventDefault();
+        focusSearch();
+      },
+    }),
+    register({
+      key: 'k',
+      ctrl: true,
+      handler: (event) => {
+        event.preventDefault();
+        focusSearch();
+      },
+    }),
+    register({
+      key: 'Escape',
+      allowInInputs: true,
+      handler: (event) => {
+        if (isInSearch(event.target as HTMLElement)) {
+          event.stopPropagation();
+          (event.target as HTMLElement)?.blur?.();
+          emit('escape');
+        }
+      },
+    }),
+  ];
 });
 
 onBeforeUnmount(() => {
   if (unsubscribeUpdates) unsubscribeUpdates();
+  unregisterHotkeys.forEach((fn) => fn());
 });
+
+function focusSearch() {
+  const input = searchSlot.value?.querySelector('input');
+  input?.focus();
+}
 
 function handleUpdate() {
   window.update.quitAndInstall();
+}
+
+function isInSearch(target: HTMLElement | null) {
+  if (!target) return false;
+  return Boolean(target.closest('.app-toolbar__search'));
 }
 </script>
 
