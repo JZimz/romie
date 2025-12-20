@@ -12,13 +12,26 @@ export async function loadHashDatabase(): Promise<GamesHashMap> {
     with: { type: 'json' },
   });
 
-  return gameDb as GamesHashMap;
+  hashDatabase = gameDb as GamesHashMap;
+
+  return hashDatabase;
 }
 
 export async function lookupRomByHash(hash: string): Promise<GameEntity | null> {
   const gameDb = await loadHashDatabase();
   const gameIndex = gameDb.hashMap[hash];
   const game = gameDb.games[gameIndex];
+
+  return game || null;
+}
+
+export function lookupRomByHashSync(hash: string): GameEntity | null {
+  if (!hashDatabase) {
+    throw new Error('Hash database not loaded. Call loadHashDatabase() first.');
+  }
+
+  const gameIndex = hashDatabase.hashMap[hash];
+  const game = hashDatabase.games[gameIndex];
 
   return game || null;
 }

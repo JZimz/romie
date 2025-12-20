@@ -1,6 +1,6 @@
 import { nativeTheme } from 'electron';
 import log from 'electron-log/main';
-import { getAppSettings } from '../roms/romDatabase';
+import { getAppSettings } from '@main/database';
 import type { AppTheme } from '@/types/settings';
 
 export async function initializeTheme(): Promise<void> {

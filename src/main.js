@@ -8,7 +8,7 @@ import { SENTRY_DSN, SENTRY_SAMPLE_RATE } from './sentry.config';
 import { getInstanceId } from '@main/analytics';
 import { initializeTheme } from '@main/themes';
 import { initializeUpdater } from '@main/updater';
-
+import { getDatabase } from '@main/database/connection';
 // Initialize sentry for error tracking
 if (process.env.NODE_ENV !== 'development') {
   init({
@@ -93,6 +93,8 @@ app.whenReady().then(async () => {
 
   registerAllIpc();
 
+  // Initialize app database
+  await getDatabase();
   // Initialize theme from saved settings
   await initializeTheme();
 

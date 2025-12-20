@@ -7,7 +7,7 @@ import { hash } from '@romie/ra-hasher';
 import { getConsoleIdForSystem, determineSystemFromExtension } from '@/utils/systems';
 import { RomProcessingError } from '@/errors';
 import { extractRegionFromFilename, cleanDisplayName, md5sum, crc32sum } from './romUtils';
-import { addRom } from './romDatabase';
+import { addRom } from '@main/database/roms';
 import { lookupRomByHash } from './romLookup';
 
 import type { Rom } from '@/types/rom';
@@ -118,8 +118,8 @@ export async function processRomFile(
           romFilename: fileName,
           filePath,
           size,
-          importedAt: now,
-          lastUpdated: now,
+          createdAt: now,
+          updatedAt: now,
           tags: [],
           notes: '',
           favorite: false,

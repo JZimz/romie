@@ -3,7 +3,7 @@ import logger from 'electron-log/main';
 import * as Sentry from '@sentry/electron/main';
 import si from 'systeminformation';
 import fs from 'fs/promises';
-import { addDevice, listDevices as getDevices, addDeviceProfile } from '@main/roms/romDatabase';
+import { addDevice, listDevices as getDevices, addDeviceProfile } from '@main/database';
 import { AppError } from '@/errors';
 
 import type { Device, StorageDevice } from '@/types/device';

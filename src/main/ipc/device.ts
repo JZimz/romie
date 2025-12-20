@@ -7,7 +7,7 @@ import {
   uploadProfile,
 } from '@main/devices/deviceService';
 
-import { listDevices, listDeviceProfiles, addDevice } from '@main/roms/romDatabase';
+import { listDevices, listDeviceProfiles, addDevice } from '@main/database';
 
 export function registerDeviceIpc() {
   ipcMain.handle('device:list', listDevices);

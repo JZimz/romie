@@ -29,8 +29,6 @@ export interface Rom {
   /** ROM filename used for system detection (e.g., "Super Metroid.sfc") */
   romFilename: string;
   size: number;
-  importedAt: number;
-  lastUpdated: number;
   /** MD5 hash of ROM content - primary deduplication method */
   md5: string;
   /** CRC32 of actual file on disk - fast file integrity checking */
@@ -43,7 +41,13 @@ export interface Rom {
   tags?: string[];
   favorite?: boolean;
   notes?: string;
+  createdAt: number;
+  updatedAt: number;
 
+  /** @deprecated Use `createdAt` */
+  importedAt?: number;
+  /** @deprecated Use `updatedAt` */
+  lastUpdated?: number;
   /** @deprecated Use `filename` now, will be removed in future version */
   originalFilename?: string;
   /** @deprecated Unused import source field, will be removed in future version */

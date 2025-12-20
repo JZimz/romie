@@ -2,10 +2,9 @@ import fs from 'fs/promises';
 import path from 'path';
 import { ipcMain, BrowserWindow } from 'electron';
 import logger from 'electron-log/main';
-import * as Sentry from '@sentry/electron/main';
 import { SyncError } from '@/errors';
 import type { SyncOptions, SyncStatus, SyncSkipReason, SyncFailReason } from '@/types/electron-api';
-import { listDevices, getDeviceProfile, listRoms } from '../roms/romDatabase';
+import { listDevices, listRomsByTags, getDeviceProfileById } from '@main/database';
 import { crc32sum } from '../roms/romUtils';
 
 import type { DeviceProfile } from '@romie/device-profiles';
@@ -31,117 +30,74 @@ async function startSync(
   deviceId: string,
   options: SyncOptions
 ): Promise<SyncStatus> {
-  return await Sentry.startSpan(
-    {
-      op: 'sync.operation',
-      name: 'Sync ROMs to Device',
-      attributes: {
-        'sync.tag_count': tagIds.length,
-        'sync.clean_destination': options.cleanDestination,
-        'sync.verify_files': options.verifyFiles,
-      },
-    },
-    async (span) => {
-      syncCancelled = false;
-      const startTime = Date.now();
-      const syncStatus = createSyncNotifier();
+  syncCancelled = false;
+  const startTime = Date.now();
+  const syncStatus = createSyncNotifier();
 
-      log.info(`Starting sync operation for device ${deviceId} with tags: ${tagIds.join(', ')}`);
-      log.info(
-        `Sync options: cleanDestination=${options.cleanDestination}, verifyFiles=${options.verifyFiles}`
-      );
+  log.info(`Starting sync operation for device ${deviceId} with tags: ${tagIds.join(', ')}`);
+  log.info(
+    `Sync options: cleanDestination=${options.cleanDestination}, verifyFiles=${options.verifyFiles}`
+  );
 
-      try {
-        // Step 1: Validation
-        syncStatus.setPhase('preparing').notify();
+  try {
+    // Step 1: Validation
+    syncStatus.setPhase('preparing').notify();
 
-        const device = await Sentry.startSpan(
-          { op: 'sync.validate', name: 'Validate Device' },
-          () => validateDevice(deviceId)
-        );
-        const profile = await validateProfile(device.profileId);
+    const device = await validateDevice(deviceId);
+    const profile = await validateProfile(device.profileId);
 
-        span.setAttributes({
-          'device.profile_id': device.profileId,
-          'device.profile_name': profile.name,
-        });
+    // Step 2: Preparation
+    if (options.cleanDestination) {
+      await cleanDestination(device, profile);
+    }
 
-        // Step 2: Preparation
-        if (options.cleanDestination) {
-          await Sentry.startSpan({ op: 'sync.clean', name: 'Clean Destination' }, () =>
-            cleanDestination(device, profile)
-          );
-        }
+    // Step 3: Get and filter ROMs
+    log.debug(`Loading ROMs for tags: ${tagIds.join(', ')}`);
+    const taggedRoms = await listRomsByTags(tagIds);
+    const filteredRoms = filterRomsForSync(taggedRoms, profile, syncStatus);
+    syncStatus.setTotal(filteredRoms.length).notify();
 
-        // Step 3: Get and filter ROMs
-        log.debug(`Loading ROM database`);
-        const allRoms = await listRoms();
-        const filteredRoms = filterRomsForSync(allRoms, tagIds, profile, syncStatus);
-        syncStatus.setTotal(filteredRoms.length).notify();
-
-        if (filteredRoms.length === 0) {
-          log.warn(`No ROMs found matching criteria`);
-          syncStatus.setPhase('done').setCurrentFile('').notify();
-          span.setAttributes({
-            'sync.roms_filtered': 0,
-            'sync.roms_total': allRoms.length,
-          });
-          return syncStatus.status;
-        }
-
-        span.setAttributes({
-          'sync.roms_filtered': filteredRoms.length,
-          'sync.roms_total': allRoms.length,
-        });
-
-        // Step 4: Copy ROMs
-        await Sentry.startSpan({ op: 'sync.copy', name: 'Copy ROMs to Device' }, () =>
-          copyRoms(filteredRoms, device, profile, options, syncStatus)
-        );
-
-        // Step 5: Clean up macOS hidden files
-        const destinationPath = path.join(device.deviceInfo.mount, profile.romBasePath);
-        await cleanMacOSHiddenFiles(destinationPath);
-
-        // Complete
-        const duration = Date.now() - startTime;
-        span.setAttributes({
-          'sync.duration_ms': duration,
-          'sync.success': true,
-        });
-
-        log.info(
-          `Sync completed successfully in ${duration}ms: ${filteredRoms.length} ROMs synced`
-        );
-
-        syncStatus.setPhase('done').setCurrentFile('').notify();
-      } catch (error) {
-        const duration = Date.now() - startTime;
-        span.setStatus({ code: 2, message: 'Sync operation failed' });
-        span.recordException(error instanceof Error ? error : new Error(String(error)));
-        span.setAttributes({
-          'sync.duration_ms': duration,
-          'sync.success': false,
-        });
-
-        const syncError =
-          error instanceof SyncError
-            ? error
-            : new SyncError(`Sync failed: ${(error as Error).message}`, error as Error);
-
-        log.error(`Sync failed after ${duration}ms: ${syncError.message}`);
-        if (syncError.cause) {
-          log.error(`Root cause:`, syncError.cause);
-        }
-
-        syncStatus.setError(syncError).setCurrentFile('').notify();
-
-        throw syncError;
-      }
-
+    if (filteredRoms.length === 0) {
+      log.warn(`No ROMs found matching criteria`);
+      syncStatus.setPhase('done').setCurrentFile('').notify();
       return syncStatus.status;
     }
-  );
+
+    log.info(
+      `Found ${filteredRoms.length} ROMs to sync (${taggedRoms.length} tagged ROMs after filtering)`
+    );
+
+    // Step 4: Copy ROMs
+    await copyRoms(filteredRoms, device, profile, options, syncStatus);
+
+    // Step 5: Clean up macOS hidden files
+    const destinationPath = path.join(device.deviceInfo.mount, profile.romBasePath);
+    await cleanMacOSHiddenFiles(destinationPath);
+
+    // Complete
+    const duration = Date.now() - startTime;
+    log.info(`Sync completed successfully in ${duration}ms: ${filteredRoms.length} ROMs synced`);
+
+    syncStatus.setPhase('done').setCurrentFile('').notify();
+  } catch (error) {
+    const duration = Date.now() - startTime;
+
+    const syncError =
+      error instanceof SyncError
+        ? error
+        : new SyncError(`Sync failed: ${(error as Error).message}`, error as Error);
+
+    log.error(`Sync failed after ${duration}ms: ${syncError.message}`);
+    if (syncError.cause) {
+      log.error(`Root cause:`, syncError.cause);
+    }
+
+    syncStatus.setError(syncError).setCurrentFile('').notify();
+
+    throw syncError;
+  }
+
+  return syncStatus.status;
 }
 
 function cancelSync() {
@@ -182,7 +138,7 @@ async function validateDevice(deviceId: string): Promise<Device> {
 async function validateProfile(profileId: string): Promise<DeviceProfile> {
   log.debug(`Validating device profile: ${profileId}`);
 
-  const profile = await getDeviceProfile(profileId);
+  const profile = await getDeviceProfileById(profileId);
 
   if (!profile) {
     log.error(`Device profile not found: ${profileId}`);
@@ -209,20 +165,10 @@ async function cleanDestination(device: Device, profile: DeviceProfile): Promise
   }
 }
 
-function filterRomsForSync(
-  allRoms: Rom[],
-  tagIds: string[],
-  profile: DeviceProfile,
-  syncStatus: SyncNotifier
-): Rom[] {
-  log.debug(`Filtering ${allRoms.length} ROMs for tags: ${tagIds.join(', ')}`);
+function filterRomsForSync(roms: Rom[], profile: DeviceProfile, syncStatus: SyncNotifier): Rom[] {
+  log.debug(`Filtering ${roms.length} ROMs for device compatibility`);
 
-  const filteredRoms = allRoms.filter((rom) => {
-    // Check if ROM has any of the target tags
-    if (!rom.tags?.some((tag) => tagIds.includes(tag))) {
-      return false;
-    }
-
+  const filteredRoms = roms.filter((rom) => {
     // Check if system is supported by profile
     const systemMapping = profile.systemMappings[rom.system];
     if (!systemMapping) {

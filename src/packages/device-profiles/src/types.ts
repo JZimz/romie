@@ -31,9 +31,11 @@ export interface DeviceProfile {
   systemMappings: Partial<Record<SystemCode, DeviceSystemProfile>>;
   isBuiltIn?: boolean;
   createdAt?: number;
-  lastModified?: number;
+  updatedAt?: number;
   description?: string;
   version?: number;
+  /** @deprecated Use updatedAt instead */
+  lastModified?: number;
 }
 
 export type DeviceProfileDraft = Omit<DeviceProfile, 'id'>;

@@ -19,12 +19,13 @@ export interface Device {
   id?: string;
   name: string;
   profileId: string;
-  manifestRelPath?: string;
   deviceInfo: StorageDevice;
-  tags?: string[];
-  addedAt?: number;
+  createdAt?: number;
+  updatedAt?: number;
   lastSeenAt?: number;
   lastSyncedAt?: number;
+  /** @deprecated Use `lastSeenAt` instead */
+  addedAt?: number;
 }
 
 export interface BiosFile {
