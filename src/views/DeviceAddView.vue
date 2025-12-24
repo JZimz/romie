@@ -169,7 +169,7 @@ function handleCreate(device: Device) {
   router.push({
     name: 'device-detail',
     params: {
-      deviceId: device.id || '1234',
+      deviceId: device.id,
     },
   });
 }

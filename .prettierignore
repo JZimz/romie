@@ -10,6 +10,7 @@ node_modules/
 # Generated files
 *.min.js
 *.min.css
+drizzle/
 
 # Large data files
 src/data/ra/*.json

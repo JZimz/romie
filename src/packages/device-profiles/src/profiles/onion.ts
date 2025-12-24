@@ -7,6 +7,8 @@ export const ONION_OS_PROFILE: DeviceProfile = {
   biosBasePath: '/BIOS/',
   isBuiltIn: true,
   version: 1,
+  createdAt: new Date('2024-01-01'),
+  updatedAt: new Date('2024-01-01'),
   artworkConfig: {
     enabled: true,
     pathPattern: '{romBasePath}/{folderName}/Imgs/',

@@ -7,6 +7,8 @@ export const KNULLI_PROFILE: DeviceProfile = {
   biosBasePath: '/bios/',
   isBuiltIn: true,
   version: 1,
+  createdAt: new Date('2024-01-01'),
+  updatedAt: new Date('2024-01-01'),
   systemMappings: {
     nes: {
       folderName: 'nes',

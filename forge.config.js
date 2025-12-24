@@ -36,7 +36,7 @@ export default {
             teamId: process.env.APPLE_TEAM_ID,
           },
         }),
-    extraResource: ['node_modules/7zip-bin'],
+    extraResource: ['node_modules/7zip-bin', 'drizzle'],
   },
   rebuildConfig: {},
   makers: [

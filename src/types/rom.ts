@@ -29,8 +29,8 @@ export interface Rom {
   /** ROM filename used for system detection (e.g., "Super Metroid.sfc") */
   romFilename: string;
   size: number;
-  importedAt: number;
-  lastUpdated: number;
+  createdAt: Date;
+  updatedAt: Date;
   /** MD5 hash of ROM content - primary deduplication method */
   md5: string;
   /** CRC32 of actual file on disk - fast file integrity checking */
@@ -40,10 +40,14 @@ export interface Rom {
   verified: boolean;
   /** Number of achievements available in RetroAchievements (computed at runtime, not stored) */
   numAchievements?: number;
-  tags?: string[];
-  favorite?: boolean;
-  notes?: string;
+  tags?: string[] | null;
+  favorite?: boolean | null;
+  notes?: string | null;
 
+  /** @deprecated Use `createdAt` instead */
+  importedAt?: number;
+  /** @deprecated Use `updatedAt` instead */
+  lastUpdated?: number;
   /** @deprecated Use `filename` now, will be removed in future version */
   originalFilename?: string;
   /** @deprecated Unused import source field, will be removed in future version */
@@ -53,6 +57,8 @@ export interface Rom {
   /** @deprecated Unused hash field, will be removed in future version */
   sha1?: string;
 }
+
+export type RomDraft = Omit<Rom, 'id' | 'createdAt' | 'updatedAt' | 'numAchievements'>;
 
 export interface TagStats {
   tag: string;

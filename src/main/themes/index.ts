@@ -1,17 +1,19 @@
 import { nativeTheme } from 'electron';
-import log from 'electron-log/main';
-import { getAppSettings } from '../roms/romDatabase';
+import logger from 'electron-log/main';
+import { settings } from '@main/db/queries';
 import type { AppTheme } from '@/types/settings';
+
+const log = logger.scope('themes');
 
 export async function initializeTheme(): Promise<void> {
   try {
-    const settings = await getAppSettings();
-    const theme = settings.theme || 'system';
+    const allSettings = settings.getAll();
+    const theme = (allSettings.theme as AppTheme) || 'system';
 
-    log.debug(`[THEME] Initializing theme: ${theme}`);
+    log.debug(`Initializing theme: ${theme}`);
     applyTheme(theme);
   } catch (error) {
-    log.warn('[THEME] Failed to load theme settings, using system default:', error);
+    log.warn('Failed to load theme settings, using system default:', error);
     applyTheme('system');
   }
 }

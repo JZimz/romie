@@ -22,7 +22,6 @@ defineProps<{
   system: SystemCode;
   region: string;
   size: number;
-  dateAdded: number; // ISO string or raw Date-compatible value
   isActive: boolean;
 }>();
 </script>
@@ -57,6 +56,7 @@ defineProps<{
 
   &__name {
     font-weight: 500;
+    white-space: nowrap;
   }
 
   &__region {

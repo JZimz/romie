@@ -1,7 +1,6 @@
 import path from 'path';
 import logger from 'electron-log/main';
 import fs from 'fs/promises';
-import { v4 as uuidv4 } from 'uuid';
 import * as Sentry from '@sentry/electron/main';
 import { hash } from '@romie/ra-hasher';
 import { getConsoleIdForSystem, determineSystemFromExtension } from '@/utils/systems';
@@ -23,7 +22,7 @@ export async function processRomFile(
   filePath: string,
   fileName: string,
   fileBuffer: Buffer
-): Promise<Rom> {
+): Promise<Omit<Rom, 'id' | 'createdAt' | 'updatedAt' | 'numAchievements'>> {
   const log = logger.scope(`rom-process`);
   const fileExtension = path.extname(fileName);
   log.debug(`Starting ROM processing for file: ${filePath}`);
@@ -106,9 +105,7 @@ export async function processRomFile(
         log.debug(`File size: ${(size / 1024 / 1024).toFixed(2)} MB`);
 
         // Create metadata object
-        const now = Date.now();
-        const metadata: Rom = {
-          id: uuidv4(),
+        const metadata: Omit<Rom, 'id' | 'createdAt' | 'updatedAt' | 'numAchievements'> = {
           system,
           displayName,
           region,
@@ -118,8 +115,6 @@ export async function processRomFile(
           romFilename: fileName,
           filePath,
           size,
-          importedAt: now,
-          lastUpdated: now,
           tags: [],
           notes: '',
           favorite: false,

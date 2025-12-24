@@ -16,14 +16,19 @@ export interface StorageDevice {
  * Represents a device chosen for ROM synchronization in ROMie.
  */
 export interface Device {
-  id?: string;
+  id: string;
   name: string;
   profileId: string;
-  manifestRelPath?: string;
   deviceInfo: StorageDevice;
-  tags?: string[];
+  tags?: string[] | null;
+  createdAt: Date;
+  updatedAt: Date;
+
+  /** @deprecated Use `createdAt` instead */
   addedAt?: number;
+  /** @deprecated Not used, will be removed in future version */
   lastSeenAt?: number;
+  /** @deprecated Not used, will be removed in future version */
   lastSyncedAt?: number;
 }
 

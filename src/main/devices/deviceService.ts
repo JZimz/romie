@@ -3,7 +3,8 @@ import logger from 'electron-log/main';
 import * as Sentry from '@sentry/electron/main';
 import si from 'systeminformation';
 import fs from 'fs/promises';
-import { addDevice, listDevices as getDevices, addDeviceProfile } from '@main/roms/romDatabase';
+import { addDevice, addDeviceProfile } from '@main/roms/romDatabase';
+import { devices } from '@main/db/queries';
 import { AppError } from '@/errors';
 
 import type { Device, StorageDevice } from '@/types/device';
@@ -11,12 +12,6 @@ import type { DeviceMountStatus, ApiResult } from '@/types/electron-api';
 import type { DeviceProfile, DeviceProfileDraft } from '@romie/device-profiles';
 
 const log = logger.scope('device');
-
-export async function listDevices(): Promise<Device[]> {
-  log.warn('deviceService.listDevices() is not implemented');
-
-  return [];
-}
 
 export async function listStorage(): Promise<StorageDevice[]> {
   return await Sentry.startSpan(
@@ -130,8 +125,8 @@ export async function checkDeviceMount(deviceId: string): Promise<DeviceMountSta
     async (span) => {
       try {
         // Get the device to find its mount path
-        const devices = await getDevices();
-        const device = devices.find((d) => d.id === deviceId);
+        const deviceList = devices.list();
+        const device = deviceList.find((d) => d.id === deviceId);
 
         if (!device || !device.deviceInfo.mount) {
           span.setAttributes({

@@ -30,10 +30,13 @@ export interface DeviceProfile {
   artworkConfig?: ArtworkConfig;
   systemMappings: Partial<Record<SystemCode, DeviceSystemProfile>>;
   isBuiltIn?: boolean;
-  createdAt?: number;
-  lastModified?: number;
+  createdAt: Date;
+  updatedAt: Date;
   description?: string;
   version?: number;
+
+  /** @deprecated Use `updatedAt` instead */
+  lastModified?: number;
 }
 
 export type DeviceProfileDraft = Omit<DeviceProfile, 'id'>;

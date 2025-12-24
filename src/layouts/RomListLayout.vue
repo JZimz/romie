@@ -175,7 +175,7 @@ const filteredRoms = computed(() => {
       !selectedRegions?.length || selectedRegions.some((value) => value === region);
     const hasQueryMatch = !query || displayName.toLowerCase().includes(query);
 
-    const hasTagMatch = !filterTag || tags.includes(filterTag);
+    const hasTagMatch = !filterTag || (tags && tags.includes(filterTag));
     const hasFavoritesMatch = props.mode === 'favorites' ? rom.favorite : true;
     const hasRAMatch =
       !filterByRA.value ||

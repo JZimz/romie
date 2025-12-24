@@ -7,6 +7,8 @@ export const MUOS_PROFILE: DeviceProfile = {
   biosBasePath: '/MUOS/bios/',
   isBuiltIn: true,
   version: 1,
+  createdAt: new Date('2024-01-01'),
+  updatedAt: new Date('2024-01-01'),
   artworkConfig: {
     enabled: true,
     pathPattern: '/MUOS/info/catalogue/{folderName}/box/',

@@ -14,7 +14,6 @@
         :system="rom.system"
         :region="rom.region"
         :size="rom.size"
-        :date-added="rom.importedAt"
         :is-active="romSelections.includes(rom.id)"
         @click="handleRomClick($event, rom)"
       />

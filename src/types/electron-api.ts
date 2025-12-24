@@ -52,7 +52,7 @@ export interface DeviceApi {
   list(): Promise<Device[]>;
   listStorage(): Promise<StorageDevice[]>;
   listProfiles(): Promise<DeviceProfile[]>;
-  create(data: Device): Promise<Device>;
+  create(data: Omit<Device, 'id' | 'createdAt' | 'updatedAt'>): Promise<Device>;
   update(id: string, deviceUpdate: Partial<Device>): Promise<Device>;
   remove(id: string): Promise<void>;
   checkDeviceMount(deviceId: string): Promise<DeviceMountStatus>;

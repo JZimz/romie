@@ -11,7 +11,7 @@ import {
   getUserCompletionProgress as raGetUserCompletionProgress,
   getGameInfoAndUserProgress as raGetGameInfoAndUserProgress,
 } from '@retroachievements/api';
-import { getRetoroAchievementsConfig } from '@main/roms/romDatabase';
+import { integrations } from '@main/db/queries';
 import { lookupRomByHash } from '@main/roms/romLookup';
 
 export async function isConfigured() {
@@ -65,7 +65,7 @@ export async function getGameInfoAndUserProgress(romHash: string) {
 //= Internal helpers =//
 
 async function getAuth() {
-  const config = await getRetoroAchievementsConfig();
+  const config = integrations.getRetroAchievements();
   if (!config) {
     throw new Error('RetroAchievements config not set');
   }

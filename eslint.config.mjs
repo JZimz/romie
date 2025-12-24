@@ -4,19 +4,25 @@ import tsparser from '@typescript-eslint/parser';
 import vuePlugin from 'eslint-plugin-vue';
 import prettierConfig from 'eslint-config-prettier';
 import globals from 'globals';
+import { FlatCompat } from '@eslint/eslintrc';
+
+const compat = new FlatCompat();
 
 export default [
   // Ignore patterns
   {
-    ignores: ['node_modules/', 'out/', 'dist/', '.vite/', 'build/', '**/*.min.js'],
+    ignores: ['node_modules/', 'out/', 'dist/', '.vite/', 'build/', 'drizzle/', '**/*.min.js'],
   },
 
   // Base JavaScript config
   js.configs.recommended,
 
+  // Drizzle ORM rules (using compat for old config format)
+  ...compat.extends('plugin:drizzle/all'),
+
   // TypeScript files - Node.js environment (main process & scripts)
   {
-    files: ['src/main/**/*.ts', 'scripts/**/*.ts', '**/*.mts', '**/*.cts'],
+    files: ['src/main/**/*.ts', 'scripts/**/*.ts', '*.config.ts'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {

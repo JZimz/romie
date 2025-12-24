@@ -202,7 +202,7 @@ function handleCancel() {
 
 async function handleSubmit() {
   saving.value = true;
-  const draftDevice: Device = {
+  const draftDevice: Omit<Device, 'id' | 'createdAt' | 'updatedAt'> = {
     name: deviceForm.value.name,
     profileId: deviceForm.value.profileId,
     deviceInfo: { ...props.storageDevice },
@@ -210,6 +210,7 @@ async function handleSubmit() {
 
   try {
     const newDevice = await window.device.create(draftDevice);
+
     await deviceStore.loadDevices();
     emit('created', newDevice);
   } catch (error) {

@@ -5,7 +5,8 @@ import logger from 'electron-log/main';
 import * as Sentry from '@sentry/electron/main';
 import { SyncError } from '@/errors';
 import type { SyncOptions, SyncStatus, SyncSkipReason, SyncFailReason } from '@/types/electron-api';
-import { listDevices, getDeviceProfile, listRoms } from '../roms/romDatabase';
+import { getDeviceProfile, listRoms } from '../roms/romDatabase';
+import { devices } from '@main/db/queries';
 import { crc32sum } from '../roms/romUtils';
 
 import type { DeviceProfile } from '@romie/device-profiles';
@@ -154,8 +155,8 @@ function cancelSync() {
 async function validateDevice(deviceId: string): Promise<Device> {
   log.debug(`Validating device: ${deviceId}`);
 
-  const devices = await listDevices();
-  const device = devices.find((d) => d.id === deviceId);
+  const deviceList = devices.list();
+  const device = deviceList.find((d) => d.id === deviceId);
 
   if (!device) {
     log.error(`Device not found: ${deviceId}`);

@@ -141,7 +141,7 @@ const romMetadata = computed(() =>
     ? [
         { label: 'Size', value: formatSize(rom.value.size) },
         { label: 'Region', value: rom.value.region },
-        { label: 'Imported on', value: formatDatetime(rom.value.importedAt) },
+        { label: 'Imported on', value: formatDatetime(rom.value.createdAt.getTime()) },
         { label: 'Filename', value: rom.value.filename },
       ]
     : []

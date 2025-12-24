@@ -8,6 +8,7 @@ import { SENTRY_DSN, SENTRY_SAMPLE_RATE } from './sentry.config';
 import { getInstanceId } from '@main/analytics';
 import { initializeTheme } from '@main/themes';
 import { initializeUpdater } from '@main/updater';
+import { initializeDatabase } from '@main/db';
 
 // Initialize sentry for error tracking
 if (process.env.NODE_ENV !== 'development') {
@@ -91,9 +92,9 @@ app.whenReady().then(async () => {
   setUser({ id: instanceId });
   log.debug(`Analytics instance ID: ${instanceId}`);
 
+  // Initialize app services
+  initializeDatabase();
   registerAllIpc();
-
-  // Initialize theme from saved settings
   await initializeTheme();
 
   createWindow();

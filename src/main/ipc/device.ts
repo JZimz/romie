@@ -7,10 +7,11 @@ import {
   uploadProfile,
 } from '@main/devices/deviceService';
 
-import { listDevices, listDeviceProfiles, addDevice } from '@main/roms/romDatabase';
+import { listDeviceProfiles, addDevice } from '@main/roms/romDatabase';
+import { devices } from '@main/db/queries';
 
 export function registerDeviceIpc() {
-  ipcMain.handle('device:list', listDevices);
+  ipcMain.handle('device:list', () => devices.list());
   ipcMain.handle('device:listStorage', listStorage);
   ipcMain.handle('device:listProfiles', listDeviceProfiles);
   ipcMain.handle('device:create', (_, data) => addDevice(data));
