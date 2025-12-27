@@ -1,4 +1,4 @@
-import { app, BrowserWindow, nativeTheme } from 'electron';
+import { app, BrowserWindow, nativeTheme, dialog } from 'electron';
 import log from 'electron-log/main';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
@@ -78,35 +78,49 @@ const createWindow = () => {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(async () => {
-  // Initialize the logger for any renderer process
-  log.initialize();
-  // Use debug level in production during alpha testing
-  log.transports.file.level = 'debug';
-  log.info(
-    `Romie v${app.getVersion()} is ready to rip on ${process.platform} with chrome@${process.versions.chrome}`
-  );
+app
+  .whenReady()
+  .then(async () => {
+    // Initialize the logger for any renderer process
+    log.initialize();
+    // Use debug level in production during alpha testing
+    log.transports.file.level = 'debug';
+    log.info(
+      `Romie v${app.getVersion()} is ready to rip on ${process.platform} with chrome@${process.versions.chrome}`
+    );
 
-  // Set up anonymous user tracking for analytics
-  const instanceId = await getInstanceId();
-  setUser({ id: instanceId });
-  log.debug(`Analytics instance ID: ${instanceId}`);
+    // Set up anonymous user tracking for analytics
+    const instanceId = await getInstanceId();
+    setUser({ id: instanceId });
+    log.debug(`Analytics instance ID: ${instanceId}`);
 
-  // Initialize app services
-  initializeDatabase();
-  registerAllIpc();
-  await initializeTheme();
+    // Initialize app services
+    initializeDatabase();
+    registerAllIpc();
+    await initializeTheme();
 
-  createWindow();
+    createWindow();
 
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
+    // On OS X it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow();
+      }
+    });
+  })
+  .catch((error) => {
+    const message = error instanceof Error ? error.message : String(error);
+    log.error('Failed to initialize app:', error);
+
+    dialog.showErrorBox(
+      'ROMie Failed to Start',
+      `An error occurred during startup:\n\n${message}\n\nCheck the logs for more details.`
+    );
+
+    // Exit the app
+    app.quit();
   });
-});
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

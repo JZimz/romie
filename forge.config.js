@@ -1,6 +1,9 @@
 import 'dotenv/config';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import { execSync } from 'node:child_process';
+import path from 'node:path';
+import { readFileSync } from 'node:fs';
 
 const S3_BUCKET = 'romie.jzimz.com';
 const S3_REGION = 'us-east-1';
@@ -8,7 +11,11 @@ const CDN_URL = `https://romie.jzimz.com`;
 
 export default {
   packagerConfig: {
-    asar: true,
+    // Extracts native module binaries from app.asar to app.asar.unpacked
+    // (native modules can't run from inside archive)
+    asar: {
+      unpack: '**/*.{node,dylib,so}', // Matches all native binaries in any subdirectory
+    },
     name: 'ROMie',
     executableName: 'ROMie',
     // App icons (platform-specific)
@@ -36,9 +43,41 @@ export default {
             teamId: process.env.APPLE_TEAM_ID,
           },
         }),
-    extraResource: ['node_modules/7zip-bin', 'drizzle'],
+    extraResource: [
+      // Include 7zip binaries for packaging/unpacking ROM archives
+      'node_modules/7zip-bin',
+      // Include database migration files
+      'drizzle',
+    ],
   },
-  rebuildConfig: {},
+  // Rebuilds better-sqlite3 for Electron's Node.js version
+  rebuildConfig: {
+    onlyModules: ['better-sqlite3'],
+    force: true,
+  },
+  hooks: {
+    // Note: This hook is needed because @electron-forge/plugin-vite doesn't package
+    // external dependencies. We mark better-sqlite3 as external (Vite can't bundle
+    // native modules), so we manually install it during packaging.
+    packageAfterCopy(_forgeConfig, buildPath) {
+      try {
+        const pkg = JSON.parse(readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
+        const version = pkg.dependencies?.['better-sqlite3'];
+
+        if (!version) {
+          throw new Error('better-sqlite3 not found in package.json dependencies');
+        }
+
+        console.log(`Installing better-sqlite3@${version} in packaged app...`);
+        execSync(`npm install --omit=dev --no-save better-sqlite3@${version}`, {
+          cwd: buildPath,
+          stdio: 'inherit',
+        });
+      } catch (error) {
+        throw new Error(`Failed to install better-sqlite3 during packaging: ${error.message}`);
+      }
+    },
+  },
   makers: [
     {
       name: '@electron-forge/maker-squirrel',

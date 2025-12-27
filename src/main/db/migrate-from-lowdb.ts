@@ -97,8 +97,8 @@ function migrateDevices(db: AppDatabase, data: RomDatabase['devices']) {
         profileId: device.profileId,
         deviceInfo: device.deviceInfo,
         // LowDB stored addedAt as unix ms, convert to Date
-        createdAt: device.addedAt ? new Date(device.addedAt) : device.createdAt,
-        updatedAt: device.updatedAt || new Date(),
+        createdAt: device.addedAt ? new Date(device.addedAt) : new Date(),
+        updatedAt: device.updatedAt ? new Date(device.updatedAt) : new Date(),
       })
       .onConflictDoNothing()
       .run();
@@ -123,8 +123,8 @@ function migrateProfiles(db: AppDatabase, data: RomDatabase['profiles']) {
         romBasePath: profile.romBasePath,
         systemMappings: profile.systemMappings,
         version: profile.version,
-        createdAt: profile.createdAt || new Date(),
-        updatedAt: profile.updatedAt || new Date(),
+        createdAt: profile.createdAt ? new Date(profile.createdAt) : new Date(),
+        updatedAt: profile.lastModified ? new Date(profile.lastModified) : new Date(),
       })
       .onConflictDoNothing()
       .run();

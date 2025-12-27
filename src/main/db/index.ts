@@ -14,7 +14,7 @@ export type AppDatabase = BetterSQLite3Database<typeof schema>;
 
 export let db: AppDatabase = null!; // Will be set in initializeDatabase()
 
-export async function initializeDatabase() {
+export function initializeDatabase() {
   const baseDir = app.isPackaged ? app.getPath('userData') : path.join(process.cwd(), '.romie');
 
   // Ensure directory exists (mainly for development, userData should always exist)
@@ -27,7 +27,7 @@ export async function initializeDatabase() {
   const sqlite = new Database(dbPath, {
     verbose: (_msg) => {
       // Uncomment to enable verbose SQL logging
-      // log.verbose(_msg)
+      // log.debug(_msg)
     },
   });
 
