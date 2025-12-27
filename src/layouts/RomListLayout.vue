@@ -82,7 +82,12 @@
     </div>
     <div class="rom-list-layout__content">
       <div class="rom-list-layout__content-list">
-        <slot :filtered-roms="filteredRoms" :loading="romStore.loading"></slot>
+        <slot
+          :filtered-roms="filteredRoms.roms"
+          :filtered-size="filteredRoms.size"
+          :total-roms="sortedRoms.length"
+          :loading="romStore.loading"
+        ></slot>
       </div>
       <div class="rom-list-layout__content-detail">
         <slot name="rom-details"></slot>
@@ -156,27 +161,43 @@ const filterRegions = computed(() => {
     .sort((a, b) => a.label.localeCompare(b.label));
 });
 
+const romsForMode = computed(() => {
+  if (props.mode === 'favorites') {
+    return romStore.roms.filter((rom) => rom.favorite);
+  }
+
+  if (props.mode === 'system' && props.system) {
+    return romStore.roms.filter((rom) => rom.system === props.system);
+  }
+
+  if (props.mode === 'tag') {
+    const tag = props.tag;
+    if (!tag) return romStore.roms;
+    return romStore.roms.filter((rom) => (rom.tags || []).includes(tag));
+  }
+
+  return romStore.roms;
+});
+
+// TODO: Consider doing sort in the database query instead.
 const sortedRoms = computed(() => {
-  return [...romStore.roms].sort((a, b) => a.displayName.localeCompare(b.displayName));
+  return [...romsForMode.value].sort((a, b) => a.displayName.localeCompare(b.displayName));
 });
 
 const filteredRoms = computed(() => {
   const query = searchQuery.value.toLowerCase().trim();
   const selectedRegions = filterByRegion.value;
-  const selectedSystems = props.mode === 'system' ? [props.system] : filterBySystem.value;
-  const filterTag = props.mode === 'tag' ? props.tag : null;
+  const selectedSystems = filterBySystem.value;
+  let size = 0;
 
-  return sortedRoms.value.filter((rom) => {
-    const { displayName, system, region, tags = [] } = rom;
+  const roms = sortedRoms.value.filter((rom) => {
+    const { displayName, system, region } = rom;
 
     const hasSystemMatch =
       !selectedSystems?.length || selectedSystems.some((value) => value === system);
     const hasRegionMatch =
       !selectedRegions?.length || selectedRegions.some((value) => value === region);
     const hasQueryMatch = !query || displayName.toLowerCase().includes(query);
-
-    const hasTagMatch = !filterTag || (tags && tags.includes(filterTag));
-    const hasFavoritesMatch = props.mode === 'favorites' ? rom.favorite : true;
     const hasRAMatch =
       !filterByRA.value ||
       (filterByRA.value === 'has-achievements' && (rom.numAchievements ?? 0) > 0) ||
@@ -184,16 +205,16 @@ const filteredRoms = computed(() => {
         rom.verified &&
         (rom.numAchievements ?? 0) === 0) ||
       (filterByRA.value === 'unverified' && !rom.verified);
+    const shouldInclude = hasSystemMatch && hasRegionMatch && hasQueryMatch && hasRAMatch;
 
-    return (
-      hasSystemMatch &&
-      hasRegionMatch &&
-      hasQueryMatch &&
-      hasTagMatch &&
-      hasRAMatch &&
-      hasFavoritesMatch
-    );
+    if (shouldInclude) {
+      size += rom.size ?? 0;
+    }
+
+    return shouldInclude;
   });
+
+  return { roms, size };
 });
 
 function toggleFilters() {

@@ -1,14 +1,22 @@
 <template>
-  <RomListLayout :tag="tag" mode="tag">
-    <template #default="{ filteredRoms, loading }">
-      <RomList
-        class="library-view__content-list"
-        :loading="loading"
-        :roms="filteredRoms"
-        :rom-selections="romSelections"
-        :compact="false"
-        @rom-selected="romSelections = $event"
-      />
+  <RomListLayout class="tag-view" :tag="tag" mode="tag">
+    <template #default="{ filteredRoms, totalRoms, filteredSize, loading }">
+      <div class="tag-view__content">
+        <RomStats
+          :filtered="filteredRoms.length"
+          :total="totalRoms"
+          :size="filteredSize"
+          :label="statsLabel"
+        />
+        <RomList
+          class="tag-view__list"
+          :loading="loading"
+          :roms="filteredRoms"
+          :rom-selections="romSelections"
+          :compact="false"
+          @rom-selected="romSelections = $event"
+        />
+      </div>
     </template>
     <template #rom-details>
       <RomDetailView
@@ -26,16 +34,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, computed } from 'vue';
 import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
 import RomList from '@/components/RomList.vue';
+import RomStats from '@/components/RomStats.vue';
 
-defineProps<{ tag: string }>();
-useRouter();
+const props = defineProps<{ tag: string }>();
 const romSelections = ref<string[]>([]);
+const statsLabel = computed(() => `ROMs tagged "${props.tag}"`);
 </script>
 
-<style scoped lang="less"></style>
+<style lang="less" scoped>
+.tag-view {
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  &__list {
+    flex: 1;
+    min-height: 0;
+  }
+}
+</style>

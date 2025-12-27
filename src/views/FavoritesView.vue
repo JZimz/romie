@@ -1,14 +1,22 @@
 <template>
-  <RomListLayout mode="favorites">
-    <template #default="{ filteredRoms, loading }">
-      <RomList
-        class="library-view__content-list"
-        :loading="loading"
-        :roms="filteredRoms"
-        :rom-selections="romSelections"
-        :compact="false"
-        @rom-selected="romSelections = $event"
-      />
+  <RomListLayout class="favorites-view" mode="favorites">
+    <template #default="{ filteredRoms, totalRoms, filteredSize, loading }">
+      <div class="favorites-view__content">
+        <RomStats
+          :filtered="filteredRoms.length"
+          :total="totalRoms"
+          :size="filteredSize"
+          label="favorites"
+        />
+        <RomList
+          class="favorites-view__list"
+          :loading="loading"
+          :roms="filteredRoms"
+          :rom-selections="romSelections"
+          :compact="false"
+          @rom-selected="romSelections = $event"
+        />
+      </div>
     </template>
     <template #rom-details>
       <RomDetailView
@@ -32,6 +40,7 @@ import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
 import RomList from '@/components/RomList.vue';
+import RomStats from '@/components/RomStats.vue';
 
 const romSelections = ref<string[]>([]);
 
@@ -42,4 +51,18 @@ function handleFavorite(favorite: boolean) {
 }
 </script>
 
-<style scoped lang="less"></style>
+<style lang="less" scoped>
+.favorites-view {
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  &__list {
+    flex: 1;
+    min-height: 0;
+  }
+}
+</style>
