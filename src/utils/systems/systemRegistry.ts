@@ -131,6 +131,16 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
   //   manufacturer: "Sony",
   //   releaseYear: 1994,
   // },
+  psp: {
+    code: 'psp',
+    displayName: 'PSP',
+    fullName: 'PlayStation Portable',
+    type: 'handheld',
+    extensions: ['.iso', '.cso'],
+    requiresBios: false,
+    manufacturer: 'Sony',
+    releaseYear: 2004,
+  },
 
   // === ATARI ===
   atari2600: {

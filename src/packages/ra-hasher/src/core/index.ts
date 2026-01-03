@@ -7,6 +7,7 @@ import { hashN64 } from './n64';
 import { hashAtariLynx } from './atariLynx';
 import { hashAtari7800 } from './atari7800';
 import { hashArcade } from './arcade';
+import { hashPSP } from './psp';
 
 /**
  * Generates RetroAchievements-compatible hashes for ROM identification.
@@ -45,6 +46,8 @@ function chooseHasher(consoleId: number) {
       return hashAtari7800;
     case 27: // Arcade
       return hashArcade;
+    case 41: // PlayStation Portable
+      return hashPSP;
     default:
       // Full MD5
       return async ({ buffer, path }: RaHashOptions) => {

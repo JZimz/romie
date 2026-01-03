@@ -96,6 +96,7 @@
     "@retroachievements/api": "^2.6.0",
     "@sentry/electron": "^7.4.0",
     "@sentry/vue": "^10.32.1",
+    "7z-wasm": "^1.2.0",
     "7zip-bin": "^5.2.0",
     "better-sqlite3": "^12.5.0",
     "crc-32": "^1.2.2",

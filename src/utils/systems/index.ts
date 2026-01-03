@@ -22,6 +22,7 @@ const RA_SYSTEMS: RASystemMapping[] = [
   { consoleId: 25, code: 'atari2600' },
   { consoleId: 27, code: 'arcade' },
   { consoleId: 28, code: 'vb' },
+  { consoleId: 41, code: 'psp' },
 ];
 
 const systems = Object.values(SYSTEM_REGISTRY);

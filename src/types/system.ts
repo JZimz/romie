@@ -12,6 +12,7 @@ export const SYSTEM_CODES = [
   'sms',
   'gg',
   'psx',
+  'psp',
   'lynx',
   'atari2600',
   'arcade',
