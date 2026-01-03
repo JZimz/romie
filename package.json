@@ -95,7 +95,7 @@
     "@primeuix/themes": "^2.0.1",
     "@retroachievements/api": "^2.6.0",
     "@sentry/electron": "^7.4.0",
-    "@sentry/vue": "^10.27.0",
+    "@sentry/vue": "^10.32.1",
     "7zip-bin": "^5.2.0",
     "better-sqlite3": "^12.5.0",
     "crc-32": "^1.2.2",
@@ -107,12 +107,12 @@
     "node-7z": "^3.0.0",
     "pinia": "^3.0.4",
     "primeicons": "^7.0.0",
-    "primevue": "^4.5.0",
-    "systeminformation": "^5.27.11",
+    "primevue": "^4.5.4",
+    "systeminformation": "^5.28.9",
     "update-electron-app": "^3.1.1",
     "uuid": "^13.0.0",
-    "vue": "^3.5.25",
-    "vue-router": "^4.6.3",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4",
     "yauzl": "^3.2.0"
   }
 }
