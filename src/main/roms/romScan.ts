@@ -11,6 +11,7 @@ import { getAllSupportedExtensions } from '@/utils/systems';
 import { RomProcessingError } from '@/errors';
 
 import type { PathLike } from 'node:fs';
+import type { Readable } from 'stream';
 import type { ImportStatus } from '@/types/electron-api';
 
 interface ScanResult {
@@ -287,25 +288,66 @@ async function readRomFromZip(zipPath: string): Promise<{
   buffer: Buffer;
 } | null> {
   return new Promise((resolve, reject) => {
+    let aborted = false;
+    let settled = false;
+    let zipfile: yauzl.ZipFile | undefined;
+    let currentReadStream: Readable | undefined;
     let romFileName: string | null = null;
     let romBuffer: Buffer | null = null;
 
-    yauzl.open(zipPath, { lazyEntries: true }, (err, zipfile) => {
+    const cleanup = () => {
+      if (aborted) return;
+      aborted = true;
+
+      currentReadStream?.destroy();
+      zipfile?.removeAllListeners();
+
+      try {
+        zipfile?.close();
+      } catch {
+        // ignore
+      }
+    };
+
+    const safeResolve = (value: { fileName: string; buffer: Buffer } | null) => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      resolve(value);
+    };
+
+    const safeReject = (error: RomProcessingError) => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      reject(error);
+    };
+
+    yauzl.open(zipPath, { lazyEntries: true }, (err, zf) => {
       if (err) {
         log.error(`Failed to open zip file ${zipPath}:`, err);
 
-        reject(new RomProcessingError(`Failed to open zip file`, zipPath, err.message, err));
+        safeReject(new RomProcessingError(`Failed to open zip file`, zipPath, err.message, err));
         return;
       }
 
-      zipfile.readEntry();
+      if (aborted) {
+        zf.close();
+        return;
+      }
 
-      zipfile.on('entry', (entry) => {
+      // Stored for cleanup after an early exit.
+      zipfile = zf;
+
+      zf.readEntry();
+
+      zf.on('entry', (entry) => {
+        if (aborted) return;
         log.debug(`Processing zip entry: ${entry.fileName}`);
         // Directory file names end with '/' so skip them since we only care about files.
         if (/\/$/.test(entry.fileName)) {
           log.debug('Skipping directory', entry.fileName);
-          zipfile.readEntry();
+          zf.readEntry();
           return;
         }
 
@@ -314,21 +356,20 @@ async function readRomFromZip(zipPath: string): Promise<{
 
           if (romBuffer) {
             // Already found a ROM, so this is a violation of the 1-ROM-per-zip rule.
-            reject(
+            safeReject(
               new RomProcessingError(
                 `Multiple ROMs found in zip file`,
                 zipPath,
-                `Found multiple ROM files in zip file.`
+                `Found multiple ROM files in zip file: ${romFileName} and ${entry.fileName}`
               )
             );
-            zipfile.close();
             return;
           }
 
-          zipfile.openReadStream(entry, (err, readStream) => {
+          zf.openReadStream(entry, (err, readStream) => {
             log.debug('Starting read stream for', entry.fileName);
             if (err) {
-              reject(
+              safeReject(
                 new RomProcessingError(
                   `Failed to open read stream for ROM in zip`,
                   zipPath,
@@ -339,32 +380,51 @@ async function readRomFromZip(zipPath: string): Promise<{
               return;
             }
 
+            if (aborted) {
+              readStream.destroy();
+              return;
+            }
+
+            currentReadStream = readStream;
             const chunks: Buffer[] = [];
-            readStream.on('data', (chunk) => chunks.push(chunk));
+            readStream.on('data', (chunk) => {
+              if (aborted) return;
+              chunks.push(chunk);
+            });
+            readStream.on('error', (streamError) => {
+              safeReject(
+                new RomProcessingError(
+                  `Failed to read ROM entry from zip`,
+                  zipPath,
+                  `Zip entry ${entry.fileName} failed to decompress: ${streamError.message}`,
+                  streamError
+                )
+              );
+            });
             readStream.on('end', function () {
+              if (aborted) return;
               log.debug(`Read stream completed for: ${entry.fileName}`);
               romFileName = entry.fileName;
               romBuffer = Buffer.concat(chunks);
-              zipfile.readEntry();
+              currentReadStream = undefined;
+              zf.readEntry();
             });
           });
         } else {
-          zipfile.readEntry();
+          zf.readEntry();
         }
       });
 
-      zipfile.on('error', (err) => {
+      zf.on('error', (err) => {
+        if (aborted) return;
         log.error(`Zip parsing error for ${zipPath}:`, err);
-        reject(new RomProcessingError(`Zip file parsing failed`, zipPath, err.message, err));
+        safeReject(new RomProcessingError(`Zip file parsing failed`, zipPath, err.message, err));
       });
 
-      zipfile.on('end', () => {
+      zf.on('end', () => {
+        if (aborted) return;
         log.debug(`Zip processing completed. ROM found: ${romFileName || 'none'}`);
-        if (romBuffer && romFileName) {
-          resolve({ fileName: romFileName, buffer: romBuffer });
-        } else {
-          resolve(null);
-        }
+        safeResolve(romBuffer && romFileName ? { fileName: romFileName, buffer: romBuffer } : null);
       });
     });
   });
