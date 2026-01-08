@@ -1,11 +1,12 @@
 import log from 'electron-log/main';
+import { rhash } from 'node-rcheevos';
 import crypto from 'crypto';
 import fs from 'fs/promises';
 import CRC32 from 'crc-32';
 import { app } from 'electron';
 import path from 'path';
 import type { PathLike } from 'fs';
-import type { RomRegion } from '../../types/rom';
+import type { RomFile, RomRegion } from '../../types/rom';
 
 interface HashInput {
   filePath?: string;
@@ -133,52 +134,47 @@ export function cleanDisplayName(filename: string): string {
   return name;
 }
 
-export async function md5sum({ filePath, buffer }: HashInput): Promise<string> {
-  const fileBuffer = filePath ? await fs.readFile(filePath) : buffer;
+export function ramd5sum(consoleId: number | null, romFile: RomFile): string | null {
+  if (!consoleId) return null;
 
-  if (!fileBuffer) {
-    throw new Error('Either path or buffer must be provided');
+  const { romPath, romBuffer, romFilename, sourcePath } = romFile;
+
+  // If we have a buffer then use it unless it's from an arcade game. These files must use
+  // path since their hash is based on filename.
+  if (romBuffer && consoleId !== 27) {
+    // A fake file path is still needed when using buffer input so the RA hasher can
+    // choose the correct hashing algorithm based on file extension.
+    return rhash(consoleId, romFilename, romBuffer);
   }
 
-  return crypto.createHash('md5').update(fileBuffer).digest('hex').toLowerCase();
+  // If we have a romPath, then the ROM was extracted from an archive.
+  return rhash(consoleId, romPath || sourcePath);
+}
+
+export async function md5sum({ filePath, buffer }: HashInput): Promise<string> {
+  if (!buffer) {
+    if (!filePath) {
+      throw new Error('Either path or buffer must be provided');
+    }
+
+    buffer = await fs.readFile(filePath);
+  }
+
+  return crypto.createHash('md5').update(buffer).digest('hex').toLowerCase();
 }
 
 export async function crc32sum({ filePath, buffer }: HashInput): Promise<string> {
-  const fileBuffer = filePath ? await fs.readFile(filePath) : buffer;
+  if (!buffer) {
+    if (!filePath) {
+      throw new Error('Either path or buffer must be provided');
+    }
 
-  if (!fileBuffer) {
-    throw new Error('Either path or buffer must be provided');
+    buffer = await fs.readFile(filePath);
   }
 
-  const crc = CRC32.buf(fileBuffer);
+  const crc = CRC32.buf(buffer);
 
   return (crc >>> 0).toString(16).toLowerCase().padStart(8, '0');
-}
-
-/**
- * Generates the three hash types required for libretro database lookups
- *
- * @returns {Promise<Object>} Object containing CRC32, MD5, and SHA1 hashes
- */
-export async function generateLibretroHashes({ filePath, buffer }: HashInput): Promise<{
-  crc32: string;
-  md5: string;
-  sha1: string;
-}> {
-  const fileBuffer = filePath ? await fs.readFile(filePath) : buffer;
-
-  if (!fileBuffer) {
-    throw new Error('Either path or buffer must be provided');
-  }
-
-  const md5 = await md5sum({ buffer: fileBuffer });
-  const crc32 = await crc32sum({ buffer: fileBuffer });
-
-  return {
-    crc32,
-    md5,
-    sha1: crypto.createHash('sha1').update(fileBuffer).digest('hex').toLowerCase(),
-  };
 }
 
 /**

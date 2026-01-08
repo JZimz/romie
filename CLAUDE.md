@@ -75,8 +75,7 @@ src/
 ├── data/                   # Static data
 │   └── ra/                 # RetroAchievements game database (JSON files)
 ├── packages/               # Internal packages (workspace packages)
-│   ├── device-profiles/    # Device profile definitions (Onion, muOS, Knulli)
-│   └── ra-hasher/          # ROM hashing algorithms for RA verification
+│   └── device-profiles/    # Device profile definitions (Onion, muOS, Knulli)
 ├── assets/                 # Static assets (fonts, app icons)
 └── errors/                 # Error definitions
 ```
@@ -132,25 +131,6 @@ const props = defineProps<{
 ```
 
 ## Architecture Decisions
-
-### ROM Identification
-
-ROMs are identified using platform-specific hashing algorithms matching RetroAchievements:
-
-- CRC32 for cartridge-based systems
-- MD5 for disc-based systems (with header offset handling)
-- Custom hashing for systems like Nintendo DS
-
-See `src/packages/ra-hasher/` for implementation details.
-
-### Database Schema
-
-LowDB is used with separate collections:
-
-- `roms` - ROM metadata and file paths
-- `tags` - User-created playlists
-- `devices` - Device profiles and sync history
-- `settings` - Application settings including encrypted RA API keys
 
 ### Device Profiles
 

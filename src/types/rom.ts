@@ -17,6 +17,23 @@ export type RomRegion =
   | 'Brazil'
   | 'Canada';
 
+export interface RomFile {
+  /** Original import path provided by the user (archive or loose ROM). Used when copying/syncing */
+  sourcePath: string;
+  /** Basename of the imported file (e.g., "Super Metroid.zip") */
+  filename: string;
+  /** Basename of the ROM used for system detection (e.g., "Super Metroid.sfc") */
+  romFilename: string;
+  /** Whether the source file is an archive container */
+  isArchive: boolean;
+  /** Optional path of the selected entry inside the archive (e.g., "roms/Super Metroid.sfc") */
+  archiveEntryPath?: string;
+  /** Optional path to the ROM file when extracted to disk from an archive */
+  romPath?: string;
+  /** Optional buffer containing ROM data (used for cartridge ROMs from archives to avoid disk I/O) */
+  romBuffer?: Buffer;
+}
+
 export interface Rom {
   id: string;
   system: SystemCode;

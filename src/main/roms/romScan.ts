@@ -11,6 +11,7 @@ import { RomProcessingError } from '@/errors';
 
 import type { PathLike } from 'node:fs';
 import type { ImportStatus } from '@/types/electron-api';
+import type { RomFile } from '@/types/rom';
 
 interface ScanResult {
   processed: number;
@@ -89,8 +90,21 @@ async function processFile(dirPath: PathLike, filename: string): Promise<ScanRes
       }
 
       emitProgress({ currentFile: filename });
-      const fileBuffer = await fs.readFile(fullPath);
-      await processRomFile(fullPath, filename, fileBuffer);
+
+      let fileBuffer: Buffer | undefined;
+
+      // ISO files can be very large, so avoid reading them fully into memory.
+      if (ext !== '.iso') {
+        fileBuffer = await fs.readFile(fullPath);
+      }
+
+      await processRomFile({
+        sourcePath: fullPath,
+        romBuffer: fileBuffer,
+        romFilename: filename,
+        filename,
+        isArchive: false,
+      });
 
       return { processed: 1, errors: [], skipped: [] };
     }
@@ -119,14 +133,14 @@ async function processSevenZipFile(archivePath: string): Promise<ScanResult> {
   log.debug(`Checking for ROMs in ${archivePath}`);
 
   try {
-    const romBuffer = await readRomFromSevenZip(archivePath);
+    const romFile = await readRomFromSevenZip(archivePath);
 
-    if (!romBuffer) {
+    if (!romFile) {
       log.warn(`No ROM files found in 7z: ${archivePath}`);
       return { processed: 0, errors: [], skipped: [archivePath] };
     }
 
-    await processRomFile(archivePath, romBuffer.fileName, romBuffer.buffer);
+    await processRomFile(romFile);
 
     return { processed: 1, errors: [], skipped: [] };
   } catch (error) {
@@ -149,14 +163,14 @@ async function processZipFile(zipPath: string): Promise<ScanResult> {
   log.debug(`Checking for ROMs in ${zipPath}`);
 
   try {
-    const romBuffer = await readRomFromZip(zipPath);
+    const romFile = await readRomFromZip(zipPath);
 
-    if (!romBuffer) {
+    if (!romFile) {
       log.warn(`No ROM files found in zip: ${zipPath}`);
       return { processed: 0, errors: [], skipped: [zipPath] };
     }
 
-    await processRomFile(zipPath, romBuffer.fileName, romBuffer.buffer);
+    await processRomFile(romFile);
 
     return { processed: 1, errors: [], skipped: [] };
   } catch (error) {
@@ -175,53 +189,90 @@ async function processZipFile(zipPath: string): Promise<ScanResult> {
   }
 }
 
-async function readRomFromSevenZip(archivePath: string): Promise<{
-  fileName: string;
-  buffer: Buffer;
-} | null> {
+async function listRomEntriesInSevenZip(archivePath: string): Promise<string[]> {
   return new Promise((resolve, reject) => {
-    const extractDir = path.join(app.getPath('temp'), `rom-${Date.now().toString()}`);
-    const stream = Seven.extractFull(archivePath, extractDir, {
+    const listStream = Seven.list(archivePath, {
       $bin: SEVEN_ZIP_PATH,
     });
-    const cleanTempDir = () => fs.rm(extractDir, { recursive: true, force: true }).catch(() => {});
-    const romFiles: string[] = [];
 
-    stream.on('data', ({ status, file }) => {
-      if (status === 'extracted' && isRomFile(file)) {
-        log.debug(`Found 7z entry: ${file}`);
-        const fullPath = path.join(extractDir, file);
+    const romEntries: string[] = [];
 
-        if (romFiles.length) {
-          // Already found a ROM, so this is a violation of the 1-ROM-per-zip rule.
-          reject(
-            new RomProcessingError(
-              `Multiple ROMs found in 7z file`,
-              archivePath,
-              `Found multiple ROM files in 7z file.`
-            )
-          );
-          stream.destroy();
-          return;
-        }
-
-        romFiles.push(fullPath);
+    listStream.on('data', (data) => {
+      const file = data.file;
+      if (isRomFile(file)) {
+        log.debug(`Found ROM in 7z: ${file}`);
+        romEntries.push(file);
       }
     });
 
-    stream.on('end', async () => {
-      const romFilePath = romFiles[0];
+    listStream.on('end', () => {
+      resolve(romEntries);
+    });
 
-      if (!romFilePath) {
-        resolve(null);
-        return;
-      }
+    listStream.on('error', (error) => {
+      log.error(`Error listing 7z file ${archivePath}:`, error);
+      reject(
+        new RomProcessingError(
+          `Failed to list 7z file contents`,
+          archivePath,
+          error instanceof Error ? error.message : 'Unknown error',
+          error instanceof Error ? error : undefined
+        )
+      );
+    });
+  });
+}
+
+async function readRomFromSevenZip(archivePath: string): Promise<RomFile | null> {
+  const romEntries = await listRomEntriesInSevenZip(archivePath);
+
+  // No ROM files found
+  if (romEntries.length === 0) {
+    log.warn(`No ROM files found in 7z: ${archivePath}`);
+    return null;
+  }
+
+  // Multiple ROMs found
+  if (romEntries.length > 1) {
+    throw new RomProcessingError(
+      `Multiple ROMs found in 7z file`,
+      archivePath,
+      `Found multiple ROM files in 7z file.`
+    );
+  }
+
+  const romEntry = romEntries[0];
+  const romExt = path.extname(romEntry).toLowerCase();
+
+  // Check for ISO before extraction
+  if (romExt === '.iso') {
+    throw new RomProcessingError(
+      'ISO files in archives are not supported',
+      archivePath,
+      'Please extract ISO files before importing. They are too large (15-20s extraction time) to efficiently process from archives.'
+    );
+  }
+
+  // Now extract the single cartridge ROM
+  return new Promise((resolve, reject) => {
+    const extractDir = path.join(app.getPath('temp'), `rom-${Date.now().toString()}`);
+    const cleanTempDir = () => fs.rm(extractDir, { recursive: true, force: true }).catch(() => {});
+
+    const extractStream = Seven.extractFull(archivePath, extractDir, {
+      $bin: SEVEN_ZIP_PATH,
+    });
+
+    extractStream.on('end', async () => {
+      const fullPath = path.join(extractDir, romEntry);
 
       try {
-        const romBuffer = await fs.readFile(romFilePath);
+        const romBuffer = await fs.readFile(fullPath);
         resolve({
-          fileName: path.basename(romFilePath),
-          buffer: romBuffer,
+          sourcePath: archivePath,
+          filename: path.basename(archivePath),
+          romFilename: path.basename(romEntry),
+          romBuffer,
+          isArchive: true,
         });
       } catch (error) {
         log.error(`Error reading extracted ROM from 7z:`, error);
@@ -238,12 +289,12 @@ async function readRomFromSevenZip(archivePath: string): Promise<{
       }
     });
 
-    stream.on('error', (error) => {
-      log.error(`Error processing 7z file ${archivePath}:`, error);
+    extractStream.on('error', (error) => {
+      log.error(`Error extracting 7z file ${archivePath}:`, error);
       cleanTempDir();
       reject(
         new RomProcessingError(
-          `Failed to process 7z file`,
+          `Failed to extract 7z file`,
           archivePath,
           error instanceof Error ? error.message : 'Unknown error',
           error instanceof Error ? error : undefined
@@ -258,10 +309,7 @@ async function readRomFromSevenZip(archivePath: string): Promise<{
  * Multiple ROMs in one zip would create mapping issues when syncing to devices
  * since each ROM entry needs a unique file path reference.
  */
-async function readRomFromZip(zipPath: string): Promise<{
-  fileName: string;
-  buffer: Buffer;
-} | null> {
+async function readRomFromZip(zipPath: string): Promise<RomFile | null> {
   return new Promise((resolve, reject) => {
     let romFileName: string | null = null;
     let romBuffer: Buffer | null = null;
@@ -298,6 +346,18 @@ async function readRomFromZip(zipPath: string): Promise<{
               )
             );
             zipfile.close();
+            return;
+          }
+          const romExt = path.extname(entry.fileName).toLowerCase();
+
+          if (romExt === '.iso') {
+            reject(
+              new RomProcessingError(
+                'ISO files in archives are not supported',
+                zipPath,
+                'Please extract ISO files before importing. They are too large (15-20s extraction time) to efficiently process from archives.'
+              )
+            );
             return;
           }
 
@@ -349,7 +409,13 @@ async function readRomFromZip(zipPath: string): Promise<{
       zipfile.on('end', () => {
         log.debug(`Zip processing completed. ROM found: ${romFileName || 'none'}`);
         if (romBuffer && romFileName) {
-          resolve({ fileName: romFileName, buffer: romBuffer });
+          resolve({
+            sourcePath: zipPath,
+            filename: path.basename(zipPath),
+            romFilename: romFileName,
+            romBuffer,
+            isArchive: true,
+          });
         } else {
           resolve(null);
         }

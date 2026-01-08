@@ -1,5 +1,8 @@
+import path from 'node:path';
 import { SYSTEM_REGISTRY } from './systemRegistry';
 import { SYSTEM_CODES, type SystemType, type SystemCode, type SystemInfo } from '@/types/system';
+
+import type { RomFile } from '@/types/rom';
 
 interface RASystemMapping {
   consoleId: number; // RetroArch console ID
@@ -22,6 +25,7 @@ const RA_SYSTEMS: RASystemMapping[] = [
   { consoleId: 25, code: 'atari2600' },
   { consoleId: 27, code: 'arcade' },
   { consoleId: 28, code: 'vb' },
+  { consoleId: 41, code: 'psp' },
 ];
 
 const systems = Object.values(SYSTEM_REGISTRY);
@@ -34,10 +38,10 @@ export function isSystemCode(code: SystemCode): code is SystemCode {
   return SYSTEM_CODES.includes(code);
 }
 
-export function getSystemByExtension(extension: string): SystemInfo | undefined {
+export function getSystemByExtension(extension: string): SystemInfo[] {
   const ext = extension.toLowerCase();
 
-  return systems.find((system) => system.extensions.includes(ext));
+  return systems.filter((system) => system.extensions.includes(ext));
 }
 
 export function getConsoleIdForSystem(code: SystemCode): number | null {
@@ -60,13 +64,28 @@ export function getSystemsByType(type: SystemType): SystemInfo[] {
   return systems.filter((system) => system.type === type);
 }
 
-export function determineSystemFromExtension(fileExtension: string): SystemCode {
-  const system = getSystemByExtension(fileExtension);
+export function determineSystem(romFile: RomFile): SystemCode {
+  const { sourcePath, romFilename } = romFile;
+  const fileExtension = path.extname(romFilename);
+
+  const matches = getSystemByExtension(fileExtension);
+  if (matches.length === 1) return matches[0].code;
+
+  const system = determineSystemFromParentFolder(sourcePath);
   if (!system) {
     throw new Error(`Unsupported file extension: ${fileExtension}`);
   }
 
-  return system.code;
+  return system;
+}
+
+export function determineSystemFromParentFolder(sourcePath: string): SystemCode | null {
+  const parentFolder = path.basename(path.dirname(sourcePath));
+  const matchedSystem = systems.find((system) =>
+    system.aliases?.some((alias) => alias.toLowerCase() === parentFolder.toLowerCase())
+  );
+
+  return matchedSystem ? matchedSystem.code : null;
 }
 
 export function determineSystemFromRAConsoleId(consoleId: number): SystemCode | null {

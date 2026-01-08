@@ -12,6 +12,7 @@ export const SYSTEM_CODES = [
   'sms',
   'gg',
   'psx',
+  'psp',
   'lynx',
   'atari2600',
   'arcade',
@@ -27,6 +28,7 @@ export interface SystemInfo {
   fullName: string;
   type: SystemType;
   extensions: string[];
+  aliases?: string[];
   requiresBios?: boolean;
   biosFiles?: string[];
   manufacturer?: string;

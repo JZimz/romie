@@ -1,49 +1,45 @@
 import path from 'path';
 import logger from 'electron-log/main';
 import fs from 'fs/promises';
-import { hash } from '@romie/ra-hasher';
-import { getConsoleIdForSystem, determineSystemFromExtension } from '@/utils/systems';
+import { getConsoleIdForSystem, determineSystem } from '@/utils/systems';
 import { RomProcessingError } from '@/errors';
-import { extractRegionFromFilename, cleanDisplayName, md5sum, crc32sum } from './romUtils';
+import {
+  extractRegionFromFilename,
+  cleanDisplayName,
+  ramd5sum,
+  md5sum,
+  crc32sum,
+} from './romUtils';
 import { addRom } from './romDatabase';
 import { lookupRomByHash } from './romLookup';
 
-import type { Rom } from '@/types/rom';
+import type { Rom, RomFile } from '@/types/rom';
+
+const log = logger.scope(`rom-process`);
 
 /**
  * Process a ROM file and add it to the database
- * @param filePath - Path to file (zip archive or individual ROM)
- * @param fileName - ROM filename (may differ from filePath basename if extracted from zip)
- * @param fileBuffer - ROM file data buffer
+ * @param romFile - ROM file information
  * @returns Promise that resolves to the created ROM metadata
  */
 export async function processRomFile(
-  filePath: string,
-  fileName: string,
-  fileBuffer: Buffer
+  romFile: RomFile
 ): Promise<Omit<Rom, 'id' | 'createdAt' | 'updatedAt' | 'numAchievements'>> {
-  const log = logger.scope(`rom-process`);
-  const fileExtension = path.extname(fileName);
-  const fileBaseName = path.basename(filePath);
-  log.debug(`Starting ROM processing for file: ${filePath}`);
+  const { filename, romFilename, sourcePath } = romFile;
+  const fileExtension = path.extname(romFilename);
+
+  log.info(`Processing ROM file: ${filename} (${romFilename})`);
 
   try {
-    log.info(`Processing ROM file: ${fileBaseName} (${fileName})`);
-
     // Determine system information from extension
     log.debug(`Determining system from extension ${fileExtension}`);
-    const system = determineSystemFromExtension(fileExtension);
+    const system = determineSystem(romFile);
     const consoleId = getConsoleIdForSystem(system);
     log.debug(`Detected system: ${system}, consoleId: ${consoleId}`);
 
-    // Generate ROM hashes for deduplication and RetroAchievements lookups
-    log.debug(`Generating hashes for ROM file`);
-    const ramd5 = consoleId
-      ? (await hash({ consoleId, path: filePath, buffer: fileBuffer })).ramd5
-      : null;
-    const md5 = await md5sum({ buffer: fileBuffer });
-    const fileCrc32 = await crc32sum({ filePath });
-
+    const ramd5 = ramd5sum(consoleId, romFile);
+    const md5 = await md5sum({ filePath: romFile.sourcePath, buffer: romFile.romBuffer });
+    const fileCrc32 = await crc32sum({ filePath: romFile.sourcePath, buffer: romFile.romBuffer });
     const hashes = { ramd5, md5, fileCrc32 };
 
     log.debug(
@@ -69,20 +65,19 @@ export async function processRomFile(
       log.warn(`No matching game found in database for hash.`);
 
       // Create displayName by stripping: region tag, dump tags ([!], [v1.1]), punctuation
-      displayName = cleanDisplayName(fileName);
+      displayName = cleanDisplayName(romFilename);
       log.debug(`Clean display name: ${displayName}`);
     }
 
     // Extract region tag from filename e.g. (USA), (JPN) fallback: "Unknown"
     log.debug(`Extracting region from filename`);
-    const region = extractRegionFromFilename(fileName);
+    const region = extractRegionFromFilename(romFilename);
     log.debug(`Detected region: ${region}`);
 
     // Get file size
     log.debug(`Getting file statistics`);
-    const stats = await fs.stat(filePath);
+    const stats = await fs.stat(sourcePath);
     const size = stats.size;
-    log.debug(`File size: ${(size / 1024 / 1024).toFixed(2)} MB`);
 
     // Create metadata object
     const metadata: Omit<Rom, 'id' | 'createdAt' | 'updatedAt' | 'numAchievements'> = {
@@ -90,10 +85,10 @@ export async function processRomFile(
       displayName,
       region,
       // Actual file basename (e.g., "Super Metroid.zip")
-      filename: fileBaseName,
+      filename: filename,
       // ROM filename for system detection (e.g., "Super Metroid.sfc")
-      romFilename: fileName,
-      filePath,
+      romFilename,
+      filePath: sourcePath,
       size,
       tags: [],
       notes: '',
@@ -109,11 +104,11 @@ export async function processRomFile(
 
     return metadata;
   } catch (error) {
-    log.error(`Failed to process ROM file: ${fileBaseName} (${fileName})`, error);
+    log.error(`Failed to process ROM file: ${filename} (${romFilename})`, error);
 
     const romError = new RomProcessingError(
-      `Failed to process ROM: ${fileBaseName} (${fileName})`,
-      filePath,
+      `Failed to process ROM: ${filename} (${romFilename})`,
+      sourcePath,
       error instanceof Error ? error.message : 'Unknown error',
       error instanceof Error ? error : undefined
     );
