@@ -64,6 +64,16 @@ export interface SettingsApi {
   update(settingsUpdate: Partial<AppSettings>): Promise<AppSettings>;
 }
 
+export type DatabaseBackupDialogResult = {
+  canceled: boolean;
+};
+
+export interface DatabaseApi {
+  exportBackup(): Promise<ApiResult<DatabaseBackupDialogResult>>;
+  importBackup(): Promise<ApiResult<DatabaseBackupDialogResult>>;
+  reset(): Promise<ApiResult<void>>;
+}
+
 export interface RetroAchievementsApi {
   setConfig(config: RetroAchievementsConfig): Promise<void>;
   getConfig(): Promise<RetroAchievementsConfig | null>;

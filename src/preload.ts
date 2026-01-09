@@ -7,6 +7,7 @@ import type {
   RomApi,
   DeviceApi,
   SettingsApi,
+  DatabaseApi,
   RetroAchievementsApi,
   DarkModeApi,
   UtilApi,
@@ -76,6 +77,12 @@ const settingsApi: SettingsApi = {
   update: (data: Partial<AppSettings>) => ipcRenderer.invoke('settings:update', data),
 };
 
+const dbApi: DatabaseApi = {
+  exportBackup: () => ipcRenderer.invoke('db:exportBackup'),
+  importBackup: () => ipcRenderer.invoke('db:importBackup'),
+  reset: () => ipcRenderer.invoke('db:reset'),
+};
+
 const retroAchievementsApi: RetroAchievementsApi = {
   setConfig: (config: RetroAchievementsConfig) => ipcRenderer.invoke('ra:setConfig', config),
   getConfig: () => ipcRenderer.invoke('ra:getConfig'),
@@ -124,6 +131,7 @@ contextBridge.exposeInMainWorld('sync', syncApi);
 contextBridge.exposeInMainWorld('util', utilApi);
 contextBridge.exposeInMainWorld('update', updateApi);
 contextBridge.exposeInMainWorld('settings', settingsApi);
+contextBridge.exposeInMainWorld('db', dbApi);
 contextBridge.exposeInMainWorld('ra', retroAchievementsApi);
 
 // Note: Global Window interface is declared in src/types/electron.d.ts

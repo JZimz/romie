@@ -6,6 +6,7 @@ import type {
   UpdateApi,
   UtilApi,
   SettingsApi,
+  DatabaseApi,
   RetroAchievementsApi,
 } from './electron-api';
 
@@ -15,6 +16,7 @@ declare global {
     device: DeviceApi;
     sync: SyncApi;
     settings: SettingsApi;
+    db: DatabaseApi;
     ra: RetroAchievementsApi;
     darkMode: DarkModeApi;
     util: UtilApi;

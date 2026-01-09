@@ -14,36 +14,68 @@ export type AppDatabase = BetterSQLite3Database<typeof schema>;
 
 export let db: AppDatabase = null!; // Will be set in initializeDatabase()
 
+let sqlite: Database.Database | null = null;
+
+export function getDatabaseBaseDir(): string {
+  return app.isPackaged ? app.getPath('userData') : path.join(process.cwd(), '.romie');
+}
+
+export function getDatabasePath(): string {
+  return path.join(getDatabaseBaseDir(), 'romie.db');
+}
+
+export function getSqlite(): Database.Database {
+  if (!sqlite) {
+    throw new Error('Database is not initialized');
+  }
+
+  return sqlite;
+}
+
+export function closeDatabase() {
+  if (!sqlite) return;
+
+  try {
+    sqlite.close();
+  } catch (error) {
+    log.warn('Failed to close database:', error);
+  } finally {
+    sqlite = null;
+  }
+}
+
 export function initializeDatabase() {
-  const baseDir = app.isPackaged ? app.getPath('userData') : path.join(process.cwd(), '.romie');
+  const baseDir = getDatabaseBaseDir();
 
   // Ensure directory exists (mainly for development, userData should always exist)
   fs.mkdirSync(baseDir, { recursive: true });
 
-  const dbPath = path.join(baseDir, 'romie.db');
+  const dbPath = getDatabasePath();
 
   log.info(`Initializing database at: ${dbPath}`);
 
-  const sqlite = new Database(dbPath, {
+  const sqliteDb = new Database(dbPath, {
     verbose: (_msg) => {
       // Uncomment to enable verbose SQL logging
       // log.debug(_msg)
     },
   });
 
+  sqlite = sqliteDb;
+
   // WAL mode: Write-Ahead Logging allows reads to happen while writes are in progress
   // This means the app can query ROMs while importing new ones without blocking
-  sqlite.pragma('journal_mode = WAL');
+  sqliteDb.pragma('journal_mode = WAL');
 
   // Foreign keys: Enforce referential integrity (e.g., can't have device pointing to non-existent profile)
   // SQLite doesn't enable this by default for backwards compatibility
-  sqlite.pragma('foreign_keys = ON');
+  sqliteDb.pragma('foreign_keys = ON');
 
   // Synchronous NORMAL: Only sync critical writes to disk immediately, batch the rest
   // Faster than FULL, still safe with WAL mode, won't corrupt DB if app crashes
-  sqlite.pragma('synchronous = NORMAL');
+  sqliteDb.pragma('synchronous = NORMAL');
 
-  db = drizzle(sqlite, { schema });
+  db = drizzle(sqliteDb, { schema });
 
   // Run schema migrations (creates tables for new users)
   const migrationsPath = app.isPackaged
