@@ -18,7 +18,7 @@ export async function runDataMigrations(db: AppDatabase) {
 }
 
 function buildArchivePathWhereClause(): SQL {
-  if (ARCHIVE_CONTAINER_EXTENSIONS_V1.length === 0) {
+  if ((ARCHIVE_CONTAINER_EXTENSIONS_V1 as readonly string[]).length === 0) {
     throw new Error('ARCHIVE_CONTAINER_EXTENSIONS_V1 must not be empty');
   }
 
