@@ -50,7 +50,12 @@ export interface Rom {
   updatedAt: Date;
   /** MD5 hash of ROM content - primary deduplication method */
   md5: string;
-  /** CRC32 of actual file on disk - fast file integrity checking */
+  /**
+   * CRC32 of the actual file bytes on disk at `filePath`.
+   *
+   * Used for copy integrity checking during sync. For archive containers (e.g. `.zip` / `.7z`),
+   * this is the CRC32 of the archive file itself (not the extracted ROM contents).
+   */
   fileCrc32: string;
   /** RetroAchievements hash - required for game identification */
   ramd5: string | null;

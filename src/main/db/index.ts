@@ -7,6 +7,7 @@ import fs from 'fs';
 import logger from 'electron-log/main';
 import * as schema from './schema';
 import { migrateLowdbToSqlite } from './migrate-from-lowdb';
+import { runDataMigrations } from './dataMigrations';
 
 const log = logger.scope('db');
 
@@ -87,6 +88,9 @@ export async function initializeDatabase() {
 
   // Migrate from LowDB if needed (existing users)
   await migrateLowdbToSqlite(db, baseDir);
+
+  // Run one-off data migrations (existing SQLite users)
+  await runDataMigrations(db);
 
   log.info('Database initialized successfully');
 

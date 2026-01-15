@@ -25,6 +25,9 @@ export async function ensureDatabaseSchema(data: RomDatabase) {
     // falls through
     case '5.0.0':
       await migrateToVersion_6_0_0(data);
+    // falls through
+    case '6.0.0':
+      await migrateToVersion_6_0_1(data);
   }
 
   data.lastUpdated = Date.now();
@@ -132,4 +135,22 @@ async function migrateToVersion_6_0_0(data: RomDatabase) {
   log.info(`Migrating rom database from ${data.version} to version 6.0.0`);
   data.version = '6.0.0';
   data.profiles ??= [];
+}
+
+async function migrateToVersion_6_0_1(data: RomDatabase) {
+  log.info(`Migrating rom database from ${data.version} to version 6.0.1`);
+  data.version = '6.0.1';
+
+  for (const rom of data.roms) {
+    const ext = path.extname(rom.filePath).toLowerCase();
+    if (ext !== '.zip' && ext !== '.7z') {
+      continue;
+    }
+
+    try {
+      rom.fileCrc32 = await crc32sum({ filePath: rom.filePath });
+    } catch (error) {
+      log.error(`Error regenerating archive CRC32 for ROM ${rom.id}: ${error}`);
+    }
+  }
 }
