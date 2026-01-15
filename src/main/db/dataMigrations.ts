@@ -1,10 +1,10 @@
-import { eq } from 'drizzle-orm';
+import { eq, sql, type SQL } from 'drizzle-orm';
 import logger from 'electron-log/main';
 
 import type { BetterSQLite3Database } from 'drizzle-orm/better-sqlite3';
 import * as schema from './schema';
 import { crc32sum } from '../roms/romUtils';
-import { isArchiveContainerPath } from '../roms/archive.utils';
+import { ARCHIVE_CONTAINER_EXTENSIONS_V1 } from '../roms/archive.utils';
 
 const log = logger.scope('db:data-migrations');
 
@@ -15,6 +15,23 @@ const ARCHIVE_FILE_CRC32_MIGRATION_STARTED_KEY = `${ARCHIVE_FILE_CRC32_MIGRATION
 
 export async function runDataMigrations(db: AppDatabase) {
   await migrateArchiveFileCrc32(db);
+}
+
+function buildArchivePathWhereClause(): SQL {
+  if (ARCHIVE_CONTAINER_EXTENSIONS_V1.length === 0) {
+    throw new Error('ARCHIVE_CONTAINER_EXTENSIONS_V1 must not be empty');
+  }
+
+  const clauses = ARCHIVE_CONTAINER_EXTENSIONS_V1.map((ext) => {
+    return sql`lower(substr(${schema.roms.filePath}, -${ext.length})) = ${ext}`;
+  });
+
+  let clause = clauses[0]!;
+  for (const condition of clauses.slice(1)) {
+    clause = sql`${clause} OR ${condition}`;
+  }
+
+  return sql`(${clause})`;
 }
 
 async function migrateArchiveFileCrc32(db: AppDatabase) {
@@ -52,17 +69,18 @@ async function migrateArchiveFileCrc32(db: AppDatabase) {
     );
   }
 
-  const allRoms = db
+  // This is a one-shot, best-effort migration. If the app exits mid-run, it will restart from
+  // the beginning on the next launch.
+
+  const archiveRoms = db
     .select({
       id: schema.roms.id,
       filePath: schema.roms.filePath,
-      filename: schema.roms.filename,
       fileCrc32: schema.roms.fileCrc32,
     })
     .from(schema.roms)
+    .where(buildArchivePathWhereClause())
     .all();
-
-  const archiveRoms = allRoms.filter((rom) => isArchiveContainerPath(rom.filePath));
 
   if (archiveRoms.length === 0) {
     const timestamp = Date.now().toString();
@@ -79,10 +97,13 @@ async function migrateArchiveFileCrc32(db: AppDatabase) {
     return;
   }
 
+  // Recompute for all archive containers (even if fileCrc32 is already set), since legacy values
+  // may have been computed from extracted ROM contents rather than the on-disk archive bytes.
   log.info(`Regenerating fileCrc32 for ${archiveRoms.length} archive ROMs...`);
 
   let updated = 0;
   let processed = 0;
+  let failed = 0;
 
   for (const rom of archiveRoms) {
     processed++;
@@ -92,17 +113,14 @@ async function migrateArchiveFileCrc32(db: AppDatabase) {
         continue;
       }
 
-      db.update(schema.roms)
-        .set({
-          fileCrc32: nextCrc32,
-          updatedAt: new Date(),
-        })
-        .where(eq(schema.roms.id, rom.id))
-        .run();
+      db.update(schema.roms).set({ fileCrc32: nextCrc32 }).where(eq(schema.roms.id, rom.id)).run();
 
       updated++;
     } catch (error) {
-      log.warn(`Failed to regenerate CRC32 for archive ROM ${rom.filename} (${rom.id}): ${error}`);
+      failed++;
+      log.warn(`Failed to regenerate CRC32 for archive ROM ${rom.id} at ${rom.filePath}: ${error}`);
+
+      db.update(schema.roms).set({ fileCrc32: '00000000' }).where(eq(schema.roms.id, rom.id)).run();
     }
 
     if (processed % 100 === 0) {
@@ -116,6 +134,19 @@ async function migrateArchiveFileCrc32(db: AppDatabase) {
 
   const timestamp = Date.now().toString();
 
+  if (failed > 0) {
+    db.insert(schema.metadata)
+      .values({
+        key: `${ARCHIVE_FILE_CRC32_MIGRATION_KEY}.failed`,
+        value: failed.toString(),
+      })
+      .onConflictDoUpdate({
+        target: schema.metadata.key,
+        set: { value: failed.toString() },
+      })
+      .run();
+  }
+
   db.insert(schema.metadata)
     .values({
       key: ARCHIVE_FILE_CRC32_MIGRATION_KEY,
@@ -127,5 +158,7 @@ async function migrateArchiveFileCrc32(db: AppDatabase) {
     })
     .run();
 
-  log.info(`Archive fileCrc32 regeneration complete (${updated}/${archiveRoms.length} updated)`);
+  log.info(
+    `Archive fileCrc32 regeneration complete (${updated}/${archiveRoms.length} updated, ${failed} failed)`
+  );
 }

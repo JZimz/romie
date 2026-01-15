@@ -5,7 +5,7 @@ import { RomDatabase } from '@/types/rom';
 import { crc32sum } from './romUtils';
 import { lookupRomByHash, unloadHashDatabase } from './romLookup';
 import { determineSystemFromRAConsoleId, getConsoleIdForSystem } from '@/utils/systems';
-import { isArchiveContainerPath } from './archive.utils';
+import { ARCHIVE_CONTAINER_EXTENSIONS_V1 } from './archive.utils';
 
 const log = logger.scope('romdb:migrations');
 
@@ -142,15 +142,35 @@ async function migrateToVersion_6_0_1(data: RomDatabase) {
   log.info(`Migrating rom database from ${data.version} to version 6.0.1`);
   data.version = '6.0.1';
 
-  for (const rom of data.roms) {
-    if (!isArchiveContainerPath(rom.filePath)) {
-      continue;
-    }
+  const archiveRoms = data.roms.filter((rom) => {
+    const ext = path.extname(rom.filePath).toLowerCase();
+    return (ARCHIVE_CONTAINER_EXTENSIONS_V1 as readonly string[]).includes(ext);
+  });
+  log.info(`Regenerating fileCrc32 for ${archiveRoms.length} archive ROMs...`);
 
+  let processed = 0;
+  let failed = 0;
+
+  for (const rom of archiveRoms) {
     try {
       rom.fileCrc32 = await crc32sum({ filePath: rom.filePath });
     } catch (error) {
-      log.error(`Error regenerating archive CRC32 for ROM ${rom.id}: ${error}`);
+      failed++;
+      rom.fileCrc32 = '00000000';
+      log.error(`Error regenerating archive CRC32 for ROM ${rom.id} at ${rom.filePath}: ${error}`);
+    }
+
+    processed++;
+    if (processed % 100 === 0) {
+      log.info(`Archive CRC32 migration progress: ${processed}/${archiveRoms.length}`);
+    }
+
+    if (processed % 25 === 0) {
+      await new Promise<void>((resolve) => setTimeout(resolve, 0));
     }
   }
+
+  log.info(
+    `Archive CRC32 regeneration complete (${archiveRoms.length - failed}/${archiveRoms.length} succeeded, ${failed} failed)`
+  );
 }

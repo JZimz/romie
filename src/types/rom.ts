@@ -53,10 +53,12 @@ export interface Rom {
   /**
    * CRC32 of the actual file bytes on disk at `filePath`.
    *
-   * Used for copy integrity checking during sync. For archive containers (e.g. `.zip` / `.7z`),
+   * This is the authoritative checksum used for copy integrity checking during sync. For archive
+   * containers (e.g. `.zip` / `.7z`),
    * this is the CRC32 of the archive file itself (not the extracted ROM contents).
    *
    * If the file on disk is modified outside of ROMie, this value should be treated as stale.
+   * A value of `"00000000"` indicates an unknown checksum (e.g. a failed migration).
    */
   fileCrc32: string;
   /** RetroAchievements hash - required for game identification */

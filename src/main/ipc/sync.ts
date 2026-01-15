@@ -5,7 +5,7 @@ import logger from 'electron-log/main';
 import { SyncError } from '@/errors';
 import type { SyncOptions, SyncStatus, SyncSkipReason, SyncFailReason } from '@/types/electron-api';
 import { getDeviceProfile, listRoms } from '../roms/romDatabase';
-import { devices } from '@main/db/queries';
+import { devices, roms } from '@main/db/queries';
 import { crc32sum } from '../roms/romUtils';
 
 import type { DeviceProfile } from '@romie/device-profiles';
@@ -303,13 +303,52 @@ async function copyRoms(
     if (options.verifyFiles) {
       try {
         log.debug(`Verifying checksum for: ${rom.filename}`);
-        const copiedCrc32 = await crc32sum({ filePath: destinationPath });
 
-        if (!/^[0-9a-f]{8}$/i.test(rom.fileCrc32)) {
-          throw new Error(`Invalid expected CRC32: ${rom.fileCrc32}`);
+        let expectedCrc32 = rom.fileCrc32;
+
+        const isUnknownOrInvalidCrc32 = (value: string) => {
+          return !value || value === '00000000' || !/^[0-9a-f]{8}$/i.test(value);
+        };
+
+        // Best-effort repair path for legacy/invalid data (should be uncommon after migrations).
+        if (isUnknownOrInvalidCrc32(expectedCrc32)) {
+          try {
+            expectedCrc32 = await crc32sum({ filePath: rom.filePath });
+            try {
+              roms.update(rom.id, { fileCrc32: expectedCrc32 });
+            } catch (dbError) {
+              log.warn(
+                `Failed to persist repaired fileCrc32 for ROM ${rom.id} (${rom.filename}): ${(dbError as Error).message}`
+              );
+            }
+          } catch (repairError) {
+            throw new Error(
+              `Failed to repair invalid stored fileCrc32='${rom.fileCrc32}': ${(repairError as Error).message}`
+            );
+          }
         }
 
-        if (copiedCrc32 !== rom.fileCrc32) {
+        if (isUnknownOrInvalidCrc32(expectedCrc32)) {
+          const error = new SyncError(
+            `Cannot verify ${rom.filename}: invalid stored fileCrc32='${rom.fileCrc32}'`
+          );
+          log.error(error.message);
+
+          // Delete the file since we can't verify it
+          try {
+            await fs.unlink(destinationPath);
+            log.debug(`Deleted unverifiable file: ${destinationPath}`);
+          } catch (deleteError) {
+            log.warn(`Failed to delete unverifiable file: ${(deleteError as Error).message}`);
+          }
+
+          syncStatus.addFailed({ rom, error }).incrementProcessed().notify();
+          continue;
+        }
+
+        const copiedCrc32 = await crc32sum({ filePath: destinationPath });
+
+        if (copiedCrc32 !== expectedCrc32) {
           log.error(`Checksum mismatch for ${rom.filename}`);
 
           // Delete the corrupted file
