@@ -282,6 +282,33 @@ async function copyRoms(
       // File doesn't exist, proceed with copy
     }
 
+    const sourceExt = path.extname(rom.filePath).toLowerCase();
+
+    // Copy verification should always hash the full zip/7z file (not extracted ROM contents).
+    const shouldPrehashSourceFile =
+      options.verifyFiles && (sourceExt === '.zip' || sourceExt === '.7z');
+
+    let expectedCrc32 = rom.fileCrc32;
+
+    if (shouldPrehashSourceFile) {
+      try {
+        expectedCrc32 = await crc32sum({ filePath: rom.filePath });
+      } catch (error) {
+        log.error(`Failed to hash source file for ${rom.filename}: ${(error as Error).message}`);
+        syncStatus
+          .addFailed({
+            rom,
+            error: new SyncError(
+              `Failed to verify ${rom.filename}: ${(error as Error).message}`,
+              error as Error
+            ),
+          })
+          .incrementProcessed()
+          .notify();
+        continue;
+      }
+    }
+
     // Copy file
     try {
       log.debug(`Copying: ${rom.filePath} -> ${destinationPath}`);
@@ -305,7 +332,7 @@ async function copyRoms(
         log.debug(`Verifying checksum for: ${rom.filename}`);
         const copiedCrc32 = await crc32sum({ filePath: destinationPath });
 
-        if (copiedCrc32 !== rom.fileCrc32) {
+        if (copiedCrc32 !== expectedCrc32) {
           log.error(`Checksum mismatch for ${rom.filename}`);
 
           // Delete the corrupted file

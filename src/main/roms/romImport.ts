@@ -39,7 +39,12 @@ export async function processRomFile(
 
     const ramd5 = ramd5sum(consoleId, romFile);
     const md5 = await md5sum({ filePath: romFile.sourcePath, buffer: romFile.romBuffer });
-    const fileCrc32 = await crc32sum({ filePath: romFile.sourcePath, buffer: romFile.romBuffer });
+    // `romBuffer` for archives contains the extracted ROM contents; file integrity checks should
+    // always use the bytes of the actual imported file on disk.
+    const fileCrc32 = await crc32sum({
+      filePath: romFile.sourcePath,
+      buffer: romFile.isArchive ? undefined : romFile.romBuffer,
+    });
     const hashes = { ramd5, md5, fileCrc32 };
 
     log.debug(
