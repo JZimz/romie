@@ -305,6 +305,10 @@ async function copyRoms(
         log.debug(`Verifying checksum for: ${rom.filename}`);
         const copiedCrc32 = await crc32sum({ filePath: destinationPath });
 
+        if (!/^[0-9a-f]{8}$/i.test(rom.fileCrc32)) {
+          throw new Error(`Invalid expected CRC32: ${rom.fileCrc32}`);
+        }
+
         if (copiedCrc32 !== rom.fileCrc32) {
           log.error(`Checksum mismatch for ${rom.filename}`);
 

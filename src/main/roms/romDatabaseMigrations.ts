@@ -5,6 +5,7 @@ import { RomDatabase } from '@/types/rom';
 import { crc32sum } from './romUtils';
 import { lookupRomByHash, unloadHashDatabase } from './romLookup';
 import { determineSystemFromRAConsoleId, getConsoleIdForSystem } from '@/utils/systems';
+import { isArchiveContainerPath } from './archive.utils';
 
 const log = logger.scope('romdb:migrations');
 
@@ -142,8 +143,7 @@ async function migrateToVersion_6_0_1(data: RomDatabase) {
   data.version = '6.0.1';
 
   for (const rom of data.roms) {
-    const ext = path.extname(rom.filePath).toLowerCase();
-    if (ext !== '.zip' && ext !== '.7z') {
+    if (!isArchiveContainerPath(rom.filePath)) {
       continue;
     }
 

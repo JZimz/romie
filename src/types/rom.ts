@@ -55,6 +55,8 @@ export interface Rom {
    *
    * Used for copy integrity checking during sync. For archive containers (e.g. `.zip` / `.7z`),
    * this is the CRC32 of the archive file itself (not the extracted ROM contents).
+   *
+   * If the file on disk is modified outside of ROMie, this value should be treated as stale.
    */
   fileCrc32: string;
   /** RetroAchievements hash - required for game identification */
