@@ -3,10 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { BetterSQLite3Database } from 'drizzle-orm/better-sqlite3';
 import type { RomDatabase } from '@/types/rom';
-import { schema } from './index';
-import { ensureDatabaseSchema } from '../roms/romDatabaseMigrations';
+import { schema } from '@/main/db';
+import { ensureDatabaseSchema } from '@/main/roms/romDatabaseMigrations';
 
-const log = logger.scope('db:migration');
+const log = logger.scope('db:lowdb-migration');
 
 type AppDatabase = BetterSQLite3Database<typeof schema>;
 

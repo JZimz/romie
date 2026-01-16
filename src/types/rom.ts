@@ -50,10 +50,11 @@ export interface Rom {
   updatedAt: Date;
   /** MD5 hash of ROM content - primary deduplication method */
   md5: string;
-  /** CRC32 of actual file on disk - fast file integrity checking */
+  /** CRC32 of source file on disk (archive or raw ROM) - used for sync integrity verification */
   fileCrc32: string;
   /** RetroAchievements hash - required for game identification */
   ramd5: string | null;
+  /** RetroAchievements verification status indicating if a ROM is eligible for achievements */
   verified: boolean;
   /** Number of achievements available in RetroAchievements (computed at runtime, not stored) */
   numAchievements?: number;

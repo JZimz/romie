@@ -6,8 +6,7 @@ import path from 'path';
 import fs from 'fs';
 import logger from 'electron-log/main';
 import * as schema from './schema';
-import { migrateLowdbToSqlite } from './migrate-from-lowdb';
-import { migrateRegionDetection } from './migrate-region-detection';
+import { runDataMigrations } from './migrations';
 
 const log = logger.scope('db');
 
@@ -86,11 +85,8 @@ export async function initializeDatabase() {
   log.info('Running database migrations...', migrationsPath);
   migrate(db, { migrationsFolder: migrationsPath });
 
-  // Migrate from LowDB if needed (existing users)
-  await migrateLowdbToSqlite(db, baseDir);
-
-  // Fix region detection false positives (issue #97)
-  await migrateRegionDetection(db, baseDir);
+  // Run data migrations (LowDB migration, region detection fix, etc.)
+  await runDataMigrations(db, baseDir);
 
   log.info('Database initialized successfully');
 

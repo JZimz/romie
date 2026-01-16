@@ -39,7 +39,7 @@ export async function processRomFile(
 
     const ramd5 = ramd5sum(consoleId, romFile);
     const md5 = await md5sum({ filePath: romFile.sourcePath, buffer: romFile.romBuffer });
-    const fileCrc32 = await crc32sum({ filePath: romFile.sourcePath, buffer: romFile.romBuffer });
+    const fileCrc32 = await crc32sum({ filePath: romFile.sourcePath });
     const hashes = { ramd5, md5, fileCrc32 };
 
     log.debug(

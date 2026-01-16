@@ -3,8 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { BetterSQLite3Database } from 'drizzle-orm/better-sqlite3';
 import { eq } from 'drizzle-orm';
-import { extractRegionFromFilename } from '../roms/romUtils';
-import { schema } from './index';
+import { extractRegionFromFilename } from '@/main/roms/romUtils';
+import { schema } from '@/main/db';
+import { getMigrationsDir } from './index';
 
 const log = logger.scope('db:region-migration');
 
@@ -22,9 +23,11 @@ type AppDatabase = BetterSQLite3Database<typeof schema>;
  * Addresses issue #97: Region detection has false positives and missing mappings
  */
 export async function migrateRegionDetection(db: AppDatabase, baseDir: string) {
-  const markerPath = path.join(baseDir, '.region-migration-v1-complete');
+  const migrationsDir = getMigrationsDir(baseDir);
+  fs.mkdirSync(migrationsDir, { recursive: true });
+  const markerPath = path.join(migrationsDir, 'region-detection-v1');
 
-  // Skip if migration already ran
+  // Skip if migration already ran (check both locations)
   if (fs.existsSync(markerPath)) {
     log.info('Region detection migration already completed, skipping');
     return;
@@ -33,7 +36,14 @@ export async function migrateRegionDetection(db: AppDatabase, baseDir: string) {
   log.info('Starting region detection migration...');
 
   try {
-    const allRoms = await db.select().from(schema.roms);
+    // Select only columns needed for migration to reduce memory usage
+    const allRoms = await db
+      .select({
+        id: schema.roms.id,
+        filename: schema.roms.filename,
+        region: schema.roms.region,
+      })
+      .from(schema.roms);
     let updatedCount = 0;
     let unchangedCount = 0;
 
@@ -59,7 +69,7 @@ export async function migrateRegionDetection(db: AppDatabase, baseDir: string) {
       }
     });
 
-    // Mark migration as complete
+    // Mark migration as complete in new location
     fs.writeFileSync(markerPath, new Date().toISOString());
 
     log.info(
