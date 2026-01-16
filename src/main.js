@@ -9,6 +9,7 @@ import { getInstanceId } from '@main/analytics';
 import { initializeTheme } from '@main/themes';
 import { initializeUpdater } from '@main/updater';
 import { initializeDatabase } from '@main/db';
+import { initializeMenu } from '@main/menu';
 
 // Initialize sentry for error tracking
 if (process.env.NODE_ENV !== 'development') {
@@ -70,6 +71,16 @@ const createWindow = () => {
       mainWindow.webContents.send('dark-mode:change', shouldUseDarkColors);
     }
   });
+
+  // Set up the About panel
+  app.setAboutPanelOptions({
+    applicationName: 'ROMie',
+    applicationVersion: app.getVersion(),
+    copyright: '© 2025 JZimz',
+  });
+
+  // Initialize the application menu
+  initializeMenu(mainWindow);
 
   // Initialize the auto-updater
   initializeUpdater(mainWindow);
