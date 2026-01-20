@@ -10,6 +10,7 @@ import { initializeTheme } from '@main/themes';
 import { initializeUpdater } from '@main/updater';
 import { initializeDatabase } from '@main/db';
 import { initializeMenu } from '@main/menu';
+import { loadWindowState, trackWindowState } from '@main/window';
 
 // Initialize sentry for error tracking
 if (process.env.NODE_ENV !== 'development') {
@@ -25,13 +26,16 @@ if (started) {
 }
 
 const createWindow = () => {
+  const windowState = loadWindowState();
   const mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 600,
+    width: windowState.bounds.width,
+    height: windowState.bounds.height,
+    x: windowState.bounds.x,
+    y: windowState.bounds.y,
     minWidth: 900,
     minHeight: 480,
     // Remove the window frame
-    frame: 'false',
+    frame: false,
     // Hide the title bar but keep traffic lights on MacOS
     titleBarStyle: process.platform === 'darwin' ? 'hidden' : 'default',
     // Hide the menu bar in windows and linux
@@ -40,6 +44,14 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
   });
+
+  // Restore maximized state after window is ready
+  if (windowState.isMaximized) {
+    mainWindow.maximize();
+  }
+
+  // Track and persist window state changes
+  trackWindowState(mainWindow);
 
   // and load the index.html of the app.
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
