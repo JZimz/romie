@@ -133,6 +133,35 @@ export default {
         },
       },
     },
+    {
+      name: '@electron-forge/maker-rpm',
+      config: {
+        options: {
+          name: 'romie',
+          productName: 'ROMie',
+          bin: 'ROMie',
+          genericName: 'ROM Manager',
+          description: 'ROM Manager for Retro Handhelds',
+          categories: ['Utility', 'Game'],
+          homepage: 'https://github.com/JZimz/romie',
+          icon: 'src/assets/icons/app/png/512x512.png',
+          license: 'MIT',
+        },
+      },
+    },
+    {
+      name: '@reforged/maker-appimage',
+      config: {
+        options: {
+          name: 'romie',
+          bin: 'ROMie',
+          productName: 'ROMie',
+          genericName: 'ROM Manager',
+          icon: 'src/assets/icons/app/png/512x512.png',
+          categories: ['Utility', 'Game'],
+        },
+      },
+    },
   ],
   publishers: [
     {

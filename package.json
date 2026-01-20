@@ -67,6 +67,7 @@
     "@electron-forge/plugin-vite": "^7.10.2",
     "@electron-forge/publisher-s3": "^7.10.2",
     "@electron/fuses": "^1.8.0",
+    "@reforged/maker-appimage": "^5.1.1",
     "@types/better-sqlite3": "^7.6.13",
     "@types/node-7z": "^2.1.11",
     "@typescript-eslint/eslint-plugin": "^8.51.0",
