@@ -15,6 +15,7 @@ import type { Rom, RomDraft, RomDatabaseStats } from '@/types/rom';
 import type { SystemCode } from '@/types/system';
 import type { Device } from '@/types/device';
 import type { RetroAchievementsConfig } from '@/types/settings';
+import { validateRomExists } from './romValidation';
 
 const log = logger.scope('rom-db');
 
@@ -36,10 +37,11 @@ export async function addRom(rom: RomDraft): Promise<Rom> {
   return inserted;
 }
 
-export async function removeRomById(id: string): Promise<void> {
-  log.debug(`Removing ROM: ${id}`);
-  roms.remove(id);
-  log.info(`ROM removed: ${id}`);
+export async function removeRomById(ids: string | string[]): Promise<void> {
+  const idArray = Array.isArray(ids) ? ids : [ids];
+  log.debug(`Removing ${idArray.length} ROM(s)`);
+  roms.remove(idArray);
+  log.info(`Removed ${idArray.length} ROM(s)`);
 }
 
 export async function updateRom(id: string, romUpdate: Partial<Rom>): Promise<void> {
@@ -52,21 +54,24 @@ export async function updateRom(id: string, romUpdate: Partial<Rom>): Promise<vo
 }
 
 export async function listRoms(): Promise<Rom[]> {
-  const [allRoms] = await Promise.all([Promise.resolve(roms.list()), loadHashDatabase()]);
+  const allRoms = roms.list();
 
-  // Enrich ROMs with achievement count from game database
-  const enrichedRoms = allRoms.map((rom) => {
-    if (!rom.verified || !rom.ramd5) {
-      return rom;
-    }
+  await loadHashDatabase();
 
-    const game = lookupRomByHashSync(rom.ramd5);
+  // Enrich ROMs with achievement count and availability data.
+  const enrichedRoms = await Promise.all(
+    allRoms.map(async (rom) => {
+      const filePathExists = await validateRomExists(rom);
+      const enrichedRom: Rom = { ...rom, filePathExists };
 
-    return {
-      ...rom,
-      numAchievements: game?.numAchievements ?? 0,
-    };
-  });
+      if (rom.verified && rom.ramd5) {
+        const game = lookupRomByHashSync(rom.ramd5);
+        enrichedRom.numAchievements = game?.numAchievements ?? 0;
+      }
+
+      return enrichedRom;
+    })
+  );
 
   return enrichedRoms;
 }

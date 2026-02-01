@@ -32,10 +32,11 @@ if (process.env.NODE_ENV !== 'development') {
 
 const romApi: RomApi = {
   list: () => ipcRenderer.invoke('rom:list'),
-  remove: (id: string) => ipcRenderer.invoke('rom:remove', id),
+  remove: (ids: string | string[]) => ipcRenderer.invoke('rom:remove', ids),
   update: (id: string, data: Partial<Rom>) => ipcRenderer.invoke('rom:update', id, data),
   scan: () => ipcRenderer.invoke('rom:scan'),
   stats: () => ipcRenderer.invoke('rom:stats'),
+  refresh: () => ipcRenderer.invoke('rom:refresh'),
   onImportProgress: (callback: (progress: ImportStatus) => void) => {
     const handler = (_event: IpcRendererEvent, progress: ImportStatus) => callback(progress);
     ipcRenderer.on('rom:import-progress', handler);

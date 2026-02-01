@@ -4,12 +4,22 @@
       <div class="rom-import__actions">
         <Button
           size="large"
-          severity="secondary"
+          severity="primary"
           icon="pi pi-search-plus"
           :label="scanLabel"
           :loading="processingState === 'scanning'"
-          :disabled="isProcessing"
+          :disabled="isProcessing || isRefreshing"
           @click="handleScan"
+        />
+        <Button
+          class="rom-import__refresh-button"
+          size="large"
+          severity="secondary"
+          icon="pi pi-refresh"
+          label="Refresh Library"
+          :loading="isRefreshing"
+          :disabled="isRefreshing || isProcessing"
+          @click="handleRefresh"
         />
         <div class="rom-import__supported-info">
           <strong>Supported file extensions:</strong> {{ supportedExtensions }}
@@ -92,6 +102,7 @@ const romStore = useRomStore();
 const toast = useToast();
 const processingState = ref<'idle' | 'scanning'>('idle');
 const currentFile = ref('');
+const isRefreshing = ref(false);
 
 const result = ref<{
   errors: string[];
@@ -139,6 +150,25 @@ async function handleScan() {
   }
 }
 
+async function handleRefresh() {
+  isRefreshing.value = true;
+
+  try {
+    await romStore.refreshRomAvailability();
+    toast.add({
+      severity: 'success',
+      summary: 'Library Refreshed',
+      detail: 'ROM file availability has been updated.',
+      life: 3000,
+    });
+  } catch (error) {
+    showGenericError('refresh');
+    log.error('ROM library refresh failed:', error);
+  } finally {
+    isRefreshing.value = false;
+  }
+}
+
 function processImportResult(importResult: RomImportResult) {
   log.debug('Processing import result');
   if (importResult.canceled) return;
@@ -171,6 +201,10 @@ function processImportResult(importResult: RomImportResult) {
 .rom-import {
   &__actions {
     padding: 0 var(--space-10);
+  }
+
+  &__refresh-button {
+    margin-left: var(--space-6);
   }
 
   &__result-header {

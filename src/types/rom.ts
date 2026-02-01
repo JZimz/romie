@@ -56,11 +56,13 @@ export interface Rom {
   ramd5: string | null;
   /** RetroAchievements verification status indicating if a ROM is eligible for achievements */
   verified: boolean;
-  /** Number of achievements available in RetroAchievements (computed at runtime, not stored) */
-  numAchievements?: number;
   tags?: string[] | null;
   favorite?: boolean | null;
   notes?: string | null;
+  /** Whether the file path exists on disk (computed at runtime, not stored) */
+  filePathExists?: boolean;
+  /** Number of achievements available in RetroAchievements (computed at runtime, not stored) */
+  numAchievements?: number;
 
   /** @deprecated Use `createdAt` instead */
   importedAt?: number;

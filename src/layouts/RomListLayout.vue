@@ -1,6 +1,10 @@
 <template>
   <div class="rom-list-layout">
-    <AppToolbar>
+    <AppToolbar
+      :unavailable-count="unavailableCount"
+      @filter-unavailable="showUnavailableFilter"
+      @remove-unavailable="removeUnavailableRoms"
+    >
       <template #actions>
         <div class="rom-list-layout__header-actions">
           <!-- TODO: Add this back once grid view is implemented
@@ -21,9 +25,7 @@
       <template #search>
         <div class="rom-list-layout__search">
           <IconField class="rom-list-layout__header-item">
-            <InputIcon>
-              <i class="pi pi-search" />
-            </InputIcon>
+            <InputIcon class="pi pi-search" />
             <InputText v-model="searchQuery" size="small" :placeholder="searchPlaceholder" />
           </IconField>
           <Button
@@ -38,6 +40,23 @@
       </template>
     </AppToolbar>
     <div v-if="showFilters" class="rom-list-layout__filters">
+      <FloatLabel variant="on">
+        <Select
+          v-if="hasUnavailableRoms || filterByAvailability !== null"
+          id="availability_filter"
+          v-model="filterByAvailability"
+          class="rom-list-layout__availability-filter"
+          :options="[
+            { label: 'Available', value: 'available' },
+            { label: 'Unavailable', value: 'unavailable' },
+          ]"
+          option-label="label"
+          option-value="value"
+          show-clear
+          size="small"
+        />
+        <label for="availability_filter">Status</label>
+      </FloatLabel>
       <FloatLabel variant="on">
         <Select
           id="achievements_filter"
@@ -98,6 +117,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import log from 'electron-log/renderer';
 import Button from 'primevue/button';
 import FloatLabel from 'primevue/floatlabel';
 import Select from 'primevue/select';
@@ -105,6 +125,7 @@ import MultiSelect from 'primevue/multiselect';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
+import { useToast } from 'primevue/usetoast';
 import { useRomStore } from '@/stores';
 import AppToolbar from '@/components/AppToolbar.vue';
 import { getSystemDisplayName } from '@/utils/systems';
@@ -118,12 +139,18 @@ const props = defineProps<{
   tag?: string;
 }>();
 
+const toast = useToast();
 const romStore = useRomStore();
 const searchQuery = ref('');
 const showFilters = ref(false);
 const filterBySystem = ref([]);
 const filterByRegion = ref([]);
 const filterByRA = ref(null);
+const filterByAvailability = ref<string | null>(null);
+
+const unavailableRoms = computed(() => romStore.roms.filter((rom) => !rom.filePathExists));
+const unavailableCount = computed(() => unavailableRoms.value.length);
+const hasUnavailableRoms = computed(() => unavailableCount.value > 0);
 
 const searchPlaceholder = computed(() => {
   if (props.mode === 'tag' && props.tag) {
@@ -205,7 +232,12 @@ const filteredRoms = computed(() => {
         rom.verified &&
         (rom.numAchievements ?? 0) === 0) ||
       (filterByRA.value === 'unverified' && !rom.verified);
-    const shouldInclude = hasSystemMatch && hasRegionMatch && hasQueryMatch && hasRAMatch;
+    const hasAvailabilityMatch =
+      !filterByAvailability.value ||
+      (filterByAvailability.value === 'unavailable' && !rom.filePathExists) ||
+      (filterByAvailability.value === 'available' && rom.filePathExists);
+    const shouldInclude =
+      hasSystemMatch && hasRegionMatch && hasQueryMatch && hasRAMatch && hasAvailabilityMatch;
 
     if (shouldInclude) {
       size += rom.size ?? 0;
@@ -222,8 +254,36 @@ function toggleFilters() {
     filterByRA.value = null;
     filterByRegion.value = [];
     filterBySystem.value = [];
+    filterByAvailability.value = null;
   }
   showFilters.value = !showFilters.value;
+}
+
+function showUnavailableFilter() {
+  showFilters.value = true;
+  filterByAvailability.value = 'unavailable';
+}
+
+async function removeUnavailableRoms() {
+  const idsToRemove = unavailableRoms.value.map(({ id }) => id);
+
+  try {
+    await romStore.removeRoms(idsToRemove);
+    filterByAvailability.value = null;
+    toast.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Unavailable ROMs removed.',
+      life: 3000,
+    });
+  } catch (err) {
+    log.error('Failed to remove roms', err);
+    toast.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'Failed to remove ROMs.',
+    });
+  }
 }
 
 function getUniqueRomValues<T extends keyof Rom>(field: T) {
@@ -250,6 +310,10 @@ function getUniqueRomValues<T extends keyof Rom>(field: T) {
     align-items: center;
     justify-content: flex-end;
     gap: 8px;
+  }
+
+  &__availability-filter {
+    min-width: 85px;
   }
 
   &__content {

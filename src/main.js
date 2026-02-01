@@ -11,6 +11,7 @@ import { initializeUpdater } from '@main/updater';
 import { initializeDatabase } from '@main/db';
 import { initializeMenu } from '@main/menu';
 import { loadWindowState, trackWindowState } from '@main/window';
+import { checkRomAvailability } from '@main/roms/romValidation';
 
 // Initialize sentry for error tracking
 if (process.env.NODE_ENV !== 'development') {
@@ -121,6 +122,7 @@ app
     await initializeDatabase();
     registerAllIpc();
     await initializeTheme();
+    await checkRomAvailability();
 
     createWindow();
 

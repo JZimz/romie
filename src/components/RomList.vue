@@ -15,6 +15,7 @@
         :region="rom.region"
         :size="rom.size"
         :is-active="romSelections.includes(rom.id)"
+        :available="!!rom.filePathExists"
         @click="handleRomClick($event, rom)"
       />
     </template>

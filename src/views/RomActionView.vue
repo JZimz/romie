@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import log from 'electron-log/renderer';
 import Card from 'primevue/card';
 import Button from 'primevue/button';
 import { useConfirm } from 'primevue/useconfirm';
@@ -44,7 +45,7 @@ const props = defineProps<{
   romSelections: string[];
 }>();
 const emit = defineEmits<{
-  (e: 'delete', deleted: number, failed: number): void;
+  (e: 'delete'): void;
 }>();
 
 const deleting = ref<boolean>(false);
@@ -76,11 +77,12 @@ const commonTags = computed(() => {
 });
 
 function confirmDelete() {
-  const count = pluralize(props.romSelections.length, 'ROM', 'ROMs');
+  const count = props.romSelections.length;
+  const label = count === 1 ? '1 ROM' : `${count} ROMs`;
 
   confirm.require({
     header: 'Delete ROMs',
-    message: `Are you sure you want to delete ${count}?`,
+    message: `Are you sure you want to delete ${label}?`,
     rejectProps: {
       label: 'Cancel',
       severity: 'secondary',
@@ -93,48 +95,31 @@ function confirmDelete() {
     accept: handleDelete,
   });
 }
-function showDeleteToast(successCount: number, failureCount: number) {
-  if (successCount && !failureCount) {
+async function handleDelete() {
+  const count = props.romSelections.length;
+  deleting.value = true;
+
+  try {
+    await romStore.removeRoms(props.romSelections);
     toast.add({
       severity: 'success',
       summary: 'Delete Successful',
-      detail: successCount === 1 ? 'Deleted 1 ROM' : `Deleted ${successCount} ROMs`,
+      detail: `Deleted ${count} ${pluralize(count, 'ROM')}.`,
       life: 3000,
     });
-  } else if (successCount && failureCount) {
-    toast.add({
-      severity: 'warn',
-      summary: 'Partial Delete',
-      detail: `Deleted ${successCount} ROM(s), but ${failureCount} failed.`,
-      life: 4000,
-    });
-  } else if (failureCount) {
+  } catch (error) {
+    log.error(error);
     toast.add({
       severity: 'error',
       summary: 'Delete Failed',
-      detail: `Failed to delete ${failureCount} ROM(s).`,
+      detail: `Failed to delete ${pluralize(count, 'ROM')}.`,
       life: 4000,
     });
-  }
-}
-
-async function handleDelete() {
-  const deletions = [];
-  deleting.value = true;
-
-  for (const romId of props.romSelections) {
-    deletions.push(romStore.removeRom(romId));
+  } finally {
+    deleting.value = false;
   }
 
-  const results = await Promise.allSettled(deletions);
-  const succeeded = results.filter((r) => r.status === 'fulfilled').length;
-  const failed = results.filter((r) => r.status === 'rejected').length;
-
-  showDeleteToast(succeeded, failed);
-
-  deleting.value = false;
-
-  emit('delete', succeeded, failed);
+  emit('delete');
 }
 
 async function handleTagUpdate(newTags: string[]) {
@@ -159,7 +144,7 @@ async function handleTagUpdate(newTags: string[]) {
   try {
     await Promise.all(updates);
   } catch (error) {
-    console.error(error);
+    log.error(error);
   } finally {
     updating.value = false;
   }

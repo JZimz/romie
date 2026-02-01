@@ -27,6 +27,16 @@
       </template>
       <template #content>
         <div class="rom-details__content">
+          <Message v-if="!rom.filePathExists" severity="warn" :closable="false">
+            <p class="rom-details__alert-text">
+              The ROM file could not be located. It may have been moved, deleted, or is on a
+              disconnected drive.
+            </p>
+            <code class="rom-details__alert-path">{{ rom.filePath }}</code>
+            <p class="rom-details__alert-hint">
+              Use the <strong>Delete</strong> button below to remove this ROM from your library.
+            </p>
+          </Message>
           <RomAchievements
             :verified="rom.verified"
             :loading="loading"
@@ -99,6 +109,7 @@ import { computed, ref, watch } from 'vue';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Tag from 'primevue/tag';
+import Message from 'primevue/message';
 import { useToast } from 'primevue/usetoast';
 import { useRomStore, useFeatureFlagStore } from '@/stores';
 import { getSystemDisplayName } from '@/utils/systems';
@@ -195,7 +206,7 @@ async function handleDelete() {
   deleting.value = true;
 
   try {
-    await romStore.removeRom(props.romId);
+    await romStore.removeRoms([props.romId]);
 
     toast.add({
       severity: 'success',
@@ -336,6 +347,27 @@ function formatDatetime(ts: number): string {
 
   &__actions {
     margin-top: 16px;
+  }
+
+  &__alert-text {
+    margin: 0;
+  }
+
+  &__alert-path {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    margin-top: 10px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    word-break: break-all;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &__alert-hint {
+    margin: 10px 0 0;
+    font-size: var(--font-size-sm);
+    opacity: 0.85;
   }
 }
 </style>

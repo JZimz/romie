@@ -87,12 +87,13 @@ export const useRomStore = defineStore('roms', {
         throw error;
       }
     },
-    async removeRom(id: string) {
-      log.info(`Removing ${id}`);
+    async removeRoms(ids: string[]) {
+      if (ids.length === 0) return;
+      log.info(`Removing ${ids.length} ROMs`);
       this.loading = true;
 
       try {
-        await window.rom.remove(id);
+        await window.rom.remove([...ids]);
         await this.loadRoms();
         await this.loadStats();
       } catch (error) {
@@ -124,6 +125,21 @@ export const useRomStore = defineStore('roms', {
       await this.loadStats();
 
       return scanResults;
+    },
+    async refreshRomAvailability() {
+      log.info('Refreshing rom availability..');
+      this.loading = true;
+
+      try {
+        await window.rom.refresh();
+        await this.loadRoms();
+        await this.loadStats();
+      } catch (error) {
+        log.error(error);
+        throw error;
+      } finally {
+        this.loading = false;
+      }
     },
   },
 });

@@ -1,4 +1,4 @@
-import { eq, count, sum } from 'drizzle-orm';
+import { eq, count, sum, inArray } from 'drizzle-orm';
 import { db, schema } from '@main/db';
 import type { Rom } from '@/types/rom';
 import type { SystemCode } from '@/types/system';
@@ -34,8 +34,10 @@ export const romsQueries = {
       .run();
   },
 
-  remove(id: string) {
-    db.delete(schema.roms).where(eq(schema.roms.id, id)).run();
+  remove(ids: string | string[]) {
+    const idArray = Array.isArray(ids) ? ids : [ids];
+    if (idArray.length === 0) return;
+    db.delete(schema.roms).where(inArray(schema.roms.id, idArray)).run();
   },
 
   count() {
