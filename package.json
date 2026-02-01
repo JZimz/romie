@@ -74,7 +74,7 @@
     "@typescript-eslint/parser": "^8.50.1",
     "@vitejs/plugin-vue": "^6.0.3",
     "drizzle-kit": "^0.31.8",
-    "electron": "39.2.7",
+    "electron": "40.1.0",
     "electron-devtools-installer": "^4.0.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
