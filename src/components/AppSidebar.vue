@@ -6,43 +6,11 @@
         <h4 v-if="section.title" class="app-sidebar__title">
           {{ section.title }}
         </h4>
-        <ul v-if="section.id === 'tags'" class="app-sidebar__items app-sidebar__items--tags">
-          <li v-for="item in section.items" :key="item.id">
-            <RouterLink
-              v-slot="{ isActive }"
-              :to="item.route"
-              class="app-sidebar__item"
-              active-class="app-sidebar__item--active"
-            >
-              <Tag
-                :key="item.id"
-                :severity="isActive ? 'contrast' : 'secondary'"
-                :value="item.label"
-              ></Tag>
-            </RouterLink>
-          </li>
-          <li v-if="section.items.length === 0" class="app-sidebar__item--empty">No tags yet</li>
-        </ul>
-        <ul v-else class="app-sidebar__items">
-          <li v-for="item in section.items" :key="item.id">
-            <RouterLink
-              :to="item.route"
-              class="app-sidebar__item"
-              active-class="app-sidebar__item--active"
-            >
-              <span v-if="item.icon" class="app-sidebar__icon">
-                <i :class="item.icon"></i>
-              </span>
-              <span class="app-sidebar__label">{{ item.label }}</span>
-              <Badge
-                v-if="item.count"
-                :value="formatCompactNumber(item.count)"
-                severity="secondary"
-                class="app-sidebar__count"
-              />
-            </RouterLink>
-          </li>
-        </ul>
+        <component
+          :is="sectionComponents[section.id] || sectionComponents.default"
+          :items="section.items"
+          @reorder="handleSystemReorder"
+        />
       </div>
     </div>
     <div class="app-sidebar__footer">
@@ -76,29 +44,37 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-import { computed, ref, onMounted, onBeforeUnmount } from 'vue';
+import { computed, ref, onMounted, onBeforeUnmount, type Component } from 'vue';
 import Button from 'primevue/button';
-import Badge from 'primevue/badge';
-import Tag from 'primevue/tag';
+import SidebarSection from '@/components/sidebar/SidebarSection.vue';
+import SystemSection from '@/components/sidebar/SystemSection.vue';
+import TagsSection from '@/components/sidebar/TagsSection.vue';
 import { useRomStore, useDeviceStore } from '@/stores';
 import { getSystemDisplayName } from '@/utils/systems';
-import { formatCompactNumber } from '@/utils/number.utils';
 
 import type { RouteLocationRaw } from 'vue-router';
 import type { SystemCode } from '@/types/system';
 
+const sectionComponents: Record<string, Component> = {
+  tags: TagsSection,
+  systems: SystemSection,
+  default: SidebarSection,
+};
+
 // prettier-ignore
 const SYSTEM_SORT_ORDER: SystemCode[] = [
-  'nes','snes','n64','gb','gbc','gba', 'nds', // Nintendo
-  'sms','genesis','gg',                       // Sega
-  'psx',                                      // Sony
-  'atari2600',                                // Atari
-  'arcade'                                    // Arcade
+  'nes', 'snes', 'gb', 'gbc', 'gba', 'n64', 'nds', 'vb',  // Nintendo
+  'genesis', 'sms', 'gg',                                 // Sega
+  'psp',                                                  // Sony
+  'arcade',                                               // Arcade
+  'atari2600', 'lynx',                                    // Atari
+  'pce',                                                  // NEC
+  'ngp',                                                  // SNK
 ];
 
 const romStore = useRomStore();
 const deviceStore = useDeviceStore();
+const customSystemOrder = ref<SystemCode[] | null>(null);
 
 interface SidebarItem {
   id: string;
@@ -108,7 +84,7 @@ interface SidebarItem {
   route: RouteLocationRaw;
 }
 
-interface SidebarSection {
+interface Section {
   id: string;
   title?: string;
   items: SidebarItem[];
@@ -118,9 +94,12 @@ const isDark = ref(false);
 let unsubscribeDarkMode: (() => void) | null = null;
 
 onMounted(async () => {
+  const { systemOrder } = await window.settings.get();
+
   romStore.loadStats();
   romStore.loadRoms();
   deviceStore.loadDevices();
+  customSystemOrder.value = systemOrder || null;
   isDark.value = await window.darkMode.value();
   unsubscribeDarkMode = window.darkMode.onChange((value) => {
     isDark.value = value;
@@ -131,30 +110,7 @@ onBeforeUnmount(() => {
   if (unsubscribeDarkMode) unsubscribeDarkMode();
 });
 
-const systemsSection = computed((): SidebarSection => {
-  const systems = Object.entries(romStore.stats.systemCounts) as [SystemCode, number][];
-  const items: SidebarItem[] = [];
-
-  systems.sort((a, b) => {
-    return SYSTEM_SORT_ORDER.indexOf(a[0]) - SYSTEM_SORT_ORDER.indexOf(b[0]);
-  });
-
-  systems.forEach(([system, count]) => {
-    items.push({
-      id: `system-${system}`,
-      label: getSystemDisplayName(system),
-      count,
-      route: {
-        name: 'system-detail',
-        params: { system },
-      },
-    });
-  });
-
-  return { id: 'systems', title: 'Systems', items };
-});
-
-const tagsSection = computed((): SidebarSection => {
+const tagsSection = computed((): Section => {
   const { tagStats } = romStore.stats;
 
   // Build tag list sorted alphabetically
@@ -178,7 +134,7 @@ const tagsSection = computed((): SidebarSection => {
   };
 });
 
-const devicesSection = computed((): SidebarSection => {
+const devicesSection = computed((): Section => {
   const items = deviceStore.devices.map((device) => ({
     id: `device-${device.id}`,
     label: device.name,
@@ -196,8 +152,47 @@ const devicesSection = computed((): SidebarSection => {
   };
 });
 
-const sections = computed((): SidebarSection[] => {
-  const baseSections: SidebarSection[] = [
+const systemsSortOrder = computed(() => {
+  if (customSystemOrder.value) {
+    const customSortOrder = customSystemOrder.value;
+    const defaultSortOrder = SYSTEM_SORT_ORDER.filter((code) => !customSortOrder?.includes(code));
+
+    return [...customSortOrder, ...defaultSortOrder];
+  }
+
+  return SYSTEM_SORT_ORDER;
+});
+const systemsSection = computed((): Section => {
+  const availableSystems = Object.entries(romStore.stats.systemCounts) as [SystemCode, number][];
+  const availableCodes = new Set(availableSystems.map(([code]) => code));
+
+  // Filter to only available systems, preserving order
+  const orderedSystems = systemsSortOrder.value
+    .filter((code) => availableCodes.has(code))
+    .map((code) => [code, romStore.stats.systemCounts[code]] as [SystemCode, number]);
+
+  // Append any systems not in either list in case I missed some.
+  for (const [code, count] of availableSystems) {
+    if (!systemsSortOrder.value.includes(code)) {
+      orderedSystems.push([code, count]);
+    }
+  }
+
+  const items: SidebarItem[] = orderedSystems.map(([system, count]) => ({
+    id: `system-${system}`,
+    label: getSystemDisplayName(system),
+    count,
+    route: {
+      name: 'system-detail',
+      params: { system },
+    },
+  }));
+
+  return { id: 'systems', title: 'Systems', items };
+});
+
+const sections = computed((): Section[] => {
+  const baseSections: Section[] = [
     {
       id: 'library',
       items: [
@@ -241,6 +236,12 @@ const sections = computed((): SidebarSection[] => {
 
   return baseSections;
 });
+
+function handleSystemReorder(ids: string[]) {
+  const newOrder = ids.map((id) => id.replace('system-', '') as SystemCode);
+  customSystemOrder.value = newOrder;
+  window.settings.update({ systemOrder: newOrder });
+}
 
 async function openDiscordInvite() {
   window.util.openExternalLink('https://discord.gg/ZmhHgEfAsD');
@@ -316,72 +317,6 @@ async function handleDisplayModeToggle() {
     margin: 0 16px 8px 16px;
     padding: 0;
     user-select: none;
-  }
-
-  &__items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__items--tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0 14px;
-
-    .app-sidebar__item {
-      padding: 0;
-      margin: 0;
-    }
-
-    .app-sidebar__item--empty {
-      font-size: var(--font-size-sm);
-      color: var(--p-text-muted-color);
-    }
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    padding: 6px 16px;
-    cursor: pointer;
-    border-radius: 6px;
-    margin: 0 8px;
-    transition: all 0.15s ease;
-    line-height: 1.4;
-    text-decoration: none;
-    color: inherit;
-
-    &:hover,
-    &:focus {
-      background: var(--p-navigation-item-focus-background);
-      color: var(--p-navigation-item-focus-color); // If available
-    }
-
-    &--active {
-      background: var(--p-navigation-item-active-background);
-      color: var(--p-navigation-item-active-color);
-    }
-  }
-
-  &__icon {
-    margin-right: 8px;
-    opacity: 0.7;
-    font-size: 12px;
-    color: var(--p-text-muted-color);
-  }
-
-  &__label {
-    flex: 1;
-    font-weight: 400;
-  }
-
-  &__count {
-    font-size: 11px;
-    opacity: 0.7;
-    font-weight: 500;
-    margin-left: auto;
   }
 }
 </style>
