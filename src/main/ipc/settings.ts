@@ -4,19 +4,36 @@ import { settings, integrations } from '@main/db/queries';
 import { getUserProfile, getGameInfoAndUserProgress } from '@main/retroachievements';
 import { AppSettings, RetroAchievementsConfig } from '@/types/settings';
 
+function parseSystemOrder(raw: string | undefined): AppSettings['systemOrder'] {
+  if (!raw) return undefined;
+  try {
+    const value = JSON.parse(raw);
+    return Array.isArray(value) && value.every((v) => typeof v === 'string')
+      ? (value as AppSettings['systemOrder'])
+      : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function getUiSettings() {
+  const { theme, systemOrder } = settings.getAll();
+
+  return {
+    theme: (theme as AppSettings['theme']) || 'system',
+    systemOrder: parseSystemOrder(systemOrder),
+  };
+}
+
 export function registerSettingsIpc() {
-  // App settings
-  ipcMain.handle('settings:get', async (_) => {
-    const allSettings = settings.getAll();
-    return {
-      theme: (allSettings.theme as AppSettings['theme']) || 'system',
-    };
-  });
-  ipcMain.handle('settings:update', async (_, update: Partial<AppSettings>) => {
+  ipcMain.handle('settings:get', getUiSettings);
+  ipcMain.handle('settings:update', (_, update: Partial<AppSettings>) => {
     const next: Record<string, string> = {};
     if (update.theme) next.theme = update.theme;
+    if (update.systemOrder) next.systemOrder = JSON.stringify(update.systemOrder);
     settings.setMany(next);
-    return { theme: (settings.get('theme') as AppSettings['theme']) ?? 'system' };
+
+    return getUiSettings();
   });
 
   // TODO: Move to own ipc file.

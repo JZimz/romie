@@ -15,10 +15,12 @@ export async function checkRomAvailability(): Promise<void> {
   await Promise.all(allRoms.map((rom) => validateRomExists(rom)));
 }
 
-export async function validateRomExists(rom: Rom): Promise<boolean> {
-  const cached = availabilityCache.get(rom.id);
-  if (cached !== undefined) {
-    return cached;
+export async function validateRomExists(rom: Rom, ignoreCache = false): Promise<boolean> {
+  if (!ignoreCache) {
+    const cached = availabilityCache.get(rom.id);
+    if (cached !== undefined) {
+      return cached;
+    }
   }
 
   try {

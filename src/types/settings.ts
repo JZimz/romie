@@ -1,3 +1,5 @@
+import type { SystemCode } from '@/types/system';
+
 export type AppTheme = 'light' | 'dark' | 'system';
 
 export interface WindowBounds {
@@ -15,6 +17,7 @@ export interface WindowState {
 export interface AppSettings {
   theme: AppTheme;
   windowState?: WindowState;
+  systemOrder?: SystemCode[];
 }
 
 export interface RetroAchievementsConfig {
