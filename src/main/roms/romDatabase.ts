@@ -26,6 +26,27 @@ export async function addRom(rom: RomDraft): Promise<Rom> {
   const existing = roms.findByMd5(rom.md5);
 
   if (existing) {
+    const originalExists = await validateRomExists(existing);
+
+    if (existing.filePath !== rom.filePath && !originalExists) {
+      // Original file no longer accessible - update the record with new path
+      roms.update(existing.id, {
+        filePath: rom.filePath,
+        filename: rom.filename,
+        romFilename: rom.romFilename,
+        size: rom.size,
+        fileCrc32: rom.fileCrc32,
+        ramd5: rom.ramd5,
+        verified: rom.verified,
+        region: rom.region,
+        system: rom.system,
+      });
+      const updated = roms.findById(existing.id)!;
+      await validateRomExists(updated, true);
+      log.info(`ROM path updated: ${existing.filename} -> ${rom.filename}`);
+      return updated;
+    }
+    // Either same path or original still exists - reject as duplicate
     log.warn(`Duplicate ROM rejected: ${rom.filename} (matches ${existing.filename})`);
     throw new Error(`ROM "${rom.filename}" already exists (duplicate of "${existing.filename}")`);
   }
