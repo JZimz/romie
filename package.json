@@ -114,7 +114,7 @@
     "update-electron-app": "^3.1.1",
     "uuid": "^13.0.0",
     "vue": "^3.5.27",
-    "vue-router": "^4.6.4",
+    "vue-router": "^5.0.1",
     "vuedraggable": "^4.1.0",
     "yauzl": "^3.2.0"
   }
