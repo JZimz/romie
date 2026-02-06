@@ -160,7 +160,7 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     displayName: 'Atari 2600',
     fullName: 'Atari 2600',
     type: 'console',
-    extensions: ['.a26'],
+    extensions: ['.a26', '.bin'],
     aliases: ['atari2600', 'atari 2600', 'atari', '2600'],
     requiresBios: false,
     manufacturer: 'Atari',
