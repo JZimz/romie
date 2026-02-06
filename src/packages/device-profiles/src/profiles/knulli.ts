@@ -56,7 +56,7 @@ export const KNULLI_PROFILE: DeviceProfile = {
     },
     atari2600: {
       folderName: 'atari2600',
-      supportedFormats: ['.a26', '.zip', '.7z'],
+      supportedFormats: ['.a26', '.bin', .zip', '.7z'],
     },
     lynx: {
       folderName: 'lynx',
