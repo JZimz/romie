@@ -11,7 +11,6 @@ import {
   crc32sum,
 } from './romUtils';
 import { addRom } from './romDatabase';
-import { lookupRomByHash } from './romLookup';
 
 import type { Rom, RomFile } from '@/types/rom';
 
@@ -49,25 +48,11 @@ export async function processRomFile(
         `CRC32=${hashes.fileCrc32}`
     );
 
-    // Attempt to identify game and system from file hash.
-    // If no match by hash, fallback to extension-based detection and filename cleaning.
-    log.debug('Checking if rom exists in retroachievements db...');
-    const game = hashes.ramd5 ? await lookupRomByHash(hashes.ramd5) : null;
-    let displayName: string;
-    let verified = false;
-
-    if (game) {
-      log.debug(`Found matching game in database: ${game.title} (${game.consoleName})`);
-
-      displayName = game.title;
-      verified = true;
-    } else {
-      log.warn(`No matching game found in database for hash.`);
-
-      // Create displayName by stripping: region tag, dump tags ([!], [v1.1]), punctuation
-      displayName = cleanDisplayName(romFilename);
-      log.debug(`Clean display name: ${displayName}`);
-    }
+    // Import no longer performs RetroAchievements DB lookup per file.
+    // Keep imports fast and deterministic; users can run explicit refresh later if needed.
+    const displayName = cleanDisplayName(romFilename);
+    const verified = false;
+    log.debug(`Clean display name: ${displayName}`);
 
     // Extract region tag from filename e.g. (USA), (JPN) fallback: "Unknown"
     log.debug(`Extracting region from filename`);
