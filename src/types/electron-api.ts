@@ -1,6 +1,7 @@
 import { SyncError } from '@/errors';
 import type { DeviceProfile } from '@romie/device-profiles';
 import type { Rom, RomDatabaseStats } from './rom';
+import type { Document } from './document';
 import type { Device, StorageDevice } from '@/types/device';
 import { AppSettings, RetroAchievementsConfig } from './settings';
 
@@ -39,6 +40,29 @@ export interface RomApi {
   stats(): Promise<RomDatabaseStats>;
   refresh(): Promise<void>;
   onImportProgress(callback: (progress: ImportStatus) => void): () => void;
+}
+
+export type DocumentImportResult = {
+  canceled: boolean;
+  imported: Document[];
+  failed: {
+    file: string;
+    reason: string;
+  }[];
+  totalProcessed: number;
+  totalImported: number;
+};
+
+export interface DocumentImportStatus {
+  currentFile: string;
+}
+
+export interface DocumentApi {
+  list(): Promise<Document[]>;
+  remove(ids: string | string[]): Promise<void>;
+  update(id: string, documentUpdate: Partial<Document>): Promise<void>;
+  scan(): Promise<DocumentImportResult>;
+  onImportProgress(callback: (progress: DocumentImportStatus) => void): () => void;
 }
 
 export interface DeviceMountStatus {

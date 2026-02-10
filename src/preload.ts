@@ -5,6 +5,7 @@ import { contextBridge, ipcRenderer, type IpcRendererEvent } from 'electron';
 import { init } from '@sentry/electron/renderer';
 import type {
   RomApi,
+  DocumentApi,
   DeviceApi,
   SettingsApi,
   DatabaseApi,
@@ -17,8 +18,10 @@ import type {
   SyncOptions,
   SyncStatus,
   ImportStatus,
+  DocumentImportStatus,
 } from '@/types/electron-api';
 import type { Rom } from '@/types/rom';
+import type { Document } from '@/types/document';
 import type { Device } from '@/types/device';
 import type { AppSettings, RetroAchievementsConfig } from '@/types/settings';
 import { SENTRY_DSN } from './sentry.config';
@@ -44,6 +47,22 @@ const romApi: RomApi = {
     // Return cleanup function
     return () => {
       ipcRenderer.removeListener('rom:import-progress', handler);
+    };
+  },
+};
+
+const documentApi: DocumentApi = {
+  list: () => ipcRenderer.invoke('document:list'),
+  remove: (ids: string | string[]) => ipcRenderer.invoke('document:remove', ids),
+  update: (id: string, data: Partial<Document>) => ipcRenderer.invoke('document:update', id, data),
+  scan: () => ipcRenderer.invoke('document:scan'),
+  onImportProgress: (callback: (progress: DocumentImportStatus) => void) => {
+    const handler = (_event: IpcRendererEvent, progress: DocumentImportStatus) =>
+      callback(progress);
+    ipcRenderer.on('document:import-progress', handler);
+
+    return () => {
+      ipcRenderer.removeListener('document:import-progress', handler);
     };
   },
 };
@@ -132,6 +151,7 @@ const updateApi: UpdateApi = {
 
 contextBridge.exposeInMainWorld('darkMode', darkModeApi);
 contextBridge.exposeInMainWorld('rom', romApi);
+contextBridge.exposeInMainWorld('documentApi', documentApi);
 contextBridge.exposeInMainWorld('device', deviceApi);
 contextBridge.exposeInMainWorld('sync', syncApi);
 contextBridge.exposeInMainWorld('util', utilApi);
