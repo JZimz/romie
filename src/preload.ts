@@ -53,6 +53,7 @@ const romApi: RomApi = {
 
 const documentApi: DocumentApi = {
   list: () => ipcRenderer.invoke('document:list'),
+  search: (query: string, limit?: number) => ipcRenderer.invoke('document:search', query, limit),
   remove: (ids: string | string[]) => ipcRenderer.invoke('document:remove', ids),
   update: (id: string, data: Partial<Document>) => ipcRenderer.invoke('document:update', id, data),
   scan: () => ipcRenderer.invoke('document:scan'),

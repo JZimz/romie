@@ -59,6 +59,7 @@ export interface DocumentImportStatus {
 
 export interface DocumentApi {
   list(): Promise<Document[]>;
+  search(query: string, limit?: number): Promise<Document[]>;
   remove(ids: string | string[]): Promise<void>;
   update(id: string, documentUpdate: Partial<Document>): Promise<void>;
   scan(): Promise<DocumentImportResult>;
