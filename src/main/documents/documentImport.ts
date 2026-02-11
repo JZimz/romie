@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import logger from 'electron-log/main';
 import { documents } from '@main/db/queries';
 import { md5sum } from '@main/roms/romUtils';
+import { extractDocumentMetadata } from './documentMetadata';
 
 import type { Document, DocumentFileType } from '@/types/document';
 
@@ -33,6 +34,8 @@ export async function processDocumentFile(filePath: string): Promise<Document | 
   const fileType = extension as DocumentFileType;
   const checksum = await md5sum({ filePath });
 
+  const extracted = await extractDocumentMetadata(filePath, fileType);
+
   const now = new Date();
   const payload: Omit<Document, 'id' | 'createdAt' | 'updatedAt'> = {
     fileType,
@@ -42,13 +45,13 @@ export async function processDocumentFile(filePath: string): Promise<Document | 
     mimeType: MIME_BY_EXTENSION[fileType] ?? null,
     size: stats.size,
     checksum,
-    title: filename.replace(/\.[^/.]+$/, ''),
-    author: null,
-    subject: null,
-    pageCount: null,
-    sheetCount: null,
-    language: null,
-    textContent: null,
+    title: extracted.title || filename.replace(/\.[^/.]+$/, ''),
+    author: extracted.author ?? null,
+    subject: extracted.subject ?? null,
+    pageCount: extracted.pageCount ?? null,
+    sheetCount: extracted.sheetCount ?? null,
+    language: extracted.language ?? null,
+    textContent: extracted.textContent ?? null,
     tags: [],
     favorite: false,
     notes: '',
