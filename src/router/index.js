@@ -7,6 +7,7 @@ import SystemView from '@/views/SystemView.vue';
 import DeviceAddView from '@/views/DeviceAddView.vue';
 import DeviceView from '@/views/DeviceView.vue';
 import RomImportView from '@/views/RomImportView.vue';
+import DocumentsView from '@/views/DocumentsView.vue';
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     path: '/import',
     name: 'import',
     component: RomImportView,
+  },
+  {
+    path: '/documents',
+    name: 'documents',
+    component: DocumentsView,
   },
   {
     path: '/add-device',

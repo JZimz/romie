@@ -216,6 +216,12 @@ const sections = computed((): Section[] => {
           route: { name: 'library' },
         },
         {
+          id: 'documents',
+          label: 'Documents',
+          icon: 'pi pi-file',
+          route: { name: 'documents' },
+        },
+        {
           id: 'favorites',
           label: 'Favorites',
           count: romStore.roms.reduce((acc, rom) => acc + (rom.favorite ? 1 : 0), 0),
