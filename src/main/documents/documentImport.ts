@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import logger from 'electron-log/main';
 import { documents } from '@main/db/queries';
+import { md5sum } from '@main/roms/romUtils';
 import { extractDocumentMetadata } from './documentMetadata';
 
 import type { Document, DocumentFileType } from '@/types/document';
@@ -32,6 +33,7 @@ export async function processDocumentFile(filePath: string): Promise<Document | 
   const stats = await fs.stat(filePath);
   const fileType = extension as DocumentFileType;
   const checksum = `${stats.size}-${Math.floor(stats.mtimeMs)}-${filename}`;
+  const checksum = await md5sum({ filePath });
 
   const extracted = await extractDocumentMetadata(filePath, fileType);
 

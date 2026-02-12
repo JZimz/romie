@@ -48,6 +48,8 @@
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import type { Document, DocumentFileType } from '@/types/document';
+import { onMounted, ref } from 'vue';
+import type { Document } from '@/types/document';
 
 const docs = ref<Document[]>([]);
 const query = ref('');
@@ -75,6 +77,10 @@ async function refreshAll() {
   try {
     const allDocs = await window.documents.list();
     docs.value = applyCategoryFilter(allDocs);
+async function refreshAll() {
+  loading.value = true;
+  try {
+    docs.value = await window.documents.list();
   } finally {
     loading.value = false;
   }
@@ -91,6 +97,11 @@ async function runSearch() {
 
     const found = await window.documents.search(query.value, 200);
     docs.value = applyCategoryFilter(found);
+      docs.value = await window.documents.list();
+      return;
+    }
+
+    docs.value = await window.documents.search(query.value, 200);
   } finally {
     loading.value = false;
   }
