@@ -14,10 +14,15 @@ export interface WindowState {
   isMaximized: boolean;
 }
 
+export type DocumentCategoryKey = 'pdf' | 'docx' | 'xls' | 'xlsx';
+
+export type DocumentCategoryNames = Partial<Record<DocumentCategoryKey, string>>;
+
 export interface AppSettings {
   theme: AppTheme;
   windowState?: WindowState;
   systemOrder?: SystemCode[];
+  documentCategoryNames?: DocumentCategoryNames;
 }
 
 export interface RetroAchievementsConfig {

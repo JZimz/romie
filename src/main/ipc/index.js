@@ -2,6 +2,7 @@ import { shell, ipcMain } from 'electron';
 import { quitAndInstall } from '@main/updater';
 import { registerDarkModeIpc } from './darkMode';
 import { registerRomIpc } from './rom';
+import { registerDocumentIpc } from './document';
 import { registerDeviceIpc } from './device';
 import { registerSyncIpc } from './sync';
 import { registerSettingsIpc } from './settings';
@@ -11,6 +12,7 @@ import { registerDiagnosticsIpc } from './diagnostics';
 export function registerAllIpc() {
   registerDarkModeIpc();
   registerRomIpc();
+  registerDocumentIpc();
   registerDeviceIpc();
   registerSyncIpc();
   registerSettingsIpc();

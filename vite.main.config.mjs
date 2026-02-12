@@ -10,7 +10,6 @@ export default defineConfig({
       '@romie/device-profiles': fileURLToPath(
         new URL('./src/packages/device-profiles/src', import.meta.url)
       ),
-      '@romie/ra-hasher': fileURLToPath(new URL('./src/packages/ra-hasher/src', import.meta.url)),
     },
   },
   build: {

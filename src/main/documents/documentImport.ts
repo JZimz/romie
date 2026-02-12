@@ -1,0 +1,66 @@
+import path from 'path';
+import fs from 'fs/promises';
+import logger from 'electron-log/main';
+import { documents } from '@main/db/queries';
+import { extractDocumentMetadata } from './documentMetadata';
+
+import type { Document, DocumentFileType } from '@/types/document';
+
+const log = logger.scope('document-import');
+
+const MIME_BY_EXTENSION: Record<DocumentFileType, string> = {
+  pdf: 'application/pdf',
+  docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  xls: 'application/vnd.ms-excel',
+  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+};
+
+export async function processDocumentFile(filePath: string): Promise<Document | null> {
+  const filename = path.basename(filePath);
+  const extension = path.extname(filename).toLowerCase().slice(1);
+
+  if (!isSupportedDocumentExtension(extension)) {
+    return null;
+  }
+
+  const existing = documents.findByPath(filePath);
+  if (existing) {
+    log.debug(`Skipping existing document: ${filePath}`);
+    return existing;
+  }
+
+  const stats = await fs.stat(filePath);
+  const fileType = extension as DocumentFileType;
+  const checksum = `${stats.size}-${Math.floor(stats.mtimeMs)}-${filename}`;
+
+  const extracted = await extractDocumentMetadata(filePath, fileType);
+
+  const now = new Date();
+  const payload: Omit<Document, 'id' | 'createdAt' | 'updatedAt'> = {
+    fileType,
+    filePath,
+    filename,
+    extension: `.${extension}`,
+    mimeType: MIME_BY_EXTENSION[fileType] ?? null,
+    size: stats.size,
+    checksum,
+    title: extracted.title || filename.replace(/\.[^/.]+$/, ''),
+    author: extracted.author ?? null,
+    subject: extracted.subject ?? null,
+    pageCount: extracted.pageCount ?? null,
+    sheetCount: extracted.sheetCount ?? null,
+    language: extracted.language ?? null,
+    textContent: extracted.textContent ?? null,
+    tags: [],
+    favorite: false,
+    notes: '',
+    importedAt: now,
+    modifiedAt: new Date(stats.mtimeMs),
+  };
+
+  return documents.insert(payload);
+}
+
+function isSupportedDocumentExtension(extension: string): extension is DocumentFileType {
+  return extension === 'pdf' || extension === 'docx' || extension === 'xls' || extension === 'xlsx';
+}

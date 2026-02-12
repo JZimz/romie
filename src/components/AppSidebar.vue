@@ -9,7 +9,6 @@
         <component
           :is="sectionComponents[section.id] || sectionComponents.default"
           :items="section.items"
-          @reorder="handleSystemReorder"
         />
       </div>
     </div>
@@ -47,34 +46,29 @@
 import { computed, ref, onMounted, onBeforeUnmount, type Component } from 'vue';
 import Button from 'primevue/button';
 import SidebarSection from '@/components/sidebar/SidebarSection.vue';
-import SystemSection from '@/components/sidebar/SystemSection.vue';
-import TagsSection from '@/components/sidebar/TagsSection.vue';
 import { useRomStore, useDeviceStore } from '@/stores';
-import { getSystemDisplayName } from '@/utils/systems';
 
 import type { RouteLocationRaw } from 'vue-router';
-import type { SystemCode } from '@/types/system';
+import type { DocumentFileType } from '@/types/document';
 
 const sectionComponents: Record<string, Component> = {
-  tags: TagsSection,
-  systems: SystemSection,
   default: SidebarSection,
 };
 
-// prettier-ignore
-const SYSTEM_SORT_ORDER: SystemCode[] = [
-  'nes', 'snes', 'gb', 'gbc', 'gba', 'n64', 'nds', 'vb',  // Nintendo
-  'genesis', 'sms', 'gg',                                 // Sega
-  'psp',                                                  // Sony
-  'arcade',                                               // Arcade
-  'atari2600', 'lynx',                                    // Atari
-  'pce',                                                  // NEC
-  'ngp',                                                  // SNK
-];
-
 const romStore = useRomStore();
 const deviceStore = useDeviceStore();
-const customSystemOrder = ref<SystemCode[] | null>(null);
+const documentCategories = ref<Record<DocumentFileType, number>>({
+  pdf: 0,
+  docx: 0,
+  xls: 0,
+  xlsx: 0,
+});
+const categoryNames = ref<Record<DocumentFileType, string>>({
+  pdf: 'PDF',
+  docx: 'Word',
+  xls: 'Excel (XLS)',
+  xlsx: 'Excel (XLSX)',
+});
 
 interface SidebarItem {
   id: string;
@@ -94,12 +88,24 @@ const isDark = ref(false);
 let unsubscribeDarkMode: (() => void) | null = null;
 
 onMounted(async () => {
-  const { systemOrder } = await window.settings.get();
+  const settings = await window.settings.get();
 
   romStore.loadStats();
   romStore.loadRoms();
   deviceStore.loadDevices();
-  customSystemOrder.value = systemOrder || null;
+
+  if (settings.documentCategoryNames) {
+    categoryNames.value = {
+      ...categoryNames.value,
+      ...settings.documentCategoryNames,
+    };
+  }
+
+  const docs = await window.documents.list();
+  const counts: Record<DocumentFileType, number> = { pdf: 0, docx: 0, xls: 0, xlsx: 0 };
+  for (const doc of docs) counts[doc.fileType] += 1;
+  documentCategories.value = counts;
+
   isDark.value = await window.darkMode.value();
   unsubscribeDarkMode = window.darkMode.onChange((value) => {
     isDark.value = value;
@@ -108,30 +114,6 @@ onMounted(async () => {
 
 onBeforeUnmount(() => {
   if (unsubscribeDarkMode) unsubscribeDarkMode();
-});
-
-const tagsSection = computed((): Section => {
-  const { tagStats } = romStore.stats;
-
-  // Build tag list sorted alphabetically
-  const items = Object.values(tagStats)
-    .sort((a, b) => a.tag.localeCompare(b.tag))
-    .map(({ tag, romCount }) => ({
-      id: `tag-${tag}`,
-      label: tag,
-      count: romCount,
-      icon: 'pi pi-tag',
-      route: {
-        name: 'tag-detail',
-        params: { tag },
-      },
-    }));
-
-  return {
-    id: 'tags',
-    title: 'Tags',
-    items,
-  };
 });
 
 const devicesSection = computed((): Section => {
@@ -152,43 +134,25 @@ const devicesSection = computed((): Section => {
   };
 });
 
-const systemsSortOrder = computed(() => {
-  if (customSystemOrder.value) {
-    const customSortOrder = customSystemOrder.value;
-    const defaultSortOrder = SYSTEM_SORT_ORDER.filter((code) => !customSortOrder?.includes(code));
+const categoriesSection = computed((): Section => {
+  const categories: DocumentFileType[] = ['pdf', 'docx', 'xls', 'xlsx'];
 
-    return [...customSortOrder, ...defaultSortOrder];
-  }
-
-  return SYSTEM_SORT_ORDER;
-});
-const systemsSection = computed((): Section => {
-  const availableSystems = Object.entries(romStore.stats.systemCounts) as [SystemCode, number][];
-  const availableCodes = new Set(availableSystems.map(([code]) => code));
-
-  // Filter to only available systems, preserving order
-  const orderedSystems = systemsSortOrder.value
-    .filter((code) => availableCodes.has(code))
-    .map((code) => [code, romStore.stats.systemCounts[code]] as [SystemCode, number]);
-
-  // Append any systems not in either list in case I missed some.
-  for (const [code, count] of availableSystems) {
-    if (!systemsSortOrder.value.includes(code)) {
-      orderedSystems.push([code, count]);
-    }
-  }
-
-  const items: SidebarItem[] = orderedSystems.map(([system, count]) => ({
-    id: `system-${system}`,
-    label: getSystemDisplayName(system),
-    count,
+  const items: SidebarItem[] = categories.map((type) => ({
+    id: `category-${type}`,
+    label: categoryNames.value[type],
+    count: documentCategories.value[type],
+    icon: 'pi pi-file',
     route: {
-      name: 'system-detail',
-      params: { system },
+      name: 'documents',
+      query: { category: type },
     },
   }));
 
-  return { id: 'systems', title: 'Systems', items };
+  return {
+    id: 'categories',
+    title: 'Categories',
+    items,
+  };
 });
 
 const sections = computed((): Section[] => {
@@ -216,6 +180,12 @@ const sections = computed((): Section[] => {
           route: { name: 'library' },
         },
         {
+          id: 'documents',
+          label: 'Documents',
+          icon: 'pi pi-file',
+          route: { name: 'documents' },
+        },
+        {
           id: 'favorites',
           label: 'Favorites',
           count: romStore.roms.reduce((acc, rom) => acc + (rom.favorite ? 1 : 0), 0),
@@ -229,19 +199,12 @@ const sections = computed((): Section[] => {
   if (devicesSection.value.items.length > 0) {
     baseSections.push(devicesSection.value);
   }
-  if (systemsSection.value.items.length > 0) {
-    baseSections.push(systemsSection.value);
+  if (categoriesSection.value.items.length > 0) {
+    baseSections.push(categoriesSection.value);
   }
-  baseSections.push(tagsSection.value);
 
   return baseSections;
 });
-
-function handleSystemReorder(ids: string[]) {
-  const newOrder = ids.map((id) => id.replace('system-', '') as SystemCode);
-  customSystemOrder.value = newOrder;
-  window.settings.update({ systemOrder: newOrder });
-}
 
 async function openDiscordInvite() {
   window.util.openExternalLink('https://discord.gg/ZmhHgEfAsD');
