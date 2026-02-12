@@ -14,6 +14,7 @@
         @input="runSearch"
       />
       <button class="documents-view__refresh" @click="refreshAll">Refresh</button>
+      <button class="documents-view__refresh" @click="renameCategories">Rename categories</button>
     </div>
 
     <div class="documents-view__list">
@@ -44,17 +45,38 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import type { Document, DocumentFileType } from '@/types/document';
 import { onMounted, ref } from 'vue';
 import type { Document } from '@/types/document';
 
 const docs = ref<Document[]>([]);
 const query = ref('');
 const loading = ref(false);
+const route = useRoute();
 
 onMounted(async () => {
   await refreshAll();
 });
 
+watch(
+  () => route.query.category,
+  async () => {
+    await refreshAll();
+  }
+);
+
+function applyCategoryFilter(items: Document[]) {
+  const category = route.query.category as DocumentFileType | undefined;
+  return category ? items.filter((doc) => doc.fileType === category) : items;
+}
+
+async function refreshAll() {
+  loading.value = true;
+  try {
+    const allDocs = await window.documents.list();
+    docs.value = applyCategoryFilter(allDocs);
 async function refreshAll() {
   loading.value = true;
   try {
@@ -68,6 +90,13 @@ async function runSearch() {
   loading.value = true;
   try {
     if (!query.value.trim()) {
+      const allDocs = await window.documents.list();
+      docs.value = applyCategoryFilter(allDocs);
+      return;
+    }
+
+    const found = await window.documents.search(query.value, 200);
+    docs.value = applyCategoryFilter(found);
       docs.value = await window.documents.list();
       return;
     }
@@ -76,6 +105,27 @@ async function runSearch() {
   } finally {
     loading.value = false;
   }
+}
+
+async function renameCategories() {
+  const settings = await window.settings.get();
+  const current = settings.documentCategoryNames || {};
+
+  const pdf = window.prompt('Nume categorie pentru PDF', current.pdf || 'PDF');
+  const docx = window.prompt('Nume categorie pentru DOCX', current.docx || 'Word');
+  const xls = window.prompt('Nume categorie pentru XLS', current.xls || 'Excel (XLS)');
+  const xlsx = window.prompt('Nume categorie pentru XLSX', current.xlsx || 'Excel (XLSX)');
+
+  await window.settings.update({
+    documentCategoryNames: {
+      pdf: pdf || 'PDF',
+      docx: docx || 'Word',
+      xls: xls || 'Excel (XLS)',
+      xlsx: xlsx || 'Excel (XLSX)',
+    },
+  });
+
+  await refreshAll();
 }
 
 function formatBytes(bytes: number): string {

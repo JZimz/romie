@@ -32,6 +32,7 @@ export async function processDocumentFile(filePath: string): Promise<Document | 
 
   const stats = await fs.stat(filePath);
   const fileType = extension as DocumentFileType;
+  const checksum = `${stats.size}-${Math.floor(stats.mtimeMs)}-${filename}`;
   const checksum = await md5sum({ filePath });
 
   const extracted = await extractDocumentMetadata(filePath, fileType);
