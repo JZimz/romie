@@ -58,7 +58,7 @@ onMounted(async () => {
 async function refreshAll() {
   loading.value = true;
   try {
-    docs.value = await window.documentApi.list();
+    docs.value = await window.documents.list();
   } finally {
     loading.value = false;
   }
@@ -68,11 +68,11 @@ async function runSearch() {
   loading.value = true;
   try {
     if (!query.value.trim()) {
-      docs.value = await window.documentApi.list();
+      docs.value = await window.documents.list();
       return;
     }
 
-    docs.value = await window.documentApi.search(query.value, 200);
+    docs.value = await window.documents.search(query.value, 200);
   } finally {
     loading.value = false;
   }

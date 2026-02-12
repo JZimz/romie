@@ -15,7 +15,8 @@ import type {
 declare global {
   interface Window {
     rom: RomApi;
-    documentApi: DocumentApi;
+    documents: DocumentApi;
+    documentApi: DocumentApi; // backwards compatibility alias
     device: DeviceApi;
     sync: SyncApi;
     settings: SettingsApi;

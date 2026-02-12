@@ -152,6 +152,7 @@ const updateApi: UpdateApi = {
 
 contextBridge.exposeInMainWorld('darkMode', darkModeApi);
 contextBridge.exposeInMainWorld('rom', romApi);
+contextBridge.exposeInMainWorld('documents', documentApi);
 contextBridge.exposeInMainWorld('documentApi', documentApi);
 contextBridge.exposeInMainWorld('device', deviceApi);
 contextBridge.exposeInMainWorld('sync', syncApi);
