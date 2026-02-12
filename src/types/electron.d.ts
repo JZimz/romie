@@ -1,5 +1,6 @@
 import type {
   RomApi,
+  DocumentApi,
   DeviceApi,
   SyncApi,
   DarkModeApi,
@@ -14,6 +15,8 @@ import type {
 declare global {
   interface Window {
     rom: RomApi;
+    documents: DocumentApi;
+    documentApi: DocumentApi; // backwards compatibility alias
     device: DeviceApi;
     sync: SyncApi;
     settings: SettingsApi;

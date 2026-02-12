@@ -1,8 +1,7 @@
 import path from 'path';
 import logger from 'electron-log/main';
-import { hash } from '@romie/ra-hasher';
 import { RomDatabase } from '@/types/rom';
-import { crc32sum } from './romUtils';
+import { crc32sum, ramd5sum } from './romUtils';
 import { lookupRomByHash, unloadHashDatabase } from './romLookup';
 import { determineSystemFromRAConsoleId, getConsoleIdForSystem } from '@/utils/systems';
 
@@ -85,7 +84,18 @@ async function migrateToVersion_4_0_0(data: RomDatabase) {
     }
 
     try {
-      const { ramd5 } = await hash({ consoleId, path: rom.filePath });
+      const ramd5 = ramd5sum(consoleId, {
+        sourcePath: rom.filePath,
+        filename: rom.filename,
+        romFilename: rom.romFilename,
+        isArchive: false,
+      });
+
+      if (!ramd5) {
+        rom.ramd5 = null;
+        continue;
+      }
+
       const game = await lookupRomByHash(ramd5);
       if (game) {
         rom.verified = true;
