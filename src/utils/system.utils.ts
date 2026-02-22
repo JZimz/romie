@@ -12,6 +12,7 @@ const SYSTEM_COLORS: Record<SystemCode, string> = {
   gbc: '#6B46C1', // purple - represents color capability
   gba: '#DC2626', // red - warm, distinct from other handhelds
   nds: '#1E40AF', // darker blue - different from N64
+  ndsi: '#95979A', // gray - different from other consoles
   ngp: '#A21CAF', // bright magenta - SNK brand color
   genesis: '#563342', // muted plum - classic Genesis
   sms: '#059669', // emerald green - distinct from Genesis
@@ -21,8 +22,8 @@ const SYSTEM_COLORS: Record<SystemCode, string> = {
   lynx: '#EA580C', // orange - bright Atari color
   atari2600: '#A16207', // golden brown - retro Atari
   pce: '#D97706', // amber orange - TurboGrafx branding
-  msx: '#D97706', //
-  ws: '#D97706', //
+  msx: '#0E0E14', // black - MSX branding
+  ws: '#FF0000', // bright red - WonderSwan branding
   arcade: '#EAB308', // bright yellow - classic arcade
 };
 
