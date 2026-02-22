@@ -53,6 +53,10 @@ export const MUOS_PROFILE: DeviceProfile = {
       folderName: 'nds',
       supportedFormats: ['.nds', '.zip', '.7z'],
     },
+    ndsi: {
+      folderName: 'nds',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z'],
+    },
     ngp: {
       folderName: 'ngp',
       supportedFormats: ['.ngp', '.ngc', '.zip', '.7z'],

@@ -101,7 +101,7 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     fullName: 'Nintendo DSi',
     type: 'handheld',
     extensions: ['.nds', '.dsi', '.srl'],
-    aliases: ['ndsi', 'nintendodsi', 'nintendo dsi'],
+    aliases: ['ndsi', 'dsi', 'nintendodsi', 'nintendo dsi'],
     requiresBios: false,
     manufacturer: 'Nintendo',
     releaseYear: 2009,

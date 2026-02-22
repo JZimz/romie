@@ -38,6 +38,10 @@ export const KNULLI_PROFILE: DeviceProfile = {
       folderName: 'nds',
       supportedFormats: ['.nds', '.zip', '.7z'],
     },
+    ndsi: {
+      folderName: 'nds',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z'],
+    },
     genesis: {
       folderName: 'megadrive',
       supportedFormats: ['.md', '.gen', '.smd', '.zip', '.7z'],

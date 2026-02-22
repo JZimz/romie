@@ -41,6 +41,10 @@ export const ONION_OS_PROFILE: DeviceProfile = {
       folderName: 'NDS',
       supportedFormats: ['.nds', '.zip', '.7z', '.rar'],
     },
+    ndsi: {
+      folderName: 'NDS',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z', '.rar'],
+    },
     genesis: {
       folderName: 'MD',
       supportedFormats: ['.md', '.gen', '.smd', '.zip', '.7z'],

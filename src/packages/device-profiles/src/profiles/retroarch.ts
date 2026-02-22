@@ -45,6 +45,10 @@ export const RETROARCH_PROFILE: DeviceProfile = {
       folderName: 'Nintendo - Nintendo DS',
       supportedFormats: ['.nds', '.zip', '.7z'],
     },
+    ndsi: {
+      folderName: 'Nintendo - Nintendo DSi',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z'],
+    },
     vb: {
       folderName: 'Nintendo - Virtual Boy',
       supportedFormats: ['.vb', '.zip', '.7z'],
