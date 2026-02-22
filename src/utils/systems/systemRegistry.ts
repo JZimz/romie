@@ -36,8 +36,6 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     manufacturer: 'Nintendo',
     releaseYear: 1996,
   },
-
-  // === NINTENDO HANDHELDS ===
   vb: {
     code: 'vb',
     displayName: 'Virtual Boy',
@@ -49,6 +47,8 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     manufacturer: 'Nintendo',
     releaseYear: 1995,
   },
+
+  // === NINTENDO HANDHELDS ===
   gb: {
     code: 'gb',
     displayName: 'Game Boy',
@@ -94,13 +94,13 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     manufacturer: 'Nintendo',
     releaseYear: 2004,
   },
-  
+
   ndsi: {
     code: 'ndsi',
     displayName: 'Nintendo DSi',
     fullName: 'Nintendo DSi',
     type: 'handheld',
-    extensions: ['.nds', '.srl'],
+    extensions: ['.nds', '.dsi', '.srl'],
     aliases: ['ndsi', 'nintendodsi', 'nintendo dsi'],
     requiresBios: false,
     manufacturer: 'Nintendo',
@@ -216,13 +216,40 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     releaseYear: 1987,
   },
 
+  // === MICROSOFT ===
+  msx: {
+    code: 'msx',
+    displayName: 'MSX',
+    fullName: 'MSX / MSX2',
+    type: 'console',
+    extensions: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3', '.m3u'],
+    aliases: ['msx', 'msx1', 'msx2'],
+    requiresBios: true,
+    biosFiles: ['msx.rom', 'msx2.rom'],
+    manufacturer: 'Microsoft',
+    releaseYear: 1983,
+  },
+
+  // === BANDAI ===
+  ws: {
+    code: 'ws',
+    displayName: 'WonderSwan',
+    fullName: 'WonderSwan / WonderSwan Color',
+    type: 'handheld',
+    extensions: ['.ws', '.wsc'],
+    aliases: ['wonderswan', 'wonderswancolor', 'wonderswan color', 'ws'],
+    requiresBios: false,
+    manufacturer: 'Bandai',
+    releaseYear: 1999,
+  },
+
   // === ARCADE ===
   arcade: {
     code: 'arcade',
     displayName: 'Arcade',
     fullName: 'Arcade (MAME)',
     type: 'arcade',
-    extensions: ['.zip'],
+    extensions: ['.bin', '.zip'],
     aliases: [
       'arcade',
       'mame',

@@ -26,7 +26,9 @@ export const RA_SYSTEMS: RASystemMapping[] = [
   { consoleId: 25, code: 'atari2600' }, // ATARI_2600
   { consoleId: 27, code: 'arcade' }, // ARCADE
   { consoleId: 28, code: 'vb' }, // VIRTUAL_BOY
+  { consoleId: 29, code: 'msx' }, // MSX
   { consoleId: 41, code: 'psp' }, // PSP
+  { consoleId: 53, code: 'ws' }, // WONDERSWAN
   { consoleId: 78, code: 'ndsi' }, // NINTENDO_DSi
 ];
 
