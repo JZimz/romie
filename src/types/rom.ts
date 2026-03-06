@@ -32,6 +32,8 @@ export interface RomFile {
   romPath?: string;
   /** Optional buffer containing ROM data (used for cartridge ROMs from archives to avoid disk I/O) */
   romBuffer?: Buffer;
+  /** Absolute paths to associated data files (e.g., .bin files referenced by a .cue or .gdi manifest) */
+  relatedFiles?: string[];
 }
 
 export interface Rom {
@@ -59,6 +61,8 @@ export interface Rom {
   tags?: string[] | null;
   favorite?: boolean | null;
   notes?: string | null;
+  /** Absolute paths to associated data files that must be copied alongside the primary file (e.g., .bin files for PSX .cue) */
+  relatedFiles?: string[];
   /** Whether the file path exists on disk (computed at runtime, not stored) */
   filePathExists?: boolean;
   /** Number of achievements available in RetroAchievements (computed at runtime, not stored) */

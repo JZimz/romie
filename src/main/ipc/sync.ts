@@ -299,6 +299,34 @@ async function copyRoms(
       continue;
     }
 
+    // Copy related files (e.g., .bin files for a .cue or .gdi manifest)
+    if (rom.relatedFiles?.length) {
+      let relatedCopyFailed = false;
+      for (const relatedFile of rom.relatedFiles) {
+        const relatedFilename = path.basename(relatedFile);
+        const relatedDestPath = path.join(destinationDir, relatedFilename);
+        try {
+          log.debug(`Copying related file: ${relatedFile} -> ${relatedDestPath}`);
+          await fs.copyFile(relatedFile, relatedDestPath);
+          log.debug(`Related file copy completed: ${relatedFilename}`);
+        } catch (error) {
+          log.error(`Failed to copy related file ${relatedFilename}: ${(error as Error).message}`);
+          syncStatus.addFailed({
+            rom,
+            error: new SyncError(
+              `Failed to copy related file ${relatedFilename}: ${(error as Error).message}`
+            ),
+          });
+          relatedCopyFailed = true;
+          break;
+        }
+      }
+      if (relatedCopyFailed) {
+        syncStatus.incrementProcessed().notify();
+        continue;
+      }
+    }
+
     // Verify checksum if requested
     if (options.verifyFiles) {
       try {
