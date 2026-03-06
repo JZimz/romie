@@ -74,6 +74,10 @@ export const KNULLI_PROFILE: DeviceProfile = {
       folderName: 'pcengine',
       supportedFormats: ['.pce', '.zip', '.7z'],
     },
+    msx: {
+      folderName: 'msx',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3u', '.zip', '.7z'],
+    },
     arcade: {
       folderName: 'fbneo',
       supportedFormats: ['.zip', '.7z'],

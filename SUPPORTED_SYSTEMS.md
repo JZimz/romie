@@ -27,9 +27,14 @@ ROMie supports the following gaming systems with automatic ROM detection and org
 - **Atari 2600** (Atari 2600, 1977) - `.a26`
 - **Lynx** (Atari Lynx, 1989) - `.lnx`
 
+### MSX
+
+- **MSX / MSX2** (Various, 1983) - `.dsk`, `.mx1`, `.mx2`, `.rom`, `.cas`, `.m3u`
+
 ### Other Systems
 
 - **Neo Geo Pocket** (SNK Neo Geo Pocket, 1998) - `.ngp`, `.ngc`
+- **PC Engine / TurboGrafx-16** (NEC, 1987) - `.pce`
 - **Arcade** (MAME, 1971+) - `.zip`
 
 ## Archive Files (ZIP/7Z)

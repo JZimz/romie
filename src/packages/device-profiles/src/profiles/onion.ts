@@ -77,6 +77,10 @@ export const ONION_OS_PROFILE: DeviceProfile = {
       folderName: 'PCE',
       supportedFormats: ['.pce', '.zip', '.7z'],
     },
+    msx: {
+      folderName: 'MSX',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3u', '.zip', '.7z'],
+    },
     arcade: {
       folderName: 'ARCADE',
       supportedFormats: ['.zip', '.7z'],

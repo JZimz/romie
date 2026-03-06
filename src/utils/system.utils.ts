@@ -21,6 +21,7 @@ const SYSTEM_COLORS: Record<SystemCode, string> = {
   lynx: '#EA580C', // orange - bright Atari color
   atari2600: '#A16207', // golden brown - retro Atari
   pce: '#D97706', // amber orange - TurboGrafx branding
+  msx: '#CC0000', // red - MSX brand color
   arcade: '#EAB308', // bright yellow - classic arcade
 };
 

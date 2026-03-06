@@ -85,5 +85,9 @@ export const MUOS_PROFILE: DeviceProfile = {
       folderName: 'vb',
       supportedFormats: ['.vb', '.zip', '.7z'],
     },
+    msx: {
+      folderName: 'msx',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3u', '.zip', '.7z'],
+    },
   },
 };

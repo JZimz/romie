@@ -204,6 +204,19 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     releaseYear: 1987,
   },
 
+  // === MSX ===
+  msx: {
+    code: 'msx',
+    displayName: 'MSX',
+    fullName: 'MSX / MSX2',
+    type: 'console',
+    extensions: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3u'],
+    aliases: ['msx', 'msx1', 'msx2', 'msx-dos'],
+    requiresBios: false,
+    manufacturer: 'Various (Microsoft licensed)',
+    releaseYear: 1983,
+  },
+
   // === ARCADE ===
   arcade: {
     code: 'arcade',

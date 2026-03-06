@@ -81,6 +81,10 @@ export const RETROARCH_PROFILE: DeviceProfile = {
       folderName: 'NEC - PC Engine - TurboGrafx-16',
       supportedFormats: ['.pce', '.zip', '.7z'],
     },
+    msx: {
+      folderName: 'Microsoft - MSX',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3u', '.zip', '.7z'],
+    },
     arcade: {
       folderName: 'MAME',
       supportedFormats: ['.zip', '.7z'],
