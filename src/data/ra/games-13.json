@@ -1,0 +1,1803 @@
+[
+  {
+    "title": "~Homebrew~ ~Demo~ Zaku Puzzle",
+    "id": 37046,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8a6dfb3c53cd0f5e8649a5f047f85a0b"
+    ]
+  },
+  {
+    "title": "~Homebrew~ ~Hack~ Crystal Mines II: Buried Treasure",
+    "id": 37037,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b7627b8d70df9cb3e75da8e1a035c71a"
+    ]
+  },
+  {
+    "title": "~Homebrew~ ~Prototype~ Asteroids Chasers",
+    "id": 37035,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2067c87c8065f60a10b5c30392cd4417"
+    ]
+  },
+  {
+    "title": "~Homebrew~ 2048",
+    "id": 37767,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5515e0491719ff09553b6d7d930569bc"
+    ]
+  },
+  {
+    "title": "~Homebrew~ 8bit-Slicks",
+    "id": 19841,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "38c8b97abb1bace158e1ba4e0c117031"
+    ]
+  },
+  {
+    "title": "~Homebrew~ A Bug's Trip Redux",
+    "id": 30039,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8e94fcf9491ef7a4669aab865c5c7a32"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Assembloids",
+    "id": 34109,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "bc8aff692a6fb4f238d4198e8d7fec45",
+      "5bbd3aa2993de2adfd30093338a76d08"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Atari Tabletops Collection #1",
+    "id": 25986,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092187.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3b39c02712fbe02d47431c2f42eb1b15"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Biniax",
+    "id": 37036,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d82f074538f69a0bd926e01e8babef8a"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Blasting Robots",
+    "id": 37093,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f2be414bf03ad440a20880f74239b633"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Championship Rally",
+    "id": 30040,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "55c771c76dee5b118b9f013696f5084f"
+    ]
+  },
+  {
+    "title": "~Homebrew~ CHIP-8 Emulator",
+    "id": 25950,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/095698.png",
+    "numAchievements": 21,
+    "numLeaderboards": 7,
+    "points": 102,
+    "dateModified": "2024-05-03 12:39:35",
+    "forumTopicId": 26280,
+    "hashes": [
+      "3d4c70cba51a5c1f0e2fc3c1acb4be50"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Flappy Bird: Testing",
+    "id": 19508,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/057395.png",
+    "numAchievements": 9,
+    "numLeaderboards": 1,
+    "points": 70,
+    "dateModified": "2022-11-09 01:30:58",
+    "forumTopicId": 16386,
+    "hashes": [
+      "0173ec92e8e8a0359901f310c5f12bb1",
+      "8f05d2ffdadffdbce7a1040a9aa0f8e7"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Game & Lynx: Critter Championship",
+    "id": 19715,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092191.png",
+    "numAchievements": 15,
+    "numLeaderboards": 5,
+    "points": 50,
+    "dateModified": "2024-04-05 14:55:58",
+    "forumTopicId": 26046,
+    "hashes": [
+      "757852d987db4cc79a1a81eadc9dd821"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Grogger",
+    "id": 37038,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "e1fd2daee89cbbbffcb6f81af62afd63",
+      "f5ad5b95450c0dac977909b89367c255"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Loopz",
+    "id": 37039,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3a341972f8b86f15052833857b7b3879"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Lynx Othello",
+    "id": 37043,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "cf88183c03bc063d887aa65001cc49ca"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Lynx Quest",
+    "id": 36995,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "956931acc145c87a4a18f2cc2040ead7"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Lynxopoly",
+    "id": 37040,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5e7a37ad0d3438c5d628dfb8813e4d55"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Othello",
+    "id": 37041,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "67a14ce0d5fc5fbca4e0a3662644e5ee"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Raid on TriCity: Second Wave",
+    "id": 37042,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d89081e11dcbda2e5488144fff984217"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Running Knight",
+    "id": 29053,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/093680.png",
+    "numAchievements": 7,
+    "numLeaderboards": 1,
+    "points": 31,
+    "dateModified": "2024-04-06 22:44:53",
+    "forumTopicId": 25954,
+    "hashes": [
+      "24077ab7bf46300ff02aa4ca78a81c2c"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Scooternia",
+    "id": 24300,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/072754.png",
+    "numAchievements": 7,
+    "numLeaderboards": 1,
+    "points": 32,
+    "dateModified": "2023-05-09 18:40:26",
+    "forumTopicId": 21572,
+    "hashes": [
+      "459aaf1e66384ea3534e3ce2149a1718"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Sky Raider Redux",
+    "id": 30041,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4d091a303e7c3cbc2f7810200a238cdb"
+    ]
+  },
+  {
+    "title": "~Homebrew~ T-Tris",
+    "id": 24898,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/080420.png",
+    "numAchievements": 11,
+    "numLeaderboards": 1,
+    "points": 83,
+    "dateModified": "2023-06-19 04:04:39",
+    "forumTopicId": 22107,
+    "hashes": [
+      "1b6a8a0b7f80332e9c7dfecaded8683e"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Timeloop",
+    "id": 27007,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/096854.png",
+    "numAchievements": 6,
+    "numLeaderboards": 2,
+    "points": 21,
+    "dateModified": "2024-05-16 12:08:18",
+    "forumTopicId": 26508,
+    "hashes": [
+      "749f3e82357bab232731f0e56f97569c"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Unnamed",
+    "id": 30042,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3303bf3734bb8e32a7fb7d144be07765"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Vikings Saga: Protect the Love",
+    "id": 30043,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c2a1fd87ce91f8edb5bd19c93ac8fbb4"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Vikings Saga: Save the Love",
+    "id": 30044,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c5cab263eb6860582e4716f958317abd"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Wyvern Tales",
+    "id": 30045,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d7588e5cd114ea18898d7be34426d7cb"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Xump 2: Back to Space",
+    "id": 34049,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "18b046f833f7cbb9d3db9c9944075404"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Xump: The Final Run",
+    "id": 34048,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "361c4b2a0d5156f2b349b75559cdf36d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Yastuna Volume 1: The Alchemy of Cubes",
+    "id": 37044,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c40f43ffba5c37d6731cf4fa4c78702a"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Yastuna Volume 2: The Space Incident",
+    "id": 37045,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "df4881703738614ee465559ad18e6e8e"
+    ]
+  },
+  {
+    "title": "~Homebrew~ YNXA",
+    "id": 30046,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2de80f7d6212d5df86423b6381ecfe6f"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Z.A.P.",
+    "id": 19714,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092199.png",
+    "numAchievements": 7,
+    "numLeaderboards": 2,
+    "points": 31,
+    "dateModified": "2024-04-25 20:51:33",
+    "forumTopicId": 26105,
+    "hashes": [
+      "d5079e2e6e1ad9c2b730e47c240a4da0"
+    ]
+  },
+  {
+    "title": "~Prototype~ Alien vs. Predator",
+    "id": 10566,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092215.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8ce6c739d30d6c5ba197fcdd73d5ead5"
+    ]
+  },
+  {
+    "title": "~Prototype~ Centipede",
+    "id": 34517,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "13cb869b95c67c532efdd0e924e37299"
+    ]
+  },
+  {
+    "title": "~Prototype~ Daemonsgate",
+    "id": 11485,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092212.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 19158,
+    "hashes": [
+      "f8b4debd68eb0d7c578242fa74e1c593"
+    ]
+  },
+  {
+    "title": "~Prototype~ Eye of the Beholder",
+    "id": 9984,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092204.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2017-05-21 22:57:48",
+    "forumTopicId": null,
+    "hashes": [
+      "858480bb97d86a52b1ca17dc390a8bdc"
+    ]
+  },
+  {
+    "title": "~Prototype~ Marlboro Go!",
+    "id": 11492,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/115912.png",
+    "numAchievements": 11,
+    "numLeaderboards": 2,
+    "points": 22,
+    "dateModified": "2023-06-10 07:52:15",
+    "forumTopicId": 8856,
+    "hashes": [
+      "194a3eeb876d2b74cc480f4d337d79b3"
+    ]
+  },
+  {
+    "title": "~Test Kit~ Lynx Test Cart V0.02",
+    "id": 11122,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092203.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2019-09-28 04:22:31",
+    "forumTopicId": null,
+    "hashes": [
+      "5d8fdfb15441cdfb8a1c66c243c486da"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Alien",
+    "id": 37766,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "fe5f8038a448b0d8aa82333e49e87f9c"
+    ]
+  },
+  {
+    "title": "~Z~ No Hash 37034",
+    "id": 37034,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": []
+  },
+  {
+    "title": "A.P.B.: All Points Bulletin",
+    "id": 10444,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2017-09-17 17:04:47",
+    "forumTopicId": null,
+    "hashes": [
+      "b425941149874c6371c40e85cc5b6241"
+    ]
+  },
+  {
+    "title": "Awesome Golf",
+    "id": 10858,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/080083.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "49d6eeb3c983246ff4d7034497f7095c"
+    ]
+  },
+  {
+    "title": "Baseball Heroes",
+    "id": 11472,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/055779.png",
+    "numAchievements": 12,
+    "numLeaderboards": 0,
+    "points": 185,
+    "dateModified": "2024-04-02 09:53:45",
+    "forumTopicId": 16063,
+    "hashes": [
+      "8c9a72ddbb5559293862684ec67bfa92"
+    ]
+  },
+  {
+    "title": "Basketbrawl",
+    "id": 11479,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071056.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f19b95e4835c5fbc44b180dbd3f024fc"
+    ]
+  },
+  {
+    "title": "Batman Returns",
+    "id": 10597,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/085840.png",
+    "numAchievements": 9,
+    "numLeaderboards": 0,
+    "points": 77,
+    "dateModified": "2023-10-03 01:13:29",
+    "forumTopicId": 28571,
+    "hashes": [
+      "6e9bbff3c7b66d3ec0411ffbe0e41dfd"
+    ]
+  },
+  {
+    "title": "BattleWheels",
+    "id": 11491,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071459.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "fddecd756abe5eaf613ca1db31d51df7"
+    ]
+  },
+  {
+    "title": "Battlezone 2000",
+    "id": 13039,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/074271.png",
+    "numAchievements": 10,
+    "numLeaderboards": 1,
+    "points": 38,
+    "dateModified": "2024-01-21 19:01:01",
+    "forumTopicId": 21842,
+    "hashes": [
+      "d405ea54b77390b06222f9dac7cea827"
+    ]
+  },
+  {
+    "title": "Bill & Ted's Excellent Adventure",
+    "id": 11490,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/108236.png",
+    "numAchievements": 22,
+    "numLeaderboards": 0,
+    "points": 169,
+    "dateModified": "2025-02-26 19:11:33",
+    "forumTopicId": 23650,
+    "hashes": [
+      "87dff4f4d5e1e4a7132d19f94d4e9b3a"
+    ]
+  },
+  {
+    "title": "Block Out",
+    "id": 11235,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092011.png",
+    "numAchievements": 11,
+    "numLeaderboards": 4,
+    "points": 114,
+    "dateModified": "2025-10-11 11:12:41",
+    "forumTopicId": 32742,
+    "hashes": [
+      "c81abf2919effd525b83c2103b75e6ca"
+    ]
+  },
+  {
+    "title": "Blue Lightning",
+    "id": 11484,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071568.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f7b4775771bc25d9053af5c69a8c8b2a"
+    ]
+  },
+  {
+    "title": "Bubble Trouble",
+    "id": 11480,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092018.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "90841f8fed54862f8a8750ddf212eb84"
+    ]
+  },
+  {
+    "title": "California Games",
+    "id": 11482,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/088546.png",
+    "numAchievements": 14,
+    "numLeaderboards": 5,
+    "points": 96,
+    "dateModified": "2024-02-01 03:11:58",
+    "forumTopicId": 25156,
+    "hashes": [
+      "73e02bb77dcf857a6578f0e24b4ecb9e"
+    ]
+  },
+  {
+    "title": "Checkered Flag",
+    "id": 11481,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092020.png",
+    "numAchievements": 38,
+    "numLeaderboards": 18,
+    "points": 300,
+    "dateModified": "2024-04-11 15:55:48",
+    "forumTopicId": 26103,
+    "hashes": [
+      "85b33c5e5985ab041ecc44555a8cfb42"
+    ]
+  },
+  {
+    "title": "Chip's Challenge",
+    "id": 10596,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/016048.png",
+    "numAchievements": 18,
+    "numLeaderboards": 0,
+    "points": 300,
+    "dateModified": "2024-12-04 02:53:39",
+    "forumTopicId": 5800,
+    "hashes": [
+      "24611d1445ebd34ab79fb0ae996ff4e4"
+    ]
+  },
+  {
+    "title": "Crystal Mines II",
+    "id": 10669,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/058605.png",
+    "numAchievements": 181,
+    "numLeaderboards": 0,
+    "points": 815,
+    "dateModified": "2022-06-02 04:38:37",
+    "forumTopicId": 13608,
+    "hashes": [
+      "b4acbd3c544a0d92cc8ad1380bf8a810"
+    ]
+  },
+  {
+    "title": "Desert Strike: Return to the Gulf",
+    "id": 10190,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092028.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f764b88c44afa8b5ebefb8eb2e4d7b97"
+    ]
+  },
+  {
+    "title": "Dinolympics",
+    "id": 13863,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092024.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9496be61fd0675553f05345c5fc2d15c"
+    ]
+  },
+  {
+    "title": "Dirty Larry: Renegade Cop",
+    "id": 11038,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/080962.png",
+    "numAchievements": 13,
+    "numLeaderboards": 1,
+    "points": 114,
+    "dateModified": "2023-08-16 22:21:54",
+    "forumTopicId": 5787,
+    "hashes": [
+      "8cd77bec912c9b4dcebd8a82dcf91a0b"
+    ]
+  },
+  {
+    "title": "Double Dragon",
+    "id": 10117,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092032.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7913,
+    "hashes": [
+      "0e91b7ed60bb47d569ba24df671ad3a3"
+    ]
+  },
+  {
+    "title": "Dracula: The Undead",
+    "id": 10862,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/082691.png",
+    "numAchievements": 10,
+    "numLeaderboards": 2,
+    "points": 33,
+    "dateModified": "2023-09-21 05:53:03",
+    "forumTopicId": 23440,
+    "hashes": [
+      "3ff35996887c2ff95e275085efbbbbed"
+    ]
+  },
+  {
+    "title": "Electrocop",
+    "id": 11020,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/023352.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c49ca94a908db219224c6d5baa206ab6"
+    ]
+  },
+  {
+    "title": "European Soccer Challenge",
+    "id": 11474,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092035.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "32e726ab7941eb1e833dcc4cf348a060"
+    ]
+  },
+  {
+    "title": "Fat Bobby",
+    "id": 11483,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071571.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "69abd21c83390dae54630919c3c150d0"
+    ]
+  },
+  {
+    "title": "Gates of Zendocon",
+    "id": 11494,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/118440.png",
+    "numAchievements": 19,
+    "numLeaderboards": 2,
+    "points": 224,
+    "dateModified": "2025-10-13 01:38:22",
+    "forumTopicId": 32293,
+    "hashes": [
+      "d5be9118bcb14243468001b08c4aa21a"
+    ]
+  },
+  {
+    "title": "Gauntlet: The Third Encounter",
+    "id": 11512,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/061318.png",
+    "numAchievements": 32,
+    "numLeaderboards": 0,
+    "points": 360,
+    "dateModified": "2024-04-13 10:04:25",
+    "forumTopicId": 16064,
+    "hashes": [
+      "0b572c0dfb938849eeec39b2c9583547"
+    ]
+  },
+  {
+    "title": "Gordo 106",
+    "id": 11493,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071570.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "eb9b5b2b6160e5f3015bc2a669d886b6"
+    ]
+  },
+  {
+    "title": "Hard Drivin'",
+    "id": 19507,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092050.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c265f0de8c5bd77db8f9cf5a1f7ab68f"
+    ]
+  },
+  {
+    "title": "Hockey",
+    "id": 11476,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092054.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "a08b8070ad613bdb2637162b3bf39574"
+    ]
+  },
+  {
+    "title": "Hydra",
+    "id": 13037,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/079094.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "76a48869c14fbcf85588001a1327253d"
+    ]
+  },
+  {
+    "title": "Ishidō: The Way of Stones",
+    "id": 10201,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/122632.png",
+    "numAchievements": 7,
+    "numLeaderboards": 3,
+    "points": 53,
+    "dateModified": "2026-01-06 02:34:06",
+    "forumTopicId": 26075,
+    "hashes": [
+      "addc6c0ae7b535839815b8e7f7fd0f11"
+    ]
+  },
+  {
+    "title": "Jimmy Connors' Tennis",
+    "id": 11486,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092167.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "087e6ed018ad0573bd7ce3a91d34f2c9"
+    ]
+  },
+  {
+    "title": "Joust",
+    "id": 10670,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/113380.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "440462507cf5cffaa8d3d3a66f01ac6a"
+    ]
+  },
+  {
+    "title": "Klax",
+    "id": 13206,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092065.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f96a0ddcc72c971226e8fdfd95607c88"
+    ]
+  },
+  {
+    "title": "Krazy Ace Miniature Golf",
+    "id": 11487,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/044535.png",
+    "numAchievements": 9,
+    "numLeaderboards": 8,
+    "points": 80,
+    "dateModified": "2021-06-24 21:50:25",
+    "forumTopicId": 13083,
+    "hashes": [
+      "7e82db12a5749ab983e2f3c8bf4c0f6e"
+    ]
+  },
+  {
+    "title": "Kung Food",
+    "id": 11478,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/044744.png",
+    "numAchievements": 11,
+    "numLeaderboards": 0,
+    "points": 123,
+    "dateModified": "2023-01-22 02:31:16",
+    "forumTopicId": 13135,
+    "hashes": [
+      "e5e42190918847b8c6056e78316ee91d"
+    ]
+  },
+  {
+    "title": "Lemmings",
+    "id": 10567,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092071.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3cae85572df3b43f0220326bf4bb3c8b"
+    ]
+  },
+  {
+    "title": "Lexis",
+    "id": 10242,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092076.png",
+    "numAchievements": 18,
+    "numLeaderboards": 0,
+    "points": 200,
+    "dateModified": "2025-06-10 18:57:11",
+    "forumTopicId": 30378,
+    "hashes": [
+      "7ee41edaef283459c9df93366c5da267"
+    ]
+  },
+  {
+    "title": "Lynx Casino",
+    "id": 19754,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/080877.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2023-08-29 19:15:44",
+    "forumTopicId": 22927,
+    "hashes": [
+      "05d28ab0e92b19147e7f5ea88c6efb6d"
+    ]
+  },
+  {
+    "title": "Malibu Bikini Volleyball",
+    "id": 19506,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071057.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "280344c8b073895ecce286d1b9d87d8b"
+    ]
+  },
+  {
+    "title": "Ms. Pac-Man",
+    "id": 10598,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/043751.png",
+    "numAchievements": 35,
+    "numLeaderboards": 2,
+    "points": 357,
+    "dateModified": "2023-08-18 21:16:23",
+    "forumTopicId": 5353,
+    "hashes": [
+      "192b6b764a3a1c7831e0a785fa4b5453"
+    ]
+  },
+  {
+    "title": "NFL Football",
+    "id": 26380,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092103.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "276b9be28571189912f05d321fcb04ef"
+    ]
+  },
+  {
+    "title": "Ninja Gaiden",
+    "id": 10637,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/102827.png",
+    "numAchievements": 17,
+    "numLeaderboards": 2,
+    "points": 170,
+    "dateModified": "2024-10-21 07:38:35",
+    "forumTopicId": 28313,
+    "hashes": [
+      "7ec4063eb6c7c74600d6a16fb3a3bdbd"
+    ]
+  },
+  {
+    "title": "Ninja Gaiden III: The Ancient Ship of Doom",
+    "id": 12665,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/099523.png",
+    "numAchievements": 37,
+    "numLeaderboards": 1,
+    "points": 310,
+    "dateModified": "2023-08-12 22:40:17",
+    "forumTopicId": 22872,
+    "hashes": [
+      "c9ed2a3bdefd6d5fdf67302d87b5cfb2"
+    ]
+  },
+  {
+    "title": "Pac-Land",
+    "id": 10600,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092111.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0a14754b351b4f11a1359e252b8eb992"
+    ]
+  },
+  {
+    "title": "Paperboy",
+    "id": 10653,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/078073.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2a59d2ca6d6f07bc2791bf349e2778ee"
+    ]
+  },
+  {
+    "title": "Pinball Jam",
+    "id": 11475,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071337.png",
+    "numAchievements": 28,
+    "numLeaderboards": 4,
+    "points": 315,
+    "dateModified": "2023-05-02 14:38:34",
+    "forumTopicId": 21049,
+    "hashes": [
+      "29a248fbc87f477b49587581e29c1dc7"
+    ]
+  },
+  {
+    "title": "Pit Fighter",
+    "id": 11489,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/055774.png",
+    "numAchievements": 23,
+    "numLeaderboards": 0,
+    "points": 129,
+    "dateModified": "2022-04-14 15:28:18",
+    "forumTopicId": 16061,
+    "hashes": [
+      "5565889a9a8817f99ec6dda322a70877"
+    ]
+  },
+  {
+    "title": "Power Factor",
+    "id": 26381,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092116.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b29414b8c81cc9ef28ef2f7a09d6d876"
+    ]
+  },
+  {
+    "title": "Qix",
+    "id": 13036,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092118.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "12e1eb0900402ef6de8b72dda5d22f47"
+    ]
+  },
+  {
+    "title": "Raiden",
+    "id": 10558,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092122.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "abfd6ae93c31e8f59aa934ad922cb4dd"
+    ]
+  },
+  {
+    "title": "Rampage",
+    "id": 10243,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092126.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "e0cb426257761c3688a866332ed48340"
+    ]
+  },
+  {
+    "title": "Rampart",
+    "id": 25884,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/091347.png",
+    "numAchievements": 16,
+    "numLeaderboards": 2,
+    "points": 230,
+    "dateModified": "2025-01-24 22:52:44",
+    "forumTopicId": 29482,
+    "hashes": [
+      "d8045ed542d5e58c779c884e0930e16c"
+    ]
+  },
+  {
+    "title": "RoadBlasters",
+    "id": 10628,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071462.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "39617ebb81f3c1df27354c18571bd6c3"
+    ]
+  },
+  {
+    "title": "Robo-Squash",
+    "id": 10853,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092131.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f9faa45e3c35e505249c3f9df801737b"
+    ]
+  },
+  {
+    "title": "Robotron 2084",
+    "id": 12858,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071272.png",
+    "numAchievements": 24,
+    "numLeaderboards": 2,
+    "points": 317,
+    "dateModified": "2026-01-17 09:20:21",
+    "forumTopicId": 7074,
+    "hashes": [
+      "60c1dfbf112bbb2a49cf16eddb191842"
+    ]
+  },
+  {
+    "title": "Rygar: Legendary Warrior",
+    "id": 11473,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/037299.png",
+    "numAchievements": 30,
+    "numLeaderboards": 1,
+    "points": 405,
+    "dateModified": "2020-09-12 16:30:41",
+    "forumTopicId": 11479,
+    "hashes": [
+      "ff6fff314446ab70dfecb21e2de4a2f6"
+    ]
+  },
+  {
+    "title": "S.T.U.N. Runner",
+    "id": 13038,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071572.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "490f8063bbb299070c4aceab64195088"
+    ]
+  },
+  {
+    "title": "Scrapyard Dog",
+    "id": 11469,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/015320.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 11546,
+    "hashes": [
+      "0cf228912d2f8eeb29aa215abf416f6d"
+    ]
+  },
+  {
+    "title": "Shadow of the Beast",
+    "id": 10857,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/068018.png",
+    "numAchievements": 37,
+    "numLeaderboards": 2,
+    "points": 470,
+    "dateModified": "2024-04-26 17:33:12",
+    "forumTopicId": 19820,
+    "hashes": [
+      "f92d57198ef2da30dba63bdd7c15ff83"
+    ]
+  },
+  {
+    "title": "Shanghai",
+    "id": 13040,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/043589.png",
+    "numAchievements": 17,
+    "numLeaderboards": 0,
+    "points": 155,
+    "dateModified": "2025-02-19 03:57:55",
+    "forumTopicId": 15071,
+    "hashes": [
+      "46634eb87e6380d4d10f7b80d177c1ff"
+    ]
+  },
+  {
+    "title": "Steel Talons",
+    "id": 10626,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071569.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8828c0042a1a397de67c4e49042161ff"
+    ]
+  },
+  {
+    "title": "Super Asteroids and Missile Command",
+    "id": 11234,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092143.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "67dd69e6ffaf61bc85243d272d9ee9d9"
+    ]
+  },
+  {
+    "title": "Super Off Road",
+    "id": 13114,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071573.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "6cd23cb37c4c4c34ef4e197468462f3f"
+    ]
+  },
+  {
+    "title": "Super Skweek",
+    "id": 12642,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092144.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "a19802bd3a7e390daf7e2cbe5a81ed38"
+    ]
+  },
+  {
+    "title": "Switchblade II",
+    "id": 10997,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/015172.png",
+    "numAchievements": 29,
+    "numLeaderboards": 0,
+    "points": 385,
+    "dateModified": "2024-05-20 10:22:54",
+    "forumTopicId": 5549,
+    "hashes": [
+      "4971dd8b47d3475dc8d31b5325c14459"
+    ]
+  },
+  {
+    "title": "The Fidelity Ultimate Chess Challenge",
+    "id": 19753,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092042.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 26070,
+    "hashes": [
+      "19eb0ca77284b5d91a63eb02f6962930"
+    ]
+  },
+  {
+    "title": "Todd's Adventures in Slime World",
+    "id": 11019,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092149.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4581ac0418679567dce041c88cc97719"
+    ]
+  },
+  {
+    "title": "Toki",
+    "id": 11161,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/059728.png",
+    "numAchievements": 24,
+    "numLeaderboards": 1,
+    "points": 250,
+    "dateModified": "2023-06-27 02:26:26",
+    "forumTopicId": 17097,
+    "hashes": [
+      "ec46311f47276e20cc43228c96d119a1"
+    ]
+  },
+  {
+    "title": "Tournament Cyberball",
+    "id": 26382,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092153.png",
+    "numAchievements": 12,
+    "numLeaderboards": 0,
+    "points": 95,
+    "dateModified": "2025-04-07 10:44:18",
+    "forumTopicId": 30432,
+    "hashes": [
+      "391dfaba9ab8b9b60e9d8ca2a73f5711"
+    ]
+  },
+  {
+    "title": "Turbo Sub",
+    "id": 13115,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092158.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8caaaf56f95ee0bb610ca14af2d12a61"
+    ]
+  },
+  {
+    "title": "Viking Child",
+    "id": 11488,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071575.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "44d7c4ea6b8d930075f5b05c94b5f973"
+    ]
+  },
+  {
+    "title": "Warbirds",
+    "id": 12913,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/071574.png",
+    "numAchievements": 15,
+    "numLeaderboards": 1,
+    "points": 125,
+    "dateModified": "2024-04-11 14:10:05",
+    "forumTopicId": 26101,
+    "hashes": [
+      "e7f118ac59f985ceea2ecfc0f17e9cc6"
+    ]
+  },
+  {
+    "title": "World Class Soccer",
+    "id": 11477,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092172.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7fcf204013cbedf7eaaf682ff5f216ba"
+    ]
+  },
+  {
+    "title": "Xenophobe",
+    "id": 10573,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/092179.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "69fb597cb4db019c48fd2e0c1cc7b75c"
+    ]
+  },
+  {
+    "title": "Xybots",
+    "id": 11438,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/025344.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7954,
+    "hashes": [
+      "c145bfe904e5d56f479df44204b255da"
+    ]
+  },
+  {
+    "title": "Zarlor Mercenary",
+    "id": 10196,
+    "consoleId": 13,
+    "consoleName": "Atari Lynx",
+    "imageIcon": "/Images/064490.png",
+    "numAchievements": 16,
+    "numLeaderboards": 0,
+    "points": 127,
+    "dateModified": "2023-08-12 03:25:30",
+    "forumTopicId": 28557,
+    "hashes": [
+      "d008f41ec119e2c5c6a0782aebf148a8"
+    ]
+  }
+]

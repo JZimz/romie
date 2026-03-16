@@ -1,0 +1,5797 @@
+[
+  {
+    "title": "~Hack~ ~Demo~ Oh No! More Lemmings",
+    "id": 37772,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5ee6cd63e896d8bf12a8430e0478619c"
+    ]
+  },
+  {
+    "title": "~Hack~ Alex Kidd 3: Curse in Miracle World",
+    "id": 18048,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/088120.png",
+    "numAchievements": 60,
+    "numLeaderboards": 0,
+    "points": 470,
+    "dateModified": "2025-08-28 15:38:17",
+    "forumTopicId": 24973,
+    "hashes": [
+      "39ff2e03c88a57cc284a01760bccb36c",
+      "ad971958b58f6c40797bd6a87fa143eb",
+      "7c8909766ceffe4cb2c823a165f27ceb",
+      "76e6ecb5a9ecc3365ef38bad00113c92",
+      "7b8297ebee031bd6ec6bf245c6c33b1c"
+    ]
+  },
+  {
+    "title": "~Hack~ Alex Kidd in Miracle World 2",
+    "id": 18047,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "e9b53d893bf8fc94015de722f610c7eb"
+    ]
+  },
+  {
+    "title": "~Hack~ Alex Kidd in Radaxian Rumble",
+    "id": 34209,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7d53a656ee162eefa2ff87eb9da7bdeb"
+    ]
+  },
+  {
+    "title": "~Hack~ Alex Kidd: Fall of Radaxian",
+    "id": 34208,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "6795d1a4cfbc895fc445f8467b961921"
+    ]
+  },
+  {
+    "title": "~Hack~ Barn 51",
+    "id": 31871,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "825802ea51b81f1807be6ac9d5f3c6c1"
+    ]
+  },
+  {
+    "title": "~Hack~ Boxguy Adventure 2",
+    "id": 37010,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121306.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7149649231a6ec15530360239f31c5ff"
+    ]
+  },
+  {
+    "title": "~Hack~ Duke Nukem",
+    "id": 32330,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "41d129f589f4c459914d629c81e67c96"
+    ]
+  },
+  {
+    "title": "~Hack~ Rusty Adventure",
+    "id": 34207,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2513c65867148dba2445a3b1cf1281ae"
+    ]
+  },
+  {
+    "title": "~Hack~ Sonic 2 Sweet Relief",
+    "id": 16058,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d48e68eb1d35a00c7f911d215c23e163"
+    ]
+  },
+  {
+    "title": "~Hack~ Sonic the Hedgehog 2: Frenzy",
+    "id": 37773,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1a0d27b65bc0aaec8853db5c4ecdfa50"
+    ]
+  },
+  {
+    "title": "~Hack~ Sonic the Hedgehog 2: Re Mastered",
+    "id": 37774,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "506d51daf7df81107806f5eb3bc2fabb"
+    ]
+  },
+  {
+    "title": "~Hack~ Sonic the Hedgehog 2: Zen Island",
+    "id": 37775,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "adce540b5920d45efa2348dba0419ede"
+    ]
+  },
+  {
+    "title": "~Hack~ Sonic the Hedgehog: Triple Trouble",
+    "id": 10922,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/107959.png",
+    "numAchievements": 16,
+    "numLeaderboards": 0,
+    "points": 204,
+    "dateModified": "2023-04-11 20:46:58",
+    "forumTopicId": 13214,
+    "hashes": [
+      "2c57e3ab6dc8711c6705df0fb7516983"
+    ]
+  },
+  {
+    "title": "~Hack~ Spin Dash in Sonic 2 SMS",
+    "id": 37148,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "6dbe2d1bd73e3a9da31bfc2c7f71ef93"
+    ]
+  },
+  {
+    "title": "~Hack~ Voyage: A Sorceress Vacation",
+    "id": 22067,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/066289.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1cb7af2abb3e667db89a4b65784ed336"
+    ]
+  },
+  {
+    "title": "~Homebrew~ ~Demo~ Deathtrap Dungeon",
+    "id": 22620,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/068693.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 20542,
+    "hashes": [
+      "513b06746ff952898731b1f18480b31f",
+      "b5042f1f8334faa84e48d47a0886ccdf"
+    ]
+  },
+  {
+    "title": "~Homebrew~ ~Demo~ Radical Rat",
+    "id": 31967,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8635b8ecbce48c128cd5a6376843cf9b"
+    ]
+  },
+  {
+    "title": "~Homebrew~ ~Prototype~ Extreme Volleyball Infernal League",
+    "id": 24230,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072692.png",
+    "numAchievements": 10,
+    "numLeaderboards": 1,
+    "points": 50,
+    "dateModified": "2023-05-09 09:01:18",
+    "forumTopicId": 21558,
+    "hashes": [
+      "8b12cc57e9e1baf8cc4165d7f8a210fe"
+    ]
+  },
+  {
+    "title": "~Homebrew~ 2048",
+    "id": 22555,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/068522.png",
+    "numAchievements": 11,
+    "numLeaderboards": 1,
+    "points": 251,
+    "dateModified": "2023-02-22 20:09:27",
+    "forumTopicId": 20444,
+    "hashes": [
+      "bf9eb8c06389d211cb71e0408a86677d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Alien Cat 2",
+    "id": 34003,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0d9aa5e82f13c1c1deda9127de925fef"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Battle City",
+    "id": 27369,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1a2606c3696ff2f0411275ca3e27a0e5",
+      "c2fd1e272ea678f153a9c36146509d8d",
+      "85ee4e836de0de55032ca59b16f21ac7"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Black Castle",
+    "id": 27946,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ae6969c839d5a0d2c53229639482f61d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Bloktris",
+    "id": 25906,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "e5ba57dce3a2995d093aef67effde27d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Candy Kid",
+    "id": 34389,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4ed0762282ffeac7905571313527ed9f"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Cavit",
+    "id": 31739,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b1be1fba3086f0adc546d84b3390fb92"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Crazy Pinball",
+    "id": 29883,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8dc6002e19f66bd7dba7f9adb6f8918e"
+    ]
+  },
+  {
+    "title": "~Homebrew~ DONKEY.SMS",
+    "id": 20489,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/081353.png",
+    "numAchievements": 10,
+    "numLeaderboards": 3,
+    "points": 94,
+    "dateModified": "2023-08-21 17:24:58",
+    "forumTopicId": 22984,
+    "hashes": [
+      "026f5013a431bdd5903506b7c43df84b"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Extreme Volleyball Infernal League",
+    "id": 25192,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/077463.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "a8516e8dc290dbaf92b1c82c394db115"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Flight of Pigarus",
+    "id": 14687,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/027741.png",
+    "numAchievements": 15,
+    "numLeaderboards": 2,
+    "points": 125,
+    "dateModified": "2022-04-10 21:45:14",
+    "forumTopicId": 9598,
+    "hashes": [
+      "42b79384a1352b47b9ea32d6d3ec6849"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Flip Flap",
+    "id": 14673,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/027634.png",
+    "numAchievements": 10,
+    "numLeaderboards": 1,
+    "points": 100,
+    "dateModified": "2019-11-04 00:22:10",
+    "forumTopicId": 9562,
+    "hashes": [
+      "b636a2f6d538b583bbd48397031dd606"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Frontier Force",
+    "id": 33779,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 31272,
+    "hashes": [
+      "d6e3477b80256b44ff43f9c0562facfb"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Garbagefield Saves Christmas",
+    "id": 18186,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/050347.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2024-12-24 04:27:57",
+    "forumTopicId": 14406,
+    "hashes": [
+      "0ffc93b603c6599b0dc7db718b6d86bb"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Gaudream",
+    "id": 25353,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/080333.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 22848,
+    "hashes": [
+      "466fb9b7544099e6e23526c8b0c656d4"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Goblin Kart Rescue",
+    "id": 11827,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/101551.png",
+    "numAchievements": 0,
+    "numLeaderboards": 1,
+    "points": 0,
+    "dateModified": "2024-09-05 03:55:54",
+    "forumTopicId": 27199,
+    "hashes": [
+      "e78c072f94786fb02baaded69a57605a"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Gotris",
+    "id": 27307,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "83adab1f0d33d7e8791b4971afac3c36"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Grail of the Gods",
+    "id": 37769,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "098ad8097ccaee099d65c8f79fcbf956"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Heroes Against Demons",
+    "id": 22138,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072775.png",
+    "numAchievements": 22,
+    "numLeaderboards": 2,
+    "points": 110,
+    "dateModified": "2023-05-14 13:36:38",
+    "forumTopicId": 21576,
+    "hashes": [
+      "c61595a365ac3a92410220d868ca0564"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Iron Man",
+    "id": 34302,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/115339.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8fc6f684a2a0e17c08e43be1bece16d3"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Lawnmower",
+    "id": 27707,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ef6f43f97be9c2a51c7dbe413032236d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Lucky Penguin",
+    "id": 14729,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/082760.png",
+    "numAchievements": 6,
+    "numLeaderboards": 2,
+    "points": 9,
+    "dateModified": "2025-08-06 03:33:42",
+    "forumTopicId": 23496,
+    "hashes": [
+      "79def75be0b980752dec8526f84cd2b8"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Mahjong Solitaire",
+    "id": 33573,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "454f10b272da9b7af04147f2f107f486"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Mai Nurse",
+    "id": 33160,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "42eef7f9e4dfb7962c830ba92c810a77"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Minesweeper",
+    "id": 10713,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 27183,
+    "hashes": [
+      "78103820408ecf3affd27baadc003dda"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Mini MSX",
+    "id": 26008,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/096214.png",
+    "numAchievements": 18,
+    "numLeaderboards": 6,
+    "points": 90,
+    "dateModified": "2024-05-11 08:35:41",
+    "forumTopicId": 26408,
+    "hashes": [
+      "f8be953adda3e9088739b6086e3bf59d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Monaco Master",
+    "id": 25809,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/082754.png",
+    "numAchievements": 16,
+    "numLeaderboards": 6,
+    "points": 79,
+    "dateModified": "2023-09-25 06:30:09",
+    "forumTopicId": 23479,
+    "hashes": [
+      "12b2db71b0b8202d471a70116fae61fe"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Picross",
+    "id": 14469,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/042239.png",
+    "numAchievements": 21,
+    "numLeaderboards": 0,
+    "points": 61,
+    "dateModified": "2021-07-13 23:36:06",
+    "forumTopicId": 9900,
+    "hashes": [
+      "880815f8e899055e536b3a987c92855e"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Ring Dash SMS",
+    "id": 36734,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7206f1e903f6b0749cccd779d63464c0"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Segle",
+    "id": 25342,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/080224.png",
+    "numAchievements": 6,
+    "numLeaderboards": 0,
+    "points": 25,
+    "dateModified": "2023-08-08 21:10:25",
+    "forumTopicId": 22822,
+    "hashes": [
+      "a39acdd53659f85fbe4b252939ba5dae"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Shootagem",
+    "id": 28167,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/087649.png",
+    "numAchievements": 9,
+    "numLeaderboards": 4,
+    "points": 50,
+    "dateModified": "2024-01-03 19:48:16",
+    "forumTopicId": 24951,
+    "hashes": [
+      "4fbf47c238dce9672cac6bbdc164d60d"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Silver Valley",
+    "id": 34388,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d0381f20ac00a6163789ff8701bc19aa"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Simon the Snake",
+    "id": 17669,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/080216.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2023-08-07 20:22:15",
+    "forumTopicId": 12930,
+    "hashes": [
+      "d7f94e3ce80dcb7539e8adc219038d98"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Snepzhen Solitaire",
+    "id": 29884,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "579651894466cdb1f89174021d57ed47"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Sonik Gem Dash",
+    "id": 34139,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "efb29ab5b61521f3c4b0600e7506c55a"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Sub Rescue",
+    "id": 19713,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2c7c969a0c13109c90e6ab0fbcb3d70b"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Sudoku",
+    "id": 14468,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/028845.png",
+    "numAchievements": 6,
+    "numLeaderboards": 1,
+    "points": 16,
+    "dateModified": "2021-02-05 13:35:49",
+    "forumTopicId": 9306,
+    "hashes": [
+      "5de9ac0bee8b66d590e4ae3503b36053"
+    ]
+  },
+  {
+    "title": "~Homebrew~ The Simpsons Trivia",
+    "id": 14672,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/071852.png",
+    "numAchievements": 20,
+    "numLeaderboards": 0,
+    "points": 205,
+    "dateModified": "2023-07-22 04:23:07",
+    "forumTopicId": 9556,
+    "hashes": [
+      "ea829c4a6e9c4f05362979c9b1f3d7be"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Tower of Sorrow",
+    "id": 36990,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "45ca1c65fc03a85bfddd3e64da5ec081"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Vexed",
+    "id": 25324,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079876.png",
+    "numAchievements": 25,
+    "numLeaderboards": 0,
+    "points": 172,
+    "dateModified": "2023-08-02 05:40:18",
+    "forumTopicId": 22784,
+    "hashes": [
+      "2cde86c5890081de8c16ff598a756be3"
+    ]
+  },
+  {
+    "title": "~Homebrew~ WekaInvaders",
+    "id": 22140,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/066802.png",
+    "numAchievements": 18,
+    "numLeaderboards": 0,
+    "points": 125,
+    "dateModified": "2023-04-11 06:10:18",
+    "forumTopicId": 19918,
+    "hashes": [
+      "7d95d302d5d5029d402e51e359d25a89"
+    ]
+  },
+  {
+    "title": "~Homebrew~ XSnake | Cross Snake",
+    "id": 20250,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/060441.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "80a080bff3cfd63124a60bda6ce07394",
+      "2ef56d5a57c2af6b8b19f9b6bb9f0729"
+    ]
+  },
+  {
+    "title": "~Homebrew~ Zombi Terror",
+    "id": 34883,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "54f271adf31786cf88b04960b24a11ec",
+      "312fa6725270a0d091407cf856f09564",
+      "0a7961400ae4b74c31bb84bd133f154c"
+    ]
+  },
+  {
+    "title": "~Prototype~ Dinobasher Starring Bignose the Caveman",
+    "id": 36324,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "bb448ca5ce1ec7d86636c6571d6e94cb"
+    ]
+  },
+  {
+    "title": "~Prototype~ Game de Check! Koutsuu Anzen",
+    "id": 36633,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "840ba96cf77b465d3d0d389dac7861d7"
+    ]
+  },
+  {
+    "title": "~Prototype~ Hook",
+    "id": 17388,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7a07e3e59f51b620d8c51bef468d4df5"
+    ]
+  },
+  {
+    "title": "~Prototype~ NBA Jam",
+    "id": 16066,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3d847bf62567026be23512961a578063"
+    ]
+  },
+  {
+    "title": "~Prototype~ Sega Master System M404 BIOS",
+    "id": 17381,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3153447d155fb8bfc66a4d1c41e399b9"
+    ]
+  },
+  {
+    "title": "~Prototype~ Sonic's Edusoft",
+    "id": 14394,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/109250.png",
+    "numAchievements": 19,
+    "numLeaderboards": 4,
+    "points": 148,
+    "dateModified": "2024-07-03 22:03:39",
+    "forumTopicId": 22397,
+    "hashes": [
+      "5919b101624d4710a10825c34e753ba2"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Gangcheol RoboCop",
+    "id": 34951,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3a19a85082e7b330b75b0a082dc9628b"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Jang Pung 3",
+    "id": 36744,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f355ec9d0171a4d01356165d2baba6a1"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Jang Pung II",
+    "id": 36743,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c67c5f04519000394bd525eccb774958"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Janggun-ui Adeul",
+    "id": 36742,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121449.png",
+    "numAchievements": 12,
+    "numLeaderboards": 2,
+    "points": 145,
+    "dateModified": "2025-12-12 15:12:14",
+    "forumTopicId": 33469,
+    "hashes": [
+      "2db7aaabca7f62d69df466797c0d63d9"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Knightmare II: The Maze of Galious",
+    "id": 11607,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/117005.png",
+    "numAchievements": 69,
+    "numLeaderboards": 11,
+    "points": 310,
+    "dateModified": "2026-01-14 17:14:46",
+    "forumTopicId": 31959,
+    "hashes": [
+      "09d622effa934695566e47f1fb1d4b77"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Suho Jeonsa",
+    "id": 32662,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "01764008734841830623b43c6e3a528b"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Super Boy 4",
+    "id": 16375,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/106050.png",
+    "numAchievements": 15,
+    "numLeaderboards": 18,
+    "points": 105,
+    "dateModified": "2025-01-02 19:34:49",
+    "forumTopicId": 29201,
+    "hashes": [
+      "eb7d7db5ab98b0b7812552644fb95fe8"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Super Boy I",
+    "id": 17553,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 12927,
+    "hashes": [
+      "10b3d123ed5f2437b2d31cf8b8e60179"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Super Boy II",
+    "id": 11667,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/077239.png",
+    "numAchievements": 21,
+    "numLeaderboards": 1,
+    "points": 180,
+    "dateModified": "2023-07-21 16:45:20",
+    "forumTopicId": 22560,
+    "hashes": [
+      "6120c9ba0f2c24031c9a836035060717"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Super Tetris",
+    "id": 13090,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3aab83a641bf3a26d68ed44f49c28714"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ The Dinosaur Dooley",
+    "id": 24004,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/071184.png",
+    "numAchievements": 10,
+    "numLeaderboards": 3,
+    "points": 175,
+    "dateModified": "2023-04-14 15:24:48",
+    "forumTopicId": 21150,
+    "hashes": [
+      "e5c7ba1a2a6e1e9de597479add641d1d"
+    ]
+  },
+  {
+    "title": "~Unlicensed~ Xyzolog",
+    "id": 14174,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/052455.png",
+    "numAchievements": 33,
+    "numLeaderboards": 0,
+    "points": 330,
+    "dateModified": "2021-11-21 21:55:10",
+    "forumTopicId": 8621,
+    "hashes": [
+      "21b563031bb035f117d15dc53f406c2d"
+    ]
+  },
+  {
+    "title": "~Z~ A Cheated ROM [SMS]",
+    "id": 11625,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0936c094c82292fc9b3251f4b742232d",
+      "616f405778abcce1f72df90981cb0eef",
+      "9a853daaac364eb8de16db5ee0605dda",
+      "c399362496199674599899c8a8e16362"
+    ]
+  },
+  {
+    "title": "~Z~ Hokuto no Ken",
+    "id": 18772,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/101613.png",
+    "numAchievements": 0,
+    "numLeaderboards": 1,
+    "points": 0,
+    "dateModified": "2022-03-30 21:02:59",
+    "forumTopicId": 15728,
+    "hashes": []
+  },
+  {
+    "title": "20 em 1",
+    "id": 10690,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/048955.png",
+    "numAchievements": 20,
+    "numLeaderboards": 0,
+    "points": 40,
+    "dateModified": "2022-04-16 16:09:12",
+    "forumTopicId": 13364,
+    "hashes": [
+      "91a9dcd4f59c29db72c931be2fe60b51"
+    ]
+  },
+  {
+    "title": "Ace of Aces",
+    "id": 10743,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7970,
+    "hashes": [
+      "ce26b4372655f35f1b7c9d0c3b700f93"
+    ]
+  },
+  {
+    "title": "Action Fighter",
+    "id": 10744,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/080110.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 20116,
+    "hashes": [
+      "47d736575f9a22f7490d62c76ed7c933",
+      "7e08a9854d61fece23d3c4a39539f4e9"
+    ]
+  },
+  {
+    "title": "Aerial Assault",
+    "id": 10745,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/083457.png",
+    "numAchievements": 20,
+    "numLeaderboards": 4,
+    "points": 270,
+    "dateModified": "2021-03-18 20:50:57",
+    "forumTopicId": 6947,
+    "hashes": [
+      "0713f2e55a1eea0d9e2fb7044740261b",
+      "8b603c931418a3680b8723861f55a7b5"
+    ]
+  },
+  {
+    "title": "After Burner",
+    "id": 10051,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/103582.png",
+    "numAchievements": 33,
+    "numLeaderboards": 1,
+    "points": 240,
+    "dateModified": "2024-08-04 23:32:27",
+    "forumTopicId": 26214,
+    "hashes": [
+      "6271c183513e0be0543e326419ee989e"
+    ]
+  },
+  {
+    "title": "Air Rescue",
+    "id": 10754,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/104949.png",
+    "numAchievements": 21,
+    "numLeaderboards": 1,
+    "points": 220,
+    "dateModified": "2024-12-28 01:29:25",
+    "forumTopicId": 28792,
+    "hashes": [
+      "4f145d617b9191cbc0e005786ca993f6"
+    ]
+  },
+  {
+    "title": "Aladdin",
+    "id": 10016,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/083455.png",
+    "numAchievements": 14,
+    "numLeaderboards": 0,
+    "points": 105,
+    "dateModified": "2024-05-18 16:02:11",
+    "forumTopicId": 4499,
+    "hashes": [
+      "c4f138c72f100f6ff721ac05673c6fac",
+      "e3f60072028eb6f02c2b0558804aed83"
+    ]
+  },
+  {
+    "title": "Alex Kidd in Miracle World",
+    "id": 9998,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064914.png",
+    "numAchievements": 124,
+    "numLeaderboards": 0,
+    "points": 1017,
+    "dateModified": "2025-11-22 22:17:54",
+    "forumTopicId": 4439,
+    "hashes": [
+      "3d9a8d5c2d6d3f8ff63a8f7c77ffa983",
+      "6e8e702e1d8a893ee698b93f5807972a",
+      "8d3df8d20e5beb5682c44bc2e2da16fa",
+      "ba4e6991da1b864b24089e2ea642cce6",
+      "e53f30ba87d1efeb8c5652e2d29737cb",
+      "e8b26871629b938887757a64798df6dc",
+      "f43e74ffec58ddf62f0b8667d31f22c0",
+      "f69a7b54835381e7a91333c4d78a51f2"
+    ]
+  },
+  {
+    "title": "Alex Kidd in Shinobi World",
+    "id": 10005,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121379.png",
+    "numAchievements": 42,
+    "numLeaderboards": 0,
+    "points": 450,
+    "dateModified": "2024-12-07 00:39:05",
+    "forumTopicId": 4662,
+    "hashes": [
+      "1f37b9cb35366dec83bf8fe222ee1bdd",
+      "295320f6e9f4b98b57ae65b5ff820b96",
+      "453e0d6d283377ece3f366616a2c4154",
+      "d62b631506913712a2103f54912458a5"
+    ]
+  },
+  {
+    "title": "Alex Kidd: BMX Trial",
+    "id": 11522,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/015419.png",
+    "numAchievements": 12,
+    "numLeaderboards": 1,
+    "points": 205,
+    "dateModified": "2025-07-14 16:05:29",
+    "forumTopicId": 25923,
+    "hashes": [
+      "571f18f49e679a128b4a237001760d6c"
+    ]
+  },
+  {
+    "title": "Alex Kidd: High-Tech World",
+    "id": 10221,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/061078.png",
+    "numAchievements": 30,
+    "numLeaderboards": 2,
+    "points": 175,
+    "dateModified": "2023-11-16 20:12:39",
+    "forumTopicId": 24437,
+    "hashes": [
+      "0f6ebfa2b24bb99dbea1142312fd33c9",
+      "c6e271132566b4dd03981dcf2f8a6477"
+    ]
+  },
+  {
+    "title": "Alex Kidd: The Lost Stars",
+    "id": 10044,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/050013.png",
+    "numAchievements": 37,
+    "numLeaderboards": 0,
+    "points": 560,
+    "dateModified": "2022-08-15 13:55:10",
+    "forumTopicId": 4498,
+    "hashes": [
+      "ea50dcdd1241667f32d39d606a9f7083"
+    ]
+  },
+  {
+    "title": "ALF",
+    "id": 10257,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/030512.png",
+    "numAchievements": 25,
+    "numLeaderboards": 1,
+    "points": 180,
+    "dateModified": "2023-10-15 20:38:59",
+    "forumTopicId": 10063,
+    "hashes": [
+      "bc1360afa99cd89fbab4ea55bef08aae"
+    ]
+  },
+  {
+    "title": "Alien 3",
+    "id": 11660,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/059938.png",
+    "numAchievements": 29,
+    "numLeaderboards": 0,
+    "points": 400,
+    "dateModified": "2021-12-12 05:30:16",
+    "forumTopicId": 6670,
+    "hashes": [
+      "7d6b3351e820b6afa7cf80713dc139e3"
+    ]
+  },
+  {
+    "title": "Alien Storm",
+    "id": 10746,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/104953.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c60380642a89805f569124a875248d71"
+    ]
+  },
+  {
+    "title": "Alien Syndrome",
+    "id": 10747,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/047136.png",
+    "numAchievements": 39,
+    "numLeaderboards": 1,
+    "points": 640,
+    "dateModified": "2023-08-31 23:39:42",
+    "forumTopicId": 8525,
+    "hashes": [
+      "732808a44a90b780454a1eb6adbf3957",
+      "c352bd773dc9cd909a8c1707ccb54d40"
+    ]
+  },
+  {
+    "title": "Altered Beast",
+    "id": 10748,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/089843.png",
+    "numAchievements": 15,
+    "numLeaderboards": 1,
+    "points": 212,
+    "dateModified": "2024-02-22 18:36:07",
+    "forumTopicId": 25566,
+    "hashes": [
+      "24618ca4a223a36d2bfda10f42454687",
+      "3592d7a8b2ebf31004d057991462bfe6"
+    ]
+  },
+  {
+    "title": "Arcade Smash Hits",
+    "id": 10668,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/080095.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7910,
+    "hashes": [
+      "c74e0be13dc3fbd085fb9a1ebd6e6afc"
+    ]
+  },
+  {
+    "title": "Argos no Juujiken",
+    "id": 14730,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/028131.png",
+    "numAchievements": 25,
+    "numLeaderboards": 2,
+    "points": 150,
+    "dateModified": "2019-12-01 16:28:51",
+    "forumTopicId": 9676,
+    "hashes": [
+      "8e8b04b5a9fe7b6cdb25b6550e7a831e"
+    ]
+  },
+  {
+    "title": "Ariel the Little Mermaid",
+    "id": 26959,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/101001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9efdf5a7123f5a52967199381e93759d"
+    ]
+  },
+  {
+    "title": "Assault City",
+    "id": 10749,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b13632f6e0e0b495aae726aec9ba66d0"
+    ]
+  },
+  {
+    "title": "Astérix",
+    "id": 10750,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/050263.png",
+    "numAchievements": 83,
+    "numLeaderboards": 1,
+    "points": 468,
+    "dateModified": "2025-11-30 14:40:28",
+    "forumTopicId": 5772,
+    "hashes": [
+      "0feb52e9b0a8cd378fb38902eb4b4100",
+      "e89d852af39993740ad0259a4a5f726f"
+    ]
+  },
+  {
+    "title": "Astérix and the Great Rescue",
+    "id": 10751,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/024896.png",
+    "numAchievements": 58,
+    "numLeaderboards": 3,
+    "points": 403,
+    "dateModified": "2025-10-12 20:14:41",
+    "forumTopicId": 8748,
+    "hashes": [
+      "36bd5fe2e4d1620f5a43ea610c458c86"
+    ]
+  },
+  {
+    "title": "Astérix and the Secret Mission",
+    "id": 10752,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072260.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 5115,
+    "hashes": [
+      "7cc8be20b0a2ee3941c9846026c287ae"
+    ]
+  },
+  {
+    "title": "Astro Warrior",
+    "id": 10753,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/089912.png",
+    "numAchievements": 17,
+    "numLeaderboards": 1,
+    "points": 137,
+    "dateModified": "2024-12-15 18:04:32",
+    "forumTopicId": 13921,
+    "hashes": [
+      "e645faa5628caab5129383fdbf4df090"
+    ]
+  },
+  {
+    "title": "Ayrton Senna's Super Monaco GP II",
+    "id": 10039,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/109830.png",
+    "numAchievements": 34,
+    "numLeaderboards": 0,
+    "points": 271,
+    "dateModified": "2025-11-15 20:55:29",
+    "forumTopicId": 4505,
+    "hashes": [
+      "04abc524a3b7f7e2e96eb910490e77ec",
+      "39e3928058c18dc6c4055d8d240b2e74"
+    ]
+  },
+  {
+    "title": "Aztec Adventure: The Golden Road to Paradise",
+    "id": 11559,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/040829.png",
+    "numAchievements": 51,
+    "numLeaderboards": 3,
+    "points": 400,
+    "dateModified": "2023-07-16 14:24:58",
+    "forumTopicId": 21693,
+    "hashes": [
+      "12ce04ff557a96add46f04b12b0d47cc"
+    ]
+  },
+  {
+    "title": "Back to the Future II",
+    "id": 17350,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/040945.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f2535df9bdc3a84221303fa62d61ad6e"
+    ]
+  },
+  {
+    "title": "Back to the Future Part III",
+    "id": 26024,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3d24a52e98e6c85d7c059386451ce749"
+    ]
+  },
+  {
+    "title": "Baku Baku Animal",
+    "id": 10755,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/025115.png",
+    "numAchievements": 33,
+    "numLeaderboards": 0,
+    "points": 420,
+    "dateModified": "2022-03-30 10:09:56",
+    "forumTopicId": 14850,
+    "hashes": [
+      "8a94ded3d95aa46dae8800b92e66d3ee"
+    ]
+  },
+  {
+    "title": "Bank Panic",
+    "id": 10756,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072370.png",
+    "numAchievements": 11,
+    "numLeaderboards": 3,
+    "points": 58,
+    "dateModified": "2025-11-16 15:17:15",
+    "forumTopicId": 14451,
+    "hashes": [
+      "7a5d3b9963e316cb7f73bbdc2a7311c6"
+    ]
+  },
+  {
+    "title": "Basketball Nightmare",
+    "id": 11016,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017490.png",
+    "numAchievements": 13,
+    "numLeaderboards": 0,
+    "points": 135,
+    "dateModified": "2021-03-19 17:26:11",
+    "forumTopicId": 7067,
+    "hashes": [
+      "0069b1bd9c5b6b88ace6324d7e61539f"
+    ]
+  },
+  {
+    "title": "Batman Returns",
+    "id": 11657,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/105605.png",
+    "numAchievements": 25,
+    "numLeaderboards": 0,
+    "points": 205,
+    "dateModified": "2024-09-21 20:35:37",
+    "forumTopicId": 28052,
+    "hashes": [
+      "215876a62d3ca48d28e98cd8a2c70a15"
+    ]
+  },
+  {
+    "title": "Battle OutRun",
+    "id": 12403,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "83609eb760c3af64915fd6e73ee7d99e"
+    ]
+  },
+  {
+    "title": "Battlemaniacs",
+    "id": 10761,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064706.png",
+    "numAchievements": 0,
+    "numLeaderboards": 3,
+    "points": 0,
+    "dateModified": "2024-04-06 17:11:44",
+    "forumTopicId": 8606,
+    "hashes": [
+      "5401ddcc788c0f1a5dfe26e56f239fbf"
+    ]
+  },
+  {
+    "title": "Black Belt",
+    "id": 10757,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/051853.png",
+    "numAchievements": 26,
+    "numLeaderboards": 1,
+    "points": 490,
+    "dateModified": "2025-11-15 07:50:12",
+    "forumTopicId": 5546,
+    "hashes": [
+      "16e6b4a1d71960d64bd20aaf7024e8ac"
+    ]
+  },
+  {
+    "title": "Blade Eagle",
+    "id": 10047,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "a20798b12481284f77cee67ce5e25f2b",
+      "b106995de2f5f9dba99131f0286756ec"
+    ]
+  },
+  {
+    "title": "Bomber Raid",
+    "id": 10760,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/045158.png",
+    "numAchievements": 19,
+    "numLeaderboards": 2,
+    "points": 192,
+    "dateModified": "2024-12-08 03:32:10",
+    "forumTopicId": 13260,
+    "hashes": [
+      "d1151de6ea0a2547f047ce31b22fe18f"
+    ]
+  },
+  {
+    "title": "Bonanza Bros.",
+    "id": 10205,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/117732.png",
+    "numAchievements": 24,
+    "numLeaderboards": 1,
+    "points": 239,
+    "dateModified": "2025-08-07 23:57:09",
+    "forumTopicId": 21243,
+    "hashes": [
+      "d7237c790fa6afc0fcf5164b88cbb2e5",
+      "e58f6f374b3405fd2a5e5b80e639a980"
+    ]
+  },
+  {
+    "title": "Bonkers Wax Up!",
+    "id": 10710,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "044b79a5e4cf58fb92b60fc09cf4f316"
+    ]
+  },
+  {
+    "title": "Bram Stoker's Dracula",
+    "id": 14446,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4b3c934b3daa99a6b341da57388a7543"
+    ]
+  },
+  {
+    "title": "Bubble Bobble",
+    "id": 10758,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/101610.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 5187,
+    "hashes": [
+      "d79c186a74550876691e97ca830c66c7"
+    ]
+  },
+  {
+    "title": "Buggy Run",
+    "id": 10759,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/104316.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2024-11-19 17:58:24",
+    "forumTopicId": 28666,
+    "hashes": [
+      "db41b17f3268d9076e0928911a2791e0"
+    ]
+  },
+  {
+    "title": "California Games",
+    "id": 10691,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072371.png",
+    "numAchievements": 45,
+    "numLeaderboards": 6,
+    "points": 354,
+    "dateModified": "2024-12-04 06:45:32",
+    "forumTopicId": 5095,
+    "hashes": [
+      "182b179a1226fb5b1e1cf6bb2f351c50",
+      "f90e2f4a29838d22ec8aec48b7c9ab48"
+    ]
+  },
+  {
+    "title": "California Games II",
+    "id": 26026,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5ac58b3a7fda23161ab1185b3ee797ac"
+    ]
+  },
+  {
+    "title": "Captain Silver",
+    "id": 11615,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069538.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1dfaadbfe7d8019e73bd980fd4b819ea"
+    ]
+  },
+  {
+    "title": "Casino Games",
+    "id": 35083,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ec16428b908a2c0036b799e55614be3d"
+    ]
+  },
+  {
+    "title": "Castelo Ra-Tim-Bum",
+    "id": 13481,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/086183.png",
+    "numAchievements": 12,
+    "numLeaderboards": 0,
+    "points": 78,
+    "dateModified": "2025-09-11 12:55:57",
+    "forumTopicId": 17637,
+    "hashes": [
+      "47f513d0f9d2896bf1a87254337d5b29"
+    ]
+  },
+  {
+    "title": "Castle of Illusion starring Mickey Mouse",
+    "id": 10554,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/058710.png",
+    "numAchievements": 41,
+    "numLeaderboards": 2,
+    "points": 460,
+    "dateModified": "2020-10-31 20:36:47",
+    "forumTopicId": 4885,
+    "hashes": [
+      "e9b4b92bc29ca8fbe9978da6720bd1eb"
+    ]
+  },
+  {
+    "title": "Champions of Europe",
+    "id": 10762,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c28aa80489a467bf54fc1403029a83d3"
+    ]
+  },
+  {
+    "title": "Championship Hockey",
+    "id": 10692,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1f706162f833f1dce9513988601d314b"
+    ]
+  },
+  {
+    "title": "Chapolim x Dracula: Um Duelo Assustador",
+    "id": 11638,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079344.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 19443,
+    "hashes": [
+      "2c709ba8cdc3a1b7adc5bc838eabf6f3"
+    ]
+  },
+  {
+    "title": "Cheese Cat-Astrophe Starring Speedy Gonzales",
+    "id": 17385,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f90b86478445d220d386460e55f3b74f"
+    ]
+  },
+  {
+    "title": "Choplifter",
+    "id": 10020,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/101994.png",
+    "numAchievements": 27,
+    "numLeaderboards": 1,
+    "points": 435,
+    "dateModified": "2019-10-13 20:56:41",
+    "forumTopicId": 4541,
+    "hashes": [
+      "747a206eaaadf48714695e8b4ccead7e"
+    ]
+  },
+  {
+    "title": "Chuck Rock",
+    "id": 11819,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/088879.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2594f33f210ee4cf6356ac7b2ab8c4e7"
+    ]
+  },
+  {
+    "title": "Chuck Rock II: Son of Chuck",
+    "id": 25712,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/102347.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ad6c6ffe26d93298ae56bdea8eafc879"
+    ]
+  },
+  {
+    "title": "Cloud Master",
+    "id": 10693,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/091932.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4498afc1fce51ebd461798fbe61aa6f8"
+    ]
+  },
+  {
+    "title": "Columns",
+    "id": 10694,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d443d521036d527d35926809f230106c"
+    ]
+  },
+  {
+    "title": "Comical Machine Gun Joe",
+    "id": 10049,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2d59b3d27f022b04a597e767e6660ca9"
+    ]
+  },
+  {
+    "title": "Cool Spot",
+    "id": 10763,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/073701.png",
+    "numAchievements": 26,
+    "numLeaderboards": 3,
+    "points": 298,
+    "dateModified": "2023-09-04 21:50:31",
+    "forumTopicId": 21548,
+    "hashes": [
+      "b4c33bdba2472003f87ed193e51b2c9b"
+    ]
+  },
+  {
+    "title": "Cosmic Spacehead",
+    "id": 10695,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/023112.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7debf96f69c896d8571a6ad6cfacf502"
+    ]
+  },
+  {
+    "title": "Cyborg Hunter",
+    "id": 10696,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/104478.png",
+    "numAchievements": 43,
+    "numLeaderboards": 0,
+    "points": 555,
+    "dateModified": "2024-12-04 02:05:11",
+    "forumTopicId": 5537,
+    "hashes": [
+      "ac90d79743cac1afcd7049f7b4e73bc4",
+      "d104f53494a3d5847a1320faf38e8bc5"
+    ]
+  },
+  {
+    "title": "Daffy Duck in Hollywood",
+    "id": 17380,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "75955b8a2d2a2256523fb26dac62a5e2"
+    ]
+  },
+  {
+    "title": "Danan: The Jungle Fighter",
+    "id": 10556,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017710.png",
+    "numAchievements": 29,
+    "numLeaderboards": 2,
+    "points": 185,
+    "dateModified": "2025-12-19 01:22:56",
+    "forumTopicId": 33318,
+    "hashes": [
+      "6b0fc60aa886c060bf1a16ea97b4f441"
+    ]
+  },
+  {
+    "title": "Dead Angle",
+    "id": 10697,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/117873.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8d5e93715bad32ba8bbcac9d21e87d89"
+    ]
+  },
+  {
+    "title": "Deep Duck Trouble starring Donald Duck",
+    "id": 10443,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/027761.png",
+    "numAchievements": 34,
+    "numLeaderboards": 0,
+    "points": 150,
+    "dateModified": "2020-02-18 15:51:36",
+    "forumTopicId": 9610,
+    "hashes": [
+      "05e3071aad9c36b6e18f1656592eeb3d"
+    ]
+  },
+  {
+    "title": "Desert Speedtrap Starring Road Runner and Wile E. Coyote",
+    "id": 10428,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064865.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 29991,
+    "hashes": [
+      "8fe55ade7b34aa4e42c5f63f4368497f"
+    ]
+  },
+  {
+    "title": "Desert Strike",
+    "id": 10043,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079285.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "df89aa1ebc5f42db21fb8d12d9e78511"
+    ]
+  },
+  {
+    "title": "Dick Tracy",
+    "id": 10766,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/091950.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1dcaf7d1ea7caaaa716f0ec43c3f828a"
+    ]
+  },
+  {
+    "title": "Double Dragon",
+    "id": 10426,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/041164.png",
+    "numAchievements": 18,
+    "numLeaderboards": 0,
+    "points": 230,
+    "dateModified": "2025-11-22 21:07:21",
+    "forumTopicId": 11810,
+    "hashes": [
+      "fe9aa8044951b10f876b15f4456161a9"
+    ]
+  },
+  {
+    "title": "Double Hawk",
+    "id": 11666,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3e6e6cb8729965fdfdbb422f066ad706"
+    ]
+  },
+  {
+    "title": "Dr. Hello",
+    "id": 10769,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9f95eb534dd8a2bd57e9fc6a445e2f4c"
+    ]
+  },
+  {
+    "title": "Dr. Robotnik's Mean Bean Machine",
+    "id": 14364,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/108656.png",
+    "numAchievements": 20,
+    "numLeaderboards": 1,
+    "points": 127,
+    "dateModified": "2025-04-23 01:10:51",
+    "forumTopicId": 30602,
+    "hashes": [
+      "03d03f1e816d137fe6a1f5fe45fee82d"
+    ]
+  },
+  {
+    "title": "Dragon Crystal",
+    "id": 11586,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064876.png",
+    "numAchievements": 64,
+    "numLeaderboards": 0,
+    "points": 370,
+    "dateModified": "2024-10-17 23:00:30",
+    "forumTopicId": 28136,
+    "hashes": [
+      "e05484f93011055c5b76ffabfea84367"
+    ]
+  },
+  {
+    "title": "Dynamite Duke",
+    "id": 10768,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "31a7be585288a8b77b7923a202752ab7"
+    ]
+  },
+  {
+    "title": "Dynamite Düx",
+    "id": 10767,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/117766.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5cb7ebaee5952ebfcdc42e7093072063"
+    ]
+  },
+  {
+    "title": "Dynamite Headdy",
+    "id": 10765,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7f57481d870465fc3a6412d87f0a8e38"
+    ]
+  },
+  {
+    "title": "E-SWAT",
+    "id": 10880,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/015948.png",
+    "numAchievements": 26,
+    "numLeaderboards": 1,
+    "points": 400,
+    "dateModified": "2020-09-15 17:05:34",
+    "forumTopicId": 5968,
+    "hashes": [
+      "36a5339cef97d0a5757db4fd81b4abf3"
+    ]
+  },
+  {
+    "title": "Earthworm Jim",
+    "id": 13934,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/023150.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 8225,
+    "hashes": [
+      "f26bf8d41e0b6159fc436567b447363f"
+    ]
+  },
+  {
+    "title": "Ecco the Dolphin",
+    "id": 13228,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/118073.png",
+    "numAchievements": 21,
+    "numLeaderboards": 5,
+    "points": 190,
+    "dateModified": "2024-05-26 20:00:54",
+    "forumTopicId": 20795,
+    "hashes": [
+      "4ce5c749b2710698a97d851552b5a404",
+      "bea00f9b73ac248bafa7e406a5489b32"
+    ]
+  },
+  {
+    "title": "Ecco: The Tides of Time",
+    "id": 36362,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "fe58b4b23d58386cad7111fd522cbf75"
+    ]
+  },
+  {
+    "title": "Enduro Racer",
+    "id": 10698,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/109833.png",
+    "numAchievements": 32,
+    "numLeaderboards": 22,
+    "points": 340,
+    "dateModified": "2023-04-23 15:25:39",
+    "forumTopicId": 8722,
+    "hashes": [
+      "06779a1a9dbada60efb1f37e37040a5b"
+    ]
+  },
+  {
+    "title": "F-16 Fighting Falcon",
+    "id": 15369,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079179.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9d10a4032eb53337b08c9a709144799e"
+    ]
+  },
+  {
+    "title": "F1 | F1 Championship",
+    "id": 10041,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/100226.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5d67504b8334a0e36f6119515928717c"
+    ]
+  },
+  {
+    "title": "Fantastic Dizzy",
+    "id": 11578,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b8eb0cb6a9d16cfd08d9c03297fcd445"
+    ]
+  },
+  {
+    "title": "Fantasy Zone",
+    "id": 10025,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/010699.png",
+    "numAchievements": 30,
+    "numLeaderboards": 2,
+    "points": 270,
+    "dateModified": "2025-12-01 02:33:08",
+    "forumTopicId": 4545,
+    "hashes": [
+      "3a1dfad2cea111d0dbfb4a545bf3f87e",
+      "e4497d344386a9fe0826e6d166e0f2b3",
+      "fed8690ee5fb895c09caa8e2b879ebd6"
+    ]
+  },
+  {
+    "title": "Fantasy Zone II: The Tears of Opa-Opa",
+    "id": 10191,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072377.png",
+    "numAchievements": 52,
+    "numLeaderboards": 1,
+    "points": 450,
+    "dateModified": "2025-11-30 15:17:05",
+    "forumTopicId": 9480,
+    "hashes": [
+      "481a01c4e768c535ee18d6d78815fc89"
+    ]
+  },
+  {
+    "title": "Fantasy Zone: The Maze",
+    "id": 10879,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/102033.png",
+    "numAchievements": 67,
+    "numLeaderboards": 3,
+    "points": 228,
+    "dateModified": "2025-08-01 17:26:14",
+    "forumTopicId": 29578,
+    "hashes": [
+      "d37f86c678b2ad0018518ea7278db24b"
+    ]
+  },
+  {
+    "title": "Ferias Frustradas do Pica-Pau",
+    "id": 10699,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3706d53f47e3e0294a778bc9b732f414"
+    ]
+  },
+  {
+    "title": "FIFA International Soccer",
+    "id": 26281,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "907bc842dece97cef44afff0c9ada770"
+    ]
+  },
+  {
+    "title": "Fire & Forget II",
+    "id": 36365,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d27d8fee8f711db361a71817864bd139"
+    ]
+  },
+  {
+    "title": "Fire & Ice",
+    "id": 10231,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/062183.png",
+    "numAchievements": 36,
+    "numLeaderboards": 1,
+    "points": 395,
+    "dateModified": "2025-06-19 21:36:00",
+    "forumTopicId": 4692,
+    "hashes": [
+      "85acf93edba54485466aeb840966082b"
+    ]
+  },
+  {
+    "title": "Forgotten Worlds",
+    "id": 10700,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069537.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "68cc1711bb89921da1f215f323f3bb2d"
+    ]
+  },
+  {
+    "title": "G-LOC: Air Battle",
+    "id": 32102,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7ccd2885039eb291e5ef8789173b4e13"
+    ]
+  },
+  {
+    "title": "Gain Ground",
+    "id": 11659,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069804.png",
+    "numAchievements": 82,
+    "numLeaderboards": 52,
+    "points": 315,
+    "dateModified": "2023-08-12 02:44:34",
+    "forumTopicId": 19463,
+    "hashes": [
+      "7d54230748fa41bb62b6f08e5dcede08"
+    ]
+  },
+  {
+    "title": "Galactic Protector",
+    "id": 29075,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8d61b59296877216cf7e4b04a68bfa66"
+    ]
+  },
+  {
+    "title": "Galaxy Force",
+    "id": 10130,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "dbaac7c72eb3e0bf9e6d70b799d62799"
+    ]
+  },
+  {
+    "title": "Gangster Town",
+    "id": 10704,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3396259ca032ed4f1499d1f737e75e0d"
+    ]
+  },
+  {
+    "title": "Gauntlet",
+    "id": 10703,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "fdd401983eb42200f9fec672374597af"
+    ]
+  },
+  {
+    "title": "Ghost House",
+    "id": 10106,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/061406.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 14075,
+    "hashes": [
+      "580adb73aecd35348862fb6ed43ae956"
+    ]
+  },
+  {
+    "title": "Ghostbusters",
+    "id": 21511,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/073506.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 21690,
+    "hashes": [
+      "dbae1ad6d3917a95b96d28bfc6f3f90a"
+    ]
+  },
+  {
+    "title": "Ghouls 'n Ghosts",
+    "id": 10889,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/102097.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 16089,
+    "hashes": [
+      "85707b3a74483910699ccc4ba20c64ff"
+    ]
+  },
+  {
+    "title": "Global Defense",
+    "id": 10706,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7ab485ee37ea7ce538f7dba08b64d95e"
+    ]
+  },
+  {
+    "title": "Global Gladiators",
+    "id": 31380,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "73569d2abefb7cdcbe9a13456df525c2"
+    ]
+  },
+  {
+    "title": "Golden Axe",
+    "id": 10705,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072374.png",
+    "numAchievements": 25,
+    "numLeaderboards": 0,
+    "points": 500,
+    "dateModified": "2022-03-24 05:57:20",
+    "forumTopicId": 6910,
+    "hashes": [
+      "b4911ad6a9d2ba56497cd5b01da3938a"
+    ]
+  },
+  {
+    "title": "Golden Axe Warrior",
+    "id": 10004,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/049192.png",
+    "numAchievements": 55,
+    "numLeaderboards": 0,
+    "points": 600,
+    "dateModified": "2024-12-25 01:39:21",
+    "forumTopicId": 4979,
+    "hashes": [
+      "d46e40bbb729ba233f171ad7bf6169f5"
+    ]
+  },
+  {
+    "title": "Golfamania",
+    "id": 36630,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5554f9f67103e0d5b1a4075a2d26d15b"
+    ]
+  },
+  {
+    "title": "Golvellius: Valley of Doom",
+    "id": 10001,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/060650.png",
+    "numAchievements": 38,
+    "numLeaderboards": 2,
+    "points": 425,
+    "dateModified": "2023-10-02 16:27:00",
+    "forumTopicId": 4926,
+    "hashes": [
+      "2101295c258cb6b845bdb72be617691d"
+    ]
+  },
+  {
+    "title": "Great Baseball",
+    "id": 11616,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/073433.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2025-04-19 04:50:28",
+    "forumTopicId": 30143,
+    "hashes": [
+      "1d126c6ac8e4d7b612e9db3d56d9e78e"
+    ]
+  },
+  {
+    "title": "Great Golf",
+    "id": 36632,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "763580f2af57ea7baddf671fb51787da"
+    ]
+  },
+  {
+    "title": "Great Golf (Japan)",
+    "id": 36634,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c0a9a2261ea7ef93bf8120f5328deaec"
+    ]
+  },
+  {
+    "title": "Great Ice Hockey",
+    "id": 27414,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "26621293a88d55fedaf71bb097c24653"
+    ]
+  },
+  {
+    "title": "Great Soccer",
+    "id": 19001,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069536.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 16090,
+    "hashes": [
+      "5c9815b45b5cb3d9b3436c56c6fcadaf"
+    ]
+  },
+  {
+    "title": "Great Volleyball",
+    "id": 10439,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/105530.png",
+    "numAchievements": 66,
+    "numLeaderboards": 0,
+    "points": 410,
+    "dateModified": "2024-04-29 15:50:46",
+    "forumTopicId": 4839,
+    "hashes": [
+      "03d6e8450a74ac09e47ae9bf210cfe17",
+      "382b627efa06c958b8ec5c85e964bf10"
+    ]
+  },
+  {
+    "title": "Hang-On",
+    "id": 10219,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/063190.png",
+    "numAchievements": 30,
+    "numLeaderboards": 0,
+    "points": 375,
+    "dateModified": "2021-03-22 03:48:57",
+    "forumTopicId": 4795,
+    "hashes": [
+      "67849e734a1304799606ba5a22f840d2"
+    ]
+  },
+  {
+    "title": "Heroes of the Lance",
+    "id": 10132,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/015915.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1dcacb5969fb4a0d4e9c7fec67227cce"
+    ]
+  },
+  {
+    "title": "High School! Kimengumi",
+    "id": 15536,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ab38b53584c89476cd4646105b16083a"
+    ]
+  },
+  {
+    "title": "Home Alone",
+    "id": 22429,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b0100ad9f1838332b15d0434bfa9fe29"
+    ]
+  },
+  {
+    "title": "Hoshi wo Sagashite...",
+    "id": 11017,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/048665.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9b6274dd555f84b3f21fa2594b280a06"
+    ]
+  },
+  {
+    "title": "Impossible Mission",
+    "id": 10707,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "af51ab03a173dec28c9241532227cd64"
+    ]
+  },
+  {
+    "title": "Indiana Jones and the Last Crusade",
+    "id": 10040,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079065.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "e83f8c99882e2123bd344090421e84c3"
+    ]
+  },
+  {
+    "title": "James Bond 007: The Duel",
+    "id": 17799,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/091920.png",
+    "numAchievements": 28,
+    "numLeaderboards": 6,
+    "points": 282,
+    "dateModified": "2026-01-09 16:41:44",
+    "forumTopicId": 26050,
+    "hashes": [
+      "c52e496c497d427747769aaedfbb8dab"
+    ]
+  },
+  {
+    "title": "James Pond 2: Codename: RoboCod",
+    "id": 13229,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "73b92360c3efde9d265280f6e157fc33"
+    ]
+  },
+  {
+    "title": "Joe Montana Football",
+    "id": 10708,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0ece8f9c0fde2eba92bbe9a500116ff0"
+    ]
+  },
+  {
+    "title": "Jurassic Park",
+    "id": 11534,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/015423.png",
+    "numAchievements": 35,
+    "numLeaderboards": 1,
+    "points": 405,
+    "dateModified": "2019-10-10 18:21:01",
+    "forumTopicId": 5860,
+    "hashes": [
+      "b05014defe8d0c3d0ad6f67851ca15d7"
+    ]
+  },
+  {
+    "title": "Kenseiden",
+    "id": 10011,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/110073.png",
+    "numAchievements": 30,
+    "numLeaderboards": 0,
+    "points": 530,
+    "dateModified": "2021-04-19 01:49:27",
+    "forumTopicId": 4480,
+    "hashes": [
+      "64218d035be5988fb5ef023b70955ac3",
+      "6ae8f011701608ae8b765a26eb0b7ce1",
+      "f4c3327b0f92e09b21f59e90fd273c2f"
+    ]
+  },
+  {
+    "title": "King's Quest: Quest for the Crown",
+    "id": 9996,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064849.png",
+    "numAchievements": 32,
+    "numLeaderboards": 1,
+    "points": 169,
+    "dateModified": "2023-09-04 22:56:28",
+    "forumTopicId": 23157,
+    "hashes": [
+      "2f579f5a3216dfc77aea636930376ba7"
+    ]
+  },
+  {
+    "title": "Klax",
+    "id": 10709,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/078969.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7995,
+    "hashes": [
+      "dcea71eda85687d1835bed5c493f81a2"
+    ]
+  },
+  {
+    "title": "Krusty's Fun House",
+    "id": 26256,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "86deebacc6413f23fe11ee54011cf4bf"
+    ]
+  },
+  {
+    "title": "Kung Fu Kid",
+    "id": 10203,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/101251.png",
+    "numAchievements": 22,
+    "numLeaderboards": 0,
+    "points": 230,
+    "dateModified": "2024-04-18 11:46:52",
+    "forumTopicId": 4676,
+    "hashes": [
+      "126687037bf172174f697d16cd7e7296",
+      "387983a020328f52b42293b308562eb8"
+    ]
+  },
+  {
+    "title": "Land of Illusion starring Mickey Mouse",
+    "id": 10013,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121177.png",
+    "numAchievements": 37,
+    "numLeaderboards": 0,
+    "points": 345,
+    "dateModified": "2022-12-10 17:08:33",
+    "forumTopicId": 4837,
+    "hashes": [
+      "07fac1d61bc20cf6eb298f66ec2ffe49"
+    ]
+  },
+  {
+    "title": "Laser Ghost",
+    "id": 36782,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "17f9c50c444dc94e08ba173ab306608b"
+    ]
+  },
+  {
+    "title": "Legend of Illusion starring Mickey Mouse",
+    "id": 12653,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/082625.png",
+    "numAchievements": 41,
+    "numLeaderboards": 1,
+    "points": 270,
+    "dateModified": "2020-05-03 19:22:27",
+    "forumTopicId": 8999,
+    "hashes": [
+      "4a69a56a8efff7863feca11f1d6547e3"
+    ]
+  },
+  {
+    "title": "Lemmings",
+    "id": 10711,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/049869.png",
+    "numAchievements": 46,
+    "numLeaderboards": 61,
+    "points": 530,
+    "dateModified": "2022-01-22 16:20:56",
+    "forumTopicId": 14181,
+    "hashes": [
+      "b190f17a46ba9cc66676e7174209c24e"
+    ]
+  },
+  {
+    "title": "Les Schtroumpfs Autour du Monde",
+    "id": 27253,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "86806bba2acf7a07aad125f6ef02cd51"
+    ]
+  },
+  {
+    "title": "Line of Fire",
+    "id": 11617,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1597ad705990a66e90262ef7b1141b64"
+    ]
+  },
+  {
+    "title": "Lord of the Sword",
+    "id": 10712,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/106212.png",
+    "numAchievements": 40,
+    "numLeaderboards": 2,
+    "points": 275,
+    "dateModified": "2025-01-21 04:00:28",
+    "forumTopicId": 29303,
+    "hashes": [
+      "a5736126ed7e8569a189065ec20adf72",
+      "b80f87887881343e5705ff3cce93c5f1"
+    ]
+  },
+  {
+    "title": "Mahjong Sengoku Jidai",
+    "id": 36631,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ae37b27f37a25c5230f50e8b8d58eba2"
+    ]
+  },
+  {
+    "title": "Marble Madness",
+    "id": 30928,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "97832999dd6d2ba467b5625006b018a0"
+    ]
+  },
+  {
+    "title": "Marksman Shooting & Trap Shooting & Safari Hunt",
+    "id": 36784,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "bf7ea79ac0df3ebe7256da6331b21c34"
+    ]
+  },
+  {
+    "title": "Masters of Combat",
+    "id": 10689,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7f4c7a57ae46837f01ef9a0c85065250"
+    ]
+  },
+  {
+    "title": "Maze Hunter 3-D",
+    "id": 10770,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017357.png",
+    "numAchievements": 42,
+    "numLeaderboards": 0,
+    "points": 450,
+    "dateModified": "2024-04-30 04:25:59",
+    "forumTopicId": 6075,
+    "hashes": [
+      "2349ee42a09088a4a590e2c65474cdaf"
+    ]
+  },
+  {
+    "title": "Megumi Rescue",
+    "id": 10060,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/078361.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "fd834dbb87682c674f7d7ed917355021"
+    ]
+  },
+  {
+    "title": "Mercs",
+    "id": 20597,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069540.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7d5696c3da0dbed04b35543f7bdbef40"
+    ]
+  },
+  {
+    "title": "Michael Jackson's Moonwalker",
+    "id": 14363,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/025787.png",
+    "numAchievements": 37,
+    "numLeaderboards": 0,
+    "points": 145,
+    "dateModified": "2022-10-01 16:48:54",
+    "forumTopicId": 8989,
+    "hashes": [
+      "aa3bc8467e80a6aaab02051818ecb035"
+    ]
+  },
+  {
+    "title": "Mickey's Ultimate Challenge",
+    "id": 20601,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/074753.png",
+    "numAchievements": 17,
+    "numLeaderboards": 0,
+    "points": 55,
+    "dateModified": "2024-07-12 05:52:32",
+    "forumTopicId": 22019,
+    "hashes": [
+      "7ffa8a70ce7bfc8aabfe10e206df2c29"
+    ]
+  },
+  {
+    "title": "Micro Machines",
+    "id": 13231,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/087538.png",
+    "numAchievements": 43,
+    "numLeaderboards": 0,
+    "points": 319,
+    "dateModified": "2025-09-08 17:59:31",
+    "forumTopicId": 24863,
+    "hashes": [
+      "a90cf8d68fa8b1f0ba00f0ddb9d547b7"
+    ]
+  },
+  {
+    "title": "Miracle Warriors: Seal of the Dark Lord",
+    "id": 12843,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121377.png",
+    "numAchievements": 36,
+    "numLeaderboards": 0,
+    "points": 270,
+    "dateModified": "2024-12-06 01:44:18",
+    "forumTopicId": 8546,
+    "hashes": [
+      "e0a9cf889c27f3cb14903288f646d183"
+    ]
+  },
+  {
+    "title": "Missile Defense 3-D",
+    "id": 10818,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b17ca24555cc79c5f7d89f156b99e452"
+    ]
+  },
+  {
+    "title": "Monopoly",
+    "id": 10212,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/022333.png",
+    "numAchievements": 32,
+    "numLeaderboards": 0,
+    "points": 124,
+    "dateModified": "2025-11-21 04:16:22",
+    "forumTopicId": 7640,
+    "hashes": [
+      "b887836983fccb5ec706630cf835939f"
+    ]
+  },
+  {
+    "title": "Montezuma's Revenge featuring Panama Joe",
+    "id": 10817,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/082285.png",
+    "numAchievements": 37,
+    "numLeaderboards": 24,
+    "points": 278,
+    "dateModified": "2025-10-20 01:43:24",
+    "forumTopicId": 23422,
+    "hashes": [
+      "fe20d983d1b18ff1986c376489843f32"
+    ]
+  },
+  {
+    "title": "Mortal Kombat",
+    "id": 11947,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/106629.png",
+    "numAchievements": 25,
+    "numLeaderboards": 1,
+    "points": 216,
+    "dateModified": "2025-06-08 13:07:00",
+    "forumTopicId": 29466,
+    "hashes": [
+      "a429ed37b51cc9f46c943f968d88e29f"
+    ]
+  },
+  {
+    "title": "Mortal Kombat 3",
+    "id": 20289,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/062313.png",
+    "numAchievements": 47,
+    "numLeaderboards": 5,
+    "points": 273,
+    "dateModified": "2025-06-14 01:34:50",
+    "forumTopicId": 17998,
+    "hashes": [
+      "3ba73c09f35ea91bf36cd0b01bc1c044"
+    ]
+  },
+  {
+    "title": "Mortal Kombat II",
+    "id": 10738,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/117559.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c60f62f13a60bc585822bfd2d68ba75c"
+    ]
+  },
+  {
+    "title": "Ms. Pac-Man",
+    "id": 10192,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121212.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7911,
+    "hashes": [
+      "e492a237f62ea6a5b7e71ff1a3fc0f33"
+    ]
+  },
+  {
+    "title": "My Hero",
+    "id": 10771,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/087314.png",
+    "numAchievements": 10,
+    "numLeaderboards": 2,
+    "points": 130,
+    "dateModified": "2023-12-28 18:21:50",
+    "forumTopicId": 24868,
+    "hashes": [
+      "efef7361c9c37bcd6a7b84bc121af5f2"
+    ]
+  },
+  {
+    "title": "Nekkyuu Koushien",
+    "id": 10772,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "deac89672a98c5400030e66577cbb454"
+    ]
+  },
+  {
+    "title": "Ninja Gaiden",
+    "id": 10014,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121466.png",
+    "numAchievements": 62,
+    "numLeaderboards": 0,
+    "points": 700,
+    "dateModified": "2025-11-16 14:05:48",
+    "forumTopicId": 4446,
+    "hashes": [
+      "2cd25b3d9a1ced329a551d7fc3c0f01e",
+      "b070dc2ba3f106e89d1e9551f49a0027"
+    ]
+  },
+  {
+    "title": "Olympic Gold: Barcelona '92",
+    "id": 30460,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "205b3543f300b96972bca5ce1d1f1f90",
+      "2a0717f014b2fd99decd92308175658f"
+    ]
+  },
+  {
+    "title": "Operation Wolf",
+    "id": 31644,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/106503.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2ca2064302f51f724e1f2593369a0696"
+    ]
+  },
+  {
+    "title": "OutRun",
+    "id": 10042,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/073900.png",
+    "numAchievements": 16,
+    "numLeaderboards": 1,
+    "points": 260,
+    "dateModified": "2020-06-19 22:27:49",
+    "forumTopicId": 4653,
+    "hashes": [
+      "029ee92155247f8a282d63b8a6dd23c4"
+    ]
+  },
+  {
+    "title": "OutRun 3-D",
+    "id": 11956,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "558c793aab09b46bed78431348191060"
+    ]
+  },
+  {
+    "title": "OutRun Europa",
+    "id": 12404,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "458fc29765865fdaaf3f56808c94d8a6"
+    ]
+  },
+  {
+    "title": "Pac-Mania",
+    "id": 10048,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "946f3e6c2f0f546a8ebe55c8170ecc78"
+    ]
+  },
+  {
+    "title": "Paperboy",
+    "id": 10038,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/078072.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9b694d765038ffb87b36174412452588"
+    ]
+  },
+  {
+    "title": "Parlour Games",
+    "id": 10774,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "6bec795910c5a91ac146b905df7c17f5"
+    ]
+  },
+  {
+    "title": "Penguin Land",
+    "id": 10323,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/040828.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": "2026-01-16 17:53:34",
+    "forumTopicId": 33659,
+    "hashes": [
+      "8ddec589f72cdcf2cd4caafb075ec8e4"
+    ]
+  },
+  {
+    "title": "Phantasy Star",
+    "id": 9999,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/116184.png",
+    "numAchievements": 66,
+    "numLeaderboards": 0,
+    "points": 750,
+    "dateModified": "2025-12-01 02:06:22",
+    "forumTopicId": 4438,
+    "hashes": [
+      "1110938df80f4e44c8213d7f85cfb5e6",
+      "1b69716f9f4053e1533f654c091ae410",
+      "5ba9114edea5deb5282fd9ad7d4b2d62",
+      "5ecb5172f7b1b88da6221fb2f8da6ba6",
+      "a0f614f26e99633493e3a3339bc85586"
+    ]
+  },
+  {
+    "title": "Pit Pot: The Magical Castle",
+    "id": 13923,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/078067.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8712366da97ab80f4cd2aa36203a5885",
+      "c547a896147b5cb3450527f602359144",
+      "53e2ddbb65d2ed44afcb5c05ea3f2bfc",
+      "209ee37dcabc263aa462c781d3123fce"
+    ]
+  },
+  {
+    "title": "Populous",
+    "id": 13232,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "cc694ca94c4d74b487983332facc8b86"
+    ]
+  },
+  {
+    "title": "Poseidon Wars 3-D",
+    "id": 11187,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "3586416ac6f2aa1fa7dea351afb8ac1c"
+    ]
+  },
+  {
+    "title": "Power Strike",
+    "id": 10000,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/094022.png",
+    "numAchievements": 16,
+    "numLeaderboards": 1,
+    "points": 160,
+    "dateModified": "2023-06-26 17:43:08",
+    "forumTopicId": 20638,
+    "hashes": [
+      "810f65d7a7a8462c40c01bea3d5d7d01",
+      "8d9f02dcfea8f9728a3665ca12b044d1"
+    ]
+  },
+  {
+    "title": "Power Strike II",
+    "id": 10045,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/076345.png",
+    "numAchievements": 41,
+    "numLeaderboards": 2,
+    "points": 395,
+    "dateModified": "2025-11-24 17:55:46",
+    "forumTopicId": 4500,
+    "hashes": [
+      "bd7898393b716aff69132934bf7dccb8"
+    ]
+  },
+  {
+    "title": "Predator 2",
+    "id": 18498,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/070927.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1389419d90834d3700b772e984143fde"
+    ]
+  },
+  {
+    "title": "Prince of Persia",
+    "id": 10134,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/090950.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "70e9b330dd6a91e7310f3c8d9a934ecc"
+    ]
+  },
+  {
+    "title": "Pro Wrestling | Gokuaku Doumei Dump Matsumoto",
+    "id": 11495,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/102992.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0ee2937104e9667be89c38e6e9992d4b"
+    ]
+  },
+  {
+    "title": "Psychic World",
+    "id": 12417,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/016242.png",
+    "numAchievements": 17,
+    "numLeaderboards": 0,
+    "points": 150,
+    "dateModified": "2024-04-18 01:15:16",
+    "forumTopicId": 6479,
+    "hashes": [
+      "1076f6358527d1cec1e1e75143997293"
+    ]
+  },
+  {
+    "title": "Psycho Fox",
+    "id": 10046,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/047161.png",
+    "numAchievements": 40,
+    "numLeaderboards": 0,
+    "points": 450,
+    "dateModified": "2025-03-29 04:17:38",
+    "forumTopicId": 6838,
+    "hashes": [
+      "a9c2facf9ef536d095414ce2e7ce2f4f"
+    ]
+  },
+  {
+    "title": "Putt & Putter",
+    "id": 26904,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c13dab68a85fef5ba28ae0f5ba4fd05f"
+    ]
+  },
+  {
+    "title": "Quartet",
+    "id": 10035,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079433.png",
+    "numAchievements": 29,
+    "numLeaderboards": 0,
+    "points": 370,
+    "dateModified": "2025-06-05 03:48:34",
+    "forumTopicId": 6829,
+    "hashes": [
+      "63af7fce5106cc3de1e1b116c112095b"
+    ]
+  },
+  {
+    "title": "Quest for the Shaven Yak Starring Ren Hoëk & Stimpy",
+    "id": 37654,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "58b89d62438407f242bbe713f1d945ca"
+    ]
+  },
+  {
+    "title": "R-Type",
+    "id": 10058,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072375.png",
+    "numAchievements": 31,
+    "numLeaderboards": 1,
+    "points": 475,
+    "dateModified": "2025-11-22 06:03:33",
+    "forumTopicId": 4960,
+    "hashes": [
+      "61189f69342288aa032c66f6e2a1214d",
+      "694ee2b237d266c46e7abe5afdba528a",
+      "9e5507d51ac6f24c702a52a7abce0d3c"
+    ]
+  },
+  {
+    "title": "R.C. Grand Prix",
+    "id": 10815,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b30e60b91960a0f2a89fc133410770df"
+    ]
+  },
+  {
+    "title": "Rainbow Islands: Story of Bubble Bobble 2",
+    "id": 14878,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ffba9869948e2cef2bda6f805cc72087",
+      "e80ae00d8924f2bada5949bf75995d87"
+    ]
+  },
+  {
+    "title": "Rambo III",
+    "id": 14366,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4fce4e3247639d0ef54eb54d0ef21153"
+    ]
+  },
+  {
+    "title": "Rambo: First Blood Part 2",
+    "id": 10440,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/086073.png",
+    "numAchievements": 29,
+    "numLeaderboards": 0,
+    "points": 400,
+    "dateModified": "2023-11-26 03:54:02",
+    "forumTopicId": 22112,
+    "hashes": [
+      "3f6c5515a2e39826fbf816780298701c",
+      "7a080a155ad6a806da88aa1d3576d78c"
+    ]
+  },
+  {
+    "title": "Rampage",
+    "id": 10832,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/027517.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 9527,
+    "hashes": [
+      "54ee884bc658dbad88eac18e45e0eafc"
+    ]
+  },
+  {
+    "title": "Rampart",
+    "id": 25883,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f865afb7b5c32e130016e2d35756839c"
+    ]
+  },
+  {
+    "title": "Rastan",
+    "id": 10898,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/018709.png",
+    "numAchievements": 23,
+    "numLeaderboards": 1,
+    "points": 240,
+    "dateModified": "2025-11-30 09:12:43",
+    "forumTopicId": 7341,
+    "hashes": [
+      "5b3a785de403c311db7f17eae27caae6"
+    ]
+  },
+  {
+    "title": "Reggie Jackson Baseball",
+    "id": 10816,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "b3a37d601050ca5c732dc4160d875821"
+    ]
+  },
+  {
+    "title": "Renegade",
+    "id": 26719,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "bbce8b8ac26e2f582defe0056346f035"
+    ]
+  },
+  {
+    "title": "Rescue Mission",
+    "id": 10006,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/010589.png",
+    "numAchievements": 28,
+    "numLeaderboards": 1,
+    "points": 520,
+    "dateModified": "2019-07-05 17:27:59",
+    "forumTopicId": 4572,
+    "hashes": [
+      "717fdf868c8f11a712697260eb7db670"
+    ]
+  },
+  {
+    "title": "Road Rash",
+    "id": 10813,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/027402.png",
+    "numAchievements": 65,
+    "numLeaderboards": 0,
+    "points": 534,
+    "dateModified": "2025-11-21 05:13:27",
+    "forumTopicId": 9457,
+    "hashes": [
+      "325575374d2db3755f83bba728990ebe"
+    ]
+  },
+  {
+    "title": "RoboCop Versus The Terminator",
+    "id": 34549,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "7e29ab7dae0049e1e3944af7da2757fb"
+    ]
+  },
+  {
+    "title": "Rocky",
+    "id": 10012,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/103850.png",
+    "numAchievements": 24,
+    "numLeaderboards": 0,
+    "points": 325,
+    "dateModified": "2025-04-02 22:24:26",
+    "forumTopicId": 6022,
+    "hashes": [
+      "582d58d95c9774cd50555366c253a050"
+    ]
+  },
+  {
+    "title": "Running Battle",
+    "id": 10814,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/098764.png",
+    "numAchievements": 19,
+    "numLeaderboards": 0,
+    "points": 162,
+    "dateModified": "2025-01-05 03:41:56",
+    "forumTopicId": 26991,
+    "hashes": [
+      "c32c95222ce705c0c93732a8922f7453"
+    ]
+  },
+  {
+    "title": "Sagaia",
+    "id": 10742,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "d8a4c95203bbe294760085189f9544fa"
+    ]
+  },
+  {
+    "title": "Satellite 7",
+    "id": 10741,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072998.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "eac6a843975c50e39eb32f764da2a5ac"
+    ]
+  },
+  {
+    "title": "Scramble Spirits",
+    "id": 10740,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069535.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "82b9ee0920c3c46798ecd659be0a5d9a"
+    ]
+  },
+  {
+    "title": "SDI - Strategic Defense Initiative",
+    "id": 10036,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "4fd639981901032cdde4b12ca83d078c"
+    ]
+  },
+  {
+    "title": "Sega Chess",
+    "id": 10442,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/035104.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 10924,
+    "hashes": [
+      "92334e9e52eeb8d27606e319b1f8b617"
+    ]
+  },
+  {
+    "title": "Shadow Dancer: The Secret of Shinobi",
+    "id": 20341,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/104894.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c2055d5c66dd3944b99642c18032ebc4"
+    ]
+  },
+  {
+    "title": "Shadow of the Beast",
+    "id": 11602,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "abc8a9e43c588c7d0535cc8305bdbf94"
+    ]
+  },
+  {
+    "title": "Shanghai",
+    "id": 10739,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f0595fbd334cb8e95c0486a588a24f7b"
+    ]
+  },
+  {
+    "title": "Shinobi",
+    "id": 10034,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/106493.png",
+    "numAchievements": 39,
+    "numLeaderboards": 0,
+    "points": 650,
+    "dateModified": "2023-06-05 02:40:29",
+    "forumTopicId": 4673,
+    "hashes": [
+      "3dd2c025185e19ac9bf1ed16b695c629"
+    ]
+  },
+  {
+    "title": "Shooting Gallery",
+    "id": 36785,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f8ea8b8e641cabff32210ea6583f9f94"
+    ]
+  },
+  {
+    "title": "Sitio do Picapau Amarelo",
+    "id": 11589,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/065903.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "85ea52a2cbcae078dc3a04f8db1304a9"
+    ]
+  },
+  {
+    "title": "Slap Shot",
+    "id": 10737,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2027d095ee5c1f2c01255888e0b436ed",
+      "7f6359544ca157491960e4a0136a0f42",
+      "88a19d1f5d7ba2ba1f68fd83602c6eb7"
+    ]
+  },
+  {
+    "title": "Smash T.V.",
+    "id": 11501,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/114943.png",
+    "numAchievements": 13,
+    "numLeaderboards": 2,
+    "points": 170,
+    "dateModified": "2025-07-27 23:05:43",
+    "forumTopicId": 5839,
+    "hashes": [
+      "fd65b6794d6778c7948cd9b8b02a12f5"
+    ]
+  },
+  {
+    "title": "Snail Maze | Sega Master System BIOS",
+    "id": 11612,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017355.png",
+    "numAchievements": 13,
+    "numLeaderboards": 0,
+    "points": 60,
+    "dateModified": "2024-06-25 18:30:58",
+    "forumTopicId": 6033,
+    "hashes": [
+      "4f47e48248f6498bff9018789f26c9f8",
+      "840481177270d5642a14ca71ee72844c",
+      "ffcb0fedde6b7f8377ca99232c123597"
+    ]
+  },
+  {
+    "title": "Solomon no Kagi: Oujo Rihita no Namida",
+    "id": 11629,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017398.png",
+    "numAchievements": 50,
+    "numLeaderboards": 48,
+    "points": 465,
+    "dateModified": "2023-08-17 14:17:47",
+    "forumTopicId": 7023,
+    "hashes": [
+      "cfa84806075e017e29ffcdd0127fe647"
+    ]
+  },
+  {
+    "title": "Sonic Blast",
+    "id": 10736,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/108344.png",
+    "numAchievements": 42,
+    "numLeaderboards": 17,
+    "points": 340,
+    "dateModified": "2023-08-23 10:38:17",
+    "forumTopicId": 6065,
+    "hashes": [
+      "ce7f314a657e0f0fe506fb7aea016f31"
+    ]
+  },
+  {
+    "title": "Sonic Chaos",
+    "id": 10010,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/107958.png",
+    "numAchievements": 81,
+    "numLeaderboards": 26,
+    "points": 568,
+    "dateModified": "2025-01-13 19:28:23",
+    "forumTopicId": 4445,
+    "hashes": [
+      "1d661134b14eedf6b4ae1c907581fd96"
+    ]
+  },
+  {
+    "title": "Sonic the Hedgehog",
+    "id": 9962,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/107956.png",
+    "numAchievements": 23,
+    "numLeaderboards": 2,
+    "points": 395,
+    "dateModified": "2025-03-06 22:55:11",
+    "forumTopicId": 4416,
+    "hashes": [
+      "28110d3027da306210a9d1fb41010bbf",
+      "287c73df22264483efb3434b7d58908a",
+      "624d2e4fb85dc714f34a7c6e80035a7f",
+      "dc13a61eafe75c13c15b5ece419ac57b"
+    ]
+  },
+  {
+    "title": "Sonic the Hedgehog 2",
+    "id": 9997,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/107957.png",
+    "numAchievements": 43,
+    "numLeaderboards": 44,
+    "points": 380,
+    "dateModified": "2023-04-20 20:26:47",
+    "forumTopicId": 4437,
+    "hashes": [
+      "0ac157b6b7e839953fc8eba7538fb74a",
+      "32c109864dbe2c2644b6090def5e82b9",
+      "bf3b7a41e7da9de23416473a33c6ac2b"
+    ]
+  },
+  {
+    "title": "Sonic the Hedgehog Spinball",
+    "id": 10735,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/109372.png",
+    "numAchievements": 36,
+    "numLeaderboards": 2,
+    "points": 200,
+    "dateModified": "2025-11-22 04:06:06",
+    "forumTopicId": 29736,
+    "hashes": [
+      "21b4bcf6b259d4550912ad6f4aeaf550"
+    ]
+  },
+  {
+    "title": "Space Gun",
+    "id": 36783,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ebb0b4161ffa873a7fa80ca41d139c57"
+    ]
+  },
+  {
+    "title": "Space Harrier",
+    "id": 10033,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072372.png",
+    "numAchievements": 27,
+    "numLeaderboards": 2,
+    "points": 525,
+    "dateModified": "2025-11-30 04:58:40",
+    "forumTopicId": 4621,
+    "hashes": [
+      "b2e5047df186af7c02da17f1b285ae4f"
+    ]
+  },
+  {
+    "title": "Space Harrier 3-D",
+    "id": 10734,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "945a4202181abe8c50082a65211ef7c7",
+      "d8717eeb943c292c078429a0ed5a8527"
+    ]
+  },
+  {
+    "title": "Special Criminal Investigation",
+    "id": 36364,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "74c8108e7207d5b7149a69b0fc90d877"
+    ]
+  },
+  {
+    "title": "SpellCaster",
+    "id": 13233,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/061076.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0e1449dd7df4fd0995ccf802bb74cba0"
+    ]
+  },
+  {
+    "title": "Spider-Man vs. The Kingpin",
+    "id": 14849,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/105529.png",
+    "numAchievements": 17,
+    "numLeaderboards": 0,
+    "points": 200,
+    "dateModified": "2022-07-02 23:07:35",
+    "forumTopicId": 13004,
+    "hashes": [
+      "fa10ee70e43385e88e5d1a008716668b"
+    ]
+  },
+  {
+    "title": "Spider-Man: Return of the Sinister Six",
+    "id": 10406,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 27821,
+    "hashes": [
+      "094628b6dd0342253594b0adb0777c7b"
+    ]
+  },
+  {
+    "title": "Spy vs. Spy",
+    "id": 10441,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/022332.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 8133,
+    "hashes": [
+      "2a6ee78e2617886fe540dcb8a1500e90",
+      "c6adc5db40d0db75c9c167e4bb2ed918"
+    ]
+  },
+  {
+    "title": "Star Wars",
+    "id": 11497,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/061077.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2012a00d2ef01285e7bf077f78e975f5"
+    ]
+  },
+  {
+    "title": "Street Fighter II",
+    "id": 10733,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/025996.png",
+    "numAchievements": 32,
+    "numLeaderboards": 0,
+    "points": 200,
+    "dateModified": "2022-04-14 20:50:57",
+    "forumTopicId": 16068,
+    "hashes": [
+      "7a4cda14dd38a48fc36bcc6e104cf5d7"
+    ]
+  },
+  {
+    "title": "Streets of Rage",
+    "id": 14622,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/083495.png",
+    "numAchievements": 32,
+    "numLeaderboards": 20,
+    "points": 325,
+    "dateModified": "2023-10-03 12:38:19",
+    "forumTopicId": 9437,
+    "hashes": [
+      "29a5195d57a82fb1349a7403f1d65d7e"
+    ]
+  },
+  {
+    "title": "Streets of Rage 2",
+    "id": 11585,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069080.png",
+    "numAchievements": 22,
+    "numLeaderboards": 1,
+    "points": 260,
+    "dateModified": "2023-03-02 14:22:15",
+    "forumTopicId": 20572,
+    "hashes": [
+      "e680b108e67caf02e4fb77d419f48358"
+    ]
+  },
+  {
+    "title": "Strider",
+    "id": 12988,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/113737.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "48af5ae2cad7c48c81d7c2553a8ed426"
+    ]
+  },
+  {
+    "title": "Strider II",
+    "id": 11499,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "8336c9a48390889fb3e17cd6f9471ae1"
+    ]
+  },
+  {
+    "title": "Submarine Attack",
+    "id": 25232,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/078374.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5eaa50519e87d57f40f50731caff5f62"
+    ]
+  },
+  {
+    "title": "Sudoku (Tectoy)",
+    "id": 16057,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/034554.png",
+    "numAchievements": 20,
+    "numLeaderboards": 0,
+    "points": 60,
+    "dateModified": "2025-07-28 03:23:11",
+    "forumTopicId": 10791,
+    "hashes": [
+      "1ef2a7240551c4666b47a72e4fc6c473"
+    ]
+  },
+  {
+    "title": "Super Monaco GP",
+    "id": 10732,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "aed300f323aae6d00878eb6ba21c2eb7",
+      "efb0fb59074eab11816c8843b4135a0c"
+    ]
+  },
+  {
+    "title": "Super Off Road",
+    "id": 10954,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/086070.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 5853,
+    "hashes": [
+      "e3d3dfde69345e1f62cce512e9010bf8"
+    ]
+  },
+  {
+    "title": "Super Racing",
+    "id": 29076,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "bcc2df04cac4b713ee48a05669cdfbdd"
+    ]
+  },
+  {
+    "title": "Super Space Invaders",
+    "id": 10731,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f36e9758390ed2b781e9a8a7a958e7e3"
+    ]
+  },
+  {
+    "title": "Super Tennis",
+    "id": 34952,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "2db9404fe79593fd2379921ca822103a"
+    ]
+  },
+  {
+    "title": "Superman: The Man of Steel",
+    "id": 12772,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "dc1541e54da2376781e3691784befaa9"
+    ]
+  },
+  {
+    "title": "T2: The Arcade Game",
+    "id": 11643,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f1983c31f965aa8de77df64483883550"
+    ]
+  },
+  {
+    "title": "Taito Chase H.Q.",
+    "id": 33011,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "08511c5cf0df0941b10ebf28050afe51"
+    ]
+  },
+  {
+    "title": "Tangram",
+    "id": 16306,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/054354.png",
+    "numAchievements": 6,
+    "numLeaderboards": 15,
+    "points": 20,
+    "dateModified": "2021-04-21 07:09:28",
+    "forumTopicId": 10968,
+    "hashes": [
+      "03e1482ad2ee6f77399a1c5c647dba5e"
+    ]
+  },
+  {
+    "title": "Taz in Escape from Mars",
+    "id": 10967,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5f170677dc0d0229ec3ec7f306bb6303"
+    ]
+  },
+  {
+    "title": "Taz-Mania",
+    "id": 10076,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/105342.png",
+    "numAchievements": 14,
+    "numLeaderboards": 0,
+    "points": 120,
+    "dateModified": "2022-11-22 00:31:10",
+    "forumTopicId": 4522,
+    "hashes": [
+      "cfc878f0163933fcfcc89e134fbeb31f"
+    ]
+  },
+  {
+    "title": "Tecmo World Cup '93",
+    "id": 24990,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/080414.png",
+    "numAchievements": 14,
+    "numLeaderboards": 1,
+    "points": 185,
+    "dateModified": "2023-08-11 03:32:17",
+    "forumTopicId": 22852,
+    "hashes": [
+      "81f530d169c5c04c8faf8db367bbcd63"
+    ]
+  },
+  {
+    "title": "Teddy Boy",
+    "id": 10726,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/061408.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "66baea0a42353ffd3f131586e0c9c4d4",
+      "a7f7d8b8d3394d41430b8240151f91f6",
+      "de5d6c9e1349844b74f53caaf2af680b"
+    ]
+  },
+  {
+    "title": "Tennis Ace",
+    "id": 10008,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/020108.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "89146053b1474833e921835c907aa2d3"
+    ]
+  },
+  {
+    "title": "Tensai Bakabon",
+    "id": 12213,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079738.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ed8bfc3d17edc8e7968e553a9a6dd24c"
+    ]
+  },
+  {
+    "title": "Terminator 2: Judgment Day",
+    "id": 11186,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "cc2454eebbbfab7ba99851a923dfdaaf"
+    ]
+  },
+  {
+    "title": "The Addams Family",
+    "id": 14726,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/078519.png",
+    "numAchievements": 26,
+    "numLeaderboards": 0,
+    "points": 260,
+    "dateModified": "2023-10-10 18:10:17",
+    "forumTopicId": 9671,
+    "hashes": [
+      "09202bc26fcf19ebd3ffcbd80e23ed9d"
+    ]
+  },
+  {
+    "title": "The Cyber Shinobi",
+    "id": 10764,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079298.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7394,
+    "hashes": [
+      "9878c298077be78b765ac2264815100b"
+    ]
+  },
+  {
+    "title": "The Flash",
+    "id": 11658,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "a96908fab5f599b11fe8107c3f93b6b1"
+    ]
+  },
+  {
+    "title": "The Flintstones",
+    "id": 12897,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072376.png",
+    "numAchievements": 24,
+    "numLeaderboards": 1,
+    "points": 365,
+    "dateModified": "2021-03-17 03:56:59",
+    "forumTopicId": 7152,
+    "hashes": [
+      "23a5a42c0a4a4bceffbd1869192f329d"
+    ]
+  },
+  {
+    "title": "The Incredible Hulk",
+    "id": 32047,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "285d996c1d7dbf38458df61c28bbaa01"
+    ]
+  },
+  {
+    "title": "The Jungle Book",
+    "id": 13230,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "ed224898befb4fb246175e46f9982821"
+    ]
+  },
+  {
+    "title": "The Lion King",
+    "id": 20480,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/109150.png",
+    "numAchievements": 23,
+    "numLeaderboards": 0,
+    "points": 154,
+    "dateModified": "2025-07-01 18:55:42",
+    "forumTopicId": 30050,
+    "hashes": [
+      "e50336c0d146e8a341c7ae198a016527"
+    ]
+  },
+  {
+    "title": "The Lucky Dime Caper starring Donald Duck",
+    "id": 10714,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/105308.png",
+    "numAchievements": 23,
+    "numLeaderboards": 0,
+    "points": 200,
+    "dateModified": "2025-11-27 08:06:18",
+    "forumTopicId": 8389,
+    "hashes": [
+      "653f10042a5ee5854ccf971456641a4d",
+      "7de76abf927d6fec98d46e28de054e36"
+    ]
+  },
+  {
+    "title": "The NewZealand Story",
+    "id": 36363,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "05e5054e2ea818d4b7eb53d624562dcf"
+    ]
+  },
+  {
+    "title": "The Ninja",
+    "id": 10773,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/023671.png",
+    "numAchievements": 15,
+    "numLeaderboards": 1,
+    "points": 93,
+    "dateModified": "2021-12-03 22:49:59",
+    "forumTopicId": 14230,
+    "hashes": [
+      "2c620ba64fcaac940b4b1566733037b3"
+    ]
+  },
+  {
+    "title": "The Ottifants",
+    "id": 11579,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "f64ea159120c018e05fb95ac8533e9eb"
+    ]
+  },
+  {
+    "title": "The Smurfs",
+    "id": 27244,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "fe2aa0402eb30cec17b3bf4504f8219b"
+    ]
+  },
+  {
+    "title": "The Terminator",
+    "id": 11698,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064322.png",
+    "numAchievements": 13,
+    "numLeaderboards": 0,
+    "points": 118,
+    "dateModified": "2023-08-12 04:00:01",
+    "forumTopicId": 19143,
+    "hashes": [
+      "f224907676a09c7f0404c95c316f1503"
+    ]
+  },
+  {
+    "title": "The Three Dragon Story",
+    "id": 14173,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/069539.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "9acd8b2eab5453380242ab3a6417c165"
+    ]
+  },
+  {
+    "title": "Thunder Blade",
+    "id": 10725,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "70dcee3c77e95d83fcf6df0dae30a4a8",
+      "a03bbd3c75e736ce378f2c3fe47f5579"
+    ]
+  },
+  {
+    "title": "Time Soldiers",
+    "id": 11662,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/072157.png",
+    "numAchievements": 54,
+    "numLeaderboards": 0,
+    "points": 650,
+    "dateModified": "2024-05-14 00:06:39",
+    "forumTopicId": 8625,
+    "hashes": [
+      "dbc9260009dd0838d0e31de51d57d078"
+    ]
+  },
+  {
+    "title": "Tom and Jerry: The Movie",
+    "id": 10028,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/121625.png",
+    "numAchievements": 20,
+    "numLeaderboards": 0,
+    "points": 190,
+    "dateModified": "2023-02-14 20:24:23",
+    "forumTopicId": 4503,
+    "hashes": [
+      "965e5576d569794aa27e89048855615f"
+    ]
+  },
+  {
+    "title": "TransBot / Astro Flash",
+    "id": 16610,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 11525,
+    "hashes": [
+      "93bb1e1ee14ac53adb9e6b9e0c135043"
+    ]
+  },
+  {
+    "title": "Trivial Pursuit",
+    "id": 11584,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 7994,
+    "hashes": [
+      "87d44f3416d4f31959b583d0d460c7fb"
+    ]
+  },
+  {
+    "title": "Ultima IV: Quest of the Avatar",
+    "id": 10032,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/110105.png",
+    "numAchievements": 70,
+    "numLeaderboards": 1,
+    "points": 468,
+    "dateModified": "2026-01-03 15:04:00",
+    "forumTopicId": 18622,
+    "hashes": [
+      "c54c1a2559cec189f53e794177d002af"
+    ]
+  },
+  {
+    "title": "Ultimate Soccer",
+    "id": 10724,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c2c9a7942adb055ef08671c03648ed06"
+    ]
+  },
+  {
+    "title": "Vampire: Master of Darkness",
+    "id": 10015,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017924.png",
+    "numAchievements": 40,
+    "numLeaderboards": 0,
+    "points": 455,
+    "dateModified": "2025-01-03 05:49:07",
+    "forumTopicId": 4447,
+    "hashes": [
+      "8354932a7f20e84a808471b3724a56f8"
+    ]
+  },
+  {
+    "title": "Vigilante",
+    "id": 10427,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/120588.png",
+    "numAchievements": 14,
+    "numLeaderboards": 1,
+    "points": 80,
+    "dateModified": "2022-11-30 03:20:56",
+    "forumTopicId": 4847,
+    "hashes": [
+      "6deabfc15d9aeb4c8ed1b641fb950de5"
+    ]
+  },
+  {
+    "title": "Virtua Fighter Animation",
+    "id": 10723,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/106630.png",
+    "numAchievements": 18,
+    "numLeaderboards": 0,
+    "points": 155,
+    "dateModified": "2023-06-08 03:01:49",
+    "forumTopicId": 21852,
+    "hashes": [
+      "fdc90edb44d2a2236ab9c29d2f073d3c"
+    ]
+  },
+  {
+    "title": "Walter Payton Football",
+    "id": 10722,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5d292f9c2fa5893fa520c8145b437a28",
+      "670f409af2403c8256b6c04d026e33c5",
+      "ab173835fc5934cfdc6e378be75c12ea"
+    ]
+  },
+  {
+    "title": "Wanted",
+    "id": 10719,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/108827.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "0070737ddb0a2e5e822f1d8f46437b07"
+    ]
+  },
+  {
+    "title": "Where in the World is Carmen Sandiego?",
+    "id": 10122,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/102572.png",
+    "numAchievements": 9,
+    "numLeaderboards": 1,
+    "points": 80,
+    "dateModified": "2024-09-25 16:27:03",
+    "forumTopicId": 28202,
+    "hashes": [
+      "29dcfcf773ceb9ef29b524183ad89d8c"
+    ]
+  },
+  {
+    "title": "Wimbledon",
+    "id": 10728,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "a7f1049812a4cd1f180dcd644b10145f"
+    ]
+  },
+  {
+    "title": "Wimbledon II",
+    "id": 10729,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "41fa7c376327e7fa851103c0407e8e53"
+    ]
+  },
+  {
+    "title": "Winter Olympics: Lillehammer '94",
+    "id": 14365,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "6046d9ee439f3c76eb6713eea8ba984b"
+    ]
+  },
+  {
+    "title": "Wolfchild",
+    "id": 10727,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "08eb9bf02f5eb4e238f791f27d65449a"
+    ]
+  },
+  {
+    "title": "Wonder Boy",
+    "id": 10009,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/010508.png",
+    "numAchievements": 43,
+    "numLeaderboards": 3,
+    "points": 397,
+    "dateModified": "2025-11-17 17:54:13",
+    "forumTopicId": 4441,
+    "hashes": [
+      "7e805aa51bfb5f206c950a32ebcdab7c"
+    ]
+  },
+  {
+    "title": "Wonder Boy III: The Dragon's Trap",
+    "id": 10007,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/010498.png",
+    "numAchievements": 54,
+    "numLeaderboards": 0,
+    "points": 435,
+    "dateModified": "2022-07-09 01:04:42",
+    "forumTopicId": 4443,
+    "hashes": [
+      "3f780a4b30384578c27157dbf5c21713",
+      "56b3436304b8cecfe4e321ca029d5e80",
+      "c7e1464e9ac0805f08ae7151796f69da",
+      "e7f86c049e4bd8b26844ff62bd067d57",
+      "e91a4da4f53b214704b3a99c4982f58e"
+    ]
+  },
+  {
+    "title": "Wonder Boy in Monster Land",
+    "id": 10777,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/014630.png",
+    "numAchievements": 51,
+    "numLeaderboards": 1,
+    "points": 750,
+    "dateModified": "2019-10-22 19:20:02",
+    "forumTopicId": 5107,
+    "hashes": [
+      "7eb06aca73a5119ac95a75c01ad7b720",
+      "8f8aaac492de96f2cfddb9d1a57dd979",
+      "d649ce52d05d88efdaca81d2ccc57d2d"
+    ]
+  },
+  {
+    "title": "Wonder Boy in Monster World",
+    "id": 10776,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/109737.png",
+    "numAchievements": 53,
+    "numLeaderboards": 0,
+    "points": 400,
+    "dateModified": "2025-10-19 22:06:34",
+    "forumTopicId": 30019,
+    "hashes": [
+      "5837764c172c8c43c8c7b21f2144cf27"
+    ]
+  },
+  {
+    "title": "Wonsiin",
+    "id": 14175,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/091357.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "c53091e60b5bd473142ca231dd96f6eb"
+    ]
+  },
+  {
+    "title": "Woody Pop",
+    "id": 10050,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/079999.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1b1b6051027806a98e9947b5ae5f0076"
+    ]
+  },
+  {
+    "title": "World Class Leader Board",
+    "id": 13234,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "dd04608b2b64f11dd9dc4f7db7972650"
+    ]
+  },
+  {
+    "title": "World Cup Italia 90",
+    "id": 10718,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 9003,
+    "hashes": [
+      "a19d4a16be24106cd48b283b5bad5023"
+    ]
+  },
+  {
+    "title": "World Cup USA 94",
+    "id": 10730,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "aa8ddf472a9b0c4b26f91ab13fbc66de"
+    ]
+  },
+  {
+    "title": "World Games",
+    "id": 10720,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "87a479d66e88464d45d87cad77c2b3fe"
+    ]
+  },
+  {
+    "title": "World Gran Prix",
+    "id": 10059,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "75550fca836414ce7286c294d03c1b04"
+    ]
+  },
+  {
+    "title": "World Soccer",
+    "id": 10095,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5f008423ae6a454bc70e94a8c9f33d1c"
+    ]
+  },
+  {
+    "title": "WWF WrestleMania: Steel Cage Challenge",
+    "id": 10721,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/083328.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "5db168808d3b4756c8c5f8b836a7b05a"
+    ]
+  },
+  {
+    "title": "X-Men: Mojo World",
+    "id": 11957,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "758a1e837e51669700c0a2379e90d993"
+    ]
+  },
+  {
+    "title": "Xenon 2 Megablast",
+    "id": 10027,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "1f1ce1d74c416f2b85cc3f24d316f9e3"
+    ]
+  },
+  {
+    "title": "Ys: The Vanished Omens",
+    "id": 10717,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/112390.png",
+    "numAchievements": 50,
+    "numLeaderboards": 0,
+    "points": 400,
+    "dateModified": "2023-09-06 02:17:21",
+    "forumTopicId": 6575,
+    "hashes": [
+      "77d2ff054429f7970134e67800539a78",
+      "dd5d01d4e1fe7d275f95ac95dc63b04f"
+    ]
+  },
+  {
+    "title": "Zaxxon 3-D",
+    "id": 10715,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/000001.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "882dc10b0792be579a745c3f38010642"
+    ]
+  },
+  {
+    "title": "Zillion",
+    "id": 10969,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017580.png",
+    "numAchievements": 34,
+    "numLeaderboards": 4,
+    "points": 356,
+    "dateModified": "2024-07-21 14:02:07",
+    "forumTopicId": 24809,
+    "hashes": [
+      "d4bf9e7bcf9a48da53785d2ae7bc4270"
+    ]
+  },
+  {
+    "title": "Zillion II - The Tri Formation",
+    "id": 10716,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/017686.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": null,
+    "hashes": [
+      "605b0c360075876b4a0be479679d1075"
+    ]
+  },
+  {
+    "title": "Zool: Ninja of the Nth Dimension",
+    "id": 12977,
+    "consoleId": 11,
+    "consoleName": "Master System",
+    "imageIcon": "/Images/064781.png",
+    "numAchievements": 0,
+    "numLeaderboards": 0,
+    "points": 0,
+    "dateModified": null,
+    "forumTopicId": 11958,
+    "hashes": [
+      "42fb44c9a2c82b8c4aef8191c1b5676f"
+    ]
+  }
+]
