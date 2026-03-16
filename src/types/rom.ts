@@ -61,6 +61,8 @@ export interface Rom {
   notes?: string | null;
   /** Whether the file path exists on disk (computed at runtime, not stored) */
   filePathExists?: boolean;
+  /** Whether the ROM's volume is disconnected (e.g. external drive not mounted) — file may be fine when reconnected (computed at runtime, not stored) */
+  volumeDisconnected?: boolean;
   /** Number of achievements available in RetroAchievements (computed at runtime, not stored) */
   numAchievements?: number;
 

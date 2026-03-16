@@ -118,9 +118,36 @@ describe('romFilters', () => {
       expect(byAvailability('available')(createRom({ filePathExists: false }))).toBe(false);
     });
 
-    it('unavailable matches ROMs with missing files', () => {
-      expect(byAvailability('unavailable')(createRom({ filePathExists: false }))).toBe(true);
-      expect(byAvailability('unavailable')(createRom({ filePathExists: true }))).toBe(false);
+    it('missing matches ROMs with truly missing files', () => {
+      expect(byAvailability('missing')(createRom({ filePathExists: false }))).toBe(true);
+      expect(byAvailability('missing')(createRom({ filePathExists: true }))).toBe(false);
+      expect(
+        byAvailability('missing')(createRom({ filePathExists: false, volumeDisconnected: true }))
+      ).toBe(false);
+    });
+
+    it('disconnected matches ROMs on disconnected drives', () => {
+      expect(byAvailability('disconnected')(createRom({ volumeDisconnected: true }))).toBe(true);
+      expect(byAvailability('disconnected')(createRom({ filePathExists: true }))).toBe(false);
+      expect(byAvailability('disconnected')(createRom({ filePathExists: false }))).toBe(false);
+    });
+
+    it('each filter is mutually exclusive', () => {
+      const available = createRom({ filePathExists: true });
+      const missing = createRom({ filePathExists: false });
+      const disconnected = createRom({ filePathExists: false, volumeDisconnected: true });
+
+      expect(byAvailability('available')(available)).toBe(true);
+      expect(byAvailability('missing')(available)).toBe(false);
+      expect(byAvailability('disconnected')(available)).toBe(false);
+
+      expect(byAvailability('available')(missing)).toBe(false);
+      expect(byAvailability('missing')(missing)).toBe(true);
+      expect(byAvailability('disconnected')(missing)).toBe(false);
+
+      expect(byAvailability('available')(disconnected)).toBe(false);
+      expect(byAvailability('missing')(disconnected)).toBe(false);
+      expect(byAvailability('disconnected')(disconnected)).toBe(true);
     });
   });
 

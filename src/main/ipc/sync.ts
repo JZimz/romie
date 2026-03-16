@@ -172,6 +172,18 @@ function filterRomsForSync(
   log.debug(`Filtering ${allRoms.length} ROMs for tags: ${tagIds.join(', ')}`);
 
   const filteredRoms = allRoms.filter((rom) => {
+    // Skip ROMs on disconnected volumes — they can't be copied right now
+    if (rom.volumeDisconnected) {
+      syncStatus
+        .addSkipped({
+          rom,
+          reason: 'volume_unreachable',
+          details: 'ROM is on a disconnected drive',
+        })
+        .incrementProcessed();
+      return false;
+    }
+
     // Check if ROM has any of the target tags
     if (!rom.tags?.some((tag) => tagIds.includes(tag))) {
       return false;

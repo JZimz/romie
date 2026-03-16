@@ -125,7 +125,12 @@ export interface SyncFailReason {
 }
 export interface SyncSkipReason {
   rom: Rom;
-  reason: 'unsupported_system' | 'unsupported_format' | 'file_exists' | 'missing_system_mapping';
+  reason:
+    | 'unsupported_system'
+    | 'unsupported_format'
+    | 'file_exists'
+    | 'missing_system_mapping'
+    | 'volume_unreachable';
   details: string;
 }
 

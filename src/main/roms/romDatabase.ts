@@ -26,9 +26,10 @@ export async function addRom(rom: RomDraft): Promise<Rom> {
   const existing = roms.findByMd5(rom.md5);
 
   if (existing) {
-    const originalExists = await validateRomExists(existing);
+    const { filePathExists: originalExists, volumeDisconnected } =
+      await validateRomExists(existing);
 
-    if (existing.filePath !== rom.filePath && !originalExists) {
+    if (existing.filePath !== rom.filePath && !originalExists && !volumeDisconnected) {
       // Original file no longer accessible - update the record with new path
       roms.update(existing.id, {
         filePath: rom.filePath,
@@ -82,8 +83,8 @@ export async function listRoms(): Promise<Rom[]> {
   // Enrich ROMs with achievement count and availability data.
   const enrichedRoms = await Promise.all(
     allRoms.map(async (rom) => {
-      const filePathExists = await validateRomExists(rom);
-      const enrichedRom: Rom = { ...rom, filePathExists };
+      const { filePathExists, volumeDisconnected } = await validateRomExists(rom);
+      const enrichedRom: Rom = { ...rom, filePathExists, volumeDisconnected };
 
       if (rom.verified && rom.ramd5) {
         const game = lookupRomByHashSync(rom.ramd5);

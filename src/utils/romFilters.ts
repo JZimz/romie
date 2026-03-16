@@ -1,7 +1,7 @@
 import type { Rom } from '@/types/rom';
 
 export type AchievementFilter = 'has-achievements' | 'no-achievements' | 'unverified' | null;
-export type AvailabilityFilter = 'available' | 'unavailable' | null;
+export type AvailabilityFilter = 'available' | 'missing' | 'disconnected' | null;
 
 export const byQuery = (query: string) => (rom: Rom) =>
   !query || rom.displayName.toLowerCase().includes(query.toLowerCase());
@@ -24,8 +24,14 @@ export const byAchievements = (filter: AchievementFilter) => (rom: Rom) => {
   }
 };
 
-export const byAvailability = (filter: AvailabilityFilter) => (rom: Rom) =>
-  !filter || (filter === 'available') === !!rom.filePathExists;
+export const byAvailability = (filter: AvailabilityFilter) => (rom: Rom) => {
+  if (!filter) return true;
+  if (filter === 'disconnected') return !!rom.volumeDisconnected;
+  if (filter === 'available') return !!rom.filePathExists;
+  if (filter === 'missing') return !rom.filePathExists && !rom.volumeDisconnected;
+
+  return false;
+};
 
 export const combineFilters = (...predicates: Array<(rom: Rom) => boolean>) => {
   return (rom: Rom) => predicates.every((p) => p(rom));
