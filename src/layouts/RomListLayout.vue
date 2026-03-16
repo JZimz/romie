@@ -1,7 +1,7 @@
 <template>
   <div class="rom-list-layout">
     <AppToolbar
-      :unavailable-count="unavailableCount"
+      :unavailable-count="missingCount"
       @filter-unavailable="showUnavailableFilter"
       @remove-unavailable="removeUnavailableRoms"
     >
@@ -42,13 +42,14 @@
     <div v-if="showFilters" class="rom-list-layout__filters">
       <FloatLabel variant="on">
         <Select
-          v-if="hasUnavailableRoms || filterByAvailability !== null"
+          v-if="hasMissingRoms || hasDisconnectedRoms || filterByAvailability !== null"
           id="availability_filter"
           v-model="filterByAvailability"
           class="rom-list-layout__availability-filter"
           :options="[
             { label: 'Available', value: 'available' },
-            { label: 'Unavailable', value: 'unavailable' },
+            { label: 'Missing', value: 'missing' },
+            { label: 'Disconnected', value: 'disconnected' },
           ]"
           option-label="label"
           option-value="value"
@@ -158,9 +159,14 @@ const filterByRegion = ref<string[]>([]);
 const filterByRA = ref<AchievementFilter>(null);
 const filterByAvailability = ref<AvailabilityFilter>(null);
 
-const unavailableRoms = computed(() => romStore.roms.filter((rom) => !rom.filePathExists));
-const unavailableCount = computed(() => unavailableRoms.value.length);
-const hasUnavailableRoms = computed(() => unavailableCount.value > 0);
+const missingRoms = computed(() =>
+  romStore.roms.filter((rom) => !rom.filePathExists && !rom.volumeDisconnected)
+);
+const missingCount = computed(() => missingRoms.value.length);
+const hasMissingRoms = computed(() => missingCount.value > 0);
+const hasDisconnectedRoms = computed(() =>
+  romStore.roms.some(({ volumeDisconnected }) => volumeDisconnected)
+);
 
 const searchPlaceholder = computed(() => {
   if (props.mode === 'tag' && props.tag) {
@@ -252,11 +258,11 @@ function toggleFilters() {
 
 function showUnavailableFilter() {
   showFilters.value = true;
-  filterByAvailability.value = 'unavailable';
+  filterByAvailability.value = 'missing';
 }
 
 async function removeUnavailableRoms() {
-  const idsToRemove = unavailableRoms.value.map(({ id }) => id);
+  const idsToRemove = missingRoms.value.map(({ id }) => id);
 
   try {
     await romStore.removeRoms(idsToRemove);

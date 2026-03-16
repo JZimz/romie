@@ -15,7 +15,7 @@
         :region="rom.region"
         :size="rom.size"
         :is-active="romSelections.includes(rom.id)"
-        :available="!!rom.filePathExists"
+        :available="!!rom.filePathExists || !!rom.volumeDisconnected"
         @click="handleRomClick($event, rom)"
       />
     </template>

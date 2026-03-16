@@ -27,15 +27,27 @@
       </template>
       <template #content>
         <div class="rom-details__content">
-          <Message v-if="!rom.filePathExists" severity="warn" :closable="false">
+          <Message
+            v-if="!rom.filePathExists && !rom.volumeDisconnected"
+            severity="warn"
+            :closable="false"
+          >
             <p class="rom-details__alert-text">
-              The ROM file could not be located. It may have been moved, deleted, or is on a
-              disconnected drive.
+              The ROM file could not be located. It may have been moved or deleted.
             </p>
             <code class="rom-details__alert-path">{{ rom.filePath }}</code>
             <p class="rom-details__alert-hint">
               Use the <strong>Delete</strong> button below to remove this ROM from your library.
             </p>
+          </Message>
+          <Message
+            v-if="rom.volumeDisconnected"
+            size="small"
+            severity="warn"
+            variant="simple"
+            icon="pi pi-ban"
+          >
+            Drive not connected
           </Message>
           <RomAchievements
             :verified="rom.verified"
