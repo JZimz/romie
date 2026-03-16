@@ -53,6 +53,10 @@ export const MUOS_PROFILE: DeviceProfile = {
       folderName: 'nds',
       supportedFormats: ['.nds', '.zip', '.7z'],
     },
+    ndsi: {
+      folderName: 'nds',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z'],
+    },
     ngp: {
       folderName: 'ngp',
       supportedFormats: ['.ngp', '.ngc', '.zip', '.7z'],
@@ -84,6 +88,14 @@ export const MUOS_PROFILE: DeviceProfile = {
     vb: {
       folderName: 'vb',
       supportedFormats: ['.vb', '.zip', '.7z'],
+    },
+    msx: {
+      folderName: 'msx',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3', '.m3u', '.zip', '.7z'],
+    },
+    ws: {
+      folderName: 'ws',
+      supportedFormats: ['.ws', '.wsc', '.zip', '.7z'],
     },
   },
 };

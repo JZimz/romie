@@ -38,6 +38,10 @@ export const KNULLI_PROFILE: DeviceProfile = {
       folderName: 'nds',
       supportedFormats: ['.nds', '.zip', '.7z'],
     },
+    ndsi: {
+      folderName: 'nds',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z'],
+    },
     genesis: {
       folderName: 'megadrive',
       supportedFormats: ['.md', '.gen', '.smd', '.zip', '.7z'],
@@ -56,7 +60,7 @@ export const KNULLI_PROFILE: DeviceProfile = {
     },
     atari2600: {
       folderName: 'atari2600',
-      supportedFormats: ['.a26', '.zip', '.7z'],
+      supportedFormats: ['.a26', '.bin', '.zip', '.7z'],
     },
     lynx: {
       folderName: 'lynx',
@@ -73,6 +77,14 @@ export const KNULLI_PROFILE: DeviceProfile = {
     pce: {
       folderName: 'pcengine',
       supportedFormats: ['.pce', '.zip', '.7z'],
+    },
+    msx: {
+      folderName: 'msx',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3', '.m3u', '.zip', '.7z'],
+    },
+    ws: {
+      folderName: 'wonderswan',
+      supportedFormats: ['.ws', '.wsc', '.zip', '.7z'],
     },
     arcade: {
       folderName: 'fbneo',

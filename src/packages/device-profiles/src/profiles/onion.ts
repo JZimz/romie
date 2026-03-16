@@ -41,6 +41,10 @@ export const ONION_OS_PROFILE: DeviceProfile = {
       folderName: 'NDS',
       supportedFormats: ['.nds', '.zip', '.7z', '.rar'],
     },
+    ndsi: {
+      folderName: 'NDS',
+      supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z', '.rar'],
+    },
     genesis: {
       folderName: 'MD',
       supportedFormats: ['.md', '.gen', '.smd', '.zip', '.7z'],
@@ -76,6 +80,14 @@ export const ONION_OS_PROFILE: DeviceProfile = {
     pce: {
       folderName: 'PCE',
       supportedFormats: ['.pce', '.zip', '.7z'],
+    },
+    msx: {
+      folderName: 'MSX',
+      supportedFormats: ['.dsk', '.mx1', '.mx2', '.rom', '.cas', '.m3', '.m3u', '.zip', '.7z'],
+    },
+    ws: {
+      folderName: 'WS',
+      supportedFormats: ['.ws', '.wsc', '.zip', '.7z'],
     },
     arcade: {
       folderName: 'ARCADE',

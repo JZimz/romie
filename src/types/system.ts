@@ -7,6 +7,7 @@ export const SYSTEM_CODES = [
   'gbc',
   'gba',
   'nds',
+  'ndsi',
   'ngp',
   'genesis',
   'sms',
@@ -16,6 +17,8 @@ export const SYSTEM_CODES = [
   'lynx',
   'atari2600',
   'pce',
+  'msx',
+  'ws',
   'arcade',
 ] as const;
 
