@@ -33,7 +33,7 @@ updates:
       interval: 'weekly'
       day: 'monday'
     commit-message:
-      prefix: 'chore(ci)'
+      prefix: 'chore'
       include: 'scope'
     labels:
       - 'dependencies'
