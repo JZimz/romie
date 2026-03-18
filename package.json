@@ -96,7 +96,7 @@
     "@primeuix/themes": "^2.0.3",
     "@retroachievements/api": "^2.10.0",
     "@sentry/electron": "^7.10.0",
-    "@sentry/vue": "^10.43.0",
+    "@sentry/vue": "^10.44.0",
     "7zip-bin": "^5.2.0",
     "better-sqlite3": "^12.8.0",
     "crc-32": "^1.2.2",
