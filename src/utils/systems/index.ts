@@ -12,6 +12,7 @@ interface RASystemMapping {
 export const RA_SYSTEMS: RASystemMapping[] = [
   { consoleId: 1, code: 'genesis' }, // MEGA_DRIVE
   { consoleId: 2, code: 'n64' }, // NINTENDO_64
+  { consoleId: 16, code: 'gc' }, // GAMECUBE
   { consoleId: 3, code: 'snes' }, // SUPER_NINTENDO
   { consoleId: 4, code: 'gb' }, // GAMEBOY
   { consoleId: 5, code: 'gba' }, // GAMEBOY_ADVANCE
@@ -61,7 +62,7 @@ export function getSystemInfo(code: SystemCode): SystemInfo {
 }
 
 export function getAllSupportedExtensions(): string[] {
-  return systems.flatMap((system) => system.extensions).sort();
+  return [...new Set(systems.flatMap((system) => system.extensions))].sort();
 }
 
 export function getSystemsByType(type: SystemType): SystemInfo[] {

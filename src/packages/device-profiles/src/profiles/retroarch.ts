@@ -49,6 +49,10 @@ export const RETROARCH_PROFILE: DeviceProfile = {
       folderName: 'Nintendo - Nintendo DSi',
       supportedFormats: ['.nds', '.dsi', '.srl', '.zip', '.7z'],
     },
+    gc: {
+      folderName: 'Nintendo GameCube',
+      supportedFormats: ['.iso', '.rvz', '.gcm'],
+    },
     vb: {
       folderName: 'Nintendo - Virtual Boy',
       supportedFormats: ['.vb', '.zip', '.7z'],

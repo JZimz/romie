@@ -1,6 +1,7 @@
 import { rhash, ConsoleId, type ConsoleIdValue } from 'node-rcheevos';
 import crypto from 'crypto';
 import fs from 'fs/promises';
+import path from 'path';
 import CRC32 from 'crc-32';
 import type { PathLike } from 'fs';
 import type { RomFile, RomRegion } from '../../types/rom';
@@ -136,6 +137,10 @@ export function ramd5sum(consoleId: number | null, romFile: RomFile): string | n
   if (!consoleId) return null;
 
   const { romPath, romBuffer, romFilename, sourcePath } = romFile;
+
+  // rcheevos can't hash .rvz — it's a Dolphin compressed container, not a raw disc image.
+  // It checks for GameCube magic bytes at offset 0x1C and throws on compressed formats.
+  if (path.extname(romFilename).toLowerCase() === '.rvz') return null;
 
   // If we have a buffer then use it unless it's from an arcade game. These files must use
   // path since their hash is based on filename.
