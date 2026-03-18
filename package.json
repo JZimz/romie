@@ -1,7 +1,7 @@
 {
   "name": "romie",
   "productName": "ROMie",
-  "version": "0.8.1",
+  "version": "0.9.0-rc.0",
   "description": "ROM Manager for Retro Handhelds",
   "main": ".vite/build/main.js",
   "repository": {
