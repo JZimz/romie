@@ -3,6 +3,7 @@ export const SYSTEM_CODES = [
   'snes',
   'vb',
   'n64',
+  'gc',
   'gb',
   'gbc',
   'gba',

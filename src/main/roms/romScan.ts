@@ -21,6 +21,7 @@ interface ScanResult {
 
 const SUPPORTED_EXTENSIONS = getAllSupportedExtensions();
 const SEVEN_ZIP_PATH = get7zBinaryPath();
+const LARGE_DISC_EXTENSIONS = new Set(['.iso', '.rvz', '.gcm']);
 const log = logger.scope('rom-scan');
 
 export async function processRomDirectory(dirPath: PathLike): Promise<ScanResult> {
@@ -93,8 +94,8 @@ async function processFile(dirPath: PathLike, filename: string): Promise<ScanRes
 
       let fileBuffer: Buffer | undefined;
 
-      // ISO files can be very large, so avoid reading them fully into memory.
-      if (ext !== '.iso') {
+      // Large disc images can be several GB, so avoid reading them fully into memory.
+      if (!LARGE_DISC_EXTENSIONS.has(ext)) {
         fileBuffer = await fs.readFile(fullPath);
       }
 
@@ -244,12 +245,12 @@ async function readRomFromSevenZip(archivePath: string): Promise<RomFile | null>
   const romEntry = romEntries[0];
   const romExt = path.extname(romEntry).toLowerCase();
 
-  // Check for ISO before extraction
-  if (romExt === '.iso') {
+  // Check for large disc images before extraction
+  if (LARGE_DISC_EXTENSIONS.has(romExt)) {
     throw new RomProcessingError(
-      'ISO files in archives are not supported',
+      'Large disc images in archives are not supported',
       archivePath,
-      'Please extract ISO files before importing. They are too large (15-20s extraction time) to efficiently process from archives.'
+      'Please extract disc images before importing. They are too large (15-20s extraction time) to efficiently process from archives.'
     );
   }
 
@@ -350,12 +351,12 @@ async function readRomFromZip(zipPath: string): Promise<RomFile | null> {
           }
           const romExt = path.extname(entry.fileName).toLowerCase();
 
-          if (romExt === '.iso') {
+          if (LARGE_DISC_EXTENSIONS.has(romExt)) {
             reject(
               new RomProcessingError(
-                'ISO files in archives are not supported',
+                'Large disc images in archives are not supported',
                 zipPath,
-                'Please extract ISO files before importing. They are too large (15-20s extraction time) to efficiently process from archives.'
+                'Please extract disc images before importing. They are too large (15-20s extraction time) to efficiently process from archives.'
               )
             );
             return;

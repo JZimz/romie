@@ -36,6 +36,17 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
     manufacturer: 'Nintendo',
     releaseYear: 1996,
   },
+  gc: {
+    code: 'gc',
+    displayName: 'GameCube',
+    fullName: 'Nintendo GameCube',
+    type: 'console',
+    extensions: ['.iso', '.rvz', '.gcm'],
+    aliases: ['gamecube', 'gc', 'nintendo gamecube'],
+    requiresBios: false,
+    manufacturer: 'Nintendo',
+    releaseYear: 2001,
+  },
   vb: {
     code: 'vb',
     displayName: 'Virtual Boy',

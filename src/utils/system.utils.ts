@@ -7,6 +7,7 @@ const SYSTEM_COLORS: Record<SystemCode, string> = {
   nes: '#364d30', // olive green - distinct Nintendo color
   snes: '#443966', // dusty indigo - classic SNES purple
   n64: '#2563EB', // bright blue - stands out from other Nintendo
+  gc: '#6D28D9', // purple - GameCube's signature color
   vb: '#991B1B', // red - matches Virtual Boy's red display
   gb: '#2c6153', // deep teal - classic Game Boy
   gbc: '#6B46C1', // purple - represents color capability
