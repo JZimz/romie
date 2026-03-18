@@ -26,6 +26,6 @@ Hey! Thanks for the suggestion. The more context you give, the easier it is to f
 
 ---
 
-**Discord Username: **
+**Discord Username:**
 
 <!-- Used to follow up if needed and to credit you on the contributor leaderboard -->

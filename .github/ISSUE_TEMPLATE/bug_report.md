@@ -38,6 +38,6 @@ Hey! Thanks for taking the time to report this. The more detail you give, the fa
 
 ---
 
-**Discord Username: **
+**Discord Username:**
 
 <!-- Used to follow up if needed and to credit you on the contributor leaderboard -->
