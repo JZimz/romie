@@ -35,6 +35,10 @@ coverage
 # Vite
 .vite/
 
+# VitePress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
 # Caches
 .cache
 .npm
