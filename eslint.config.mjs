@@ -11,7 +11,17 @@ const compat = new FlatCompat();
 export default [
   // Ignore patterns
   {
-    ignores: ['node_modules/', 'out/', 'dist/', '.vite/', 'build/', 'drizzle/', '**/*.min.js'],
+    ignores: [
+      'node_modules/',
+      'out/',
+      'dist/',
+      '.vite/',
+      'build/',
+      'drizzle/',
+      '**/*.min.js',
+      'docs/.vitepress/dist/',
+      'docs/.vitepress/cache/',
+    ],
   },
 
   // Base JavaScript config
@@ -22,7 +32,7 @@ export default [
 
   // TypeScript files - Node.js environment (main process & scripts)
   {
-    files: ['src/main/**/*.ts', 'scripts/**/*.ts', '*.config.ts'],
+    files: ['src/main/**/*.ts', 'scripts/**/*.ts', '*.config.ts', 'docs/**/*.ts'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {

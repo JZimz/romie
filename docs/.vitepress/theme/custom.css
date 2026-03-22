@@ -1,0 +1,31 @@
+.VPHero .image-container {
+  max-width: 560px !important;
+  width: 560px !important;
+}
+
+.VPHero .image-src {
+  max-width: 560px !important;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 10000 !important;
+}
+
+@media (max-width: 960px) {
+  .VPHero .image-container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .VPHero .image-src {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* zoom isn't useful on mobile, disable it */
+  .medium-zoom-overlay,
+  .medium-zoom-image--opened {
+    display: none !important;
+  }
+}
