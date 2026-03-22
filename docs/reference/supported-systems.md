@@ -21,7 +21,7 @@ These are the systems ROMie can identify and organize. Whether a system can be s
 | Neo Geo Pocket            | `.ngp`, `.ngc`, `.zip`, `.7z`                                 |
 | Virtual Boy               | `.vb`, `.zip`, `.7z`                                          |
 | PC Engine                 | `.pce`, `.zip`, `.7z`                                         |
-| MSX                       | `.dsk`, `.mx1`, `.mx2`, `.rom`, `.cas`, `.m3u`, `.zip`, `.7z` |
+| MSX / MSX2                | `.dsk`, `.mx1`, `.mx2`, `.rom`, `.cas`, `.m3u`, `.zip`, `.7z` |
 | WonderSwan                | `.ws`, `.wsc`, `.zip`, `.7z`                                  |
 | Arcade                    | `.zip`, `.7z`                                                 |
 
