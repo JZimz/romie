@@ -6,9 +6,10 @@ ROMie runs on macOS, Windows and Linux. Download the latest release from the [Gi
 
 **Windows**: download the `.exe` installer and run it.
 
-**Linux**: **Any distribution**: download the `.appimage` installer and run it.
-           **Fedora/Arch based**: download the `.rpm` installer and run it.
-           **Debian based**: download the `.deb` installer and run it.
+**Linux**: 
+- **Any distribution**: download the `.appimage` installer and run it.
+- **Fedora / Arch based**: download the `.rpm` installer and run it.
+- **Debian / Ubuntu based**: download the `.deb` installer and run it.
 
 That's it. No setup wizard, no account required.
 
