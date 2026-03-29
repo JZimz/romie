@@ -18,6 +18,7 @@ export default defineConfig({
           { text: 'Installation', link: '/getting-started/installation' },
           { text: 'Quick Start', link: '/getting-started/quick-start' },
           { text: 'Importing ROMs', link: '/getting-started/importing-roms' },
+          { text: 'Building from Source', link: '/getting-started/build-from-source' },
         ],
       },
       {
