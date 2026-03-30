@@ -5,6 +5,7 @@ Here it's a guide on how to build the project from source, including all the dep
 
 ## Cloning the repository from Github
 
+Run this command in the directory you want to clone:
 ```bash
 git clone https://github.com/JZimz/romie
 ```
@@ -25,3 +26,16 @@ Just run:
 npm install
 ```
 And all the requirements will be installed automatically.
+
+## Testing
+
+For a live test, without packaging, run:
+```bash
+npm run start
+```
+## Packaging / Compiling
+
+If you want packages for all the operating systems, run:
+```bash
+npm run make
+```
