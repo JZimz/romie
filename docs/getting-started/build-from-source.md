@@ -18,7 +18,7 @@ cd romie
 ## Requirements
 
 > [!NOTE]
-> You need to have [Node.js](https://nodejs.org/en) installed on your device. Download from [here](https://nodejs.org/en/download)
+> You need to have [Node.js](https://nodejs.org/en) installed on your device. Download from [here.](https://nodejs.org/en/download)
 
 Just run:
 ```bash
