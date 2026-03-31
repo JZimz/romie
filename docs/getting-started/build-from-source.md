@@ -39,3 +39,15 @@ If you want packages for all the operating systems, run:
 ```bash
 npm run make
 ```
+## Packaging / Compiling by OS
+
+If you want packages for only your operating systems, choose from here:
+
+### Windows 11 / 10
+
+> [!WARNING]
+> The [electron windows-installer](https://github.com/electron/windows-installer/issues/263) don't work very well on Linux, I recommend using a Virtual Machine to do this.
+
+```bash
+npm run make -- --platform=win32 --arch=x64 --targets=@electron-forge/maker-squirrel
+```
