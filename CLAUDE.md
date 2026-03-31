@@ -88,6 +88,7 @@ src/
 - Use Vue 3 Composition API with `<script setup lang="ts">`
 - Use `defineProps` and `defineEmits` for component props and events
 - Prefer PrimeVue components over custom UI implementations
+- Prefer early `continue`/`return` with a counter over building intermediate filtered arrays
 
 ### Styling
 
