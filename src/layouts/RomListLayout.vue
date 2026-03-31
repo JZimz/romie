@@ -169,15 +169,16 @@ const hasDisconnectedRoms = computed(() =>
 );
 
 const searchPlaceholder = computed(() => {
-  if (props.mode === 'tag' && props.tag) {
-    return `Search in ${props.tag}`;
+  switch (props.mode) {
+    case 'tag':
+      return props.tag ? `Search ${props.tag}` : 'Search your library';
+    case 'favorites':
+      return 'Search your favorites';
+    case 'system':
+      return props.system ? `Search ${getSystemDisplayName(props.system)}` : 'Search your library';
+    default:
+      return 'Search your library';
   }
-
-  if (props.mode === 'favorites') {
-    return `Search in your favorites`;
-  }
-
-  return `Search in your library`;
 });
 
 const filterSystems = computed(() => {
