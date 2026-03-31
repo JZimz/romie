@@ -1,6 +1,6 @@
 # Building from Source
 
-Here it's a guide on how to build the project from source, including all the dependencies. If you want to contribute to the main repository, check [CONTRIBUTING.md](https://github.com/gittttreporter/romie/blob/564b634051a886e078919a3919bb5cb06b32fde9/CONTRIBUTING.md).
+Here it's a guide on how to build the project from source, including all the dependencies. If you want to contribute to the main repository, check [CONTRIBUTING.md](https://github.com/JZimz/romie/blob/564b634051a886e078919a3919bb5cb06b32fde9/CONTRIBUTING.md).
 
 
 ## Cloning the repository from Github
@@ -50,4 +50,49 @@ If you want packages for only your operating systems, choose from here:
 
 ```bash
 npm run make -- --platform=win32 --arch=x64 --targets=@electron-forge/maker-squirrel
+```
+### MacOS
+
+For M Series chips (ARM64):
+```bash
+npm run make -- --platform=darwin --arch=arm64 --targets=@electron-forge/maker-zip
+```
+
+For Intel based Macs (X64):
+```bash
+npm run make -- --platform=darwin --arch=x64 --targets=@electron-forge/maker-zip
+```
+
+### Linux
+
+For every distribution (.appimage):
+```bash
+npm run make -- --platform=linux --arch=x64 --targets=@reforged/maker-appimage
+```
+
+For Debian / Ubuntu based distributions(.deb):
+```bash
+npm run make -- --platform=linux --arch=x64 --targets=@electron-forge/maker-deb
+```
+
+For Fedora / Arch based distributions(.rpm):
+```bash
+npm run make -- --platform=linux --arch=x64 --targets=@electron-forge/maker-rpm
+```
+
+For ARM devices (Rasberry Pi, Snapdragon cips) distributions:
+
+- For every distribution (.appimage):
+```bash
+npm run make -- --platform=linux --arch=arm64 --targets=@reforged/maker-appimage
+```
+
+- For Debian / Ubuntu based distributions(.deb):
+```bash
+npm run make -- --platform=linux --arch=arm64 --targets=@electron-forge/maker-deb
+```
+
+- For Fedora / Arch based distributions(.rpm):
+```bash
+npm run make -- --platform=linux --arch=arm64 --targets=@electron-forge/maker-rpm
 ```
