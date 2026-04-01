@@ -69,7 +69,7 @@
     "@electron-forge/plugin-fuses": "^7.11.1",
     "@electron-forge/plugin-vite": "^7.11.1",
     "@electron-forge/publisher-s3": "^7.11.1",
-    "@electron/fuses": "^1.8.0",
+    "@electron/fuses": "^2.1.1",
     "@reforged/maker-appimage": "^5.2.0",
     "@types/better-sqlite3": "^7.6.13",
     "@types/node-7z": "^2.1.11",
