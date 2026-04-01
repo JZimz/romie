@@ -91,7 +91,7 @@
     "medium-zoom": "^1.1.0",
     "prettier": "^3.8.1",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "vite": "^8.0.1",
     "vitepress": "^2.0.0-alpha.17",
     "vitest": "^4.1.0",
