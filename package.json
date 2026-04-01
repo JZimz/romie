@@ -79,7 +79,7 @@
     "drizzle-kit": "^0.31.10",
     "electron": "41.0.3",
     "electron-devtools-installer": "^4.0.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-drizzle": "^0.2.3",
     "eslint-plugin-vue": "^10.8.0",
