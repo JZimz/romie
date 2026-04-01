@@ -33,7 +33,7 @@ export interface ImportStatus {
 
 export interface RomApi {
   list(): Promise<Rom[]>;
-  remove(ids: string | string[]): Promise<void>;
+  remove(ids: string | string[], deleteFile?: boolean): Promise<void>;
   update(id: string, romUpdate: Partial<Rom>): Promise<void>;
   scan(): Promise<RomImportResult>;
   stats(): Promise<RomDatabaseStats>;

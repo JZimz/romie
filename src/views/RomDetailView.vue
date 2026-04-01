@@ -106,12 +106,19 @@
               :fluid="true"
               :disabled="updating"
               :loading="deleting"
-              @click="handleDelete"
+              @click="deleteDialogVisible = true"
             />
           </div>
         </div>
       </template>
     </Card>
+    <DeleteRomDialog
+      v-model:visible="deleteDialogVisible"
+      header="Delete ROM"
+      :message="`Remove &quot;${rom.displayName}&quot; from your library?`"
+      :loading="deleting"
+      @confirm="handleDelete"
+    />
   </div>
 </template>
 
@@ -119,6 +126,7 @@
 import log from 'electron-log/renderer';
 import { computed, ref, watch } from 'vue';
 import Button from 'primevue/button';
+import DeleteRomDialog from '@/components/DeleteRomDialog.vue';
 import Card from 'primevue/card';
 import Tag from 'primevue/tag';
 import Message from 'primevue/message';
@@ -145,6 +153,7 @@ const toast = useToast();
 const deleting = ref(false);
 const updating = ref(false);
 const loading = ref(false);
+const deleteDialogVisible = ref(false);
 const romMetadataExtended = ref<GameInfoAndUserProgress | null>(null);
 
 const rom = computed(() => romStore.getRomById(props.romId));
@@ -213,17 +222,19 @@ async function handleFavorite(value: boolean) {
   emit('favorite', value);
 }
 
-async function handleDelete() {
+async function handleDelete(deleteFromDisk: boolean) {
   const romName = rom.value?.displayName || 'Unknown';
   deleting.value = true;
 
   try {
-    await romStore.removeRoms([props.romId]);
+    await romStore.removeRoms([props.romId], deleteFromDisk);
 
     toast.add({
       severity: 'success',
-      summary: 'Delete Successful',
-      detail: `Deleted ${romName}`,
+      summary: 'Deleted',
+      detail: deleteFromDisk
+        ? `Deleted ${romName} and its file`
+        : `Removed ${romName} from library`,
       life: 3000,
     });
   } catch (error) {
@@ -236,6 +247,7 @@ async function handleDelete() {
     log.error('Failed to delete ROM:', error);
   } finally {
     deleting.value = false;
+    deleteDialogVisible.value = false;
   }
 
   emit('delete');

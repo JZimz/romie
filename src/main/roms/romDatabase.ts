@@ -1,4 +1,5 @@
 import { safeStorage } from 'electron';
+import fs from 'node:fs/promises';
 import logger from 'electron-log/main';
 import { isSystemCode } from '@/utils/systems';
 import { SYSTEM_CODES } from '@/types/system';
@@ -59,9 +60,25 @@ export async function addRom(rom: RomDraft): Promise<Rom> {
   return inserted;
 }
 
-export async function removeRomById(ids: string | string[]): Promise<void> {
+export async function removeRomById(ids: string | string[], deleteFile = false): Promise<void> {
   const idArray = Array.isArray(ids) ? ids : [ids];
-  log.debug(`Removing ${idArray.length} ROM(s)`);
+  log.debug(`Removing ${idArray.length} ROM(s) (deleteFile=${deleteFile})`);
+
+  if (deleteFile) {
+    await Promise.all(
+      idArray.map(async (id) => {
+        const rom = roms.findById(id);
+        if (!rom?.filePath) return;
+
+        try {
+          await fs.unlink(rom.filePath);
+        } catch (err) {
+          log.warn(`Failed to delete file ${rom.filePath}:`, err);
+        }
+      })
+    );
+  }
+
   roms.remove(idArray);
   log.info(`Removed ${idArray.length} ROM(s)`);
 }
