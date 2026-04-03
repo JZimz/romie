@@ -97,7 +97,8 @@ function handleRomClick(event: MouseEvent, rom: Rom) {
   } else if (isRange) {
     newSelections = computeRangeSelection(props.romSelections, props.roms, romId);
   } else {
-    newSelections = [romId];
+    newSelections =
+      props.romSelections.length === 1 && props.romSelections[0] === romId ? [] : [romId];
   }
 
   emit('rom-selected', newSelections);
