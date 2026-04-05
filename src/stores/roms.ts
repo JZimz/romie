@@ -87,13 +87,13 @@ export const useRomStore = defineStore('roms', {
         throw error;
       }
     },
-    async removeRoms(ids: string[]) {
+    async removeRoms(ids: string[], deleteFile = false) {
       if (ids.length === 0) return;
       log.info(`Removing ${ids.length} ROMs`);
       this.loading = true;
 
       try {
-        await window.rom.remove([...ids]);
+        await window.rom.remove([...ids], deleteFile);
         await this.loadRoms();
         await this.loadStats();
       } catch (error) {

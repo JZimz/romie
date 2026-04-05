@@ -32,7 +32,8 @@ if (process.env.NODE_ENV !== 'development') {
 
 const romApi: RomApi = {
   list: () => ipcRenderer.invoke('rom:list'),
-  remove: (ids: string | string[]) => ipcRenderer.invoke('rom:remove', ids),
+  remove: (ids: string | string[], deleteFile?: boolean) =>
+    ipcRenderer.invoke('rom:remove', ids, deleteFile),
   update: (id: string, data: Partial<Rom>) => ipcRenderer.invoke('rom:update', id, data),
   scan: () => ipcRenderer.invoke('rom:scan'),
   stats: () => ipcRenderer.invoke('rom:stats'),

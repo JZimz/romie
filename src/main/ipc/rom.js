@@ -6,7 +6,7 @@ import { checkRomAvailability } from '@main/roms/romValidation';
 export function registerRomIpc() {
   ipcMain.handle('rom:scan', scanRomDirectory);
   ipcMain.handle('rom:list', listRoms);
-  ipcMain.handle('rom:remove', (_, id) => removeRomById(id));
+  ipcMain.handle('rom:remove', (_, id, deleteFile) => removeRomById(id, deleteFile === true));
   ipcMain.handle('rom:update', (_, id, data) => updateRom(id, data));
   ipcMain.handle('rom:stats', () => getRomStats());
   ipcMain.handle('rom:refresh', checkRomAvailability);

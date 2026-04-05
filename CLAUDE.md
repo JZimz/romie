@@ -89,6 +89,7 @@ src/
 - Use `defineProps` and `defineEmits` for component props and events
 - Prefer PrimeVue components over custom UI implementations
 - Prefer early `continue`/`return` with a counter over building intermediate filtered arrays
+- Keep logic out of templates — use handler functions in `<script setup>` instead of inline expressions on event bindings
 
 ### Styling
 
