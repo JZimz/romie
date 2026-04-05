@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
@@ -44,6 +44,13 @@ import RomStats from '@/components/RomStats.vue';
 const props = defineProps<{ tag: string }>();
 const romSelections = ref<string[]>([]);
 const statsLabel = computed(() => `ROMs tagged "${props.tag}"`);
+
+watch(
+  () => props.tag,
+  () => {
+    romSelections.value = [];
+  }
+);
 </script>
 
 <style lang="less" scoped>
