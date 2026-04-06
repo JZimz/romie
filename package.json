@@ -105,7 +105,7 @@
     "7zip-bin": "^5.2.0",
     "better-sqlite3": "^12.8.0",
     "crc-32": "^1.2.2",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.0",
     "drizzle-orm": "^0.45.2",
     "electron-log": "^5.4.1",
     "electron-squirrel-startup": "^1.0.1",
@@ -118,7 +118,7 @@
     "systeminformation": "^5.31.4",
     "update-electron-app": "^3.1.1",
     "uuid": "^13.0.0",
-    "vue": "^3.5.31",
+    "vue": "^3.5.32",
     "vue-router": "^5.0.3",
     "vuedraggable": "^4.1.0",
     "yauzl": "^3.3.0"
