@@ -57,14 +57,7 @@ onMounted(() => {
 });
 
 function toggleId(selections: string[], id: string): string[] {
-  const idx = selections.indexOf(id);
-  if (idx !== -1) {
-    // Remove selection
-    return [...selections.slice(0, idx), ...selections.slice(idx + 1)];
-  } else {
-    // Add
-    return [...selections, id];
-  }
+  return selections.includes(id) ? selections.filter((sid) => sid !== id) : [...selections, id];
 }
 
 function computeRangeSelection(selections: string[], roms: Rom[], clickedId: string): string[] {
