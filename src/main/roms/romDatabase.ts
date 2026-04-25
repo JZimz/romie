@@ -32,7 +32,7 @@ export async function addRom(rom: RomDraft): Promise<Rom> {
 
     if (existing.filePath !== rom.filePath && !originalExists && !volumeDisconnected) {
       // Original file no longer accessible - update the record with new path
-      roms.update(existing.id, {
+      const updated = roms.update(existing.id, {
         filePath: rom.filePath,
         filename: rom.filename,
         romFilename: rom.romFilename,
@@ -43,9 +43,9 @@ export async function addRom(rom: RomDraft): Promise<Rom> {
         region: rom.region,
         system: rom.system,
       });
-      const updated = roms.findById(existing.id)!;
       await validateRomExists(updated, true);
       log.info(`ROM path updated: ${existing.filename} -> ${rom.filename}`);
+
       return updated;
     }
     // Either same path or original still exists - reject as duplicate
