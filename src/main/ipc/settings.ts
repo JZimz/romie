@@ -28,7 +28,7 @@ function getUiSettings() {
 export function registerSettingsIpc() {
   ipcMain.handle('settings:get', getUiSettings);
   ipcMain.handle('settings:update', (_, update: Partial<AppSettings>) => {
-    const next: Record<string, string> = {};
+    const next: Partial<Record<keyof AppSettings, string>> = {};
     if (update.theme) next.theme = update.theme;
     if (update.systemOrder) next.systemOrder = JSON.stringify(update.systemOrder);
     settings.setMany(next);
