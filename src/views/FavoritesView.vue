@@ -18,18 +18,14 @@
         />
       </div>
     </template>
-    <template #rom-details>
+    <template v-if="romSelections.length > 0" #rom-details>
       <RomDetailView
         v-if="romSelections.length === 1"
         :rom-id="romSelections[0]"
         @favorite="handleFavorite"
         @delete="romSelections = []"
       />
-      <RomActionView
-        v-else-if="romSelections.length > 1"
-        :rom-selections="romSelections"
-        @delete="romSelections = []"
-      />
+      <RomActionView v-else :rom-selections="romSelections" @delete="romSelections = []" />
     </template>
   </RomListLayout>
 </template>

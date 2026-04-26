@@ -314,7 +314,7 @@ function formatDatetime(ts: number): string {
 
 <style scoped lang="less">
 .rom-details {
-  width: 350px;
+  width: 100%;
   height: 100%;
   padding: 12px;
 
