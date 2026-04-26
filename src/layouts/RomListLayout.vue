@@ -109,7 +109,7 @@
           :loading="romStore.loading"
         ></slot>
       </div>
-      <div class="rom-list-layout__content-detail">
+      <div v-if="$slots['rom-details']" class="rom-list-layout__content-detail">
         <slot name="rom-details"></slot>
       </div>
     </div>
@@ -326,6 +326,12 @@ function getUniqueRomValues<T extends keyof Rom>(field: T) {
 
     &-list {
       flex: 1;
+      min-width: 0;
+    }
+
+    &-detail {
+      width: clamp(320px, 28%, 520px);
+      flex-shrink: 0;
     }
   }
 

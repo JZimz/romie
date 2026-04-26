@@ -145,7 +145,7 @@ async function handleTagUpdate(newTags: string[]) {
 
 <style scoped lang="less">
 .rom-bulk-actions {
-  width: 350px;
+  width: 100%;
   height: 100%;
   padding: 16px;
 
