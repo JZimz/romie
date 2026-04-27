@@ -1,6 +1,6 @@
 <template>
   <RomListLayout class="favorites-view" mode="favorites">
-    <template #default="{ filteredRoms, totalRoms, filteredSize, loading }">
+    <template #default="{ filteredRoms, totalRoms, filteredSize, loading, listMode, gridItemSize }">
       <div class="favorites-view__content">
         <RomStats
           :filtered="filteredRoms.length"
@@ -9,11 +9,20 @@
           label="favorites"
         />
         <RomList
+          v-if="listMode === 'list'"
           class="favorites-view__list"
           :loading="loading"
           :roms="filteredRoms"
           :rom-selections="romSelections"
           :compact="false"
+          @rom-selected="romSelections = $event"
+        />
+        <RomGrid
+          v-else
+          class="favorites-view__list"
+          :roms="filteredRoms"
+          :rom-selections="romSelections"
+          :item-size="gridItemSize"
           @rom-selected="romSelections = $event"
         />
       </div>
@@ -36,6 +45,7 @@ import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
 import RomList from '@/components/RomList.vue';
+import RomGrid from '@/components/RomGrid.vue';
 import RomStats from '@/components/RomStats.vue';
 
 const romSelections = ref<string[]>([]);
