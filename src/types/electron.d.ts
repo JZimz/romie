@@ -9,6 +9,7 @@ import type {
   DatabaseApi,
   DiagnosticsApi,
   RetroAchievementsApi,
+  ArtworkApi,
 } from './electron-api';
 
 declare global {
@@ -23,5 +24,6 @@ declare global {
     darkMode: DarkModeApi;
     util: UtilApi;
     update: UpdateApi;
+    artwork: ArtworkApi;
   }
 }

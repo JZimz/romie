@@ -7,6 +7,7 @@ import type { SyncOptions, SyncStatus, SyncSkipReason, SyncFailReason } from '@/
 import { getDeviceProfile, listRoms } from '../roms/romDatabase';
 import { devices } from '@main/db/queries';
 import { crc32sum } from '../roms/romUtils';
+import { copyArtworkToDevice } from '@main/artwork';
 
 import type { DeviceProfile } from '@romie/device-profiles';
 import type { Device } from '@/types/device';
@@ -364,6 +365,15 @@ async function copyRoms(
           .incrementProcessed()
           .notify();
         continue;
+      }
+    }
+
+    // Copy cached box art alongside the ROM. Best-effort — never fails the sync.
+    if (profile.artworkConfig?.enabled) {
+      try {
+        await copyArtworkToDevice({ rom, device, profile, destinationFilename: safeFilename });
+      } catch (error) {
+        log.warn(`Artwork copy failed for ${rom.filename}: ${toErrorMessage(error)}`);
       }
     }
 

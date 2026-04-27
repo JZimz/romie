@@ -17,6 +17,8 @@ import type {
   SyncOptions,
   SyncStatus,
   ImportStatus,
+  ArtworkApi,
+  ArtworkFetchProgress,
 } from '@/types/electron-api';
 import type { Rom } from '@/types/rom';
 import type { Device } from '@/types/device';
@@ -118,6 +120,22 @@ const utilApi: UtilApi = {
   openExternalLink: (url: string) => ipcRenderer.invoke('util:openExternal', url),
 };
 
+const artworkApi: ArtworkApi = {
+  fetchAll: () => ipcRenderer.invoke('artwork:fetchAll'),
+  cancel: () => ipcRenderer.invoke('artwork:cancel'),
+  status: () => ipcRenderer.invoke('artwork:status'),
+  get: (romId: string) => ipcRenderer.invoke('artwork:get', romId),
+  onProgress: (callback: (progress: ArtworkFetchProgress) => void) => {
+    const handler = (_event: IpcRendererEvent, progress: ArtworkFetchProgress) =>
+      callback(progress);
+    ipcRenderer.on('artwork:progress', handler);
+
+    return () => {
+      ipcRenderer.removeListener('artwork:progress', handler);
+    };
+  },
+};
+
 const updateApi: UpdateApi = {
   onUpdateAvailable: (callback: (version: string) => void) => {
     const handler = (_event: IpcRendererEvent, version: string) => callback(version);
@@ -141,5 +159,6 @@ contextBridge.exposeInMainWorld('settings', settingsApi);
 contextBridge.exposeInMainWorld('db', dbApi);
 contextBridge.exposeInMainWorld('diagnostics', diagnosticsApi);
 contextBridge.exposeInMainWorld('ra', retroAchievementsApi);
+contextBridge.exposeInMainWorld('artwork', artworkApi);
 
 // Note: Global Window interface is declared in src/types/electron.d.ts

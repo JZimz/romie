@@ -7,6 +7,7 @@ import { registerSyncIpc } from './sync';
 import { registerSettingsIpc } from './settings';
 import { registerDatabaseIpc } from './database';
 import { registerDiagnosticsIpc } from './diagnostics';
+import { registerArtworkIpc } from '@main/artwork';
 
 export function registerAllIpc() {
   registerDarkModeIpc();
@@ -16,6 +17,7 @@ export function registerAllIpc() {
   registerSettingsIpc();
   registerDatabaseIpc();
   registerDiagnosticsIpc();
+  registerArtworkIpc();
 
   // General utilities
   ipcMain.handle('util:openExternal', (_, url) => shell.openExternal(url));

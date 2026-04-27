@@ -147,6 +147,23 @@ export interface SyncApi {
   onProgress(callback: (progress: SyncStatus) => void): () => void;
 }
 
+export interface ArtworkFetchProgress {
+  isRunning: boolean;
+  total: number;
+  fetched: number;
+  failed: number;
+  skipped: number;
+}
+
+export interface ArtworkApi {
+  fetchAll(): Promise<ArtworkFetchProgress>;
+  cancel(): Promise<ArtworkFetchProgress>;
+  status(): Promise<ArtworkFetchProgress>;
+  /** Returns a `data:image/png;base64,...` URL for a cached image, or null. */
+  get(romId: string): Promise<string | null>;
+  onProgress(callback: (progress: ArtworkFetchProgress) => void): () => void;
+}
+
 export interface UtilApi {
   openExternalLink: (url: string) => Promise<void>;
 }

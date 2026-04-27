@@ -14,7 +14,15 @@
       :class="{ 'rom-grid-item--active': isActive }"
       :style="{ width: itemSize + 'px', height: itemSize + 'px' }"
     >
-      <span class="rom-grid-item__watermark">{{ abbr }}</span>
+      <img
+        v-if="artworkUrl"
+        :src="artworkUrl"
+        :alt="rom.displayName"
+        class="rom-grid-item__image"
+        loading="lazy"
+        decoding="async"
+      />
+      <span v-else class="rom-grid-item__watermark">{{ abbr }}</span>
       <i
         v-if="!available"
         v-tooltip.top="'File not found'"
@@ -29,9 +37,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { getSystemColor } from '@/utils/system.utils';
 import { getSystemAbbreviation, getSystemDisplayName } from '@/utils/systems';
+import { useArtworkCache, artworkVersion } from '@/composables/useArtworkCache';
 import type { Rom } from '@/types/rom';
 
 const props = withDefaults(
@@ -49,6 +58,17 @@ defineEmits<{ (e: 'click', event: MouseEvent): void }>();
 const systemColor = computed(() => getSystemColor(props.rom.system));
 const abbr = computed(() => getSystemAbbreviation(props.rom.system));
 const systemName = computed(() => getSystemDisplayName(props.rom.system));
+
+const artworkUrl = ref<string | null>(null);
+const { resolve } = useArtworkCache();
+
+watch(
+  [() => props.rom.id, artworkVersion],
+  async ([id]) => {
+    artworkUrl.value = await resolve(id);
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped lang="less">
@@ -85,6 +105,7 @@ const systemName = computed(() => getSystemDisplayName(props.rom.system));
       background: var(--system-color);
       opacity: 0.14;
       pointer-events: none;
+      z-index: 1;
     }
 
     &:hover {
@@ -94,6 +115,14 @@ const systemName = computed(() => getSystemDisplayName(props.rom.system));
     &.rom-grid-item--active {
       border-color: var(--p-primary-color) !important;
     }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__watermark {
