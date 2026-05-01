@@ -117,7 +117,7 @@
     "primevue": "^4.5.4",
     "systeminformation": "^5.31.4",
     "update-electron-app": "^3.1.1",
-    "uuid": "^13.0.0",
+    "uuid": "^14.0.0",
     "vue": "^3.5.32",
     "vue-router": "^5.0.3",
     "vuedraggable": "^4.1.0",
