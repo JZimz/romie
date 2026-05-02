@@ -156,6 +156,8 @@ function handleRemoveUnavailable() {
   :deep(.p-inputtext),
   :deep(.p-dropdown),
   :deep(.p-iconfield),
+  :deep(.p-slider-handle),
+  :deep(.p-slider-range),
   &__update-message {
     z-index: var(--z-index-ui-elements);
     -webkit-app-region: no-drag;

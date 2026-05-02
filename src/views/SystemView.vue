@@ -1,6 +1,6 @@
 <template>
   <RomListLayout class="system-view" :system="system" mode="system">
-    <template #default="{ filteredRoms, totalRoms, filteredSize, loading }">
+    <template #default="{ filteredRoms, totalRoms, filteredSize, loading, listMode, gridItemSize }">
       <div class="system-view__content">
         <RomStats
           :filtered="filteredRoms.length"
@@ -9,11 +9,20 @@
           :label="statsLabel"
         />
         <RomList
+          v-if="listMode === 'list'"
           class="system-view__list"
           :loading="loading"
           :roms="filteredRoms"
           :rom-selections="romSelections"
           :compact="false"
+          @rom-selected="romSelections = $event"
+        />
+        <RomGrid
+          v-else
+          class="system-view__list"
+          :roms="filteredRoms"
+          :rom-selections="romSelections"
+          :item-size="gridItemSize"
           @rom-selected="romSelections = $event"
         />
       </div>
@@ -35,6 +44,7 @@ import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
 import RomList from '@/components/RomList.vue';
+import RomGrid from '@/components/RomGrid.vue';
 import RomStats from '@/components/RomStats.vue';
 import { getSystemDisplayName } from '@/utils/systems';
 

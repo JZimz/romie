@@ -1,6 +1,6 @@
 <template>
   <RomListLayout class="tag-view" :tag="tag" mode="tag">
-    <template #default="{ filteredRoms, totalRoms, filteredSize, loading }">
+    <template #default="{ filteredRoms, totalRoms, filteredSize, loading, listMode, gridItemSize }">
       <div class="tag-view__content">
         <RomStats
           :filtered="filteredRoms.length"
@@ -9,11 +9,20 @@
           :label="statsLabel"
         />
         <RomList
+          v-if="listMode === 'list'"
           class="tag-view__list"
           :loading="loading"
           :roms="filteredRoms"
           :rom-selections="romSelections"
           :compact="false"
+          @rom-selected="romSelections = $event"
+        />
+        <RomGrid
+          v-else
+          class="tag-view__list"
+          :roms="filteredRoms"
+          :rom-selections="romSelections"
+          :item-size="gridItemSize"
           @rom-selected="romSelections = $event"
         />
       </div>
@@ -35,6 +44,7 @@ import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
 import RomList from '@/components/RomList.vue';
+import RomGrid from '@/components/RomGrid.vue';
 import RomStats from '@/components/RomStats.vue';
 
 const props = defineProps<{ tag: string }>();

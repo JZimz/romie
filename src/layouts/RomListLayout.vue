@@ -7,19 +7,26 @@
     >
       <template #actions>
         <div class="rom-list-layout__header-actions">
-          <!-- TODO: Add this back once grid view is implemented
-        <SelectButton
-          v-model="listMode"
-          :options="listModeOptions"
-          optionValue="value"
-          dataKey="value"
-          size="small"
-          aria-labelledby="custom"
-        >
-          <template #option="slotProps">
-            <i :class="slotProps.option.icon"></i>
-          </template>
-        </SelectButton> -->
+          <Slider
+            v-if="listMode === 'grid'"
+            v-model="gridItemSize"
+            :min="80"
+            :max="220"
+            :step="20"
+            class="rom-list-layout__size-slider"
+          />
+          <SelectButton
+            v-model="listMode"
+            :options="listModeOptions"
+            option-value="value"
+            data-key="value"
+            size="small"
+            aria-label="View mode"
+          >
+            <template #option="slotProps">
+              <i :class="slotProps.option.icon"></i>
+            </template>
+          </SelectButton>
         </div>
       </template>
       <template #search>
@@ -107,6 +114,8 @@
           :filtered-size="filteredRoms.size"
           :total-roms="sortedRoms.length"
           :loading="romStore.loading"
+          :list-mode="listMode"
+          :grid-item-size="gridItemSize"
         ></slot>
       </div>
       <div v-if="$slots['rom-details']" class="rom-list-layout__content-detail">
@@ -117,7 +126,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import log from 'electron-log/renderer';
 import Button from 'primevue/button';
 import FloatLabel from 'primevue/floatlabel';
@@ -126,6 +135,8 @@ import MultiSelect from 'primevue/multiselect';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
+import SelectButton from 'primevue/selectbutton';
+import Slider from 'primevue/slider';
 import { useToast } from 'primevue/usetoast';
 import { useRomStore } from '@/stores';
 import AppToolbar from '@/components/AppToolbar.vue';
@@ -144,6 +155,14 @@ import {
 import type { Rom } from '@/types/rom';
 import type { SystemCode } from '@/types/system';
 
+const STORAGE_KEY_VIEW_MODE = 'r_view_mode';
+const STORAGE_KEY_GRID_SIZE = 'r_grid_item_size';
+
+const listModeOptions = [
+  { value: 'list', icon: 'pi pi-list' },
+  { value: 'grid', icon: 'pi pi-th-large' },
+];
+
 const props = defineProps<{
   mode: 'all' | 'tag' | 'favorites' | 'system';
   system?: SystemCode;
@@ -158,6 +177,16 @@ const filterBySystem = ref<string[]>([]);
 const filterByRegion = ref<string[]>([]);
 const filterByRA = ref<AchievementFilter>(null);
 const filterByAvailability = ref<AvailabilityFilter>(null);
+
+const listMode = ref<'list' | 'grid'>(
+  (localStorage.getItem(STORAGE_KEY_VIEW_MODE) as 'list' | 'grid') || 'list'
+);
+const gridItemSize = ref<number>(
+  parseInt(localStorage.getItem(STORAGE_KEY_GRID_SIZE) ?? '140', 10)
+);
+
+watch(listMode, (val) => localStorage.setItem(STORAGE_KEY_VIEW_MODE, val));
+watch(gridItemSize, (val) => localStorage.setItem(STORAGE_KEY_GRID_SIZE, String(val)));
 
 const missingRoms = computed(() =>
   romStore.roms.filter((rom) => !rom.filePathExists && !rom.volumeDisconnected)
@@ -294,6 +323,17 @@ function getUniqueRomValues<T extends keyof Rom>(field: T) {
   height: 100vh;
   display: flex;
   flex-direction: column;
+
+  &__header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__size-slider {
+    width: 90px;
+    margin-left: 8px;
+  }
 
   &__search {
     display: flex;

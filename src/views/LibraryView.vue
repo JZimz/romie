@@ -1,14 +1,23 @@
 <template>
   <RomListLayout class="library-view" mode="all">
-    <template #default="{ filteredRoms, totalRoms, filteredSize, loading }">
+    <template #default="{ filteredRoms, totalRoms, filteredSize, loading, listMode, gridItemSize }">
       <div class="library-view__content">
         <RomStats :filtered="filteredRoms.length" :total="totalRoms" :size="filteredSize" />
         <RomList
+          v-if="listMode === 'list'"
           class="library-view__list"
           :loading="loading"
           :roms="filteredRoms"
           :rom-selections="romSelections"
           :compact="false"
+          @rom-selected="romSelections = $event"
+        />
+        <RomGrid
+          v-else
+          class="library-view__list"
+          :roms="filteredRoms"
+          :rom-selections="romSelections"
+          :item-size="gridItemSize"
           @rom-selected="romSelections = $event"
         />
       </div>
@@ -31,6 +40,7 @@ import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
 import RomList from '@/components/RomList.vue';
+import RomGrid from '@/components/RomGrid.vue';
 import RomStats from '@/components/RomStats.vue';
 
 const romSelections = ref<string[]>([]);
