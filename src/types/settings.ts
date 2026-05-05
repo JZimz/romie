@@ -16,6 +16,8 @@ export interface WindowState {
 
 export interface AppSettings {
   theme: AppTheme;
+  lightColorTheme?: string;
+  darkColorTheme?: string;
   windowState?: WindowState;
   systemOrder?: SystemCode[];
 }

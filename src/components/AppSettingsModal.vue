@@ -34,6 +34,62 @@
               />
             </div>
           </div>
+
+          <div class="setting-item">
+            <div class="setting-item__info">
+              <label class="setting-item__label">Light color theme</label>
+              <p class="setting-item__description">
+                Color palette used when the app is in light mode
+              </p>
+            </div>
+            <div class="setting-item__control">
+              <Select
+                v-model="selectedLightTheme"
+                :options="colorThemeOptions"
+                :fluid="true"
+                option-label="label"
+                option-value="id"
+                placeholder="Select light theme"
+                size="small"
+                @change="handleLightThemeChange"
+              >
+                <template #value="{ value }">
+                  <ThemeSwatch :theme-id="value" mode="light" />
+                </template>
+                <template #option="{ option }">
+                  <ThemeSwatch :theme-id="option.id" mode="light" />
+                </template>
+              </Select>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-item__info">
+              <label class="setting-item__label">Dark color theme</label>
+              <p class="setting-item__description">
+                Color palette used when the app is in dark mode
+              </p>
+            </div>
+            <div class="setting-item__control">
+              <Select
+                v-model="selectedDarkTheme"
+                :options="colorThemeOptions"
+                :fluid="true"
+                option-label="label"
+                option-value="id"
+                placeholder="Select dark theme"
+                size="small"
+                @change="handleDarkThemeChange"
+              >
+                <template #value="{ value }">
+                  <ThemeSwatch :theme-id="value" mode="dark" />
+                </template>
+                <template #option="{ option }">
+                  <ThemeSwatch :theme-id="option.id" mode="dark" />
+                </template>
+              </Select>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -294,9 +350,11 @@ import Message from 'primevue/message';
 import Avatar from 'primevue/avatar';
 import { useConfirm } from 'primevue/useconfirm';
 import { useToast } from 'primevue/usetoast';
-import { useFeatureFlagStore } from '@/stores';
+import { useFeatureFlagStore, useUIStore } from '@/stores';
 import type { AppTheme } from '@/types/settings';
 import type { UserProfile } from '@retroachievements/api';
+import { colorThemes, DEFAULT_THEME_ID } from '@/themes/colorThemes';
+import ThemeSwatch from '@/components/ThemeSwatch.vue';
 
 defineExpose({
   show() {
@@ -310,6 +368,7 @@ defineExpose({
 const toast = useToast();
 const confirm = useConfirm();
 const ff = useFeatureFlagStore();
+const ui = useUIStore();
 const visible = ref(false);
 const saving = ref(false);
 
@@ -332,6 +391,14 @@ const themeOptions = ref<Array<{ label: string; value: AppTheme }>>([
   { label: 'Dark', value: 'dark' },
 ]);
 
+const selectedLightTheme = ref<string>(DEFAULT_THEME_ID);
+const selectedDarkTheme = ref<string>(DEFAULT_THEME_ID);
+
+const colorThemeOptions = [
+  { id: DEFAULT_THEME_ID, label: 'Default', preferredMode: 'light' as const },
+  ...colorThemes,
+];
+
 // RetroAchievements Settings
 const raEnabled = ref(false);
 const hasUnsavedChanges = ref(false);
@@ -350,15 +417,25 @@ onMounted(() => {
 });
 
 async function loadSettings() {
-  const { theme } = await window.settings.get();
+  const { theme, lightColorTheme, darkColorTheme } = await window.settings.get();
   const raConfig = await window.ra.getConfig();
 
   darkMode.value = theme;
+  selectedLightTheme.value = lightColorTheme || DEFAULT_THEME_ID;
+  selectedDarkTheme.value = darkColorTheme || DEFAULT_THEME_ID;
   raEnabled.value = !!raConfig;
   if (raConfig) {
     raUsername.value = raConfig.username;
     raApiKey.value = raConfig.apiKey;
   }
+}
+
+async function handleLightThemeChange() {
+  await ui.setLightColorTheme(selectedLightTheme.value);
+}
+
+async function handleDarkThemeChange() {
+  await ui.setDarkColorTheme(selectedDarkTheme.value);
 }
 
 function openRaControlPanel() {

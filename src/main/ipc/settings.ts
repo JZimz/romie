@@ -17,10 +17,12 @@ function parseSystemOrder(raw: string | undefined): AppSettings['systemOrder'] {
 }
 
 function getUiSettings() {
-  const { theme, systemOrder } = settings.getAll();
+  const { theme, systemOrder, lightColorTheme, darkColorTheme } = settings.getAll();
 
   return {
     theme: (theme as AppSettings['theme']) || 'system',
+    lightColorTheme: lightColorTheme || undefined,
+    darkColorTheme: darkColorTheme || undefined,
     systemOrder: parseSystemOrder(systemOrder),
   };
 }
@@ -30,6 +32,8 @@ export function registerSettingsIpc() {
   ipcMain.handle('settings:update', (_, update: Partial<AppSettings>) => {
     const next: Partial<Record<keyof AppSettings, string>> = {};
     if (update.theme) next.theme = update.theme;
+    if (update.lightColorTheme !== undefined) next.lightColorTheme = update.lightColorTheme;
+    if (update.darkColorTheme !== undefined) next.darkColorTheme = update.darkColorTheme;
     if (update.systemOrder) next.systemOrder = JSON.stringify(update.systemOrder);
     settings.setMany(next);
 
