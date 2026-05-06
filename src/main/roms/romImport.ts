@@ -94,6 +94,7 @@ export async function processRomFile(
       notes: '',
       favorite: false,
       verified,
+      ...(romFile.relatedFiles?.length ? { relatedFiles: romFile.relatedFiles } : {}),
       ...hashes,
     };
 

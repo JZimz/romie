@@ -20,6 +20,7 @@ export const RA_SYSTEMS: RASystemMapping[] = [
   { consoleId: 7, code: 'nes' }, // NINTENDO
   { consoleId: 8, code: 'pce' }, // PC_ENGINE
   { consoleId: 11, code: 'sms' }, // MASTER_SYSTEM
+  { consoleId: 12, code: 'psx' }, // PLAYSTATION
   { consoleId: 13, code: 'lynx' }, // ATARI_LYNX
   { consoleId: 14, code: 'ngp' }, // NEOGEO_POCKET
   { consoleId: 15, code: 'gg' }, // GAME_GEAR

@@ -154,17 +154,31 @@ export const SYSTEM_REGISTRY: Partial<Record<SystemCode, SystemInfo>> = {
   },
 
   // === SONY ===
-  // UNSUPPORTED - Requires special handling for multi-disc games and bin
-  // psx: {
-  //   code: "psx",
-  //   displayName: "Sony PlayStation",
-  //   type: "console",
-  //   extensions: [".iso", ".chd", ".pbp"],
-  //   requiresBios: true,
-  //   biosFiles: ["scph1001.bin", "scph7001.bin", "scph5501.bin"],
-  //   manufacturer: "Sony",
-  //   releaseYear: 1994,
-  // },
+  psx: {
+    code: 'psx',
+    displayName: 'PlayStation',
+    fullName: 'Sony PlayStation',
+    type: 'console',
+    // Primary import format is .cue (manifest file referencing .bin data files)
+    extensions: ['.cue'],
+    aliases: ['psx', 'ps1', 'playstation', 'sony playstation'],
+    requiresBios: true,
+    biosFiles: ['scph1001.bin', 'scph7001.bin', 'scph5501.bin'],
+    manufacturer: 'Sony',
+    releaseYear: 1994,
+  },
+  dreamcast: {
+    code: 'dreamcast',
+    displayName: 'Dreamcast',
+    fullName: 'Sega Dreamcast',
+    type: 'console',
+    // Primary import format is .gdi (manifest file referencing .bin/.raw data files)
+    extensions: ['.gdi'],
+    aliases: ['dreamcast', 'dc', 'sega dreamcast'],
+    requiresBios: false,
+    manufacturer: 'Sega',
+    releaseYear: 1998,
+  },
   psp: {
     code: 'psp',
     displayName: 'PSP',

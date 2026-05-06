@@ -85,6 +85,16 @@ async function processFile(dirPath: PathLike, filename: string): Promise<ScanRes
         }
       }
 
+      // Handle manifest-based multi-file ROM formats before generic ROM processing
+      if (ext === '.cue') {
+        emitProgress({ currentFile: filename });
+        return await processManifestRom(fullPath, 'cue');
+      }
+      if (ext === '.gdi') {
+        emitProgress({ currentFile: filename });
+        return await processManifestRom(fullPath, 'gdi');
+      }
+
       if (!isRomFile(filename)) {
         log.debug('Skipping unsupported file', filename);
         return { processed: 0, errors: [], skipped: [filename] };
@@ -423,6 +433,138 @@ async function readRomFromZip(zipPath: string): Promise<RomFile | null> {
       });
     });
   });
+}
+
+/**
+ * Processes a manifest-based multi-file ROM (.cue or .gdi).
+ * Parses the manifest to find associated data files, then imports the ROM
+ * with relatedFiles populated so they can be copied alongside during sync.
+ */
+async function processManifestRom(
+  manifestPath: string,
+  format: 'cue' | 'gdi'
+): Promise<ScanResult> {
+  log.debug(`Processing ${format.toUpperCase()} manifest: ${manifestPath}`);
+
+  try {
+    const content = await fs.readFile(manifestPath, 'utf-8');
+    const manifestDir = path.dirname(manifestPath);
+    const filename = path.basename(manifestPath);
+
+    let dataFiles: string[];
+    if (format === 'cue') {
+      dataFiles = parseCueFile(content, manifestDir);
+    } else {
+      dataFiles = parseGdiFile(content, manifestDir);
+    }
+
+    log.debug(`Found ${dataFiles.length} related file(s) in ${filename}`);
+
+    // Verify all referenced data files exist
+    for (const dataFile of dataFiles) {
+      try {
+        await fs.access(dataFile);
+      } catch {
+        throw new RomProcessingError(
+          `Missing data file referenced by ${format.toUpperCase()} manifest`,
+          manifestPath,
+          `Referenced file not found: ${path.basename(dataFile)}`
+        );
+      }
+    }
+
+    await processRomFile({
+      sourcePath: manifestPath,
+      romFilename: filename,
+      filename,
+      isArchive: false,
+      relatedFiles: dataFiles,
+    });
+
+    return { processed: 1, errors: [], skipped: [] };
+  } catch (error) {
+    log.error(`Error processing ${format.toUpperCase()} file ${manifestPath}:`, error);
+    const romError =
+      error instanceof RomProcessingError
+        ? error
+        : new RomProcessingError(
+            `Failed to process ${format.toUpperCase()} file`,
+            manifestPath,
+            error instanceof Error ? error.message : 'Unknown error',
+            error instanceof Error ? error : undefined
+          );
+    return { processed: 0, errors: [romError], skipped: [] };
+  }
+}
+
+/**
+ * Parses a .cue file and returns the absolute paths of all referenced data files.
+ *
+ * CUE format example:
+ *   FILE "Track 01.bin" BINARY
+ *     TRACK 01 MODE2/2352
+ *       INDEX 01 00:00:00
+ *   FILE "Track 02.bin" BINARY
+ *     TRACK 02 AUDIO
+ *       INDEX 01 00:00:00
+ */
+function parseCueFile(content: string, baseDir: string): string[] {
+  const dataFiles: string[] = [];
+  const seen = new Set<string>();
+
+  // Match FILE "filename" <format> lines (format can be BINARY, WAVE, AIFF, MP3, etc.)
+  const linePattern = /^FILE\s+"([^"]+)"\s+\S+/gim;
+
+  let match;
+  while ((match = linePattern.exec(content)) !== null) {
+    const referencedFile = match[1];
+    const absolutePath = path.resolve(baseDir, referencedFile);
+
+    if (!seen.has(absolutePath)) {
+      seen.add(absolutePath);
+      dataFiles.push(absolutePath);
+      log.debug(`CUE references: ${referencedFile}`);
+    }
+  }
+
+  return dataFiles;
+}
+
+/**
+ * Parses a .gdi file and returns the absolute paths of all referenced data files.
+ *
+ * GDI format (one track per line after the count):
+ *   3
+ *   1 0 4 2352 track01.bin 0
+ *   2 600 0 2352 track02.raw 0
+ *   3 45000 4 2352 track03.bin 0
+ */
+function parseGdiFile(content: string, baseDir: string): string[] {
+  const dataFiles: string[] = [];
+  const seen = new Set<string>();
+  const lines = content.split(/\r?\n/);
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Skip empty lines and the track count line (pure number)
+    if (!trimmed || /^\d+$/.test(trimmed)) continue;
+
+    // Each track line: <num> <lba> <type> <sectorSize> <filename> <padding>
+    const parts = trimmed.split(/\s+/);
+    if (parts.length >= 5) {
+      const referencedFile = parts[4];
+      const absolutePath = path.resolve(baseDir, referencedFile);
+
+      if (!seen.has(absolutePath)) {
+        seen.add(absolutePath);
+        dataFiles.push(absolutePath);
+        log.debug(`GDI references: ${referencedFile}`);
+      }
+    }
+  }
+
+  return dataFiles;
 }
 
 function emitProgress(progress: ImportStatus) {

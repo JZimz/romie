@@ -19,6 +19,7 @@ const SYSTEM_COLORS: Record<SystemCode, string> = {
   sms: '#059669', // emerald green - distinct from Genesis
   gg: '#F59E0B', // amber - bright handheld color
   psx: '#373d66', // violet blue - PlayStation brand
+  dreamcast: '#E87530', // orange - Dreamcast brand color
   psp: '#0EA5E9', // sky blue - modern portable feel
   lynx: '#EA580C', // orange - bright Atari color
   atari2600: '#A16207', // golden brown - retro Atari
