@@ -23,7 +23,7 @@ function toErrorMessage(error: unknown): string {
 
 //=== PUBLIC API ===
 export function registerSyncIpc() {
-  ipcMain.handle('sync:start', (_, tagIds, deviceId, options) =>
+  ipcMain.handle('sync:start', (_, tagIds: string[], deviceId: string, options: SyncOptions) =>
     startSync(tagIds, deviceId, options)
   );
   ipcMain.handle('sync:cancel', cancelSync);
