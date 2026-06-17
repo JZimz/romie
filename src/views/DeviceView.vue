@@ -56,6 +56,17 @@
               <span class="device-status__value">{{ deviceStatus?.freeSpace }}</span>
             </div>
           </div>
+          <div class="device-view__delete-row">
+            <Button
+              label="Delete device"
+              icon="pi pi-trash"
+              severity="danger"
+              text
+              size="small"
+              :disabled="['preparing', 'copying', 'verifying'].includes(syncStatus.phase)"
+              @click="handleDeleteDevice"
+            />
+          </div>
         </template>
       </Card>
 
@@ -186,6 +197,9 @@ import MultiSelect from 'primevue/multiselect';
 import Popover from 'primevue/popover';
 import Checkbox from 'primevue/checkbox';
 import Button from 'primevue/button';
+import { useConfirm } from 'primevue/useconfirm';
+import { useToast } from 'primevue/usetoast';
+import { useRouter } from 'vue-router';
 import { useDeviceStore, useRomStore } from '@/stores';
 import { useSyncLogic } from '@/composables/useSyncLogic';
 import SyncProgress from '@/components/device/SyncProgress.vue';
@@ -204,6 +218,9 @@ const props = defineProps<{
 }>();
 
 const op = ref();
+const confirm = useConfirm();
+const toast = useToast();
+const router = useRouter();
 const deviceStore = useDeviceStore();
 const romStore = useRomStore();
 const device = ref<Device | null>(null);
@@ -300,6 +317,25 @@ async function startSync() {
 function unselectTag(tagId: string) {
   selectedTags.value = selectedTags.value.filter(({ tag }) => tag !== tagId);
 }
+
+function handleDeleteDevice() {
+  confirm.require({
+    message: `Delete "${device.value?.name}"? This will remove it from ROMie. Your SD card files won't be affected.`,
+    header: 'Delete Device',
+    icon: 'pi pi-exclamation-triangle',
+    rejectLabel: 'Cancel',
+    acceptLabel: 'Delete',
+    acceptProps: { severity: 'danger' },
+    accept: async () => {
+      try {
+        await deviceStore.removeDevice(props.deviceId);
+        router.push({ name: 'library' });
+      } catch {
+        toast.add({ severity: 'error', summary: 'Failed to delete device', life: 4000 });
+      }
+    },
+  });
+}
 </script>
 
 <style lang="less" scoped>
@@ -319,6 +355,13 @@ function unselectTag(tagId: string) {
   }
   &__profile {
     cursor: pointer;
+  }
+  &__delete-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--p-content-border-color);
   }
 }
 
