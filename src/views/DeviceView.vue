@@ -63,7 +63,7 @@
               severity="danger"
               text
               size="small"
-              :disabled="syncStatus.phase !== 'idle'"
+              :disabled="['preparing', 'copying', 'verifying'].includes(syncStatus.phase)"
               @click="handleDeleteDevice"
             />
           </div>
@@ -198,6 +198,7 @@ import Popover from 'primevue/popover';
 import Checkbox from 'primevue/checkbox';
 import Button from 'primevue/button';
 import { useConfirm } from 'primevue/useconfirm';
+import { useToast } from 'primevue/usetoast';
 import { useRouter } from 'vue-router';
 import { useDeviceStore, useRomStore } from '@/stores';
 import { useSyncLogic } from '@/composables/useSyncLogic';
@@ -218,6 +219,7 @@ const props = defineProps<{
 
 const op = ref();
 const confirm = useConfirm();
+const toast = useToast();
 const router = useRouter();
 const deviceStore = useDeviceStore();
 const romStore = useRomStore();
@@ -325,8 +327,12 @@ function handleDeleteDevice() {
     acceptLabel: 'Delete',
     acceptProps: { severity: 'danger' },
     accept: async () => {
-      await deviceStore.removeDevice(props.deviceId);
-      router.push({ name: 'library' });
+      try {
+        await deviceStore.removeDevice(props.deviceId);
+        router.push({ name: 'library' });
+      } catch {
+        toast.add({ severity: 'error', summary: 'Failed to delete device', life: 4000 });
+      }
     },
   });
 }

@@ -60,9 +60,14 @@ export const useDeviceStore = defineStore('devices', {
       }
     },
     async removeDevice(id: string) {
-      await window.device.remove(id);
-      const index = this.devices.findIndex((d) => d.id === id);
-      if (index !== -1) this.devices.splice(index, 1);
+      try {
+        await window.device.remove(id);
+        const index = this.devices.findIndex((d) => d.id === id);
+        if (index !== -1) this.devices.splice(index, 1);
+      } catch (error) {
+        log.error('Failed to remove device:', error);
+        throw error;
+      }
     },
   },
 });
