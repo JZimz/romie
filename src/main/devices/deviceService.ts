@@ -59,7 +59,8 @@ export async function createDevice(data: Device): Promise<Device> {
 }
 
 export async function removeDevice(id: string): Promise<void> {
-  log.warn('deviceService.removeDevice() is not implemented', id);
+  // eslint-disable-next-line drizzle/enforce-delete-with-where
+  devices.delete(id);
 }
 
 export async function updateDevice(id: string, data: Partial<Device>): Promise<void> {

@@ -59,5 +59,10 @@ export const useDeviceStore = defineStore('devices', {
         this.loading = false;
       }
     },
+    async removeDevice(id: string) {
+      await window.device.remove(id);
+      const index = this.devices.findIndex((d) => d.id === id);
+      if (index !== -1) this.devices.splice(index, 1);
+    },
   },
 });
