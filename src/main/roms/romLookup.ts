@@ -1,5 +1,6 @@
 import { type GameList } from '@retroachievements/api';
 import { type GamesHashMap } from '@/types/games';
+import gameDb from '@/data/ra/all-games.json';
 
 let hashDatabase: GamesHashMap | null = null;
 
@@ -7,10 +8,6 @@ export type GameEntity = GameList[number];
 
 export async function loadHashDatabase(): Promise<GamesHashMap> {
   if (hashDatabase) return hashDatabase;
-
-  const { default: gameDb } = await import('@/data/ra/all-games.json', {
-    with: { type: 'json' },
-  });
 
   hashDatabase = gameDb as GamesHashMap;
 

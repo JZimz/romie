@@ -25,13 +25,15 @@ export const romsQueries = {
   },
 
   update(id: string, updates: Partial<Omit<Rom, 'id' | 'createdAt' | 'updatedAt'>>) {
-    db.update(schema.roms)
+    return db
+      .update(schema.roms)
       .set({
         ...updates,
         updatedAt: new Date(),
       })
       .where(eq(schema.roms.id, id))
-      .run();
+      .returning()
+      .get();
   },
 
   remove(ids: string | string[]) {

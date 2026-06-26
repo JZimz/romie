@@ -18,23 +18,19 @@
         />
       </div>
     </template>
-    <template #rom-details>
+    <template v-if="romSelections.length > 0" #rom-details>
       <RomDetailView
         v-if="romSelections.length === 1"
         :rom-id="romSelections[0]"
         @delete="romSelections = []"
       />
-      <RomActionView
-        v-else-if="romSelections.length > 1"
-        :rom-selections="romSelections"
-        @delete="romSelections = []"
-      />
+      <RomActionView v-else :rom-selections="romSelections" @delete="romSelections = []" />
     </template>
   </RomListLayout>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import RomListLayout from '@/layouts/RomListLayout.vue';
 import RomDetailView from '@/views/RomDetailView.vue';
 import RomActionView from '@/views/RomActionView.vue';
@@ -44,6 +40,13 @@ import RomStats from '@/components/RomStats.vue';
 const props = defineProps<{ tag: string }>();
 const romSelections = ref<string[]>([]);
 const statsLabel = computed(() => `ROMs tagged "${props.tag}"`);
+
+watch(
+  () => props.tag,
+  () => {
+    romSelections.value = [];
+  }
+);
 </script>
 
 <style lang="less" scoped>

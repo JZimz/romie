@@ -17,6 +17,10 @@ type SyncNotifier = ReturnType<typeof createSyncNotifier>;
 const log = logger.scope('sync');
 let syncCancelled = false;
 
+function toErrorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
+
 //=== PUBLIC API ===
 export function registerSyncIpc() {
   ipcMain.handle('sync:start', (_, tagIds, deviceId, options) =>
@@ -83,7 +87,10 @@ async function startSync(
     const syncError =
       error instanceof SyncError
         ? error
-        : new SyncError(`Sync failed: ${(error as Error).message}`, error as Error);
+        : new SyncError(
+            `Sync failed: ${toErrorMessage(error)}`,
+            error instanceof Error ? error : undefined
+          );
 
     log.error(`Sync failed after ${duration}ms: ${syncError.message}`);
     if (syncError.cause) {
@@ -156,10 +163,8 @@ async function cleanDestination(device: Device, profile: DeviceProfile): Promise
     await fs.rm(destinationPath, { recursive: true, force: true });
     log.info(`Destination cleaned successfully`);
   } catch (error) {
-    log.error(`Failed to clean destination: ${(error as Error).message}`);
-    throw new SyncError(
-      `Failed to clean destination ${destinationPath}: ${(error as Error).message}`
-    );
+    log.error(`Failed to clean destination: ${toErrorMessage(error)}`);
+    throw new SyncError(`Failed to clean destination ${destinationPath}: ${toErrorMessage(error)}`);
   }
 }
 
@@ -300,11 +305,11 @@ async function copyRoms(
       await fs.copyFile(rom.filePath, destinationPath);
       log.debug(`Copy completed: ${rom.filename}`);
     } catch (error) {
-      log.error(`Copy failed for ${rom.filename}: ${(error as Error).message}`);
+      log.error(`Copy failed for ${rom.filename}: ${toErrorMessage(error)}`);
       syncStatus
         .addFailed({
           rom,
-          error: new SyncError(`Failed to copy ${rom.filename}: ${(error as Error).message}`),
+          error: new SyncError(`Failed to copy ${rom.filename}: ${toErrorMessage(error)}`),
         })
         .incrementProcessed()
         .notify();
@@ -325,7 +330,7 @@ async function copyRoms(
             await fs.unlink(destinationPath);
             log.debug(`Deleted corrupted file: ${destinationPath}`);
           } catch (deleteError) {
-            log.warn(`Failed to delete corrupted file: ${(deleteError as Error).message}`);
+            log.warn(`Failed to delete corrupted file: ${toErrorMessage(deleteError)}`);
           }
 
           // Record as failure and continue
@@ -340,21 +345,21 @@ async function copyRoms(
         }
         log.debug(`Checksum verified for: ${rom.filename}`);
       } catch (error) {
-        log.error(`Verification failed for ${rom.filename}: ${(error as Error).message}`);
+        log.error(`Verification failed for ${rom.filename}: ${toErrorMessage(error)}`);
 
         // Delete the file since we can't verify it
         try {
           await fs.unlink(destinationPath);
           log.debug(`Deleted unverifiable file: ${destinationPath}`);
         } catch (deleteError) {
-          log.warn(`Failed to delete unverifiable file: ${(deleteError as Error).message}`);
+          log.warn(`Failed to delete unverifiable file: ${toErrorMessage(deleteError)}`);
         }
 
         // Record as failure and continue
         syncStatus
           .addFailed({
             rom,
-            error: new SyncError(`Failed to verify ${rom.filename}: ${(error as Error).message}`),
+            error: new SyncError(`Failed to verify ${rom.filename}: ${toErrorMessage(error)}`),
           })
           .incrementProcessed()
           .notify();
@@ -407,7 +412,7 @@ async function cleanMacOSHiddenFiles(dirPath: string): Promise<void> {
             filesRemoved++;
             log.debug(`Removed macOS system directory: ${fullPath}`);
           } catch (error) {
-            log.warn(`Failed to remove ${fullPath}: ${(error as Error).message}`);
+            log.warn(`Failed to remove ${fullPath}: ${toErrorMessage(error)}`);
           }
           continue;
         }
@@ -425,12 +430,12 @@ async function cleanMacOSHiddenFiles(dirPath: string): Promise<void> {
             filesRemoved++;
             log.debug(`Removed macOS hidden file: ${fullPath}`);
           } catch (error) {
-            log.warn(`Failed to remove ${fullPath}: ${(error as Error).message}`);
+            log.warn(`Failed to remove ${fullPath}: ${toErrorMessage(error)}`);
           }
         }
       }
     } catch (error) {
-      log.warn(`Failed to clean directory ${dir}: ${(error as Error).message}`);
+      log.warn(`Failed to clean directory ${dir}: ${toErrorMessage(error)}`);
     }
   }
 

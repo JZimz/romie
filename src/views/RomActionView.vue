@@ -18,12 +18,20 @@
             :rounded="true"
             :disabled="updating"
             :loading="deleting"
-            @click="confirmDelete"
+            @click="deleteDialogVisible = true"
           />
         </div>
       </template>
     </Card>
   </div>
+
+  <DeleteRomDialog
+    v-model:visible="deleteDialogVisible"
+    header="Delete ROMs"
+    :message="`Remove ${romSelections.length} ${pluralize(romSelections.length, 'ROM')} from your library?`"
+    :loading="deleting"
+    @confirm="handleDelete"
+  />
 </template>
 
 <script setup lang="ts">
@@ -31,15 +39,15 @@ import { computed, ref } from 'vue';
 import log from 'electron-log/renderer';
 import Card from 'primevue/card';
 import Button from 'primevue/button';
-import { useConfirm } from 'primevue/useconfirm';
 import { useToast } from 'primevue/usetoast';
 import TagsEditor from '@/components/TagsEditor.vue';
+import DeleteRomDialog from '@/components/DeleteRomDialog.vue';
 import { useRomStore } from '@/stores';
 import { pluralize } from '@/utils/string.utils';
 
 const romStore = useRomStore();
-const confirm = useConfirm();
 const toast = useToast();
+const deleteDialogVisible = ref(false);
 
 const props = defineProps<{
   romSelections: string[];
@@ -76,35 +84,18 @@ const commonTags = computed(() => {
   return intersection ? Array.from(intersection) : [];
 });
 
-function confirmDelete() {
-  const count = props.romSelections.length;
-  const label = count === 1 ? '1 ROM' : `${count} ROMs`;
-
-  confirm.require({
-    header: 'Delete ROMs',
-    message: `Are you sure you want to delete ${label}?`,
-    rejectProps: {
-      label: 'Cancel',
-      severity: 'secondary',
-      outlined: true,
-    },
-    acceptProps: {
-      label: 'Do it',
-      severity: 'danger',
-    },
-    accept: handleDelete,
-  });
-}
-async function handleDelete() {
+async function handleDelete(deleteFromDisk: boolean) {
   const count = props.romSelections.length;
   deleting.value = true;
 
   try {
-    await romStore.removeRoms(props.romSelections);
+    await romStore.removeRoms(props.romSelections, deleteFromDisk);
     toast.add({
       severity: 'success',
       summary: 'Delete Successful',
-      detail: `Deleted ${count} ${pluralize(count, 'ROM')}.`,
+      detail: deleteFromDisk
+        ? `Deleted ${count} ${pluralize(count, 'ROM')} and their files.`
+        : `Removed ${count} ${pluralize(count, 'ROM')} from library.`,
       life: 3000,
     });
   } catch (error) {
@@ -117,6 +108,7 @@ async function handleDelete() {
     });
   } finally {
     deleting.value = false;
+    deleteDialogVisible.value = false;
   }
 
   emit('delete');
@@ -153,7 +145,7 @@ async function handleTagUpdate(newTags: string[]) {
 
 <style scoped lang="less">
 .rom-bulk-actions {
-  width: 350px;
+  width: 100%;
   height: 100%;
   padding: 16px;
 

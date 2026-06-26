@@ -57,14 +57,7 @@ onMounted(() => {
 });
 
 function toggleId(selections: string[], id: string): string[] {
-  const idx = selections.indexOf(id);
-  if (idx !== -1) {
-    // Remove selection
-    return [...selections.slice(0, idx), ...selections.slice(idx + 1)];
-  } else {
-    // Add
-    return [...selections, id];
-  }
+  return selections.includes(id) ? selections.filter((sid) => sid !== id) : [...selections, id];
 }
 
 function computeRangeSelection(selections: string[], roms: Rom[], clickedId: string): string[] {
@@ -97,7 +90,8 @@ function handleRomClick(event: MouseEvent, rom: Rom) {
   } else if (isRange) {
     newSelections = computeRangeSelection(props.romSelections, props.roms, romId);
   } else {
-    newSelections = [romId];
+    newSelections =
+      props.romSelections.length === 1 && props.romSelections[0] === romId ? [] : [romId];
   }
 
   emit('rom-selected', newSelections);

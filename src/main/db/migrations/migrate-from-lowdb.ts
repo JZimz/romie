@@ -56,8 +56,16 @@ function migrateRoms(db: AppDatabase, data: RomDatabase['roms']) {
   }
 
   log.info(`Migrating ${data.length} ROMs...`);
+  let skipped = 0;
 
   for (const rom of data) {
+    // Very old installs may still exist without a filePath on ROMs. This was a breaking change
+    // introduced by `51370be` so if we run into any of these they should be skipped.
+    if (!rom.filePath) {
+      skipped++;
+      continue;
+    }
+
     db.insert(schema.roms)
       .values({
         id: rom.id,
@@ -83,7 +91,10 @@ function migrateRoms(db: AppDatabase, data: RomDatabase['roms']) {
       .run();
   }
 
-  log.info(`Successfully migrated ${data.length} ROMs`);
+  log.info(`Successfully migrated ${data.length - skipped} ROMs`);
+  if (skipped > 0) {
+    log.warn(`Skipped ${skipped} ROM(s) with missing filePath. These will need to be re-imported.`);
+  }
 }
 
 function migrateDevices(db: AppDatabase, data: RomDatabase['devices']) {

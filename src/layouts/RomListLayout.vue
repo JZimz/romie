@@ -109,7 +109,7 @@
           :loading="romStore.loading"
         ></slot>
       </div>
-      <div class="rom-list-layout__content-detail">
+      <div v-if="$slots['rom-details']" class="rom-list-layout__content-detail">
         <slot name="rom-details"></slot>
       </div>
     </div>
@@ -169,15 +169,16 @@ const hasDisconnectedRoms = computed(() =>
 );
 
 const searchPlaceholder = computed(() => {
-  if (props.mode === 'tag' && props.tag) {
-    return `Search in ${props.tag}`;
+  switch (props.mode) {
+    case 'tag':
+      return props.tag ? `Search ${props.tag}` : 'Search your library';
+    case 'favorites':
+      return 'Search your favorites';
+    case 'system':
+      return props.system ? `Search ${getSystemDisplayName(props.system)}` : 'Search your library';
+    default:
+      return 'Search your library';
   }
-
-  if (props.mode === 'favorites') {
-    return `Search in your favorites`;
-  }
-
-  return `Search in your library`;
 });
 
 const filterSystems = computed(() => {
@@ -325,6 +326,12 @@ function getUniqueRomValues<T extends keyof Rom>(field: T) {
 
     &-list {
       flex: 1;
+      min-width: 0;
+    }
+
+    &-detail {
+      width: clamp(320px, 28%, 520px);
+      flex-shrink: 0;
     }
   }
 

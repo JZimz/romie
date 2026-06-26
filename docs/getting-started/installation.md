@@ -1,10 +1,16 @@
 # Installation
 
-ROMie runs on macOS and Windows. Download the latest release from the [GitHub releases page](https://github.com/JZimz/romie/releases) and grab the right file for your system.
+ROMie runs on macOS, Windows and Linux. Download the latest release from the [GitHub releases page](https://github.com/JZimz/romie/releases) and grab the right file for your system.
 
 **macOS**: download the `.dmg` file, open it, and drag ROMie to your Applications folder.
 
 **Windows**: download the `.exe` installer and run it.
+
+**Linux** ([Flatpak coming soon](https://github.com/jzimz/romie/issues/41)):
+
+- **Any distribution**: download the `.appimage` installer and run it.
+- **Fedora / Arch based**: download the `.rpm` installer and run it.
+- **Debian / Ubuntu based**: download the `.deb` installer and run it.
 
 That's it. No setup wizard, no account required.
 
