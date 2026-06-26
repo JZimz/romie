@@ -94,7 +94,7 @@ For Fedora / Arch based distributions(.rpm):
 npm run make -- --platform=linux --arch=x64 --targets=@electron-forge/maker-rpm
 ```
 
-For ARM devices (Rasberry Pi, Snapdragon cips) distributions:
+For linux distributions with ARM arhitecture (ex: Rasberry Pi):
 
 - For every distribution (.appimage):
 
