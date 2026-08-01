@@ -100,14 +100,14 @@
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
     "@retroachievements/api": "^2.10.0",
-    "@sentry/electron": "^7.13.0",
-    "@sentry/vue": "^10.51.0",
+    "@sentry/electron": "^7.16.0",
+    "@sentry/vue": "^10.69.0",
     "7zip-bin": "^5.2.0",
     "better-sqlite3": "^12.9.0",
     "crc-32": "^1.2.2",
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
-    "electron-log": "^5.4.1",
+    "electron-log": "^5.4.4",
     "electron-squirrel-startup": "^1.0.1",
     "lowdb": "^7.0.1",
     "node-7z": "^3.0.0",
@@ -115,12 +115,12 @@
     "pinia": "^3.0.4",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.5",
-    "systeminformation": "^5.31.4",
-    "update-electron-app": "^3.2.0",
-    "uuid": "^14.0.0",
-    "vue": "^3.5.33",
-    "vue-router": "^5.0.6",
+    "systeminformation": "^5.33.1",
+    "update-electron-app": "^3.3.0",
+    "uuid": "^14.0.1",
+    "vue": "^3.5.40",
+    "vue-router": "^5.2.0",
     "vuedraggable": "^4.1.0",
-    "yauzl": "^3.3.0"
+    "yauzl": "^3.4.0"
   }
 }
